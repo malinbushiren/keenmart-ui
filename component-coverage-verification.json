@@ -1,0 +1,3558 @@
+{
+  "catalog": {
+    "basic": 59,
+    "business": 52,
+    "supplemental": 14,
+    "states": 291
+  },
+  "recipes": 135,
+  "templates": 47,
+  "passed": 426,
+  "total": 426,
+  "errors": [],
+  "results": [
+    {
+      "kind": "component",
+      "id": "Button",
+      "state": "outline",
+      "url": "?component-preview=Button&variant=outline",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Button",
+      "state": "disabled",
+      "url": "?component-preview=Button&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Button",
+      "state": "compact",
+      "url": "?component-preview=Button&variant=compact",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Button",
+      "state": "default",
+      "url": "?component-preview=Button&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Button",
+      "state": "loading",
+      "url": "?component-preview=Button&variant=loading",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "AddButton",
+      "state": "disabled",
+      "url": "?component-preview=AddButton&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "AddButton",
+      "state": "default",
+      "url": "?component-preview=AddButton&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "QuantityStepper",
+      "state": "default",
+      "url": "?component-preview=QuantityStepper&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "QuantityStepper",
+      "state": "zero",
+      "url": "?component-preview=QuantityStepper&variant=zero",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "QuantityStepper",
+      "state": "max",
+      "url": "?component-preview=QuantityStepper&variant=max",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "QuantityStepper",
+      "state": "disabled",
+      "url": "?component-preview=QuantityStepper&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "QuantityStepper",
+      "state": "overlay",
+      "url": "?component-preview=QuantityStepper&variant=overlay",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "QuantityStepper",
+      "state": "overlay-remove",
+      "url": "?component-preview=QuantityStepper&variant=overlay-remove",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "Price",
+      "state": "integer",
+      "url": "?component-preview=Price&variant=integer",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Price",
+      "state": "default",
+      "url": "?component-preview=Price&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Price",
+      "state": "large",
+      "url": "?component-preview=Price&variant=large",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Price",
+      "state": "promotion",
+      "url": "?component-preview=Price&variant=promotion",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Tag",
+      "state": "neutral",
+      "url": "?component-preview=Tag&variant=neutral",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Tag",
+      "state": "default",
+      "url": "?component-preview=Tag&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Tag",
+      "state": "danger",
+      "url": "?component-preview=Tag&variant=danger",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ChoiceChip",
+      "state": "default",
+      "url": "?component-preview=ChoiceChip&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ChoiceChip",
+      "state": "selected",
+      "url": "?component-preview=ChoiceChip&variant=selected",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "TextField",
+      "state": "filled",
+      "url": "?component-preview=TextField&variant=filled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "TextField",
+      "state": "default",
+      "url": "?component-preview=TextField&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "TextField",
+      "state": "disabled",
+      "url": "?component-preview=TextField&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "TextField",
+      "state": "error",
+      "url": "?component-preview=TextField&variant=error",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "RadioRow",
+      "state": "selected",
+      "url": "?component-preview=RadioRow&variant=selected",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "RadioRow",
+      "state": "default",
+      "url": "?component-preview=RadioRow&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "RadioRow",
+      "state": "disabled",
+      "url": "?component-preview=RadioRow&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Rating",
+      "state": "rated",
+      "url": "?component-preview=Rating&variant=rated",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Rating",
+      "state": "default",
+      "url": "?component-preview=Rating&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Rating",
+      "state": "readonly",
+      "url": "?component-preview=Rating&variant=readonly",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ProductCard",
+      "state": "default",
+      "url": "?component-preview=ProductCard&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductCard",
+      "state": "compact",
+      "url": "?component-preview=ProductCard&variant=compact",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductCard",
+      "state": "promotion",
+      "url": "?component-preview=ProductCard&variant=promotion",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductCard",
+      "state": "unavailable",
+      "url": "?component-preview=ProductCard&variant=unavailable",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductCard",
+      "state": "unavailable-promotion",
+      "url": "?component-preview=ProductCard&variant=unavailable-promotion",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductCard",
+      "state": "integer",
+      "url": "?component-preview=ProductCard&variant=integer",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductCard",
+      "state": "promotion-integer",
+      "url": "?component-preview=ProductCard&variant=promotion-integer",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductCard",
+      "state": "large",
+      "url": "?component-preview=ProductCard&variant=large",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductCard",
+      "state": "short",
+      "url": "?component-preview=ProductCard&variant=short",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductCard",
+      "state": "long",
+      "url": "?component-preview=ProductCard&variant=long",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductCard",
+      "state": "quantity",
+      "url": "?component-preview=ProductCard&variant=quantity",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductCard",
+      "state": "count",
+      "url": "?component-preview=ProductCard&variant=count",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductCard",
+      "state": "remove",
+      "url": "?component-preview=ProductCard&variant=remove",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "CouponCard",
+      "state": "expired",
+      "url": "?component-preview=CouponCard&variant=expired",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "CouponCard",
+      "state": "default",
+      "url": "?component-preview=CouponCard&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "CouponCard",
+      "state": "used",
+      "url": "?component-preview=CouponCard&variant=used",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ListRow",
+      "state": "default",
+      "url": "?component-preview=ListRow&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ListRow",
+      "state": "description",
+      "url": "?component-preview=ListRow&variant=description",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Notice",
+      "state": "long",
+      "url": "?component-preview=Notice&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Notice",
+      "state": "default",
+      "url": "?component-preview=Notice&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "BottomSheet",
+      "state": "long",
+      "url": "?component-preview=BottomSheet&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "BottomSheet",
+      "state": "default",
+      "url": "?component-preview=BottomSheet&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "BottomSheet",
+      "state": "selection",
+      "url": "?component-preview=BottomSheet&variant=selection",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Text",
+      "state": "secondary",
+      "url": "?component-preview=Text&variant=secondary",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Text",
+      "state": "default",
+      "url": "?component-preview=Text&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Text",
+      "state": "danger",
+      "url": "?component-preview=Text&variant=danger",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Space",
+      "state": "default",
+      "url": "?component-preview=Space&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Space",
+      "state": "vertical",
+      "url": "?component-preview=Space&variant=vertical",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Grid",
+      "state": "three-columns",
+      "url": "?component-preview=Grid&variant=three-columns",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Grid",
+      "state": "default",
+      "url": "?component-preview=Grid&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Divider",
+      "state": "default",
+      "url": "?component-preview=Divider&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Divider",
+      "state": "label",
+      "url": "?component-preview=Divider&variant=label",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Card",
+      "state": "header-footer",
+      "url": "?component-preview=Card&variant=header-footer",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Card",
+      "state": "default",
+      "url": "?component-preview=Card&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Section",
+      "state": "action",
+      "url": "?component-preview=Section&variant=action",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Section",
+      "state": "default",
+      "url": "?component-preview=Section&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Image",
+      "state": "cover",
+      "url": "?component-preview=Image&variant=cover",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "Image",
+      "state": "default",
+      "url": "?component-preview=Image&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "Image",
+      "state": "error",
+      "url": "?component-preview=Image&variant=error",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Avatar",
+      "state": "default",
+      "url": "?component-preview=Avatar&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Avatar",
+      "state": "large",
+      "url": "?component-preview=Avatar&variant=large",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Badge",
+      "state": "default",
+      "url": "?component-preview=Badge&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "Badge",
+      "state": "dot",
+      "url": "?component-preview=Badge&variant=dot",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "Badge",
+      "state": "overflow",
+      "url": "?component-preview=Badge&variant=overflow",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "StatusBar",
+      "state": "default",
+      "url": "?component-preview=StatusBar&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "StatusBar",
+      "state": "inverse",
+      "url": "?component-preview=StatusBar&variant=inverse",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "HomeIndicator",
+      "state": "default",
+      "url": "?component-preview=HomeIndicator&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "AppShell",
+      "state": "default",
+      "url": "?component-preview=AppShell&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "AppShell",
+      "state": "long",
+      "url": "?component-preview=AppShell&variant=long",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "AppShell",
+      "state": "footer",
+      "url": "?component-preview=AppShell&variant=footer",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "component",
+      "id": "AppShell",
+      "state": "plain",
+      "url": "?component-preview=AppShell&variant=plain",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "AppShell",
+      "state": "account",
+      "url": "?component-preview=AppShell&variant=account",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "IconButton",
+      "state": "disabled",
+      "url": "?component-preview=IconButton&variant=disabled",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "IconButton",
+      "state": "default",
+      "url": "?component-preview=IconButton&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "NavBar",
+      "state": "default",
+      "url": "?component-preview=NavBar&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "NavBar",
+      "state": "long",
+      "url": "?component-preview=NavBar&variant=long",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "NavBar",
+      "state": "no-back",
+      "url": "?component-preview=NavBar&variant=no-back",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Tabs",
+      "state": "default",
+      "url": "?component-preview=Tabs&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Tabs",
+      "state": "overflow",
+      "url": "?component-preview=Tabs&variant=overflow",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Tabs",
+      "state": "disabled",
+      "url": "?component-preview=Tabs&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "SegmentedControl",
+      "state": "default",
+      "url": "?component-preview=SegmentedControl&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "SegmentedControl",
+      "state": "disabled",
+      "url": "?component-preview=SegmentedControl&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "TabBar",
+      "state": "badge",
+      "url": "?component-preview=TabBar&variant=badge",
+      "ok": true,
+      "images": 4
+    },
+    {
+      "kind": "component",
+      "id": "TabBar",
+      "state": "default",
+      "url": "?component-preview=TabBar&variant=default",
+      "ok": true,
+      "images": 4
+    },
+    {
+      "kind": "component",
+      "id": "Sidebar",
+      "state": "long",
+      "url": "?component-preview=Sidebar&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Sidebar",
+      "state": "default",
+      "url": "?component-preview=Sidebar&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "SearchBar",
+      "state": "filled",
+      "url": "?component-preview=SearchBar&variant=filled",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "SearchBar",
+      "state": "default",
+      "url": "?component-preview=SearchBar&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "SearchBar",
+      "state": "disabled",
+      "url": "?component-preview=SearchBar&variant=disabled",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "FormField",
+      "state": "default",
+      "url": "?component-preview=FormField&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "FormField",
+      "state": "error",
+      "url": "?component-preview=FormField&variant=error",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "TextArea",
+      "state": "filled",
+      "url": "?component-preview=TextArea&variant=filled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "TextArea",
+      "state": "default",
+      "url": "?component-preview=TextArea&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "TextArea",
+      "state": "disabled",
+      "url": "?component-preview=TextArea&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "TextArea",
+      "state": "error",
+      "url": "?component-preview=TextArea&variant=error",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Checkbox",
+      "state": "selected",
+      "url": "?component-preview=Checkbox&variant=selected",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Checkbox",
+      "state": "default",
+      "url": "?component-preview=Checkbox&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Checkbox",
+      "state": "disabled",
+      "url": "?component-preview=Checkbox&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Switch",
+      "state": "default",
+      "url": "?component-preview=Switch&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Switch",
+      "state": "selected",
+      "url": "?component-preview=Switch&variant=selected",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Switch",
+      "state": "disabled",
+      "url": "?component-preview=Switch&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "SelectField",
+      "state": "default",
+      "url": "?component-preview=SelectField&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "SelectField",
+      "state": "disabled",
+      "url": "?component-preview=SelectField&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Picker",
+      "state": "disabled",
+      "url": "?component-preview=Picker&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Picker",
+      "state": "default",
+      "url": "?component-preview=Picker&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "DatePicker",
+      "state": "default",
+      "url": "?component-preview=DatePicker&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "DatePicker",
+      "state": "disabled",
+      "url": "?component-preview=DatePicker&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Slider",
+      "state": "disabled",
+      "url": "?component-preview=Slider&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Slider",
+      "state": "default",
+      "url": "?component-preview=Slider&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Uploader",
+      "state": "disabled",
+      "url": "?component-preview=Uploader&variant=disabled",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "Uploader",
+      "state": "default",
+      "url": "?component-preview=Uploader&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "FilterBar",
+      "state": "selected",
+      "url": "?component-preview=FilterBar&variant=selected",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "FilterBar",
+      "state": "default",
+      "url": "?component-preview=FilterBar&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Carousel",
+      "state": "empty",
+      "url": "?component-preview=Carousel&variant=empty",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "Carousel",
+      "state": "default",
+      "url": "?component-preview=Carousel&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "Collapse",
+      "state": "default",
+      "url": "?component-preview=Collapse&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Collapse",
+      "state": "long",
+      "url": "?component-preview=Collapse&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Progress",
+      "state": "complete",
+      "url": "?component-preview=Progress&variant=complete",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Progress",
+      "state": "default",
+      "url": "?component-preview=Progress&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Steps",
+      "state": "complete",
+      "url": "?component-preview=Steps&variant=complete",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Steps",
+      "state": "default",
+      "url": "?component-preview=Steps&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "EmptyState",
+      "state": "action",
+      "url": "?component-preview=EmptyState&variant=action",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "EmptyState",
+      "state": "default",
+      "url": "?component-preview=EmptyState&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "Result",
+      "state": "default",
+      "url": "?component-preview=Result&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Result",
+      "state": "error",
+      "url": "?component-preview=Result&variant=error",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Result",
+      "state": "warning",
+      "url": "?component-preview=Result&variant=warning",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Loading",
+      "state": "default",
+      "url": "?component-preview=Loading&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Skeleton",
+      "state": "long",
+      "url": "?component-preview=Skeleton&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Skeleton",
+      "state": "default",
+      "url": "?component-preview=Skeleton&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Toast",
+      "state": "default",
+      "url": "?component-preview=Toast&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Toast",
+      "state": "long",
+      "url": "?component-preview=Toast&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Dialog",
+      "state": "long",
+      "url": "?component-preview=Dialog&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Dialog",
+      "state": "default",
+      "url": "?component-preview=Dialog&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ActionSheet",
+      "state": "disabled",
+      "url": "?component-preview=ActionSheet&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ActionSheet",
+      "state": "default",
+      "url": "?component-preview=ActionSheet&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Popover",
+      "state": "default",
+      "url": "?component-preview=Popover&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ImageViewer",
+      "state": "default",
+      "url": "?component-preview=ImageViewer&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "SwipeAction",
+      "state": "default",
+      "url": "?component-preview=SwipeAction&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "SwipeAction",
+      "state": "disabled",
+      "url": "?component-preview=SwipeAction&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "PullRefresh",
+      "state": "default",
+      "url": "?component-preview=PullRefresh&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "LoadMore",
+      "state": "default",
+      "url": "?component-preview=LoadMore&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "LoadMore",
+      "state": "loading",
+      "url": "?component-preview=LoadMore&variant=loading",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "LoadMore",
+      "state": "error",
+      "url": "?component-preview=LoadMore&variant=error",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "LoadMore",
+      "state": "end",
+      "url": "?component-preview=LoadMore&variant=end",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "StickyBar",
+      "state": "default",
+      "url": "?component-preview=StickyBar&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Keyboard",
+      "state": "alphabetic",
+      "url": "?component-preview=Keyboard&variant=alphabetic",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Keyboard",
+      "state": "disabled",
+      "url": "?component-preview=Keyboard&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Keyboard",
+      "state": "default",
+      "url": "?component-preview=Keyboard&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Countdown",
+      "state": "complete",
+      "url": "?component-preview=Countdown&variant=complete",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "Countdown",
+      "state": "default",
+      "url": "?component-preview=Countdown&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ProductCollection",
+      "state": "row",
+      "url": "?component-preview=ProductCollection&variant=row",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "ProductCollection",
+      "state": "empty",
+      "url": "?component-preview=ProductCollection&variant=empty",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductCollection",
+      "state": "default",
+      "url": "?component-preview=ProductCollection&variant=default",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "ProductDetailHeader",
+      "state": "default",
+      "url": "?component-preview=ProductDetailHeader&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductDetailHeader",
+      "state": "promotion",
+      "url": "?component-preview=ProductDetailHeader&variant=promotion",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductDetailHeader",
+      "state": "unavailable",
+      "url": "?component-preview=ProductDetailHeader&variant=unavailable",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductSpecPicker",
+      "state": "selected",
+      "url": "?component-preview=ProductSpecPicker&variant=selected",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "CartItem",
+      "state": "selected",
+      "url": "?component-preview=CartItem&variant=selected",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "CartItem",
+      "state": "default",
+      "url": "?component-preview=CartItem&variant=default",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "ProductSpecPicker",
+      "state": "default",
+      "url": "?component-preview=ProductSpecPicker&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "CartItem",
+      "state": "unavailable",
+      "url": "?component-preview=CartItem&variant=unavailable",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "CartItem",
+      "state": "readonly",
+      "url": "?component-preview=CartItem&variant=readonly",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "CartGroup",
+      "state": "selected",
+      "url": "?component-preview=CartGroup&variant=selected",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "CartGroup",
+      "state": "default",
+      "url": "?component-preview=CartGroup&variant=default",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "CartSummaryBar",
+      "state": "default",
+      "url": "?component-preview=CartSummaryBar&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "CartSummaryBar",
+      "state": "empty",
+      "url": "?component-preview=CartSummaryBar&variant=empty",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "InvalidProductsSheet",
+      "state": "long",
+      "url": "?component-preview=InvalidProductsSheet&variant=long",
+      "ok": true,
+      "images": 10
+    },
+    {
+      "kind": "component",
+      "id": "InvalidProductsSheet",
+      "state": "default",
+      "url": "?component-preview=InvalidProductsSheet&variant=default",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "AddressCard",
+      "state": "selected",
+      "url": "?component-preview=AddressCard&variant=selected",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "AddressCard",
+      "state": "default",
+      "url": "?component-preview=AddressCard&variant=default",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "AddressCard",
+      "state": "long",
+      "url": "?component-preview=AddressCard&variant=long",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "AddressCard",
+      "state": "delivery",
+      "url": "?component-preview=AddressCard&variant=delivery",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "AddressPicker",
+      "state": "empty",
+      "url": "?component-preview=AddressPicker&variant=empty",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "AddressPicker",
+      "state": "default",
+      "url": "?component-preview=AddressPicker&variant=default",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "AddressForm",
+      "state": "error",
+      "url": "?component-preview=AddressForm&variant=error",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "AddressForm",
+      "state": "default",
+      "url": "?component-preview=AddressForm&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "AddressForm",
+      "state": "disabled",
+      "url": "?component-preview=AddressForm&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "AddressForm",
+      "state": "custom-label",
+      "url": "?component-preview=AddressForm&variant=custom-label",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "AddressForm",
+      "state": "label-conflict",
+      "url": "?component-preview=AddressForm&variant=label-conflict",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "MapAddressPicker",
+      "state": "default",
+      "url": "?component-preview=MapAddressPicker&variant=default",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "component",
+      "id": "DeliverySlotPicker",
+      "state": "selected",
+      "url": "?component-preview=DeliverySlotPicker&variant=selected",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "MapAddressPicker",
+      "state": "empty",
+      "url": "?component-preview=MapAddressPicker&variant=empty",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "DeliverySlotPicker",
+      "state": "default",
+      "url": "?component-preview=DeliverySlotPicker&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "DeliverySlotPicker",
+      "state": "empty",
+      "url": "?component-preview=DeliverySlotPicker&variant=empty",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "DeliveryProgress",
+      "state": "default",
+      "url": "?component-preview=DeliveryProgress&variant=default",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "DeliveryProgress",
+      "state": "complete",
+      "url": "?component-preview=DeliveryProgress&variant=complete",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "PaymentMethodRow",
+      "state": "selected",
+      "url": "?component-preview=PaymentMethodRow&variant=selected",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "PaymentMethodRow",
+      "state": "default",
+      "url": "?component-preview=PaymentMethodRow&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "PaymentMethodRow",
+      "state": "disabled",
+      "url": "?component-preview=PaymentMethodRow&variant=disabled",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "BankCard",
+      "state": "default",
+      "url": "?component-preview=BankCard&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "BankCard",
+      "state": "selected",
+      "url": "?component-preview=BankCard&variant=selected",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "BankCardForm",
+      "state": "default",
+      "url": "?component-preview=BankCardForm&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "BankCardForm",
+      "state": "error",
+      "url": "?component-preview=BankCardForm&variant=error",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "CheckoutSummary",
+      "state": "default",
+      "url": "?component-preview=CheckoutSummary&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "CheckoutSummary",
+      "state": "discount",
+      "url": "?component-preview=CheckoutSummary&variant=discount",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderCard",
+      "state": "unpaid",
+      "url": "?component-preview=OrderCard&variant=unpaid",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "OrderCard",
+      "state": "cancelled",
+      "url": "?component-preview=OrderCard&variant=cancelled",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "OrderStatusHeader",
+      "state": "default",
+      "url": "?component-preview=OrderStatusHeader&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderCard",
+      "state": "default",
+      "url": "?component-preview=OrderCard&variant=default",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "OrderStatusHeader",
+      "state": "unpaid",
+      "url": "?component-preview=OrderStatusHeader&variant=unpaid",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderStatusHeader",
+      "state": "failed",
+      "url": "?component-preview=OrderStatusHeader&variant=failed",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderStatusHeader",
+      "state": "paid",
+      "url": "?component-preview=OrderStatusHeader&variant=paid",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderStatusHeader",
+      "state": "preparing",
+      "url": "?component-preview=OrderStatusHeader&variant=preparing",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderStatusHeader",
+      "state": "delivering",
+      "url": "?component-preview=OrderStatusHeader&variant=delivering",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderStatusHeader",
+      "state": "completed",
+      "url": "?component-preview=OrderStatusHeader&variant=completed",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderStatusHeader",
+      "state": "cancelled",
+      "url": "?component-preview=OrderStatusHeader&variant=cancelled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderTimeline",
+      "state": "default",
+      "url": "?component-preview=OrderTimeline&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderTimeline",
+      "state": "complete",
+      "url": "?component-preview=OrderTimeline&variant=complete",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderInfo",
+      "state": "default",
+      "url": "?component-preview=OrderInfo&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderInfo",
+      "state": "long",
+      "url": "?component-preview=OrderInfo&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "CancelReasonPicker",
+      "state": "selected",
+      "url": "?component-preview=CancelReasonPicker&variant=selected",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "CancelReasonPicker",
+      "state": "default",
+      "url": "?component-preview=CancelReasonPicker&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ReviewCard",
+      "state": "long",
+      "url": "?component-preview=ReviewCard&variant=long",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "ReviewCard",
+      "state": "default",
+      "url": "?component-preview=ReviewCard&variant=default",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "ProductRatingPanel",
+      "state": "rated",
+      "url": "?component-preview=ProductRatingPanel&variant=rated",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ProductRatingPanel",
+      "state": "default",
+      "url": "?component-preview=ProductRatingPanel&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "RiderRatingPanel",
+      "state": "default",
+      "url": "?component-preview=RiderRatingPanel&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "RiderRatingPanel",
+      "state": "rated",
+      "url": "?component-preview=RiderRatingPanel&variant=rated",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ReviewEditor",
+      "state": "rated",
+      "url": "?component-preview=ReviewEditor&variant=rated",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ReviewEditor",
+      "state": "default",
+      "url": "?component-preview=ReviewEditor&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ReviewEditor",
+      "state": "error",
+      "url": "?component-preview=ReviewEditor&variant=error",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "MediaPicker",
+      "state": "selected",
+      "url": "?component-preview=MediaPicker&variant=selected",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "component",
+      "id": "MediaPicker",
+      "state": "default",
+      "url": "?component-preview=MediaPicker&variant=default",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "component",
+      "id": "PromoCodeForm",
+      "state": "default",
+      "url": "?component-preview=PromoCodeForm&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "PromoCodeForm",
+      "state": "filled",
+      "url": "?component-preview=PromoCodeForm&variant=filled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "PromoCodeForm",
+      "state": "loading",
+      "url": "?component-preview=PromoCodeForm&variant=loading",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "PromoCodeForm",
+      "state": "error",
+      "url": "?component-preview=PromoCodeForm&variant=error",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "CampaignBanner",
+      "state": "image",
+      "url": "?component-preview=CampaignBanner&variant=image",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "CampaignBanner",
+      "state": "default",
+      "url": "?component-preview=CampaignBanner&variant=default",
+      "ok": true,
+      "images": 4
+    },
+    {
+      "kind": "component",
+      "id": "NewUserOffer",
+      "state": "default",
+      "url": "?component-preview=NewUserOffer&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "NewUserOffer",
+      "state": "long",
+      "url": "?component-preview=NewUserOffer&variant=long",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "MembershipBenefits",
+      "state": "default",
+      "url": "?component-preview=MembershipBenefits&variant=default",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "component",
+      "id": "AccountHeader",
+      "state": "default",
+      "url": "?component-preview=AccountHeader&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "AccountHeader",
+      "state": "guest",
+      "url": "?component-preview=AccountHeader&variant=guest",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "AccountHeader",
+      "state": "profile",
+      "url": "?component-preview=AccountHeader&variant=profile",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "SettingGroup",
+      "state": "long",
+      "url": "?component-preview=SettingGroup&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "SettingGroup",
+      "state": "default",
+      "url": "?component-preview=SettingGroup&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ChatMessage",
+      "state": "default",
+      "url": "?component-preview=ChatMessage&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "SupportEntryGrid",
+      "state": "default",
+      "url": "?component-preview=SupportEntryGrid&variant=default",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "component",
+      "id": "ChatMessage",
+      "state": "user",
+      "url": "?component-preview=ChatMessage&variant=user",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ChatMessage",
+      "state": "system",
+      "url": "?component-preview=ChatMessage&variant=system",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ChatMessage",
+      "state": "long",
+      "url": "?component-preview=ChatMessage&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ChatComposer",
+      "state": "filled",
+      "url": "?component-preview=ChatComposer&variant=filled",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ChatComposer",
+      "state": "default",
+      "url": "?component-preview=ChatComposer&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ChatComposer",
+      "state": "disabled",
+      "url": "?component-preview=ChatComposer&variant=disabled",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "ServiceQueue",
+      "state": "default",
+      "url": "?component-preview=ServiceQueue&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ServiceTicketCard",
+      "state": "ended",
+      "url": "?component-preview=ServiceTicketCard&variant=ended",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ServiceTicketCard",
+      "state": "default",
+      "url": "?component-preview=ServiceTicketCard&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ServiceTicketDetail",
+      "state": "default",
+      "url": "?component-preview=ServiceTicketDetail&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ServiceTicketDetail",
+      "state": "long",
+      "url": "?component-preview=ServiceTicketDetail&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "FAQList",
+      "state": "long",
+      "url": "?component-preview=FAQList&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "FAQList",
+      "state": "default",
+      "url": "?component-preview=FAQList&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "PhoneLoginForm",
+      "state": "filled",
+      "url": "?component-preview=PhoneLoginForm&variant=filled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "PhoneLoginForm",
+      "state": "default",
+      "url": "?component-preview=PhoneLoginForm&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "PhoneLoginForm",
+      "state": "error",
+      "url": "?component-preview=PhoneLoginForm&variant=error",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "PhoneLoginForm",
+      "state": "loading",
+      "url": "?component-preview=PhoneLoginForm&variant=loading",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "VerificationCodeField",
+      "state": "filled",
+      "url": "?component-preview=VerificationCodeField&variant=filled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "VerificationCodeField",
+      "state": "default",
+      "url": "?component-preview=VerificationCodeField&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "VerificationCodeField",
+      "state": "error",
+      "url": "?component-preview=VerificationCodeField&variant=error",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "VerificationCodeField",
+      "state": "countdown",
+      "url": "?component-preview=VerificationCodeField&variant=countdown",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ConsentSheet",
+      "state": "long",
+      "url": "?component-preview=ConsentSheet&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "ConsentSheet",
+      "state": "default",
+      "url": "?component-preview=ConsentSheet&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderRemarks",
+      "state": "selected",
+      "url": "?component-preview=OrderRemarks&variant=selected",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderRemarks",
+      "state": "default",
+      "url": "?component-preview=OrderRemarks&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderRemarks",
+      "state": "long",
+      "url": "?component-preview=OrderRemarks&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderSubmitBar",
+      "state": "disabled",
+      "url": "?component-preview=OrderSubmitBar&variant=disabled",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderSubmitBar",
+      "state": "default",
+      "url": "?component-preview=OrderSubmitBar&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderSubmitBar",
+      "state": "loading",
+      "url": "?component-preview=OrderSubmitBar&variant=loading",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "OrderSubmitBar",
+      "state": "integrated",
+      "url": "?component-preview=OrderSubmitBar&variant=integrated",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "AccountDeletionNotice",
+      "state": "long",
+      "url": "?component-preview=AccountDeletionNotice&variant=long",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "AccountDeletionNotice",
+      "state": "default",
+      "url": "?component-preview=AccountDeletionNotice&variant=default",
+      "ok": true,
+      "images": 0
+    },
+    {
+      "kind": "component",
+      "id": "PromotionGroup",
+      "state": "eligible",
+      "url": "?component-preview=PromotionGroup&variant=eligible",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "PromotionGroup",
+      "state": "default",
+      "url": "?component-preview=PromotionGroup&variant=default",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "PromotionGroup",
+      "state": "buy-get",
+      "url": "?component-preview=PromotionGroup&variant=buy-get",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "component",
+      "id": "PromotionGroup",
+      "state": "gift",
+      "url": "?component-preview=PromotionGroup&variant=gift",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "component",
+      "id": "UnavailableProductsGroup",
+      "state": "expanded",
+      "url": "?component-preview=UnavailableProductsGroup&variant=expanded",
+      "ok": true,
+      "images": 6
+    },
+    {
+      "kind": "component",
+      "id": "UnavailableProductsGroup",
+      "state": "empty",
+      "url": "?component-preview=UnavailableProductsGroup&variant=empty",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "component",
+      "id": "UnavailableProductsGroup",
+      "state": "default",
+      "url": "?component-preview=UnavailableProductsGroup&variant=default",
+      "ok": true,
+      "images": 4
+    },
+    {
+      "kind": "component",
+      "id": "Icon",
+      "state": "default",
+      "url": "?component-preview=Icon&variant=default",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:519",
+      "state": "filled",
+      "template": "login",
+      "url": "?assembly=1%3A519",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "recipe",
+      "id": "1:569",
+      "state": "default",
+      "template": "verify",
+      "url": "?assembly=1%3A569",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "1:470",
+      "state": "default",
+      "template": "login",
+      "url": "?assembly=1%3A470",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "recipe",
+      "id": "1:590",
+      "state": "error",
+      "template": "verify",
+      "url": "?assembly=1%3A590",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "1:743",
+      "state": "default",
+      "template": "consent",
+      "url": "?assembly=1%3A743",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "1:765",
+      "state": "long",
+      "template": "consent",
+      "url": "?assembly=1%3A765",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3325",
+      "state": "default",
+      "template": "product-card",
+      "url": "?assembly=1%3A3325",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:1965",
+      "state": "default",
+      "template": "home",
+      "url": "?assembly=1%3A1965",
+      "ok": true,
+      "images": 16
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3326",
+      "state": "integer",
+      "template": "product-card",
+      "url": "?assembly=1%3A3326",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3327",
+      "state": "long",
+      "template": "product-card",
+      "url": "?assembly=1%3A3327",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3328",
+      "state": "short",
+      "template": "product-card",
+      "url": "?assembly=1%3A3328",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3329",
+      "state": "large",
+      "template": "product-card",
+      "url": "?assembly=1%3A3329",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3330",
+      "state": "unavailable",
+      "template": "product-card",
+      "url": "?assembly=1%3A3330",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3331",
+      "state": "unavailable-promotion",
+      "template": "product-card",
+      "url": "?assembly=1%3A3331",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3332",
+      "state": "remove",
+      "template": "product-card",
+      "url": "?assembly=1%3A3332",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3333",
+      "state": "quantity",
+      "template": "product-card",
+      "url": "?assembly=1%3A3333",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3334",
+      "state": "quantity",
+      "template": "product-card",
+      "url": "?assembly=1%3A3334",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3335",
+      "state": "count",
+      "template": "product-card",
+      "url": "?assembly=1%3A3335",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3336",
+      "state": "promotion",
+      "template": "product-card",
+      "url": "?assembly=1%3A3336",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3337",
+      "state": "promotion-integer",
+      "template": "product-card",
+      "url": "?assembly=1%3A3337",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3674",
+      "state": "default",
+      "template": "product-card",
+      "url": "?assembly=1%3A3674",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3675",
+      "state": "default",
+      "template": "product-card",
+      "url": "?assembly=1%3A3675",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3676",
+      "state": "long",
+      "template": "product-card",
+      "url": "?assembly=1%3A3676",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3677",
+      "state": "short",
+      "template": "product-card",
+      "url": "?assembly=1%3A3677",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3678",
+      "state": "promotion",
+      "template": "product-card",
+      "url": "?assembly=1%3A3678",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3679",
+      "state": "integer",
+      "template": "product-card",
+      "url": "?assembly=1%3A3679",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3680",
+      "state": "promotion-integer",
+      "template": "product-card",
+      "url": "?assembly=1%3A3680",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3682",
+      "state": "unavailable-promotion",
+      "template": "product-card",
+      "url": "?assembly=1%3A3682",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3681",
+      "state": "unavailable",
+      "template": "product-card",
+      "url": "?assembly=1%3A3681",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3683",
+      "state": "remove",
+      "template": "product-card",
+      "url": "?assembly=1%3A3683",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3684",
+      "state": "quantity",
+      "template": "product-card",
+      "url": "?assembly=1%3A3684",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3686",
+      "state": "count",
+      "template": "product-card",
+      "url": "?assembly=1%3A3686",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "1:3685",
+      "state": "quantity",
+      "template": "product-card",
+      "url": "?assembly=1%3A3685",
+      "ok": true,
+      "images": 1
+    },
+    {
+      "kind": "recipe",
+      "id": "10:2048",
+      "state": "default",
+      "template": "category",
+      "url": "?assembly=10%3A2048",
+      "ok": true,
+      "images": 10
+    },
+    {
+      "kind": "recipe",
+      "id": "10:2123",
+      "state": "expanded",
+      "template": "category",
+      "url": "?assembly=10%3A2123",
+      "ok": true,
+      "images": 10
+    },
+    {
+      "kind": "recipe",
+      "id": "34:22799",
+      "state": "default",
+      "template": "category",
+      "url": "?assembly=34%3A22799",
+      "ok": true,
+      "images": 10
+    },
+    {
+      "kind": "recipe",
+      "id": "10:3007",
+      "state": "default",
+      "template": "search",
+      "url": "?assembly=10%3A3007",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "10:2960",
+      "state": "suggestions",
+      "template": "search",
+      "url": "?assembly=10%3A2960",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "recipe",
+      "id": "10:3045",
+      "state": "default",
+      "template": "search",
+      "url": "?assembly=10%3A3045",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "10:3556",
+      "state": "long",
+      "template": "product-detail",
+      "url": "?assembly=10%3A3556",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "10:3660",
+      "state": "default",
+      "template": "product-detail",
+      "url": "?assembly=10%3A3660",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "10:3738",
+      "state": "default",
+      "template": "product-detail",
+      "url": "?assembly=10%3A3738",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "10:3900",
+      "state": "default",
+      "template": "product-detail",
+      "url": "?assembly=10%3A3900",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "10:3815",
+      "state": "default",
+      "template": "product-detail",
+      "url": "?assembly=10%3A3815",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "10:5383",
+      "state": "address-missing",
+      "template": "cart",
+      "url": "?assembly=10%3A5383",
+      "ok": true,
+      "images": 14
+    },
+    {
+      "kind": "recipe",
+      "id": "10:5197",
+      "state": "swipe",
+      "template": "cart",
+      "url": "?assembly=10%3A5197",
+      "ok": true,
+      "images": 15
+    },
+    {
+      "kind": "recipe",
+      "id": "10:5811",
+      "state": "default",
+      "template": "invalid-cart",
+      "url": "?assembly=10%3A5811",
+      "ok": true,
+      "images": 17
+    },
+    {
+      "kind": "recipe",
+      "id": "10:5565",
+      "state": "default",
+      "template": "cart-address",
+      "url": "?assembly=10%3A5565",
+      "ok": true,
+      "images": 17
+    },
+    {
+      "kind": "recipe",
+      "id": "10:6051",
+      "state": "empty",
+      "template": "cart",
+      "url": "?assembly=10%3A6051",
+      "ok": true,
+      "images": 12
+    },
+    {
+      "kind": "recipe",
+      "id": "10:9300",
+      "state": "default",
+      "template": "address-sheet",
+      "url": "?assembly=10%3A9300",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "10:9507",
+      "state": "default",
+      "template": "delivery-slots",
+      "url": "?assembly=10%3A9507",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "10:10304",
+      "state": "unpaid",
+      "template": "order-list",
+      "url": "?assembly=10%3A10304",
+      "ok": true,
+      "images": 6
+    },
+    {
+      "kind": "recipe",
+      "id": "10:10108",
+      "state": "default",
+      "template": "order-list",
+      "url": "?assembly=10%3A10108",
+      "ok": true,
+      "images": 6
+    },
+    {
+      "kind": "recipe",
+      "id": "34:36924",
+      "state": "guest",
+      "template": "account",
+      "url": "?assembly=34%3A36924",
+      "ok": true,
+      "images": 11
+    },
+    {
+      "kind": "recipe",
+      "id": "34:36706",
+      "state": "default",
+      "template": "account",
+      "url": "?assembly=34%3A36706",
+      "ok": true,
+      "images": 11
+    },
+    {
+      "kind": "recipe",
+      "id": "10:11809",
+      "state": "default",
+      "template": "vouchers",
+      "url": "?assembly=10%3A11809",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "10:10765",
+      "state": "default",
+      "template": "language",
+      "url": "?assembly=10%3A10765",
+      "ok": true,
+      "images": 7
+    },
+    {
+      "kind": "recipe",
+      "id": "10:11841",
+      "state": "terms",
+      "template": "vouchers",
+      "url": "?assembly=10%3A11841",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "10:11887",
+      "state": "empty",
+      "template": "vouchers",
+      "url": "?assembly=10%3A11887",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "recipe",
+      "id": "10:11980",
+      "state": "expired",
+      "template": "vouchers",
+      "url": "?assembly=10%3A11980",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "21:12475",
+      "state": "filled",
+      "template": "vouchers",
+      "url": "?assembly=21%3A12475",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "21:12509",
+      "state": "success",
+      "template": "vouchers",
+      "url": "?assembly=21%3A12509",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "21:12840",
+      "state": "default",
+      "template": "map-address",
+      "url": "?assembly=21%3A12840",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "21:12886",
+      "state": "default",
+      "template": "map-address",
+      "url": "?assembly=21%3A12886",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "21:13037",
+      "state": "empty",
+      "template": "address-sheet",
+      "url": "?assembly=21%3A13037",
+      "ok": true,
+      "images": 4
+    },
+    {
+      "kind": "recipe",
+      "id": "21:13706",
+      "state": "default",
+      "template": "delete-account",
+      "url": "?assembly=21%3A13706",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "21:13732",
+      "state": "default",
+      "template": "profile",
+      "url": "?assembly=21%3A13732",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "21:13817",
+      "state": "default",
+      "template": "delete-failed",
+      "url": "?assembly=21%3A13817",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "21:13777",
+      "state": "default",
+      "template": "about",
+      "url": "?assembly=21%3A13777",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "23:15280",
+      "state": "guest",
+      "template": "new-user",
+      "url": "?assembly=23%3A15280",
+      "ok": true,
+      "images": 10
+    },
+    {
+      "kind": "recipe",
+      "id": "23:16641",
+      "state": "default",
+      "template": "new-user",
+      "url": "?assembly=23%3A16641",
+      "ok": true,
+      "images": 10
+    },
+    {
+      "kind": "recipe",
+      "id": "28:19480",
+      "state": "default",
+      "template": "cart",
+      "url": "?assembly=28%3A19480",
+      "ok": true,
+      "images": 15
+    },
+    {
+      "kind": "recipe",
+      "id": "23:15718",
+      "state": "default",
+      "template": "new-user-popup",
+      "url": "?assembly=23%3A15718",
+      "ok": true,
+      "images": 10
+    },
+    {
+      "kind": "recipe",
+      "id": "28:19661",
+      "state": "empty",
+      "template": "cart",
+      "url": "?assembly=28%3A19661",
+      "ok": true,
+      "images": 12
+    },
+    {
+      "kind": "recipe",
+      "id": "28:19777",
+      "state": "default",
+      "template": "cart",
+      "url": "?assembly=28%3A19777",
+      "ok": true,
+      "images": 15
+    },
+    {
+      "kind": "recipe",
+      "id": "34:22043",
+      "state": "default",
+      "template": "review-list",
+      "url": "?assembly=34%3A22043",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:21920",
+      "state": "completed",
+      "template": "order-detail",
+      "url": "?assembly=34%3A21920",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:22337",
+      "state": "long",
+      "template": "review-list",
+      "url": "?assembly=34%3A22337",
+      "ok": true,
+      "images": 7
+    },
+    {
+      "kind": "recipe",
+      "id": "34:24225",
+      "state": "default",
+      "template": "review-list",
+      "url": "?assembly=34%3A24225",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:24211",
+      "state": "default",
+      "template": "review-editor",
+      "url": "?assembly=34%3A24211",
+      "ok": true,
+      "images": 4
+    },
+    {
+      "kind": "recipe",
+      "id": "34:24264",
+      "state": "unrated",
+      "template": "review-list",
+      "url": "?assembly=34%3A24264",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:24246",
+      "state": "default",
+      "template": "review-result",
+      "url": "?assembly=34%3A24246",
+      "ok": true,
+      "images": 4
+    },
+    {
+      "kind": "recipe",
+      "id": "34:24279",
+      "state": "rated",
+      "template": "review-list",
+      "url": "?assembly=34%3A24279",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:24295",
+      "state": "default",
+      "template": "review-editor",
+      "url": "?assembly=34%3A24295",
+      "ok": true,
+      "images": 4
+    },
+    {
+      "kind": "recipe",
+      "id": "34:24304",
+      "state": "rated",
+      "template": "review-list",
+      "url": "?assembly=34%3A24304",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:24321",
+      "state": "default",
+      "template": "image-viewer",
+      "url": "?assembly=34%3A24321",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "recipe",
+      "id": "34:24326",
+      "state": "default",
+      "template": "review-submit",
+      "url": "?assembly=34%3A24326",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "recipe",
+      "id": "34:24372",
+      "state": "default",
+      "template": "media-picker",
+      "url": "?assembly=34%3A24372",
+      "ok": true,
+      "images": 18
+    },
+    {
+      "kind": "recipe",
+      "id": "34:30234",
+      "state": "card",
+      "template": "checkout",
+      "url": "?assembly=34%3A30234",
+      "ok": true,
+      "images": 13
+    },
+    {
+      "kind": "recipe",
+      "id": "34:29988",
+      "state": "default",
+      "template": "checkout",
+      "url": "?assembly=34%3A29988",
+      "ok": true,
+      "images": 13
+    },
+    {
+      "kind": "recipe",
+      "id": "34:30436",
+      "state": "online",
+      "template": "checkout",
+      "url": "?assembly=34%3A30436",
+      "ok": true,
+      "images": 13
+    },
+    {
+      "kind": "recipe",
+      "id": "34:30629",
+      "state": "empty",
+      "template": "payment-methods",
+      "url": "?assembly=34%3A30629",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:30886",
+      "state": "default",
+      "template": "payment-methods",
+      "url": "?assembly=34%3A30886",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:31170",
+      "state": "default",
+      "template": "card-form",
+      "url": "?assembly=34%3A31170",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "34:31276",
+      "state": "default",
+      "template": "bank-cards",
+      "url": "?assembly=34%3A31276",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "34:31419",
+      "state": "empty",
+      "template": "bank-cards",
+      "url": "?assembly=34%3A31419",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "recipe",
+      "id": "34:31555",
+      "state": "error",
+      "template": "card-form",
+      "url": "?assembly=34%3A31555",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "34:32377",
+      "state": "empty",
+      "template": "order-list",
+      "url": "?assembly=34%3A32377",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "recipe",
+      "id": "34:32519",
+      "state": "unpaid",
+      "template": "order-detail",
+      "url": "?assembly=34%3A32519",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:32912",
+      "state": "paid",
+      "template": "order-result",
+      "url": "?assembly=34%3A32912",
+      "ok": true,
+      "images": 4
+    },
+    {
+      "kind": "recipe",
+      "id": "34:32718",
+      "state": "failed",
+      "template": "order-result",
+      "url": "?assembly=34%3A32718",
+      "ok": true,
+      "images": 4
+    },
+    {
+      "kind": "recipe",
+      "id": "34:33091",
+      "state": "paid",
+      "template": "order-result",
+      "url": "?assembly=34%3A33091",
+      "ok": true,
+      "images": 4
+    },
+    {
+      "kind": "recipe",
+      "id": "34:33303",
+      "state": "preparing",
+      "template": "order-detail",
+      "url": "?assembly=34%3A33303",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:33605",
+      "state": "delivering",
+      "template": "order-detail",
+      "url": "?assembly=34%3A33605",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:34156",
+      "state": "cancelled",
+      "template": "order-detail",
+      "url": "?assembly=34%3A34156",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:34820",
+      "state": "selected",
+      "template": "remarks",
+      "url": "?assembly=34%3A34820",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "34:34746",
+      "state": "default",
+      "template": "remarks",
+      "url": "?assembly=34%3A34746",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "34:35122",
+      "state": "default",
+      "template": "cancel-reason",
+      "url": "?assembly=34%3A35122",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "34:35150",
+      "state": "error",
+      "template": "cancel-reason",
+      "url": "?assembly=34%3A35150",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "34:38863",
+      "state": "default",
+      "template": "address-sheet",
+      "url": "?assembly=34%3A38863",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:38968",
+      "state": "default",
+      "template": "address-book",
+      "url": "?assembly=34%3A38968",
+      "ok": true,
+      "images": 4
+    },
+    {
+      "kind": "recipe",
+      "id": "34:39101",
+      "state": "label-conflict",
+      "template": "address-form",
+      "url": "?assembly=34%3A39101",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "34:39182",
+      "state": "filled",
+      "template": "address-form",
+      "url": "?assembly=34%3A39182",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "34:39241",
+      "state": "custom-label",
+      "template": "address-form",
+      "url": "?assembly=34%3A39241",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "34:39300",
+      "state": "error",
+      "template": "address-form",
+      "url": "?assembly=34%3A39300",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "34:39364",
+      "state": "filled",
+      "template": "map-address",
+      "url": "?assembly=34%3A39364",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:41971",
+      "state": "guest",
+      "template": "account",
+      "url": "?assembly=34%3A41971",
+      "ok": true,
+      "images": 11
+    },
+    {
+      "kind": "recipe",
+      "id": "34:41773",
+      "state": "default",
+      "template": "support-orders",
+      "url": "?assembly=34%3A41773",
+      "ok": true,
+      "images": 9
+    },
+    {
+      "kind": "recipe",
+      "id": "34:42140",
+      "state": "default",
+      "template": "chat",
+      "url": "?assembly=34%3A42140",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:42033",
+      "state": "default",
+      "template": "chat",
+      "url": "?assembly=34%3A42033",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:42083",
+      "state": "queue",
+      "template": "chat",
+      "url": "?assembly=34%3A42083",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:42398",
+      "state": "ended",
+      "template": "chat",
+      "url": "?assembly=34%3A42398",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:42209",
+      "state": "long",
+      "template": "chat",
+      "url": "?assembly=34%3A42209",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:42300",
+      "state": "confirm",
+      "template": "chat",
+      "url": "?assembly=34%3A42300",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:42505",
+      "state": "default",
+      "template": "support-home",
+      "url": "?assembly=34%3A42505",
+      "ok": true,
+      "images": 5
+    },
+    {
+      "kind": "recipe",
+      "id": "34:42580",
+      "state": "default",
+      "template": "faq-list",
+      "url": "?assembly=34%3A42580",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "34:42611",
+      "state": "default",
+      "template": "service-tickets",
+      "url": "?assembly=34%3A42611",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "34:42652",
+      "state": "empty",
+      "template": "service-tickets",
+      "url": "?assembly=34%3A42652",
+      "ok": true,
+      "images": 3
+    },
+    {
+      "kind": "recipe",
+      "id": "34:42672",
+      "state": "default",
+      "template": "faq-detail",
+      "url": "?assembly=34%3A42672",
+      "ok": true,
+      "images": 2
+    },
+    {
+      "kind": "recipe",
+      "id": "52:44486",
+      "state": "threshold",
+      "template": "cart",
+      "url": "?assembly=52%3A44486",
+      "ok": true,
+      "images": 17
+    },
+    {
+      "kind": "recipe",
+      "id": "52:44962",
+      "state": "threshold",
+      "template": "cart",
+      "url": "?assembly=52%3A44962",
+      "ok": true,
+      "images": 16
+    },
+    {
+      "kind": "recipe",
+      "id": "52:45491",
+      "state": "threshold",
+      "template": "cart",
+      "url": "?assembly=52%3A45491",
+      "ok": true,
+      "images": 17
+    },
+    {
+      "kind": "recipe",
+      "id": "52:45707",
+      "state": "default",
+      "template": "cart",
+      "url": "?assembly=52%3A45707",
+      "ok": true,
+      "images": 16
+    },
+    {
+      "kind": "recipe",
+      "id": "52:46431",
+      "state": "selected",
+      "template": "product-spec",
+      "url": "?assembly=52%3A46431",
+      "ok": true,
+      "images": 8
+    },
+    {
+      "kind": "recipe",
+      "id": "52:46299",
+      "state": "default",
+      "template": "product-spec",
+      "url": "?assembly=52%3A46299",
+      "ok": true,
+      "images": 8
+    }
+  ]
+}

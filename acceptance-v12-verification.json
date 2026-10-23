@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-23",
+  "sourceNode": "137:52176",
+  "acceptanceScreens": 20,
+  "acceptanceItems": 19,
+  "renderedStates": 71,
+  "pagesRendered": 109,
+  "localAssetsChecked": 227,
+  "checks": [
+    "SelectField uses styled combobox, not native select",
+    "ActionSheet owns a vertical list container",
+    "Three actions are hidden by default; only deletion is destructive",
+    "PullRefresh describes a gesture and has no fake Refresh button",
+    "Cancellation is a sheet with seven radios, switch, footer confirmation",
+    "ReviewEditor no longer owns Submit",
+    "Unsupported MembershipBenefits is removed from public library",
+    "ProductList uses current custom ProductCard data and anatomy",
+    "ProductCollection uses current custom ProductCard data and anatomy",
+    "Category example and filters are English",
+    "AddressForm white surface is explicit",
+    "AddressForm gray surface is explicit",
+    "Checkbox white check, neutral swipe actions, SKU grid, and form surfaces have scoped styles",
+    "New rules are included in shared rule source"
+  ],
+  "failures": [],
+  "visualReview": "pending",
+  "browser": "Unavailable: local browser use is disabled in Work settings. Static React rendering does not verify visual geometry or live gestures."
+}

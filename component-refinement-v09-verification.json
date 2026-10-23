@@ -1,0 +1,283 @@
+{
+  "checkedAt": "2026-10-22",
+  "renderChecks": [
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "52:45707",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "52:45491",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "52:44962",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "52:44486",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "28:19661",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "34:42652",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "34:42505",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "34:41773",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "34:42033",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "34:42083",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "34:42140",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "34:42209",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "34:42300",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "34:42398",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "34:41971",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "34:36924",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "errorOverlay": false,
+      "nodeId": "34:39364",
+      "rendered": true,
+      "width": 375
+    },
+    {
+      "broken": [],
+      "component": "ListGroup",
+      "errorOverlay": false,
+      "rendered": true,
+      "variant": "inside"
+    },
+    {
+      "broken": [],
+      "component": "ListGroup",
+      "errorOverlay": false,
+      "rendered": true,
+      "variant": "outside"
+    },
+    {
+      "broken": [],
+      "component": "CartPromotionBar",
+      "errorOverlay": false,
+      "rendered": true,
+      "variant": "gift"
+    },
+    {
+      "broken": [],
+      "component": "CartPromotionBar",
+      "errorOverlay": false,
+      "rendered": true,
+      "variant": "sale"
+    },
+    {
+      "broken": [],
+      "component": "CartPromotionBar",
+      "errorOverlay": false,
+      "rendered": true,
+      "variant": "threshold"
+    },
+    {
+      "broken": [],
+      "component": "StatusLabel",
+      "errorOverlay": false,
+      "rendered": true,
+      "variant": "green"
+    },
+    {
+      "broken": [],
+      "component": "StatusLabel",
+      "errorOverlay": false,
+      "rendered": true,
+      "variant": "gray"
+    },
+    {
+      "broken": [],
+      "component": "SearchBar",
+      "errorOverlay": false,
+      "rendered": true,
+      "variant": "outline"
+    },
+    {
+      "broken": [],
+      "component": "SearchBar",
+      "errorOverlay": false,
+      "rendered": true,
+      "variant": "white"
+    },
+    {
+      "broken": [],
+      "component": "QuantityStepper",
+      "errorOverlay": false,
+      "rendered": true,
+      "variant": "minimum"
+    },
+    {
+      "broken": [],
+      "component": "QuantityStepper",
+      "errorOverlay": false,
+      "rendered": true,
+      "variant": "field"
+    },
+    {
+      "broken": [],
+      "component": "ChatMessage",
+      "errorOverlay": false,
+      "rendered": true,
+      "variant": "user"
+    },
+    {
+      "broken": [],
+      "component": "ChatMessage",
+      "errorOverlay": false,
+      "rendered": true,
+      "variant": "system"
+    },
+    {
+      "broken": [],
+      "component": "ChatMessage",
+      "errorOverlay": false,
+      "rendered": true,
+      "variant": "media"
+    }
+  ],
+  "ruleCount": 26,
+  "interactions": [
+    {
+      "name": "数量为 1 的减号禁用",
+      "passed": true
+    },
+    {
+      "name": "购物车地址抽屉选择",
+      "passed": true,
+      "result": "Work；选择后打开弹窗数量为 0"
+    },
+    {
+      "name": "左滑操作删除父商品与赠品",
+      "passed": true,
+      "result": "Cart (3)，剩余 3 个商品，无赠品"
+    },
+    {
+      "name": "不可用分组标题与第一行之间无额外空隙",
+      "passed": true,
+      "result": "0px；商品行内部仍保留 12px 内距"
+    },
+    {
+      "name": "整页空状态留白",
+      "passed": true,
+      "top": 168.3671875,
+      "bottom": 336.734375,
+      "bottomToTop": 2
+    },
+    {
+      "name": "Toast 白字且无关闭按钮",
+      "passed": true,
+      "color": "rgb(255, 255, 255)",
+      "closeButtons": 0
+    },
+    {
+      "name": "Toast 默认 3 秒自动关闭",
+      "passed": true,
+      "remainingAfter3200ms": 0
+    },
+    {
+      "name": "订单状态标签",
+      "passed": true,
+      "fontWeight": 400,
+      "colors": [
+        "rgb(0, 191, 32)",
+        "rgb(102, 102, 102)"
+      ]
+    },
+    {
+      "name": "地址搜索与选择",
+      "passed": true,
+      "query": "al shahiewen",
+      "results": 6,
+      "keyboardAfterSelection": false,
+      "selectedStreet": "al shahiewen st"
+    }
+  ],
+  "catalogBuild": "passed",
+  "productionBuild": "passed",
+  "visualReview": "pending",
+  "note": "渲染、结构、计算样式与本地交互检查；不等于逐像素视觉验收。"
+}

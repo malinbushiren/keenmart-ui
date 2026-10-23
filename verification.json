@@ -1,0 +1,143 @@
+{
+  "pages": 135,
+  "imageCallsites": 3059,
+  "pageErrors": [],
+  "brokenImages": [],
+  "zeroImageGeometry": [
+    {
+      "id": "10:10108",
+      "src": "/assets/d798c.png",
+      "ok": true,
+      "width": 0,
+      "height": 0,
+      "visible": false
+    },
+    {
+      "id": "10:10304",
+      "src": "/assets/d798c.png",
+      "ok": true,
+      "width": 0,
+      "height": 0,
+      "visible": false
+    },
+    {
+      "id": "21:12840",
+      "src": "/assets/292eb.png",
+      "ok": true,
+      "width": 0,
+      "height": 0,
+      "visible": false
+    },
+    {
+      "id": "21:12886",
+      "src": "/assets/292eb.png",
+      "ok": true,
+      "width": 0,
+      "height": 0,
+      "visible": false
+    },
+    {
+      "id": "21:13706",
+      "src": "/assets/292eb.png",
+      "ok": true,
+      "width": 0,
+      "height": 0,
+      "visible": false
+    },
+    {
+      "id": "34:21920",
+      "src": "/assets/d798c.png",
+      "ok": true,
+      "width": 0,
+      "height": 0,
+      "visible": false
+    },
+    {
+      "id": "34:32377",
+      "src": "/assets/d798c.png",
+      "ok": true,
+      "width": 0,
+      "height": 0,
+      "visible": false
+    },
+    {
+      "id": "34:35122",
+      "src": "/assets/d798c.png",
+      "ok": true,
+      "width": 0,
+      "height": 0,
+      "visible": false
+    },
+    {
+      "id": "34:35150",
+      "src": "/assets/d798c.png",
+      "ok": true,
+      "width": 0,
+      "height": 0,
+      "visible": false
+    },
+    {
+      "id": "34:39101",
+      "src": "/assets/292eb.png",
+      "ok": true,
+      "width": 0,
+      "height": 0,
+      "visible": false
+    },
+    {
+      "id": "34:39182",
+      "src": "/assets/292eb.png",
+      "ok": true,
+      "width": 0,
+      "height": 0,
+      "visible": false
+    },
+    {
+      "id": "34:39241",
+      "src": "/assets/292eb.png",
+      "ok": true,
+      "width": 0,
+      "height": 0,
+      "visible": false
+    },
+    {
+      "id": "34:39300",
+      "src": "/assets/292eb.png",
+      "ok": true,
+      "width": 0,
+      "height": 0,
+      "visible": false
+    },
+    {
+      "id": "34:39364",
+      "src": "/assets/292eb.png",
+      "ok": true,
+      "width": 0,
+      "height": 0,
+      "visible": false
+    }
+  ],
+  "interactionChecks": {
+    "checks": [
+      "空号码不能继续",
+      "区号选择更新",
+      "号码过滤及按钮状态",
+      "验证码页面跳转与键盘输入",
+      "删除与重发倒计时",
+      "隐私授权返回登录",
+      "侧栏搜索与导航",
+      "缩放",
+      "基础样式与待确认说明",
+      "手机导航与预览"
+    ],
+    "errors": []
+  },
+  "designAcceptance": "pending",
+  "zeroImageGeometryExplanation": "14 image callsites inherit original zero-sized placeholder layers; original nodes 21:13729 and 10:10302 were verified as 0×0 through Figma.",
+  "build": "passed",
+  "longPageChecks": {
+    "pages": 14,
+    "pageErrors": [],
+    "brokenImages": 0
+  }
+}

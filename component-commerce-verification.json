@@ -1,0 +1,237 @@
+{
+  "date": "2026-10-23",
+  "pagesRendered": 109,
+  "componentStates": [
+    {
+      "name": "ProductCard",
+      "variant": "grid",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "full-width",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "category",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "full-width-expanded",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "category-expanded",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "multi-spec",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "quantity",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "minimum",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "maximum",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "count",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "sold-out",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "unavailable",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "not-for-sale",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "similar",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "order-by",
+      "rendered": true
+    },
+    {
+      "name": "ProductCard",
+      "variant": "long-title",
+      "rendered": true
+    },
+    {
+      "name": "ProductPriceGroup",
+      "variant": "default",
+      "rendered": true
+    },
+    {
+      "name": "ProductPriceGroup",
+      "variant": "with-unit-price",
+      "rendered": true
+    },
+    {
+      "name": "ProductPriceGroup",
+      "variant": "price-only",
+      "rendered": true
+    },
+    {
+      "name": "ProductPriceGroup",
+      "variant": "unit-price",
+      "rendered": true
+    },
+    {
+      "name": "ProductPurchaseControl",
+      "variant": "default",
+      "rendered": true
+    },
+    {
+      "name": "ProductPurchaseControl",
+      "variant": "count",
+      "rendered": true
+    },
+    {
+      "name": "ProductPurchaseControl",
+      "variant": "quantity",
+      "rendered": true
+    },
+    {
+      "name": "ProductPurchaseControl",
+      "variant": "minimum",
+      "rendered": true
+    },
+    {
+      "name": "ProductPurchaseControl",
+      "variant": "maximum",
+      "rendered": true
+    },
+    {
+      "name": "ProductPurchaseControl",
+      "variant": "notify",
+      "rendered": true
+    },
+    {
+      "name": "ProductPurchaseControl",
+      "variant": "similar",
+      "rendered": true
+    },
+    {
+      "name": "ProductPurchaseControl",
+      "variant": "specs",
+      "rendered": true
+    },
+    {
+      "name": "ProductStatusOverlay",
+      "variant": "sold-out",
+      "rendered": true
+    },
+    {
+      "name": "ProductStatusOverlay",
+      "variant": "unavailable",
+      "rendered": true
+    },
+    {
+      "name": "ProductStatusOverlay",
+      "variant": "not-for-sale",
+      "rendered": true
+    },
+    {
+      "name": "ProductStatusOverlay",
+      "variant": "chinese",
+      "rendered": true
+    },
+    {
+      "name": "ProductStatusOverlay",
+      "variant": "compact",
+      "rendered": true
+    },
+    {
+      "name": "ProductSupplierTag",
+      "variant": "default",
+      "rendered": true
+    },
+    {
+      "name": "CategoryLayout",
+      "variant": "text-primary",
+      "rendered": true
+    },
+    {
+      "name": "CategoryLayout",
+      "variant": "image-primary",
+      "rendered": true
+    },
+    {
+      "name": "CategoryLayout",
+      "variant": "empty",
+      "rendered": true
+    },
+    {
+      "name": "ProductList",
+      "variant": "default",
+      "rendered": true
+    },
+    {
+      "name": "ProductList",
+      "variant": "compact",
+      "rendered": true
+    },
+    {
+      "name": "ProductList",
+      "variant": "row",
+      "rendered": true
+    },
+    {
+      "name": "ProductList",
+      "variant": "empty",
+      "rendered": true
+    },
+    {
+      "name": "ProductCollection",
+      "variant": "default",
+      "rendered": true
+    },
+    {
+      "name": "ProductCollection",
+      "variant": "row",
+      "rendered": true
+    },
+    {
+      "name": "ProductCollection",
+      "variant": "empty",
+      "rendered": true
+    }
+  ],
+  "referencedAssets": 227,
+  "failures": [],
+  "browserChecksBeforeDisabled": {
+    "productCardStates": 16,
+    "missingImages": 0,
+    "horizontalOverflow": 0,
+    "skuAddAndMinimum": true,
+    "maximumDisabled": true
+  },
+  "visualReview": "pending",
+  "limitation": "Browser control was disabled in Work settings before final category and migrated-page screenshot review."
+}

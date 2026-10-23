@@ -1,0 +1,508 @@
+{
+  "1:1965": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/a5006.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/e5a57.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/6790e.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/5d64c.svg"
+    }
+  ],
+  "34:22799": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/3065e.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/a38c7.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/f7fc8.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/49c4d.svg"
+    }
+  ],
+  "10:2048": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/fb931.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/green-df40f.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/e605d.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/80e78.svg"
+    }
+  ],
+  "10:5197": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/194b0.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/a7245.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/484d1.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/25236.svg"
+    }
+  ],
+  "10:5383": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/194b0.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/a7245.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/484d1.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/25236.svg"
+    }
+  ],
+  "10:5565": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/194b0.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/a7245.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/484d1.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/25236.svg"
+    }
+  ],
+  "10:5811": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/194b0.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/a7245.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/484d1.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/25236.svg"
+    }
+  ],
+  "10:6051": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/194b0.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/a7245.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/484d1.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/25236.svg"
+    }
+  ],
+  "28:19480": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/194b0.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/a7245.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/484d1.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/25236.svg"
+    }
+  ],
+  "28:19661": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/194b0.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/a7245.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/484d1.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/25236.svg"
+    }
+  ],
+  "28:19777": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/194b0.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/a7245.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/484d1.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/25236.svg"
+    }
+  ],
+  "52:45491": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/194b0.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/a7245.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/484d1.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/25236.svg"
+    }
+  ],
+  "52:45707": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/194b0.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/a7245.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/484d1.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/25236.svg"
+    }
+  ],
+  "52:44486": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/194b0.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/a7245.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/26dac.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/25236.svg"
+    }
+  ],
+  "52:44962": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/194b0.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/a7245.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/26dac.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/25236.svg"
+    }
+  ],
+  "34:36924": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/dc64c.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/b8c05.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/063eb.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/1bf5a.svg"
+    }
+  ],
+  "34:36706": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/dc64c.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/b8c05.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/063eb.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/1bf5a.svg"
+    }
+  ],
+  "10:10765": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/45ac8.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/d0485.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/672fe.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/87ef4.svg"
+    }
+  ],
+  "23:15280": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/a5006.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/de887.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/32c5d.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/5d64c.svg"
+    }
+  ],
+  "23:15718": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/a5006.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/de887.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/32c5d.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/5d64c.svg"
+    }
+  ],
+  "23:16641": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/a5006.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/de887.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/32c5d.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/5d64c.svg"
+    }
+  ],
+  "34:38863": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/07539.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/a7245.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/3888c.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/8df20.svg"
+    }
+  ],
+  "34:41971": [
+    {
+      "value": "home",
+      "label": "Home",
+      "iconSrc": "/assets/e61c0.svg"
+    },
+    {
+      "value": "category",
+      "label": "Category",
+      "iconSrc": "/assets/09973.svg"
+    },
+    {
+      "value": "cart",
+      "label": "Cart",
+      "iconSrc": "/assets/877eb.svg"
+    },
+    {
+      "value": "account",
+      "label": "Account",
+      "iconSrc": "/assets/f9d15.svg"
+    }
+  ]
+}

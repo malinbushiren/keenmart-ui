@@ -1,0 +1,2 @@
+:root{--km-text:#001747;--km-brand:#00bf20;--km-price:#f32c2c;--km-border:#ccc;--km-muted:#999;--km-surface:#fff;--km-background:#f5f6fa;--km-radius-field:12px;--km-radius-pill:100px;--km-space-1:6px;--km-space-2:12px;--km-space-3:18px;--km-space-4:24px;--km-control-height:48px}
+@font-face{font-family:DdmcSans;src:url('/fonts/DdmcSans-Bold.otf') format('opentype');font-weight:700;font-display:swap}@font-face{font-family:DdmcSans;src:url('/fonts/DdmcSans-Medium.otf') format('opentype');font-weight:500;font-display:swap}

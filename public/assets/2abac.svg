@@ -1,0 +1,19 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="19.7019" height="28.8988" viewBox="0 0 19.7019 28.8988" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#231;&#159;&#169;&#229;&#189;&#162; 2">
+<path id="&#231;&#159;&#169;&#229;&#189;&#162;" fill-rule="evenodd" clip-rule="evenodd" d="M9.85094 0C27.9309 0 16.9341 29.1197 9.85094 28.8976C2.76776 28.6754 -8.22901 0 9.85094 0Z" fill="url(#paint0_linear_0_435)"/>
+<mask id="mask0_0_435" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="29">
+<path id="&#231;&#159;&#169;&#229;&#189;&#162;_2" fill-rule="evenodd" clip-rule="evenodd" d="M9.85094 0C27.9309 0 16.9341 29.1197 9.85094 28.8976C2.76776 28.6754 -8.22901 0 9.85094 0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_0_435)">
+<path id="&#232;&#183;&#175;&#229;&#190;&#132;" opacity="0.525186" fill-rule="evenodd" clip-rule="evenodd" d="M-1.68365 5.0466C2.6207 7.18127 6.99833 8.15065 11.4492 7.95475C7.03975 9.65496 2.39824 9.78189 -2.47529 8.33554L-1.68365 5.0466Z" fill="white"/>
+<path id="&#232;&#183;&#175;&#229;&#190;&#132;&#229;&#164;&#135;&#228;&#187;&#189; 2" opacity="0.67" fill-rule="evenodd" clip-rule="evenodd" d="M22.9043 10.0934C18.7657 12.5108 14.4692 13.7708 10.0149 13.8731C14.5373 15.2742 19.1767 15.0902 23.9332 13.3213L22.9043 10.0934Z" fill="white"/>
+<path id="&#232;&#183;&#175;&#229;&#190;&#132;&#229;&#164;&#135;&#228;&#187;&#189;" opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M-1.62724 16.3915C2.63761 18.5979 6.99694 19.6404 11.4507 19.5191C7.01098 21.1452 2.36787 21.1944 -2.47861 19.6667L-1.62724 16.3915Z" fill="white"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_435" x1="6.88928" y1="7.37749" x2="1.29853" y2="18.276" gradientUnits="userSpaceOnUse">
+<stop stop-color="#DFDEDE"/>
+<stop offset="1" stop-color="#B4B4B4"/>
+</linearGradient>
+</defs>
+</svg>

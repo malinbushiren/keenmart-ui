@@ -1,0 +1,4 @@
+export const permissionIntro='By continuing, you agree to our Terms of Use and Privacy Policy you agree to oWe have formulated the Terms and Conditions and Privacy Policy in with relevant laws have formulated the Terms and Conditions ';
+export const permissionShort='Please read and ensure you understand the relevant terms before clicking Continue.Please read and ensure you understand the relevant terms before clicking Continue. KeenMart will access your location to recommend nearby restaurants for you and help you select a delivery address more conveniently.';
+export const permissionLong=permissionShort.replace('KeenMart','Dingdong');
+export const countries=[{name:'Saudi Arabia',code:'+966',left:-14,top:-389},{name:'Samoa',code:'+685',left:-14.32,top:-216.8656},{name:'San Martin',code:'+61',left:-14.64,top:-731.986}];

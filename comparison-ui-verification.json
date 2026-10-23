@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "135-entry selector and original route",
+    "matching widths at 100% zoom",
+    "language sheet close/continue/reset",
+    "per-page decision and notes persistence",
+    "review JSON export",
+    "proportional scroll synchronization",
+    "no runtime errors"
+  ],
+  "errors": []
+}

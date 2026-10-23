@@ -1,0 +1,29 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="130" height="130.001" viewBox="0 0 130 130.001" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 1312321229">
+<g id="Group 9222">
+<path id="Rectangle 3132" d="M10.0342 0H86.7121V89.4576H18.8477C13.9801 89.4576 10.0342 85.5117 10.0342 80.6441V0Z" fill="#CCCCCC" fill-opacity="0.5"/>
+<path id="Rectangle 3132_2" d="M45.2881 47.5938H110.508C116.836 47.5938 121.966 52.7235 121.966 59.0514V130.001L112.381 125.153L102.797 130.001L93.2118 125.153L83.6271 130.001L74.0423 125.153L64.4576 130.001L54.8728 125.153L45.2881 130.001V47.5938Z" fill="#EDEDEE"/>
+<path id="Rectangle 3132_3" d="M27.6611 56.4073C27.6611 51.5397 31.6071 47.5938 36.4747 47.5938C41.3423 47.5938 45.2883 51.5397 45.2883 56.4073V89.4582H27.6611V56.4073Z" fill="#CCCCCC"/>
+<path id="Subtract" d="M27.6621 89.458H18.8486V89.4561C23.7155 89.4556 27.6606 85.5114 27.6611 80.6445H27.6621V89.458Z" fill="#C7C9D0"/>
+<path id="Subtract_2" d="M45.2891 47.5931L45.2891 56.4066L45.2881 56.4066C45.2878 51.6915 41.5861 47.8411 36.9297 47.6048L36.4756 47.5931L45.2891 47.5931Z" fill="#EDEDEE"/>
+<rect id="Rectangle 3135" x="19.7295" y="10.5762" width="56.8475" height="6.16949" fill="#CCCCCC"/>
+<rect id="Rectangle 3135_2" x="55.424" y="60.3729" width="56.8475" height="4.84746" fill="#CCCCCC"/>
+<rect id="Rectangle 3135_3" x="82.7461" y="86.2891" width="29.5254" height="4.84746" fill="white"/>
+<rect id="Rectangle 3135_4" x="19.7295" y="22.0332" width="56.8475" height="6.16949" fill="#CCCCCC"/>
+<rect id="Rectangle 3135_5" x="55.4238" y="71.8301" width="56.8475" height="4.84746" fill="#CCCCCC"/>
+<rect id="Rectangle 3135_6" x="82.7461" y="97.7461" width="29.5254" height="4.84746" fill="white"/>
+<rect id="Rectangle 3135_7" x="82.7461" y="109.203" width="13.661" height="4.84746" fill="white"/>
+<rect id="Rectangle 3135_8" x="19.7295" y="33.4922" width="28.2034" height="6.16949" fill="#CCCCCC"/>
+</g>
+<g id="Group 9253">
+<path id="Vector 220" d="M114.5 23L109 28.5" stroke="#BFBFC8" stroke-width="3"/>
+<path id="Vector 220_2" d="M119.778 33.8891H112" stroke="#BFBFC8" stroke-width="3"/>
+<path id="Vector 220_3" d="M103.889 18.9996V26.7778" stroke="#BFBFC8" stroke-width="3"/>
+</g>
+<g id="Group 9223">
+<path id="Vector 220_4" d="M65.0004 84.523V92.3012" stroke="#CCCCCC" stroke-width="3"/>
+<path id="Vector 220_5" d="M70.5 87.5234L65 93.0234L59.5 87.5234" stroke="#CCCCCC" stroke-width="3"/>
+</g>
+<path id="Rectangle 3136" d="M57.9289 94.45C61.8342 90.5447 68.1658 90.5447 72.0711 94.45C75.9763 98.3552 75.9763 104.687 72.0711 108.592L65 115.663L57.9289 108.592C54.0237 104.687 54.0237 98.3552 57.9289 94.45Z" fill="white"/>
+</g>
+</svg>

@@ -1,0 +1,570 @@
+{
+  "Button": {
+    "file": "components.tsx",
+    "props": "React.ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'primary'|'outline'|'text'|'promotion';size?:'regular'|'medium'|'small'|'compact';loading?:boolean}"
+  },
+  "AddButton": {
+    "file": "components.tsx",
+    "props": "{onClick?:()=>void;disabled?:boolean}"
+  },
+  "QuantityStepper": {
+    "file": "components.tsx",
+    "props": "{value:number;onChange:(v:number)=>void;max?:number;disabled?:boolean;variant?:'default'|'overlay'|'field'}"
+  },
+  "Price": {
+    "file": "components.tsx",
+    "props": "{amount:string;original?:string;promotion?:boolean;currency?:string;unit?:string}"
+  },
+  "Tag": {
+    "file": "components.tsx",
+    "props": "{children:React.ReactNode;tone?:'success'|'neutral'|'danger'|'marketing'|'warning';variant?:'outline'}"
+  },
+  "ChoiceChip": {
+    "file": "components.tsx",
+    "props": "{children:React.ReactNode;selected:boolean;onClick:()=>void;disabled?:boolean;background?:'white'|'gray'}"
+  },
+  "TextField": {
+    "file": "components.tsx",
+    "props": "React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:string}"
+  },
+  "RadioRow": {
+    "file": "components.tsx",
+    "props": "{label:string;description?:string;checked:boolean;onChange:()=>void;name:string;value:string;disabled?:boolean}"
+  },
+  "Rating": {
+    "file": "components.tsx",
+    "props": "{value:number;onChange?:(value:number)=>void;size?:16|20|24|28;variant?:'stars'|'sentiment'}"
+  },
+  "CouponCard": {
+    "file": "components.tsx",
+    "props": "{coupon:CouponData;onUse?:()=>void;onDetails:()=>void}"
+  },
+  "ListRow": {
+    "file": "components.tsx",
+    "props": "{title:string;description?:string;trailing?:React.ReactNode;leading?:React.ReactNode;onClick?:()=>void;disabled?:boolean;danger?:boolean}"
+  },
+  "Notice": {
+    "file": "components.tsx",
+    "props": "{children:React.ReactNode}"
+  },
+  "BottomSheet": {
+    "file": "components.tsx",
+    "props": "{open:boolean;title:string;children:React.ReactNode;onClose:()=>void;footer?:React.ReactNode;showClose?:boolean;variant?:'default'|'selection'|'consent'|'country'|'product'|'review-confirm'|'payment'|'address-conflict'|'support-orders'|'cancel-reason';maxHeight?:number;titleScrollable?:boolean}"
+  },
+  "StatusLabel": {
+    "file": "components.tsx",
+    "props": "{children:React.ReactNode;tone?:'green'|'gray'}"
+  },
+  "Text": {
+    "file": "foundations.tsx",
+    "props": "{as?:'span'|'p'|'h1'|'h2'|'h3';tone?:'primary'|'secondary'|'danger'|'success';size?:'caption'|'body'|'control'|'title'|'heading';children:React.ReactNode}"
+  },
+  "TextButton": {
+    "file": "foundations.tsx",
+    "props": "{children:React.ReactNode;onClick?:()=>void;disabled?:boolean;tone?:'primary'|'brand'|'danger';icon?:React.ReactNode}"
+  },
+  "ActionBar": {
+    "file": "foundations.tsx",
+    "props": "{children:React.ReactNode;safeArea?:boolean;layout?:'equal'|'content'}"
+  },
+  "OTPInput": {
+    "file": "foundations.tsx",
+    "props": "{value:string;onChange:(v:string)=>void;length?:4|6;error?:string;disabled?:boolean;focused?:boolean;onFocus?:()=>void}"
+  },
+  "Grid": {
+    "file": "foundations.tsx",
+    "props": "{children:React.ReactNode;columns?:1|2|3|4}"
+  },
+  "Divider": {
+    "file": "foundations.tsx",
+    "props": "{label?:string}"
+  },
+  "Card": {
+    "file": "foundations.tsx",
+    "props": "{children:React.ReactNode;header?:React.ReactNode;footer?:React.ReactNode;className?:string}"
+  },
+  "Section": {
+    "file": "foundations.tsx",
+    "props": "{title:string;action?:React.ReactNode;children:React.ReactNode}"
+  },
+  "Image": {
+    "file": "foundations.tsx",
+    "props": "{src:string;alt:string;fit?:'contain'|'cover';ratio?:string;onClick?:()=>void}"
+  },
+  "Avatar": {
+    "file": "foundations.tsx",
+    "props": "{src?:string;name:string;size?:24|40|64|72}"
+  },
+  "Badge": {
+    "file": "foundations.tsx",
+    "props": "{count?:number;dot?:boolean;children?:React.ReactNode}"
+  },
+  "StatusBar": {
+    "file": "foundations.tsx",
+    "props": "{time?:string;inverse?:boolean}"
+  },
+  "HomeIndicator": {
+    "file": "foundations.tsx",
+    "props": "No props"
+  },
+  "Page": {
+    "file": "foundations.tsx",
+    "props": "{children:React.ReactNode;header?:React.ReactNode;footer?:React.ReactNode;chromeBackground?:string;background?:'white'|'gray';height?:number;showStatusBar?:boolean;showHomeIndicator?:boolean;inverse?:boolean;className?:string}"
+  },
+  "AppShell": {
+    "file": "foundations.tsx",
+    "props": "{children:React.ReactNode;header?:React.ReactNode;footer?:React.ReactNode;inverse?:boolean;surface?:'default'|'plain'|'account'|'home';height?:number;showStatusBar?:boolean;showHomeIndicator?:boolean}"
+  },
+  "IconButton": {
+    "file": "foundations.tsx",
+    "props": "{name:IconName;label:string;onClick?:()=>void;disabled?:boolean}"
+  },
+  "NavBar": {
+    "file": "foundations.tsx",
+    "props": "{title:string;onBack?:()=>void;right?:React.ReactNode;left?:React.ReactNode;align?:'center'|'left'}"
+  },
+  "Tabs": {
+    "file": "foundations.tsx",
+    "props": "{options:Option[];value:string;onChange:(v:string)=>void;variant?:'line'|'pill';layout?:'equal'|'scroll'}"
+  },
+  "SegmentedControl": {
+    "file": "foundations.tsx",
+    "props": "Omit<React.ComponentProps<typeof Tabs>,'variant'>"
+  },
+  "TabBar": {
+    "file": "foundations.tsx",
+    "props": "{options:Option[];value:string;onChange:(v:string)=>void}"
+  },
+  "Sidebar": {
+    "file": "foundations.tsx",
+    "props": "{options:Option[];value:string;onChange:(v:string)=>void}"
+  },
+  "SearchBar": {
+    "file": "foundations.tsx",
+    "props": "{surface?:'gray'|'outline'|'white';onFocus?:()=>void;value:string;onChange:(v:string)=>void;onSubmit?:(v:string)=>void;placeholder?:string;disabled?:boolean;showSubmit?:boolean;submitIcon?:boolean}"
+  },
+  "FormField": {
+    "file": "foundations.tsx",
+    "props": "{label:string;required?:boolean;error?:string;children:React.ReactNode}"
+  },
+  "TextArea": {
+    "file": "foundations.tsx",
+    "props": "{label:string;value:string;onChange:(v:string)=>void;maxLength?:number;disabled?:boolean;error?:string;placeholder?:string;hideLabel?:boolean}"
+  },
+  "Checkbox": {
+    "file": "foundations.tsx",
+    "props": "{label:string;checked:boolean;onChange:(v:boolean)=>void;disabled?:boolean}"
+  },
+  "Switch": {
+    "file": "foundations.tsx",
+    "props": "{label:string;checked:boolean;onChange:(v:boolean)=>void;disabled?:boolean}"
+  },
+  "SelectField": {
+    "file": "foundations.tsx",
+    "props": "{label:string;options:Option[];value:string;onChange:(v:string)=>void;disabled?:boolean}"
+  },
+  "Picker": {
+    "file": "foundations.tsx",
+    "props": "React.ComponentProps<typeof SelectField>"
+  },
+  "DatePicker": {
+    "file": "foundations.tsx",
+    "props": "{label:string;value:string;onChange:(v:string)=>void;min?:string;disabled?:boolean}"
+  },
+  "Slider": {
+    "file": "foundations.tsx",
+    "props": "{label:string;value:number;onChange:(v:number)=>void;min?:number;max?:number;disabled?:boolean}"
+  },
+  "Uploader": {
+    "file": "foundations.tsx",
+    "props": "{files:File[];onChange:(f:File[])=>void;max?:number;disabled?:boolean}"
+  },
+  "FilterBar": {
+    "file": "foundations.tsx",
+    "props": "{options:Option[];value:string[];onChange:(v:string[])=>void;onReset?:()=>void}"
+  },
+  "Carousel": {
+    "file": "foundations.tsx",
+    "props": "{images?:{src:string;alt:string}[];slides?:React.ReactNode[];initialIndex?:number;label?:string}"
+  },
+  "Collapse": {
+    "file": "foundations.tsx",
+    "props": "{items:{id:string;title:string;content:React.ReactNode}[]}"
+  },
+  "Progress": {
+    "file": "foundations.tsx",
+    "props": "{value:number;label?:string}"
+  },
+  "Steps": {
+    "file": "foundations.tsx",
+    "props": "{items:{title:string;description?:string}[];current?:number}"
+  },
+  "EmptyState": {
+    "file": "foundations.tsx",
+    "props": "{title?:string;description?:string;action?:React.ReactNode;illustration?:React.ReactNode;kind?:EmptyIllustrationKind;layout?:'inline'|'page'}"
+  },
+  "Result": {
+    "file": "foundations.tsx",
+    "props": "{status?:'success'|'error'|'warning';title:string;description?:string;details?:string[];action?:React.ReactNode;fullWidthAction?:boolean}"
+  },
+  "Loading": {
+    "file": "foundations.tsx",
+    "props": "{label?:string}"
+  },
+  "Skeleton": {
+    "file": "foundations.tsx",
+    "props": "{rows?:number}"
+  },
+  "Toast": {
+    "file": "foundations.tsx",
+    "props": "{open:boolean;message:string;onClose:()=>void;duration?:number}"
+  },
+  "Dialog": {
+    "file": "foundations.tsx",
+    "props": "{open:boolean;title:string;children:React.ReactNode;onClose:()=>void;actions?:React.ReactNode;variant?:'default'|'poster'|'voucher-success';showClose?:boolean}"
+  },
+  "ActionSheet": {
+    "file": "foundations.tsx",
+    "props": "{open:boolean;options:Option[];onSelect:(v:string)=>void;onClose:()=>void}"
+  },
+  "Popover": {
+    "file": "foundations.tsx",
+    "props": "{label:string;children:React.ReactNode}"
+  },
+  "ImageViewer": {
+    "file": "foundations.tsx",
+    "props": "{open:boolean;src:string;alt:string;onClose:()=>void}"
+  },
+  "SwipeAction": {
+    "file": "foundations.tsx",
+    "props": "{children:React.ReactNode;onDelete?:()=>void;actions?:{label:string;onAction:()=>void;tone?:'neutral'|'destructive'}[];disabled?:boolean}"
+  },
+  "PullRefresh": {
+    "file": "foundations.tsx",
+    "props": "{children:React.ReactNode;onRefresh:()=>Promise<void>}"
+  },
+  "LoadMore": {
+    "file": "foundations.tsx",
+    "props": "{loading?:boolean;hasMore?:boolean;onLoad:()=>void;error?:boolean}"
+  },
+  "StickyBar": {
+    "file": "foundations.tsx",
+    "props": "{children:React.ReactNode;layout?:'single'|'equal'|'content'}"
+  },
+  "Keyboard": {
+    "file": "foundations.tsx",
+    "props": "{allowDecimal?:boolean;type?:'numeric'|'alphabetic';value:string;onChange:(v:string)=>void;onDone:()=>void;maxLength?:number;disabled?:boolean}"
+  },
+  "Countdown": {
+    "file": "foundations.tsx",
+    "props": "{seconds:number;onComplete?:()=>void}"
+  },
+  "Artwork": {
+    "file": "foundations.tsx",
+    "props": "{layers:ArtworkLayer[];label:string;ratio?:string}"
+  },
+  "ListGroup": {
+    "file": "foundations.tsx",
+    "props": "{title:string;titlePlacement?:'inside'|'outside';items:{id:string;title:string;description?:string;leading?:React.ReactNode;trailing?:React.ReactNode;onClick?:()=>void;disabled?:boolean}[]}"
+  },
+  "ProductCard": {
+    "file": "business.tsx",
+    "props": "type ProductCardVariant = 'grid'|'full-width'|'category';\ntype ProductAvailability = 'available'|'sold-out'|'unavailable'|'not-for-sale';\ntype ProductSKU = {id:string;label:string;amount:string;unitPrice?:string;promotion?:string;max?:number};\ntype CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;promotion?:string;supplier?:string;orderBy?:string;availability?:ProductAvailability;purchase?:'add'|'quantity'|'count'|'notify'|'similar'|'none';max?:number;skus?:ProductSKU[]};\n\n{product:CommerceProduct;variant?:ProductCardVariant;quantity?:number;onAdd:()=>void;onQuantity?:(value:number)=>void;onSKUQuantity?:(id:string,value:number)=>void;skuQuantities?:Record<string,number>;initialExpanded?:boolean;onNotify?:()=>void;onSimilar?:()=>void;onSupplier?:()=>void;locale?:'en'|'zh'}"
+  },
+  "ProductPriceGroup": {
+    "file": "business.tsx",
+    "props": "{amount:string;original?:string;currency?:string;unit?:string;unitPrice?:string;promotion?:boolean;originalPlacement?:'inline'|'below'}"
+  },
+  "ProductPurchaseControl": {
+    "file": "business.tsx",
+    "props": "{mode?:'add'|'quantity'|'count'|'notify'|'similar'|'specs'|'none';value?:number;max?:number;expanded?:boolean;onAdd:()=>void;onQuantity?:(v:number)=>void;onToggle?:()=>void;onNotify?:()=>void;onSimilar?:()=>void}"
+  },
+  "ProductStatusOverlay": {
+    "file": "business.tsx",
+    "props": "{status:ProductAvailability;locale?:'en'|'zh'}"
+  },
+  "ProductSupplierTag": {
+    "file": "business.tsx",
+    "props": "{name:string;onClick?:()=>void}"
+  },
+  "ProductList": {
+    "file": "business.tsx",
+    "props": "{products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;onRemove?:(id:string)=>void;layout?:'grid'|'row';density?:'regular'|'compact'}"
+  },
+  "ProductCollection": {
+    "file": "business.tsx",
+    "props": "{products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;onRemove?:(id:string)=>void;layout?:'grid'|'row';title?:string;density?:'regular'|'compact'}"
+  },
+  "ProductDetailHeader": {
+    "file": "business.tsx",
+    "props": "{product:Product;images:{src:string;alt:string}[];onAdd:()=>void}"
+  },
+  "ProductSpecPicker": {
+    "file": "business.tsx",
+    "props": "{groups:{id:string;title:string;description?:string;required?:boolean;options:Option[]}[];values:Record<string,string>;onChange:(v:Record<string,string>)=>void;onConfirm:()=>void;product?:Product;quantity?:number;onQuantity?:(n:number)=>void}"
+  },
+  "CartItem": {
+    "file": "business.tsx",
+    "props": "{product:Product;quantity:number;selected:boolean;onSelect:(v:boolean)=>void;onQuantity:(v:number)=>void;onRemove:()=>void;readOnly?:boolean;selectable?:boolean}"
+  },
+  "CartGroup": {
+    "file": "business.tsx",
+    "props": "{title:string;children:React.ReactNode;selected:boolean;onSelect:(v:boolean)=>void}"
+  },
+  "CartSummaryBar": {
+    "file": "business.tsx",
+    "props": "{total:string;selectedCount:number;onCheckout:()=>void;disabled?:boolean}"
+  },
+  "InvalidProductsSheet": {
+    "file": "business.tsx",
+    "props": "{open:boolean;products:Product[];onClose:()=>void;onContinue:()=>void}"
+  },
+  "AddressCard": {
+    "file": "business.tsx",
+    "props": "{address:Address;selected?:boolean;onSelect?:()=>void;onEdit?:()=>void;variant?:'default'|'delivery'}"
+  },
+  "AddressPicker": {
+    "file": "business.tsx",
+    "props": "{addresses:Address[];value:string;onChange:(v:string)=>void;onAdd:()=>void}"
+  },
+  "AddressForm": {
+    "file": "business.tsx",
+    "props": "{surface?:'white'|'gray';value:Address;onChange:(v:Address)=>void;onSubmit:()=>void;error?:string;disabled?:boolean;onRemove?:()=>void;labelConflict?:boolean;onResolveLabel?:(use:boolean)=>void}"
+  },
+  "MapAddressPicker": {
+    "file": "business.tsx",
+    "props": "{onSearchFocus?:()=>void;map:React.ReactNode;query:string;onQuery:(v:string)=>void;address?:Address;onConfirm:()=>void;results?:{id:string;title:string}[];onSelect?:(id:string)=>void}"
+  },
+  "DeliverySlotPicker": {
+    "file": "business.tsx",
+    "props": "{days:Option[];day:string;onDay:(v:string)=>void;slots:Option[];value:string;onChange:(v:string)=>void}"
+  },
+  "DeliveryProgress": {
+    "file": "business.tsx",
+    "props": "{time:string;progress:number;description?:string;onSelect?:()=>void}"
+  },
+  "PaymentMethodRow": {
+    "file": "business.tsx",
+    "props": "{method:Payment;selected:boolean;onSelect:()=>void;groupName?:string}"
+  },
+  "BankCard": {
+    "file": "business.tsx",
+    "props": "{brand:string;last4:string;expiry:string;holder?:string;selected?:boolean;onSelect?:()=>void;onDelete?:()=>void;unavailable?:boolean}"
+  },
+  "BankCardForm": {
+    "file": "business.tsx",
+    "props": "{value:CardData;onFieldFocus?:(field:keyof CardData)=>void;onChange:(v:CardData)=>void;onSubmit:()=>void;error?:string;errors?:Partial<Record<keyof CardData,string>>;total?:string}"
+  },
+  "PaymentMethodPicker": {
+    "file": "business.tsx",
+    "props": "{value:string;onChange:(v:string)=>void;cards?:{id:string;brand:string;last4:string;logo:string}[];onNewCard:()=>void}"
+  },
+  "CheckoutSummary": {
+    "file": "business.tsx",
+    "props": "{rows:{label:string;value:string;original?:string;discount?:boolean}[];total:string}"
+  },
+  "OrderCard": {
+    "file": "business.tsx",
+    "props": "{order:Order;onAction:(action:string)=>void;actions?:string[];variant?:'list'|'overview';itemCount?:number}"
+  },
+  "OrderStatusHeader": {
+    "file": "business.tsx",
+    "props": "{state:OrderState;description?:string;countdown?:string;title?:string;artwork?:ArtworkLayer[]}"
+  },
+  "OrderTimeline": {
+    "file": "business.tsx",
+    "props": "{events:{title:string;description?:string}[];current:number}"
+  },
+  "OrderInfo": {
+    "file": "business.tsx",
+    "props": "{rows:{label:string;value:string;copyable?:boolean}[];onCopy?:(v:string)=>void}"
+  },
+  "CancelReasonPicker": {
+    "file": "business.tsx",
+    "props": "{options:Option[];value:string;onChange:(v:string)=>void;onConfirm:()=>void;open:boolean;onClose:()=>void;putBack?:boolean;onPutBack?:(v:boolean)=>void;error?:string}"
+  },
+  "ReviewCard": {
+    "file": "business.tsx",
+    "props": "{product:Product;rating:number;comment:string;images:string[];onView?:(src:string)=>void}"
+  },
+  "ProductRatingPanel": {
+    "file": "business.tsx",
+    "props": "{product:Product;rating:number;onRating:(v:number)=>void;dimensions:Record<string,number>;onDimension:(name:string,value:number)=>void;expanded?:boolean;onToggle?:()=>void;comment?:string;onComment?:(v:string)=>void;files?:File[];onFiles?:(v:File[])=>void;maxLength?:number}"
+  },
+  "RiderRatingPanel": {
+    "file": "business.tsx",
+    "props": "{name:string;rating:number;onChange:(v:number)=>void;comment?:string;onComment?:(v:string)=>void}"
+  },
+  "ReviewEditor": {
+    "file": "business.tsx",
+    "props": "{value:ReviewData;onChange:(v:ReviewData)=>void;error?:string;tagOptions?:string[]}"
+  },
+  "MediaPicker": {
+    "file": "business.tsx",
+    "props": "{items:{id:string;src:string}[];selected:string[];onChange:(v:string[])=>void;max?:number;onDone:()=>void;onCamera:()=>void}"
+  },
+  "PromoCodeForm": {
+    "file": "business.tsx",
+    "props": "{value:string;onChange:(v:string)=>void;onSubmit:()=>void;onFocus?:()=>void;error?:string;loading?:boolean}"
+  },
+  "CampaignBanner": {
+    "file": "business.tsx",
+    "props": "{variant?:'default'|'source';src?:string;alt:string;onClick:()=>void;ratio?:string;title?:string;subtitle?:string;actionLabel?:string;artwork?:React.ReactNode;background?:string}"
+  },
+  "NewUserOffer": {
+    "file": "business.tsx",
+    "props": "{amount:string;coupons:CouponData[];onUse:()=>void;onDetails:()=>void;header?:React.ReactNode}"
+  },
+  "AccountHeader": {
+    "file": "business.tsx",
+    "props": "{name?:string;phone?:string;avatarSrc?:string;variant?:'card'|'profile';onLogin:()=>void}"
+  },
+  "SettingGroup": {
+    "file": "business.tsx",
+    "props": "{items:{id:string;title:string;description?:string;value?:React.ReactNode;icon?:IconName;leading?:React.ReactNode}[];onAction:(v:string)=>void}"
+  },
+  "SupportEntryGrid": {
+    "file": "business.tsx",
+    "props": "{entries:Option[];onSelect:(v:string)=>void}"
+  },
+  "ChatMessage": {
+    "file": "business.tsx",
+    "props": "{side?:'agent'|'user'|'system';text?:string;time?:string;children?:React.ReactNode;variant?:'bubble'|'notice'|'media'}"
+  },
+  "ChatComposer": {
+    "file": "business.tsx",
+    "props": "{value:string;onChange:(v:string)=>void;onSend:()=>void;onAttach:()=>void;disabled?:boolean;expanded?:boolean}"
+  },
+  "ServiceQueue": {
+    "file": "business.tsx",
+    "props": "{position:number;onCancel:()=>void}"
+  },
+  "ServiceTicketCard": {
+    "file": "business.tsx",
+    "props": "{id:string;time:string;status:'ongoing'|'ended';onContinue:()=>void;onHistory:()=>void}"
+  },
+  "ServiceTicketDetail": {
+    "file": "business.tsx",
+    "props": "{question:string;answer:string;onContact:()=>void;onLink?:()=>void}"
+  },
+  "FAQList": {
+    "file": "business.tsx",
+    "props": "{items:{id:string;title:string;content:React.ReactNode}[]}"
+  },
+  "BrandLogo": {
+    "file": "business.tsx",
+    "props": "{variant?:'full'|'short'}"
+  },
+  "LegalText": {
+    "file": "business.tsx",
+    "props": "{text:string;onLink?:(label:string)=>void}"
+  },
+  "CountryPicker": {
+    "file": "business.tsx",
+    "props": "{open:boolean;onClose:()=>void;value:string;onChange:(value:string)=>void}"
+  },
+  "PhoneLoginForm": {
+    "file": "business.tsx",
+    "props": "{country:string;phone:string;onCountry:(v:string)=>void;onPhone:(v:string)=>void;onSubmit:()=>void;error?:string;loading?:boolean;showCountry?:boolean;initialCountryOpen?:boolean;onEmail?:()=>void;onPolicy?:(title:string)=>void;onInputFocus?:()=>void;onCountryOpen?:()=>void;focused?:boolean}"
+  },
+  "VerificationCodeField": {
+    "file": "business.tsx",
+    "props": "{value:string;onChange:(v:string)=>void;length?:4|6;error?:string;onResend:()=>void;remaining?:number;phone?:string;onMore?:()=>void;onFocus?:()=>void}"
+  },
+  "ConsentSheet": {
+    "file": "business.tsx",
+    "props": "{open:boolean;children?:React.ReactNode;onAccept:()=>void;onDecline:()=>void;onClose:()=>void;longForm?:boolean}"
+  },
+  "OrderRemarks": {
+    "file": "business.tsx",
+    "props": "{options:string[];selected:string[];onSelect:(v:string[])=>void;history:string[];note:string;onNote:(v:string)=>void;onConfirm:()=>void}"
+  },
+  "OrderSubmitBar": {
+    "file": "business.tsx",
+    "props": "{total:string;label?:string;onSubmit:()=>void;disabled?:boolean;loading?:boolean;variant?:'default'|'integrated';paymentLogo?:string}"
+  },
+  "AccountDeletionNotice": {
+    "file": "business.tsx",
+    "props": "{conditions:string[];consequences:string[];onApply:()=>void}"
+  },
+  "PromotionGroup": {
+    "file": "business.tsx",
+    "props": "{kind?:'sale'|'gift'|'buy-get';title:string;eligible:boolean;remainingCount?:number;discount?:string;selected?:boolean;onSelect?:(v:boolean)=>void;onAction:()=>void;children:React.ReactNode}"
+  },
+  "UnavailableProductsGroup": {
+    "file": "business.tsx",
+    "props": "{products:Product[];expanded:boolean;onExpand:()=>void;onRemoveAll:()=>void;onRemove:(id:string)=>void;totalCount?:number}"
+  },
+  "CartHeader": {
+    "file": "business.tsx",
+    "props": "{count:number;address?:string;onAddress?:()=>void;onClear:()=>void}"
+  },
+  "SearchHeader": {
+    "file": "business.tsx",
+    "props": "{value:string;onChange:(v:string)=>void;onSearch:(v:string)=>void;onBack:()=>void;onCart:()=>void;cartCount?:number}"
+  },
+  "SearchSuggestions": {
+    "file": "business.tsx",
+    "props": "{title:string;items:string[];onSelect:(v:string)=>void;onClear?:()=>void;expandable?:boolean}"
+  },
+  "CategoryTile": {
+    "file": "business.tsx",
+    "props": "{item:CategoryItem;onSelect:()=>void}"
+  },
+  "CategoryGrid": {
+    "file": "business.tsx",
+    "props": "{items:CategoryItem[];onSelect:(id:string)=>void}"
+  },
+  "HomeHeader": {
+    "file": "business.tsx",
+    "props": "{address:string;delivery:string;information:string;query:string;onQuery:(v:string)=>void;onAddress:()=>void;onSearch?:()=>void}"
+  },
+  "CategoryLayout": {
+    "file": "business.tsx",
+    "props": "type ProductAvailability = 'available'|'sold-out'|'unavailable'|'not-for-sale';\ntype ProductSKU = {id:string;label:string;amount:string;unitPrice?:string;promotion?:string;max?:number};\ntype CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;promotion?:string;supplier?:string;orderBy?:string;availability?:ProductAvailability;purchase?:'add'|'quantity'|'count'|'notify'|'similar'|'none';max?:number;skus?:ProductSKU[]};\ntype CommerceCategory = {id:string;label:string;image?:string;selectedImage?:string;layers?:ArtworkLayer[]};\n\n{variant?:'image-primary'|'text-primary';title:string;categories:CommerceCategory[];selected:string;onSelect:(id:string)=>void;products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;primaryCategories?:CommerceCategory[];primaryOptions:string[];primaryValue?:string;onPrimaryChange:(value:string)=>void;expanded?:boolean;onExpand:()=>void;query?:string;onQuery?:(v:string)=>void;onSearch?:()=>void;tertiaryOptions?:string[];tertiaryValue?:string;onTertiaryChange?:(v:string)=>void;sort?:'default'|'sales'|'price';onSort?:(sort:'default'|'sales'|'price')=>void}"
+  },
+  "OrderStageProgress": {
+    "file": "business.tsx",
+    "props": "{current?:number}"
+  },
+  "OrderArrival": {
+    "file": "business.tsx",
+    "props": "{time:string;actions?:string[];onAction:(action:string)=>void}"
+  },
+  "OrderDeliveryDetails": {
+    "file": "business.tsx",
+    "props": "{time:string;address:Address}"
+  },
+  "PhoneField": {
+    "file": "business.tsx",
+    "props": "{value:string;onChange:(v:string)=>void;country?:string;showCountry?:boolean;onCountry?:()=>void;placeholder?:string;disabled?:boolean;error?:string;focused?:boolean;onFocus?:()=>void}"
+  },
+  "SupportOrderCard": {
+    "file": "business.tsx",
+    "props": "{status?:string;count?:number;time?:string;onSelect?:()=>void}"
+  },
+  "RiderReviewCard": {
+    "file": "business.tsx",
+    "props": "{comment:string;rating?:number;name?:string}"
+  },
+  "CartPromotionBar": {
+    "file": "business.tsx",
+    "props": "{kind?:'sale'|'gift';title:string;description?:string;actionLabel?:string;onAction?:()=>void;celebrate?:boolean}"
+  },
+  "VoucherList": {
+    "file": "business.tsx",
+    "props": "{coupons:CouponData[];onUse:()=>void;onDetails:(index:number)=>void;empty?:boolean}"
+  },
+  "VoucherSuccessDialog": {
+    "file": "business.tsx",
+    "props": "{open:boolean;coupon:CouponData;onClose:()=>void;onUse:()=>void;onDetails:()=>void;showClose?:boolean}"
+  },
+  "HomeVoucherBanner": {
+    "file": "business.tsx",
+    "props": "{onClick:()=>void}"
+  },
+  "Icon": {
+    "file": "Icon.tsx",
+    "props": "{name:IconName;label?:string;className?:string}"
+  }
+}

@@ -1,0 +1,3 @@
+import React from 'react';
+import './delete-failed.css';
+export default function Screen(){return <div className="delete-failed-page" data-node-id="21:13817"><div className="delete-failed-status"><img src="/assets/e1171.svg" alt="9:41"/><img src="/assets/68d19.svg" alt=""/></div><div className="delete-failed-nav"><img src="/assets/8a39a.svg" alt="Back"/></div><main><img className="delete-failed-icon" src="/assets/054a7.svg" alt=""/><h1>Account delete failed</h1><ul><li>There are uncompleted order ongoing</li><li>The current time is greater than or equal to 15 days from the most recently completed order</li></ul><button>OK</button></main><div className="delete-failed-home"/></div>}

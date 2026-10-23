@@ -1,0 +1,102 @@
+{
+  "sourceTotal": 870,
+  "imported": 846,
+  "pending": [
+    {
+      "nodeId": "8018:16166",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "10:55275",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "1059:21800",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "1059:21801",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "1059:21802",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "1059:21803",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "1059:21805",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "1059:21806",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "1059:21809",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "3947:29814",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "3244:20065",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "3244:20068",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "3244:20071",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "3244:20074",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "3244:20056",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "3244:20058",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "3244:20060",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "3244:20062",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "4459:64409",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "4459:64411",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "4459:64414",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "6907:23749",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "6907:23752",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    },
+    {
+      "nodeId": "13910:359",
+      "reason": "Figma SVG export tool timed out after 300 seconds"
+    }
+  ]
+}

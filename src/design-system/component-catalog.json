@@ -1,0 +1,3010 @@
+[
+  {
+    "name": "Button",
+    "kind": "basic",
+    "category": "操作",
+    "origin": "observed",
+    "states": [
+      "default",
+      "outline",
+      "compact",
+      "small",
+      "medium",
+      "disabled",
+      "loading"
+    ],
+    "sources": [
+      "1:743",
+      "34:29988"
+    ],
+    "dependencies": [],
+    "rationale": "有填充或描边的明确操作按钮；执行当前区域的主要或次要任务。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "AddButton",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "disabled"
+    ],
+    "sources": [
+      "136:39483",
+      "136:40098",
+      "28:19480",
+      "52:46299"
+    ],
+    "dependencies": [],
+    "rationale": "商品图片角落的圆形加购入口；只表达加入购物车这一操作。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "QuantityStepper",
+    "kind": "basic",
+    "category": "操作",
+    "origin": "observed",
+    "states": [
+      "default",
+      "minimum",
+      "max",
+      "disabled",
+      "overlay",
+      "overlay-minimum",
+      "field"
+    ],
+    "sources": [
+      "1:743",
+      "34:29988"
+    ],
+    "dependencies": [],
+    "rationale": "一个商品的数量编辑控件；处理增加、减少、上限和数量为一时禁用减号。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Price",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "integer",
+      "large",
+      "promotion"
+    ],
+    "sources": [
+      "136:39483",
+      "136:40098",
+      "28:19480",
+      "52:46299"
+    ],
+    "dependencies": [],
+    "rationale": "金额格式组件；统一币种、整数、小数、原价和促销价格的层级。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Tag",
+    "kind": "basic",
+    "category": "展示",
+    "origin": "observed",
+    "states": [
+      "default",
+      "neutral",
+      "marketing",
+      "marketing-outline",
+      "warning"
+    ],
+    "sources": [
+      "10:3660",
+      "34:24225"
+    ],
+    "dependencies": [],
+    "rationale": "不可点击的短状态标签；标记促销、门槛或商品状态。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ChoiceChip",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "observed",
+    "states": [
+      "default",
+      "selected",
+      "white",
+      "white-selected",
+      "disabled"
+    ],
+    "sources": [
+      "1:470",
+      "34:34820",
+      "10:3007"
+    ],
+    "dependencies": [],
+    "rationale": "可点击的单项选择标签；选中状态由页面传入，适合短选项。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "TextField",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "observed",
+    "states": [
+      "default",
+      "filled",
+      "disabled",
+      "error"
+    ],
+    "sources": [
+      "1:470",
+      "34:34820",
+      "10:3007"
+    ],
+    "dependencies": [],
+    "rationale": "有名称、占位提示、输入值和校验反馈的单行输入项。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "RadioRow",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "observed",
+    "states": [
+      "default",
+      "selected",
+      "disabled"
+    ],
+    "sources": [
+      "1:470",
+      "34:34820",
+      "10:3007"
+    ],
+    "dependencies": [],
+    "rationale": "整行可点击的单选项；同组只能选择一个值。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Rating",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "observed",
+    "states": [
+      "default",
+      "rated",
+      "readonly",
+      "sentiment",
+      "sentiment-selected"
+    ],
+    "sources": [
+      "1:470",
+      "34:34820",
+      "10:3007"
+    ],
+    "dependencies": [],
+    "rationale": "五级评分控件；商品用圆角星形 stars，配送服务用表情 sentiment，可编辑也可只读。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "CouponCard",
+    "kind": "business",
+    "category": "优惠与账户",
+    "origin": "observed",
+    "states": [
+      "default",
+      "expired",
+      "used"
+    ],
+    "sources": [
+      "10:11809",
+      "10:11980"
+    ],
+    "dependencies": [
+      "Button",
+      "Tag"
+    ],
+    "rationale": "一张优惠券的权益、使用条件、有效期和可用状态。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ListRow",
+    "kind": "basic",
+    "category": "展示",
+    "origin": "observed",
+    "states": [
+      "default",
+      "description"
+    ],
+    "sources": [
+      "10:3660",
+      "34:24225"
+    ],
+    "dependencies": [],
+    "rationale": "单条设置或信息入口；由标题、说明、前置图标和尾部动作组成。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Notice",
+    "kind": "basic",
+    "category": "反馈",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "34:35150",
+      "10:5811",
+      "34:32377"
+    ],
+    "dependencies": [],
+    "rationale": "留在内容中的提示文字；解释规则、校验失败或注意事项。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "BottomSheet",
+    "kind": "basic",
+    "category": "反馈",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long",
+      "selection"
+    ],
+    "sources": [
+      "34:35150",
+      "10:5811",
+      "34:32377"
+    ],
+    "dependencies": [],
+    "rationale": "从页面底部出现的任务面板；背景保留上下文，内容过长时内部滚动。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "StatusLabel",
+    "kind": "basic",
+    "category": "展示",
+    "origin": "observed",
+    "states": [
+      "gray",
+      "green"
+    ],
+    "sources": [
+      "10:3660",
+      "34:24225"
+    ],
+    "dependencies": [],
+    "rationale": "常规字重的纯文字状态，支持绿色和灰色。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Text",
+    "kind": "basic",
+    "category": "展示",
+    "origin": "observed",
+    "states": [
+      "default",
+      "secondary",
+      "danger"
+    ],
+    "sources": [
+      "10:3660",
+      "34:24225"
+    ],
+    "dependencies": [],
+    "rationale": "按字阶和强调程度显示文本；不承载点击操作。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "TextButton",
+    "kind": "basic",
+    "category": "操作",
+    "origin": "observed",
+    "states": [
+      "default",
+      "brand",
+      "disabled"
+    ],
+    "sources": [
+      "1:743",
+      "34:29988"
+    ],
+    "dependencies": [],
+    "rationale": "无色块的文字操作；用于取消、完成、更多、重发、查看详情或新增入口。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ActionBar",
+    "kind": "basic",
+    "category": "页面与布局",
+    "origin": "observed",
+    "states": [
+      "default",
+      "single",
+      "content-width"
+    ],
+    "sources": [
+      "1:470",
+      "34:29988"
+    ],
+    "dependencies": [],
+    "rationale": "底部操作按钮组；自带上下 12px 间距，支持等宽或按内容宽度，不包含 HomeIndicator。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "OTPInput",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "observed",
+    "states": [
+      "default",
+      "filled",
+      "six-digits",
+      "error",
+      "disabled"
+    ],
+    "sources": [
+      "1:470",
+      "34:34820",
+      "10:3007"
+    ],
+    "dependencies": [],
+    "rationale": "四位或六位验证码的分格输入；只接收数字并限制长度。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Grid",
+    "kind": "basic",
+    "category": "页面与布局",
+    "origin": "supplemental",
+    "states": [
+      "default",
+      "three-columns"
+    ],
+    "sources": [],
+    "dependencies": [],
+    "rationale": "把同层内容排成固定列数；不负责数据、选择或业务标题。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Divider",
+    "kind": "basic",
+    "category": "页面与布局",
+    "origin": "observed",
+    "states": [
+      "default",
+      "label"
+    ],
+    "sources": [
+      "1:470",
+      "34:29988"
+    ],
+    "dependencies": [],
+    "rationale": "分隔相邻内容，或在分隔线上显示短分组文字。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Card",
+    "kind": "basic",
+    "category": "页面与布局",
+    "origin": "observed",
+    "states": [
+      "default",
+      "header-footer"
+    ],
+    "sources": [
+      "1:470",
+      "34:29988"
+    ],
+    "dependencies": [],
+    "rationale": "白色内容容器；把同一小任务的信息组合起来，放在灰色页面上形成分区。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Section",
+    "kind": "basic",
+    "category": "页面与布局",
+    "origin": "observed",
+    "states": [
+      "default",
+      "action"
+    ],
+    "sources": [
+      "1:1965",
+      "28:19480"
+    ],
+    "dependencies": [],
+    "rationale": "统一“标题＋右侧可选入口＋内容”关系的布局工具；不绘制白卡、商品或背景，可由普通布局替代，不是独立业务控件。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Image",
+    "kind": "basic",
+    "category": "展示",
+    "origin": "supplemental",
+    "states": [
+      "default",
+      "cover",
+      "error"
+    ],
+    "sources": [],
+    "dependencies": [],
+    "rationale": "单张有明确含义的图片；负责填充方式、比例和加载失败状态。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Avatar",
+    "kind": "basic",
+    "category": "展示",
+    "origin": "supplemental",
+    "states": [
+      "default",
+      "large"
+    ],
+    "sources": [],
+    "dependencies": [],
+    "rationale": "人的头像；缺图时显示姓名首字母，不能用商品图代替。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Badge",
+    "kind": "basic",
+    "category": "展示",
+    "origin": "observed",
+    "states": [
+      "default",
+      "two-digits",
+      "dot",
+      "overflow"
+    ],
+    "sources": [
+      "10:3660",
+      "34:24225"
+    ],
+    "dependencies": [],
+    "rationale": "附着在图标或入口上的数量或红点；不能当成独立任务按钮。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "StatusBar",
+    "kind": "basic",
+    "category": "页面与布局",
+    "origin": "observed",
+    "states": [
+      "default",
+      "inverse"
+    ],
+    "sources": [
+      "1:470",
+      "34:29988"
+    ],
+    "dependencies": [],
+    "rationale": "系统状态栏外观；由 Page 默认提供，不在每张业务卡里重复放置。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "HomeIndicator",
+    "kind": "basic",
+    "category": "页面与布局",
+    "origin": "observed",
+    "states": [
+      "default",
+      "on-action-background"
+    ],
+    "sources": [
+      "1:470",
+      "34:29988"
+    ],
+    "dependencies": [],
+    "rationale": "底部系统手势指示条；由 Page 或键盘持有且同屏只出现一次。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Page",
+    "kind": "basic",
+    "category": "页面与布局",
+    "origin": "observed",
+    "states": [
+      "default",
+      "white",
+      "gray"
+    ],
+    "sources": [
+      "1:470",
+      "34:29988"
+    ],
+    "dependencies": [
+      "HomeIndicator",
+      "StatusBar"
+    ],
+    "rationale": "页面底层容器；统一白／浅灰背景、状态栏、内容区和底部手势安全区。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "AppShell",
+    "kind": "basic",
+    "category": "页面与布局",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long",
+      "footer",
+      "plain",
+      "account"
+    ],
+    "sources": [
+      "1:470",
+      "34:29988"
+    ],
+    "dependencies": [
+      "Page"
+    ],
+    "rationale": "旧外壳兼容层；内部调用 Page，新组合页面直接使用 Page。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "IconButton",
+    "kind": "basic",
+    "category": "操作",
+    "origin": "observed",
+    "states": [
+      "default",
+      "disabled"
+    ],
+    "sources": [
+      "1:743",
+      "34:29988"
+    ],
+    "dependencies": [
+      "Icon"
+    ],
+    "rationale": "只有图标的操作入口；必须提供可理解的无障碍名称和点击事件。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "NavBar",
+    "kind": "basic",
+    "category": "导航",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long",
+      "no-back",
+      "no-actions"
+    ],
+    "sources": [
+      "34:22799",
+      "10:10108"
+    ],
+    "dependencies": [
+      "IconButton"
+    ],
+    "rationale": "页面标题栏；返回触点固定 44px，标题支持居中或左对齐，右侧可放文字操作。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Tabs",
+    "kind": "basic",
+    "category": "导航",
+    "origin": "observed",
+    "states": [
+      "default",
+      "scroll",
+      "disabled"
+    ],
+    "sources": [
+      "34:22799",
+      "10:10108"
+    ],
+    "dependencies": [],
+    "rationale": "同一页面内的并列内容切换；等分或横向滚动，标题栏下直接放置。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "SegmentedControl",
+    "kind": "basic",
+    "category": "导航",
+    "origin": "observed",
+    "states": [
+      "default",
+      "disabled"
+    ],
+    "sources": [
+      "34:22799",
+      "10:10108"
+    ],
+    "dependencies": [
+      "Tabs"
+    ],
+    "rationale": "少量互斥视图的胶囊切换；用于同层模式，不用于底部主导航。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "TabBar",
+    "kind": "basic",
+    "category": "导航",
+    "origin": "observed",
+    "states": [
+      "default",
+      "badge"
+    ],
+    "sources": [
+      "34:22799",
+      "10:10108"
+    ],
+    "dependencies": [
+      "Badge",
+      "Icon"
+    ],
+    "rationale": "应用主栏目导航；首页、分类、购物车、账户四个入口保持相同宽度。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Sidebar",
+    "kind": "basic",
+    "category": "导航",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "34:22799",
+      "10:10108"
+    ],
+    "dependencies": [],
+    "rationale": "纯文字的纵向分类选择；有图片的商品分类应使用 CategoryLayout。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "SearchBar",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "observed",
+    "states": [
+      "default",
+      "outline",
+      "white",
+      "filled",
+      "disabled"
+    ],
+    "sources": [
+      "1:470",
+      "34:34820",
+      "10:3007"
+    ],
+    "dependencies": [
+      "Icon"
+    ],
+    "rationale": "搜索输入原子项；包含搜索图标、placeholder、输入值和清除操作。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "FormField",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "supplemental",
+    "states": [
+      "default",
+      "error"
+    ],
+    "sources": [],
+    "dependencies": [],
+    "rationale": "给自定义控件增加标签、必填标记和错误；不再嵌套另一个有标签输入项。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "TextArea",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "observed",
+    "states": [
+      "default",
+      "filled",
+      "disabled",
+      "error"
+    ],
+    "sources": [
+      "1:470",
+      "34:34820",
+      "10:3007"
+    ],
+    "dependencies": [],
+    "rationale": "多行输入；提供 placeholder、最大字数和实时计数。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Checkbox",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "observed",
+    "states": [
+      "default",
+      "selected",
+      "disabled"
+    ],
+    "sources": [
+      "1:470",
+      "34:34820",
+      "10:3007"
+    ],
+    "dependencies": [],
+    "rationale": "独立的勾选项；适用于多选和全选，不用于同组唯一选项。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Switch",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "supplemental",
+    "states": [
+      "default",
+      "selected",
+      "disabled"
+    ],
+    "sources": [],
+    "dependencies": [],
+    "rationale": "立即切换生效的二元设置；不用于提交前的条款同意。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "SelectField",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "observed",
+    "states": [
+      "default",
+      "disabled"
+    ],
+    "sources": [
+      "1:470",
+      "34:34820",
+      "10:3007"
+    ],
+    "dependencies": [
+      "Icon"
+    ],
+    "rationale": "从有限文字选项中选一个值；不承担国家旗帜或商品分类结构。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Picker",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "observed",
+    "states": [
+      "default",
+      "disabled"
+    ],
+    "sources": [
+      "1:470",
+      "34:34820",
+      "10:3007"
+    ],
+    "dependencies": [
+      "BottomSheet",
+      "RadioRow"
+    ],
+    "rationale": "打开底部选择面板的触发器；适合较长选项列表。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "DatePicker",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "supplemental",
+    "states": [
+      "default",
+      "disabled"
+    ],
+    "sources": [],
+    "dependencies": [],
+    "rationale": "选择一个日期；配送时间段使用 DeliverySlotPicker。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Slider",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "supplemental",
+    "states": [
+      "default",
+      "disabled"
+    ],
+    "sources": [],
+    "dependencies": [],
+    "rationale": "在连续范围中选择数值；精确购买件数应使用 QuantityStepper。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Uploader",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "observed",
+    "states": [
+      "default",
+      "disabled"
+    ],
+    "sources": [
+      "1:470",
+      "34:34820",
+      "10:3007"
+    ],
+    "dependencies": [
+      "Icon"
+    ],
+    "rationale": "有限数量的图片／视频选择和移除；文件发送由业务层接入。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "FilterBar",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "observed",
+    "states": [
+      "default",
+      "selected"
+    ],
+    "sources": [
+      "1:470",
+      "34:34820",
+      "10:3007"
+    ],
+    "dependencies": [
+      "Button",
+      "ChoiceChip"
+    ],
+    "rationale": "对结果集施加多个筛选条件；可重置，不取代主分类导航。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Carousel",
+    "kind": "basic",
+    "category": "展示",
+    "origin": "observed",
+    "states": [
+      "default",
+      "empty"
+    ],
+    "sources": [
+      "10:3660",
+      "34:24225"
+    ],
+    "dependencies": [
+      "EmptyState",
+      "Image"
+    ],
+    "rationale": "在同一图片区切换图片或活动内容；带分页指示和当前页状态。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Collapse",
+    "kind": "basic",
+    "category": "展示",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "10:3660",
+      "34:24225"
+    ],
+    "dependencies": [],
+    "rationale": "折叠展开一段补充信息；主流程必读内容不默认藏起。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Progress",
+    "kind": "basic",
+    "category": "展示",
+    "origin": "observed",
+    "states": [
+      "default",
+      "complete"
+    ],
+    "sources": [
+      "10:3660",
+      "34:24225"
+    ],
+    "dependencies": [],
+    "rationale": "一个已知比例的进度；不能用它冒充订单的离散状态。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Steps",
+    "kind": "basic",
+    "category": "展示",
+    "origin": "observed",
+    "states": [
+      "default",
+      "complete"
+    ],
+    "sources": [
+      "10:3660",
+      "34:24225"
+    ],
+    "dependencies": [],
+    "rationale": "一个流程的步骤关系；物流状态外观使用 OrderStageProgress。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "EmptyState",
+    "kind": "basic",
+    "category": "反馈",
+    "origin": "observed",
+    "states": [
+      "default",
+      "action",
+      "orders",
+      "search",
+      "network",
+      "network-alt",
+      "cart",
+      "favorites",
+      "points",
+      "goods",
+      "content",
+      "waiting",
+      "load-error",
+      "server-error",
+      "closed",
+      "location",
+      "messages",
+      "vouchers",
+      "address",
+      "nothing"
+    ],
+    "sources": [
+      "34:35150",
+      "10:5811",
+      "34:32377"
+    ],
+    "dependencies": [],
+    "rationale": "列表为空或搜索无结果时的说明与下一步；插画必须对应当前场景。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Result",
+    "kind": "basic",
+    "category": "反馈",
+    "origin": "observed",
+    "states": [
+      "default",
+      "error",
+      "warning",
+      "reasons"
+    ],
+    "sources": [
+      "34:35150",
+      "10:5811",
+      "34:32377"
+    ],
+    "dependencies": [
+      "Card"
+    ],
+    "rationale": "简单任务完成后的通用反馈；订单状态页应组合订单领域组件。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Loading",
+    "kind": "basic",
+    "category": "反馈",
+    "origin": "supplemental",
+    "states": [
+      "default"
+    ],
+    "sources": [],
+    "dependencies": [],
+    "rationale": "短时间等待的加载提示；需要保留布局时使用 Skeleton。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Skeleton",
+    "kind": "basic",
+    "category": "反馈",
+    "origin": "supplemental",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [],
+    "dependencies": [],
+    "rationale": "加载前的结构占位；不显示虚构业务内容。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Toast",
+    "kind": "basic",
+    "category": "反馈",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "34:35150"
+    ],
+    "dependencies": [],
+    "rationale": "短暂、非阻塞的操作反馈；不承载必须点击确认的信息。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Dialog",
+    "kind": "basic",
+    "category": "反馈",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "34:35150",
+      "10:5811",
+      "34:32377"
+    ],
+    "dependencies": [],
+    "rationale": "页面中央的短确认框；只用于独立、简短、阻断式确认。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ActionSheet",
+    "kind": "basic",
+    "category": "反馈",
+    "origin": "observed",
+    "states": [
+      "default",
+      "disabled"
+    ],
+    "sources": [
+      "34:35150",
+      "10:5811",
+      "34:32377"
+    ],
+    "dependencies": [
+      "BottomSheet"
+    ],
+    "rationale": "底部的若干动作选择；适合拍照、选相册等命令，不承载长表单。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Popover",
+    "kind": "basic",
+    "category": "反馈",
+    "origin": "supplemental",
+    "states": [
+      "default"
+    ],
+    "sources": [],
+    "dependencies": [],
+    "rationale": "紧贴触发入口的少量解释或操作；不适合手机长列表。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ImageViewer",
+    "kind": "basic",
+    "category": "反馈",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "34:35150",
+      "10:5811",
+      "34:32377"
+    ],
+    "dependencies": [
+      "HomeIndicator",
+      "NavBar",
+      "StatusBar"
+    ],
+    "rationale": "查看一张图片的大图覆盖层；不是普通商品卡图片。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "SwipeAction",
+    "kind": "basic",
+    "category": "反馈",
+    "origin": "observed",
+    "states": [
+      "default",
+      "two-actions",
+      "three-actions",
+      "disabled"
+    ],
+    "sources": [
+      "34:35150",
+      "10:5811",
+      "34:32377"
+    ],
+    "dependencies": [],
+    "rationale": "列表行侧滑后出现的操作区；删除行为由页面决定。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "PullRefresh",
+    "kind": "basic",
+    "category": "反馈",
+    "origin": "supplemental",
+    "states": [
+      "default",
+      "error"
+    ],
+    "sources": [],
+    "dependencies": [],
+    "rationale": "规范补充的下拉手势容器，不来自某张原稿的独立控件；达到阈值松手后触发 onRefresh，并展示刷新中或失败反馈。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "LoadMore",
+    "kind": "basic",
+    "category": "反馈",
+    "origin": "supplemental",
+    "states": [
+      "default",
+      "loading",
+      "error",
+      "end"
+    ],
+    "sources": [],
+    "dependencies": [
+      "Button"
+    ],
+    "rationale": "列表底部的加载、失败重试或到底提示。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "StickyBar",
+    "kind": "basic",
+    "category": "页面与布局",
+    "origin": "supplemental",
+    "states": [
+      "default",
+      "two-buttons",
+      "content"
+    ],
+    "sources": [],
+    "dependencies": [],
+    "rationale": "滚动容器底部的操作栏；支持单按钮、双按钮和内容＋按钮，页面级固定位置由 Page.footer 管理。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Keyboard",
+    "kind": "basic",
+    "category": "输入与筛选",
+    "origin": "observed",
+    "states": [
+      "default",
+      "alphabetic",
+      "disabled"
+    ],
+    "sources": [
+      "1:470",
+      "34:34820",
+      "10:3007"
+    ],
+    "dependencies": [
+      "HomeIndicator"
+    ],
+    "rationale": "本地演示的系统键盘外观；保留原稿结构，不能替代真实系统键盘。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Countdown",
+    "kind": "basic",
+    "category": "展示",
+    "origin": "observed",
+    "states": [
+      "default",
+      "complete"
+    ],
+    "sources": [
+      "10:3660",
+      "34:24225"
+    ],
+    "dependencies": [],
+    "rationale": "按秒变化的剩余时间显示；重发校验和业务计时由调用方决定。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Artwork",
+    "kind": "basic",
+    "category": "展示",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "10:3660",
+      "34:24225"
+    ],
+    "dependencies": [],
+    "rationale": "有限插画区域的素材图层；只用于已有营销插画、状态插画和图标组合。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ListGroup",
+    "kind": "basic",
+    "category": "页面与布局",
+    "origin": "observed",
+    "states": [
+      "inside",
+      "outside"
+    ],
+    "sources": [
+      "1:470",
+      "34:29988"
+    ],
+    "dependencies": [
+      "Card",
+      "ListRow"
+    ],
+    "rationale": "一组有标题的信息入口；标题可放在卡片内部或外部。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductCard",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "grid",
+      "full-width",
+      "category",
+      "full-width-expanded",
+      "category-expanded",
+      "multi-spec",
+      "quantity",
+      "minimum",
+      "maximum",
+      "count",
+      "sold-out",
+      "unavailable",
+      "not-for-sale",
+      "similar",
+      "order-by",
+      "long-title"
+    ],
+    "sources": [
+      "136:39483",
+      "136:40098",
+      "136:40212"
+    ],
+    "dependencies": [
+      "ProductPriceGroup",
+      "ProductPurchaseControl",
+      "ProductStatusOverlay",
+      "ProductSupplierTag",
+      "Tag",
+      "BottomSheet"
+    ],
+    "rationale": "Figma 定制商卡；grid 双列、full-width 通栏、category 分类单列三种布局，共用价格、供应商、促销和购买状态。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductPriceGroup",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "with-unit-price",
+      "price-only",
+      "unit-price"
+    ],
+    "sources": [
+      "136:39643"
+    ],
+    "dependencies": [
+      "Price"
+    ],
+    "rationale": "价格业务组合；当前售价、币种、单位、单位价与划线原价的四种组合。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductPurchaseControl",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "count",
+      "quantity",
+      "minimum",
+      "maximum",
+      "notify",
+      "similar",
+      "specs"
+    ],
+    "sources": [
+      "136:39590"
+    ],
+    "dependencies": [
+      "Button",
+      "AddButton",
+      "QuantityStepper",
+      "Icon"
+    ],
+    "rationale": "商卡购买状态；加购、数量、到达上限、多规格、到货提醒和找相似。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductStatusOverlay",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "sold-out",
+      "unavailable",
+      "not-for-sale",
+      "chinese",
+      "compact"
+    ],
+    "sources": [
+      "136:39533",
+      "136:40281"
+    ],
+    "dependencies": [],
+    "rationale": "商品图上的售罄、下架、非卖品蒙层；支持中英文。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductSupplierTag",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "136:39576"
+    ],
+    "dependencies": [],
+    "rationale": "商卡供应商入口；灰色底承载供应商图标、名称和箭头。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductList",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "compact",
+      "row",
+      "empty"
+    ],
+    "sources": [
+      "136:39483",
+      "136:40098",
+      "136:40212"
+    ],
+    "dependencies": [
+      "EmptyState",
+      "ProductCard"
+    ],
+    "rationale": "同一批商品卡的数据列表；统一网格／横向布局并回传商品操作。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductCollection",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "row",
+      "empty"
+    ],
+    "sources": [
+      "136:39483",
+      "28:19480"
+    ],
+    "dependencies": [
+      "ProductList",
+      "Section"
+    ],
+    "rationale": "带标题和商品列表的推荐区；底层复用 ProductList。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductDetailHeader",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "promotion",
+      "unavailable"
+    ],
+    "sources": [
+      "136:39483",
+      "136:40098",
+      "28:19480",
+      "52:46299"
+    ],
+    "dependencies": [
+      "Button",
+      "Carousel",
+      "Price"
+    ],
+    "rationale": "详情页的商品图片、价格和标题摘要；不包含配送和推荐商品。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductSpecPicker",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "selected"
+    ],
+    "sources": [
+      "52:46299",
+      "52:46431"
+    ],
+    "dependencies": [
+      "ActionBar",
+      "Button",
+      "ChoiceChip",
+      "HomeIndicator",
+      "Price",
+      "QuantityStepper"
+    ],
+    "rationale": "商品规格任务；包含商品摘要、必选项、加工方式、数量和确认动作。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "CartItem",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "selected",
+      "unavailable",
+      "readonly"
+    ],
+    "sources": [
+      "136:39483",
+      "136:40098",
+      "28:19480",
+      "52:46299"
+    ],
+    "dependencies": [
+      "Checkbox",
+      "Icon",
+      "Price",
+      "QuantityStepper"
+    ],
+    "rationale": "购物车或订单中的单个商品行；有数量、价格、赠品或失效状态。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "CartGroup",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "selected"
+    ],
+    "sources": [
+      "136:39483",
+      "136:40098",
+      "28:19480",
+      "52:46299"
+    ],
+    "dependencies": [
+      "Card",
+      "Checkbox"
+    ],
+    "rationale": "同一购买分组的商品容器与全选；不把所有优惠活动硬塞成一个组。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "CartSummaryBar",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "empty"
+    ],
+    "sources": [
+      "136:39483",
+      "136:40098",
+      "28:19480",
+      "52:46299"
+    ],
+    "dependencies": [
+      "Button",
+      "Price"
+    ],
+    "rationale": "购物车底部总额和结算入口；汇总值从购物车状态传入。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "InvalidProductsSheet",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "10:5811"
+    ],
+    "dependencies": [
+      "BottomSheet",
+      "Button"
+    ],
+    "rationale": "结算前的失效商品拦截面板；保留返回与继续两条路径。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "AddressCard",
+    "kind": "business",
+    "category": "地址与配送",
+    "origin": "observed",
+    "states": [
+      "default",
+      "selected",
+      "long",
+      "delivery"
+    ],
+    "sources": [
+      "34:38968",
+      "34:39101",
+      "10:9507",
+      "34:29988"
+    ],
+    "dependencies": [
+      "Icon",
+      "IconButton"
+    ],
+    "rationale": "一个收货地址的摘要；结算 delivery 变体带地址标题和轻地图背景。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "AddressPicker",
+    "kind": "business",
+    "category": "地址与配送",
+    "origin": "observed",
+    "states": [
+      "default",
+      "empty"
+    ],
+    "sources": [
+      "34:38968",
+      "34:39101",
+      "10:9507",
+      "34:29988"
+    ],
+    "dependencies": [
+      "AddressCard",
+      "Button",
+      "EmptyState"
+    ],
+    "rationale": "从地址簿选择一个收货地址；提供空态和新增地址入口。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "AddressForm",
+    "kind": "business",
+    "category": "地址与配送",
+    "origin": "observed",
+    "states": [
+      "default",
+      "on-white",
+      "error",
+      "disabled",
+      "custom-label",
+      "label-conflict"
+    ],
+    "sources": [
+      "34:38968",
+      "34:39101",
+      "10:9507",
+      "34:29988"
+    ],
+    "dependencies": [
+      "BottomSheet",
+      "Button",
+      "ChoiceChip",
+      "HomeIndicator",
+      "PhoneField",
+      "Section",
+      "TextField"
+    ],
+    "rationale": "编辑地址、联系人、手机号和标签的完整地址任务。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "MapAddressPicker",
+    "kind": "business",
+    "category": "地址与配送",
+    "origin": "observed",
+    "states": [
+      "default",
+      "empty"
+    ],
+    "sources": [
+      "21:12840",
+      "21:12886"
+    ],
+    "dependencies": [
+      "AddressCard",
+      "Button",
+      "Icon",
+      "ListRow",
+      "SearchBar"
+    ],
+    "rationale": "地图选点任务；地图服务放入受限插槽，地点值由页面回传。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "DeliverySlotPicker",
+    "kind": "business",
+    "category": "地址与配送",
+    "origin": "observed",
+    "states": [
+      "default",
+      "selected",
+      "empty"
+    ],
+    "sources": [
+      "34:38968",
+      "34:39101",
+      "10:9507",
+      "34:29988"
+    ],
+    "dependencies": [
+      "EmptyState"
+    ],
+    "rationale": "选择配送日期和时间段；展示已满或不可选的时段。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "DeliveryProgress",
+    "kind": "business",
+    "category": "地址与配送",
+    "origin": "observed",
+    "states": [
+      "default",
+      "complete"
+    ],
+    "sources": [
+      "34:38968",
+      "34:39101",
+      "10:9507",
+      "34:29988"
+    ],
+    "dependencies": [
+      "Artwork",
+      "Card",
+      "Icon"
+    ],
+    "rationale": "配送时间入口与小车进度条；不能替代订单物流状态条。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "PaymentMethodRow",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "default",
+      "selected",
+      "disabled"
+    ],
+    "sources": [
+      "34:30234",
+      "34:31555",
+      "34:33605"
+    ],
+    "dependencies": [],
+    "rationale": "一种支付方式的单选行；统一标识尺寸、名称和选择状态。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "BankCard",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "mastercard",
+      "amex",
+      "mada",
+      "visa",
+      "default",
+      "selected"
+    ],
+    "sources": [
+      "34:30234",
+      "34:31555",
+      "34:33605"
+    ],
+    "dependencies": [
+      "SwipeAction"
+    ],
+    "rationale": "已绑定银行卡的摘要与管理操作；不是支付方式列表的大广告卡。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "BankCardForm",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "default",
+      "error"
+    ],
+    "sources": [
+      "34:30234",
+      "34:31555",
+      "34:33605"
+    ],
+    "dependencies": [
+      "Button",
+      "Notice",
+      "Price",
+      "TextField"
+    ],
+    "rationale": "新增银行卡输入任务；姓名、卡号、到期日、安全码及逐项校验。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "PaymentMethodPicker",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "default",
+      "empty"
+    ],
+    "sources": [
+      "34:30234",
+      "34:31555",
+      "34:33605"
+    ],
+    "dependencies": [
+      "Card",
+      "PaymentMethodRow",
+      "TextButton"
+    ],
+    "rationale": "支付方式选择任务；在线支付与已绑定卡分组，底部提供新增卡文字入口。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "CheckoutSummary",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "default",
+      "discount"
+    ],
+    "sources": [
+      "34:30234",
+      "34:31555",
+      "34:33605"
+    ],
+    "dependencies": [
+      "Card",
+      "Price"
+    ],
+    "rationale": "结算金额明细；展示商品、优惠、运费及总额，所有金额由页面传入。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "OrderCard",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "default",
+      "unpaid",
+      "cancelled"
+    ],
+    "sources": [
+      "34:30234",
+      "34:31555",
+      "34:33605"
+    ],
+    "dependencies": [
+      "Button",
+      "Card",
+      "Price",
+      "TextButton"
+    ],
+    "rationale": "订单摘要；列表变体用于订单列表，overview 变体用于状态页的订单号与商品缩略图。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "OrderStatusHeader",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "default",
+      "unpaid",
+      "failed",
+      "paid",
+      "preparing",
+      "delivering",
+      "completed",
+      "cancelled"
+    ],
+    "sources": [
+      "34:30234",
+      "34:31555",
+      "34:33605"
+    ],
+    "dependencies": [
+      "Artwork"
+    ],
+    "rationale": "订单当前状态的标题、说明与插画；待支付、失败、成功等保持独立数据。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "OrderTimeline",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "default",
+      "complete"
+    ],
+    "sources": [
+      "34:30234",
+      "34:31555",
+      "34:33605"
+    ],
+    "dependencies": [
+      "Card",
+      "Steps"
+    ],
+    "rationale": "订单事件的时间记录；仅在有时间节点的详情中使用。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "OrderInfo",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "34:30234",
+      "34:31555",
+      "34:33605"
+    ],
+    "dependencies": [
+      "Button",
+      "Card"
+    ],
+    "rationale": "订单号、下单时间等标签值信息；可提供复制操作。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "CancelReasonPicker",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "default",
+      "selected"
+    ],
+    "sources": [
+      "34:35122"
+    ],
+    "dependencies": [
+      "BottomSheet",
+      "Button",
+      "HomeIndicator",
+      "RadioRow",
+      "Switch"
+    ],
+    "rationale": "取消订单原因任务；包含单选原因、其他说明及确认。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ReviewCard",
+    "kind": "business",
+    "category": "评价与媒体",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "34:24225",
+      "34:24372"
+    ],
+    "dependencies": [
+      "Rating"
+    ],
+    "rationale": "已经提交的商品评价；只读展示评分、细分结果、文字和照片。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductRatingPanel",
+    "kind": "business",
+    "category": "评价与媒体",
+    "origin": "observed",
+    "states": [
+      "default",
+      "rated"
+    ],
+    "sources": [
+      "34:24225",
+      "34:24372"
+    ],
+    "dependencies": [
+      "Card",
+      "ChoiceChip",
+      "Rating",
+      "TextArea",
+      "Uploader"
+    ],
+    "rationale": "一个商品的评价任务；商品摘要、星级、口味／新鲜度、文字和媒体属于同一领域结构。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "RiderRatingPanel",
+    "kind": "business",
+    "category": "评价与媒体",
+    "origin": "observed",
+    "states": [
+      "default",
+      "rated"
+    ],
+    "sources": [
+      "34:24225",
+      "34:24372"
+    ],
+    "dependencies": [
+      "Avatar",
+      "Card",
+      "Rating",
+      "TextArea"
+    ],
+    "rationale": "配送服务评价；骑手、送达时间、五档表情评分、等级文字和补充意见。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ReviewEditor",
+    "kind": "business",
+    "category": "评价与媒体",
+    "origin": "observed",
+    "states": [
+      "default",
+      "rated",
+      "error"
+    ],
+    "sources": [
+      "34:24225",
+      "34:24372"
+    ],
+    "dependencies": [
+      "Notice",
+      "ProductRatingPanel"
+    ],
+    "rationale": "只编辑商品评分、细分选项、文字和媒体；复用 ProductRatingPanel，提交按钮由页面操作栏提供。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "MediaPicker",
+    "kind": "business",
+    "category": "评价与媒体",
+    "origin": "observed",
+    "states": [
+      "default",
+      "selected"
+    ],
+    "sources": [
+      "34:24225",
+      "34:24372"
+    ],
+    "dependencies": [
+      "Button",
+      "Grid",
+      "IconButton"
+    ],
+    "rationale": "本地演示的媒体网格选择；相机、相册权限与真实媒体由服务接入。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "PromoCodeForm",
+    "kind": "business",
+    "category": "优惠与账户",
+    "origin": "observed",
+    "states": [
+      "default",
+      "filled",
+      "error",
+      "loading"
+    ],
+    "sources": [
+      "10:11809",
+      "10:11980",
+      "23:15718",
+      "34:36706"
+    ],
+    "dependencies": [
+      "Button"
+    ],
+    "rationale": "优惠码输入与兑换任务；包含清除、可提交状态、加载和错误反馈。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "CampaignBanner",
+    "kind": "business",
+    "category": "优惠与账户",
+    "origin": "observed",
+    "states": [
+      "default",
+      "image"
+    ],
+    "sources": [
+      "10:11809",
+      "10:11980",
+      "23:15718",
+      "34:36706"
+    ],
+    "dependencies": [
+      "Image"
+    ],
+    "rationale": "一个活动的图文入口；活动素材和文案由配置提供，不代替商品分类。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "NewUserOffer",
+    "kind": "business",
+    "category": "优惠与账户",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "10:11809",
+      "10:11980",
+      "23:15718",
+      "34:36706"
+    ],
+    "dependencies": [
+      "Button"
+    ],
+    "rationale": "新人券包活动；展示总权益、券列表和查看详情入口。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "AccountHeader",
+    "kind": "business",
+    "category": "优惠与账户",
+    "origin": "observed",
+    "states": [
+      "default",
+      "guest",
+      "profile"
+    ],
+    "sources": [
+      "10:11809",
+      "10:11980",
+      "23:15718",
+      "34:36706"
+    ],
+    "dependencies": [
+      "Avatar",
+      "Button"
+    ],
+    "rationale": "账户身份摘要；区分游客登录入口与已登录头像姓名。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "SettingGroup",
+    "kind": "business",
+    "category": "优惠与账户",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "10:11809",
+      "10:11980",
+      "23:15718",
+      "34:36706"
+    ],
+    "dependencies": [
+      "Card",
+      "Icon",
+      "ListRow"
+    ],
+    "rationale": "同组设置入口；管理标题、辅助值和图标，不执行真实设置请求。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "SupportEntryGrid",
+    "kind": "business",
+    "category": "客服与帮助",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "34:41773",
+      "34:42209",
+      "34:42611"
+    ],
+    "dependencies": [
+      "Grid",
+      "Icon"
+    ],
+    "rationale": "客服问题类型入口；每项映射一个问题类别，不用于商城商品分类。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ChatMessage",
+    "kind": "business",
+    "category": "客服与帮助",
+    "origin": "observed",
+    "states": [
+      "default",
+      "user",
+      "system",
+      "media",
+      "long"
+    ],
+    "sources": [
+      "34:42209",
+      "34:42398"
+    ],
+    "dependencies": [],
+    "rationale": "客服聊天中的单条用户、客服或系统消息。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ChatComposer",
+    "kind": "business",
+    "category": "客服与帮助",
+    "origin": "observed",
+    "states": [
+      "default",
+      "filled",
+      "disabled"
+    ],
+    "sources": [
+      "34:41773",
+      "34:42209",
+      "34:42611"
+    ],
+    "dependencies": [
+      "Button"
+    ],
+    "rationale": "客服聊天的输入与发送区；消息内容和发送状态由页面管理。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ServiceQueue",
+    "kind": "business",
+    "category": "客服与帮助",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "34:42083"
+    ],
+    "dependencies": [
+      "ChatMessage",
+      "TextButton"
+    ],
+    "rationale": "等待人工客服的排队状态；展示排位与取消等待。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ServiceTicketCard",
+    "kind": "business",
+    "category": "客服与帮助",
+    "origin": "observed",
+    "states": [
+      "default",
+      "ended"
+    ],
+    "sources": [
+      "34:41773",
+      "34:42209",
+      "34:42611"
+    ],
+    "dependencies": [
+      "Button",
+      "Card"
+    ],
+    "rationale": "一次客服工单摘要；展示状态、时间及继续或查看历史操作。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ServiceTicketDetail",
+    "kind": "business",
+    "category": "客服与帮助",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "34:41773",
+      "34:42209",
+      "34:42611"
+    ],
+    "dependencies": [
+      "Button",
+      "Card",
+      "TextButton"
+    ],
+    "rationale": "一个客服问题的详情和联系入口；不混入购物订单的状态。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "FAQList",
+    "kind": "business",
+    "category": "客服与帮助",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "34:41773",
+      "34:42209",
+      "34:42611"
+    ],
+    "dependencies": [
+      "Collapse"
+    ],
+    "rationale": "常见问题的折叠问答列表；仅供查询，不收集表单。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "BrandLogo",
+    "kind": "business",
+    "category": "登录与授权",
+    "origin": "observed",
+    "states": [
+      "default",
+      "short"
+    ],
+    "sources": [
+      "1:470",
+      "1:569",
+      "1:743"
+    ],
+    "dependencies": [],
+    "rationale": "已有品牌标识；只在登录或首页品牌区域使用，不作为普通标题字体。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "LegalText",
+    "kind": "business",
+    "category": "登录与授权",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "1:470",
+      "1:569",
+      "1:743"
+    ],
+    "dependencies": [],
+    "rationale": "带服务条款／隐私链接的合规文字；主文和链接共用同一字阶。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "CountryPicker",
+    "kind": "business",
+    "category": "登录与授权",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "1:470",
+      "1:569",
+      "1:743"
+    ],
+    "dependencies": [
+      "BottomSheet",
+      "HomeIndicator"
+    ],
+    "rationale": "手机号区号选择任务；国家、旗帜、区号保持一行的业务关系。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "PhoneLoginForm",
+    "kind": "business",
+    "category": "登录与授权",
+    "origin": "observed",
+    "states": [
+      "default",
+      "filled",
+      "without-country",
+      "error",
+      "loading",
+      "country-open"
+    ],
+    "sources": [
+      "1:470",
+      "1:569",
+      "1:743"
+    ],
+    "dependencies": [
+      "Button",
+      "CountryPicker",
+      "LegalText",
+      "PhoneField"
+    ],
+    "rationale": "登录手机号任务；标题、区号、手机号、继续、协议和邮箱替代入口整体复用。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "VerificationCodeField",
+    "kind": "business",
+    "category": "登录与授权",
+    "origin": "observed",
+    "states": [
+      "default",
+      "filled",
+      "six-digits",
+      "error",
+      "countdown"
+    ],
+    "sources": [
+      "1:470",
+      "1:569",
+      "1:743"
+    ],
+    "dependencies": [
+      "OTPInput",
+      "TextButton"
+    ],
+    "rationale": "验证码验证任务；包含接收号码、OTPInput、重发和更多方式。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ConsentSheet",
+    "kind": "business",
+    "category": "登录与授权",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "1:470",
+      "1:569",
+      "1:743"
+    ],
+    "dependencies": [
+      "ActionBar",
+      "BottomSheet",
+      "Button",
+      "LegalText"
+    ],
+    "rationale": "授权告知任务；正文可滚动，接受与拒绝等宽，是否可关闭遵循授权流程。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "OrderRemarks",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "default",
+      "selected",
+      "long"
+    ],
+    "sources": [
+      "34:34746",
+      "34:34820"
+    ],
+    "dependencies": [
+      "Button",
+      "ChoiceChip",
+      "Section",
+      "TextArea"
+    ],
+    "rationale": "配送备注任务；快捷标签、历史备注、多行补充和确认。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "OrderSubmitBar",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "default",
+      "disabled",
+      "loading",
+      "integrated"
+    ],
+    "sources": [
+      "34:30234",
+      "34:31555",
+      "34:33605"
+    ],
+    "dependencies": [
+      "Button",
+      "Price",
+      "StickyBar"
+    ],
+    "rationale": "结算底部的金额与下单操作；可展示当前支付方式标识。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "AccountDeletionNotice",
+    "kind": "business",
+    "category": "优惠与账户",
+    "origin": "observed",
+    "states": [
+      "default",
+      "long"
+    ],
+    "sources": [
+      "21:13706"
+    ],
+    "dependencies": [
+      "Button",
+      "Card",
+      "Section"
+    ],
+    "rationale": "注销前提及权益说明；使用正常文档流，避免文字重叠。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "PromotionGroup",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "eligible",
+      "gift",
+      "buy-get"
+    ],
+    "sources": [
+      "52:44486",
+      "52:44962",
+      "52:45491",
+      "52:45707"
+    ],
+    "dependencies": [
+      "CartPromotionBar"
+    ],
+    "rationale": "原稿购物车活动条与参与商品的分组；复用 CartPromotionBar 和商品行，不加虚构全选框、绿色提示卡或额外白卡。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "UnavailableProductsGroup",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "expanded",
+      "empty"
+    ],
+    "sources": [
+      "28:19661",
+      "52:45491"
+    ],
+    "dependencies": [
+      "CartItem",
+      "EmptyState",
+      "TextButton"
+    ],
+    "rationale": "购物车失效商品分组；展示失效原因、数量、展开和移除。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "CartHeader",
+    "kind": "business",
+    "category": "导航",
+    "origin": "observed",
+    "states": [
+      "default",
+      "empty",
+      "address-missing"
+    ],
+    "sources": [
+      "28:19480",
+      "28:19661"
+    ],
+    "dependencies": [
+      "Icon",
+      "IconButton"
+    ],
+    "rationale": "购物车标题、商品总数、收货地址入口和清空操作。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "SearchHeader",
+    "kind": "business",
+    "category": "导航",
+    "origin": "observed",
+    "states": [
+      "default",
+      "filled"
+    ],
+    "sources": [
+      "10:2960",
+      "10:3045"
+    ],
+    "dependencies": [
+      "Badge",
+      "IconButton",
+      "SearchBar"
+    ],
+    "rationale": "独立搜索页面头部；返回、搜索输入、购物车入口共同组成。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "SearchSuggestions",
+    "kind": "business",
+    "category": "输入与筛选",
+    "origin": "observed",
+    "states": [
+      "default",
+      "empty"
+    ],
+    "sources": [
+      "10:2960",
+      "10:3007"
+    ],
+    "dependencies": [
+      "IconButton"
+    ],
+    "rationale": "搜索历史或热门词区域；支持词条点击、历史清除和展开。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "CategoryTile",
+    "kind": "business",
+    "category": "导航",
+    "origin": "observed",
+    "states": [
+      "default",
+      "promotion"
+    ],
+    "sources": [
+      "1:1965"
+    ],
+    "dependencies": [
+      "Artwork"
+    ],
+    "rationale": "首页一个商品分类入口；可用普通图文或营销首项变体。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "CategoryGrid",
+    "kind": "business",
+    "category": "导航",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "1:1965"
+    ],
+    "dependencies": [
+      "CategoryTile"
+    ],
+    "rationale": "首页商品分类入口网格；每个入口对应真实分类数据。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "HomeHeader",
+    "kind": "business",
+    "category": "导航",
+    "origin": "observed",
+    "states": [
+      "default",
+      "filled"
+    ],
+    "sources": [
+      "1:1965"
+    ],
+    "dependencies": [
+      "BrandLogo",
+      "SearchBar"
+    ],
+    "rationale": "商城首页头部；品牌、地址、配送承诺、辅助信息和搜索组成。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "CategoryLayout",
+    "kind": "business",
+    "category": "导航",
+    "origin": "observed",
+    "states": [
+      "text-primary",
+      "image-primary",
+      "empty"
+    ],
+    "sources": [
+      "136:39852",
+      "136:40313"
+    ],
+    "dependencies": [
+      "SearchBar",
+      "Artwork",
+      "ChoiceChip",
+      "ProductCard",
+      "BottomSheet",
+      "Icon",
+      "EmptyState"
+    ],
+    "rationale": "商品分类浏览任务；主分类、带图次分类和商品列表一起协同。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "OrderStageProgress",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "default",
+      "complete"
+    ],
+    "sources": [
+      "34:30234",
+      "34:31555",
+      "34:33605"
+    ],
+    "dependencies": [],
+    "rationale": "订单离散进展的横向状态条；对应下单、备货、配送、签收。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "OrderArrival",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "default",
+      "unpaid"
+    ],
+    "sources": [
+      "34:30234",
+      "34:31555",
+      "34:33605"
+    ],
+    "dependencies": [
+      "ActionBar",
+      "Button",
+      "Card"
+    ],
+    "rationale": "订单到达时间和当前允许的动作；待支付用 Repay，配送中可联系配送员。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "OrderDeliveryDetails",
+    "kind": "business",
+    "category": "支付与订单",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "34:30234",
+      "34:31555",
+      "34:33605"
+    ],
+    "dependencies": [
+      "Card"
+    ],
+    "rationale": "订单配送信息分区；统一时间、收货地址和联系人标签值布局。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "PhoneField",
+    "kind": "business",
+    "category": "登录与授权",
+    "origin": "observed",
+    "states": [
+      "default",
+      "filled",
+      "without-country",
+      "error",
+      "disabled"
+    ],
+    "sources": [
+      "1:470",
+      "1:569",
+      "1:743"
+    ],
+    "dependencies": [],
+    "rationale": "手机号单行输入；可带区号入口，也可仅输入手机号。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "SupportOrderCard",
+    "kind": "business",
+    "category": "客服与帮助",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "34:41773",
+      "34:42209",
+      "34:42611"
+    ],
+    "dependencies": [
+      "StatusLabel"
+    ],
+    "rationale": "客服选择订单及聊天引用的紧凑订单卡；展示原稿订单编号、四张商品图、数量、状态和时间。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "RiderReviewCard",
+    "kind": "business",
+    "category": "评价与媒体",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "34:24225",
+      "34:24372"
+    ],
+    "dependencies": [
+      "Avatar",
+      "Card",
+      "Rating"
+    ],
+    "rationale": "已提交配送评价的只读摘要；展示骑手、已选表情和评价正文。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "CartPromotionBar",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "gift",
+      "sale",
+      "threshold"
+    ],
+    "sources": [
+      "136:39483",
+      "136:40098",
+      "28:19480",
+      "52:46299"
+    ],
+    "dependencies": [
+      "Icon"
+    ],
+    "rationale": "购物车 GIFT/SALE 活动条；标签、活动标题、操作和辅助说明按原稿分层。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "VoucherList",
+    "kind": "business",
+    "category": "优惠与账户",
+    "origin": "observed",
+    "states": [
+      "default",
+      "empty",
+      "expired"
+    ],
+    "sources": [
+      "10:11809",
+      "10:11887",
+      "10:11980"
+    ],
+    "dependencies": [
+      "CouponCard",
+      "EmptyState"
+    ],
+    "rationale": "优惠券列表承载层；统一灰色背景、白色券卡，以及无券和历史券状态。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "VoucherSuccessDialog",
+    "kind": "business",
+    "category": "优惠与账户",
+    "origin": "observed",
+    "states": [
+      "default",
+      "closable"
+    ],
+    "sources": [
+      "21:12509"
+    ],
+    "dependencies": [
+      "Button",
+      "CouponCard",
+      "Dialog"
+    ],
+    "rationale": "兑换券成功弹窗；固定浅绿渐变背景、白色券卡和 Got it，关闭按钮可选。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "HomeVoucherBanner",
+    "kind": "business",
+    "category": "优惠与账户",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "23:15280"
+    ],
+    "dependencies": [],
+    "rationale": "首页新客券营销头图；使用原稿手部素材、SAR100 权益和入口。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "Icon",
+    "kind": "basic",
+    "category": "展示",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [],
+    "dependencies": [],
+    "rationale": "本地 SVG 图标库入口；必须选择与含义相符的名称和状态。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  }
+]

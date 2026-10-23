@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="4" height="6.06383" viewBox="0 0 4 6.06383" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id=" sorter">
+<path id="caret-up" d="M1.64035 0.152648C1.83692 -0.0508825 2.16307 -0.0508825 2.35964 0.152648L3.83899 1.68436C4.14555 2.00177 3.92062 2.53171 3.47935 2.53171H0.520648C0.0793757 2.53171 -0.145555 2.00177 0.161 1.68436L1.64035 0.152648Z" fill-rule="evenodd" clip-rule="evenodd" fill="#808080"/>
+<path id="caret-down" d="M1.62546 5.8951C1.82446 6.12007 2.1755 6.12007 2.3745 5.8951L3.72968 4.36298C4.01513 4.04026 3.78601 3.53171 3.35516 3.53171H0.644799C0.213953 3.53171 -0.0151668 4.04026 0.270282 4.36298L1.62546 5.8951Z" fill-rule="evenodd" clip-rule="evenodd" fill="#808080"/>
+</g>
+</svg>

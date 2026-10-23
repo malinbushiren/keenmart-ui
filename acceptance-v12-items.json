@@ -1,0 +1,218 @@
+{
+  "figmaFile": "muIyl7AhHSieD13gdjfEw1",
+  "node": "137:52176",
+  "screenshots": 20,
+  "annotationGroups": 19,
+  "items": [
+    {
+      "number": 1,
+      "annotationNode": "137:52180",
+      "screenshotNodes": [
+        "137:52178"
+      ],
+      "component": "CancelReasonPicker",
+      "change": "恢复七项原因的 BottomSheet、RadioRow、Switch 提示条与吸底 Confirm；页面组合保留订单列表背景。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 2,
+      "annotationNode": "138:52184",
+      "screenshotNodes": [
+        "138:52182"
+      ],
+      "component": "SelectField",
+      "change": "用受控 combobox 和统一圆角列表面板替换系统原生 select 菜单；固定箭头内距、焦点与键盘操作。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 3,
+      "annotationNode": "139:52875",
+      "screenshotNodes": [
+        "139:52873"
+      ],
+      "component": "Section",
+      "change": "保留有实际调用的标题＋内容布局工具，明确它不是业务卡片；示例改为真实 ProductList，说明普通布局可以替代。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 4,
+      "annotationNode": "139:52879",
+      "screenshotNodes": [
+        "139:52877"
+      ],
+      "component": "Checkbox",
+      "change": "选中状态保持品牌绿色底，勾选改白色；保留禁用与焦点状态。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 5,
+      "annotationNode": "139:52886",
+      "screenshotNodes": [
+        "139:52881",
+        "139:52884"
+      ],
+      "component": "ActionSheet",
+      "change": "操作逐行纵向排列；示例使用拍照、相册、取消命令。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 6,
+      "annotationNode": "139:52890",
+      "screenshotNodes": [
+        "139:52888"
+      ],
+      "component": "SwipeAction",
+      "change": "补充二、三个操作变体；普通操作中性，删除红色；展开宽度按操作数量计算，默认隐藏。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 7,
+      "annotationNode": "139:52894",
+      "screenshotNodes": [
+        "139:52892"
+      ],
+      "component": "PullRefresh",
+      "change": "移除假 Refresh 按钮，实现下拉阈值、松手刷新与加载／失败状态，说明是规范补充交互容器。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 8,
+      "annotationNode": "139:52898",
+      "screenshotNodes": [
+        "139:52896"
+      ],
+      "component": "StickyBar",
+      "change": "补充单按钮、双等宽按钮、内容＋按钮；说明 Page.footer 与容器 sticky 的职责，增加滚动示例。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 9,
+      "annotationNode": "139:52902",
+      "screenshotNodes": [
+        "139:52900"
+      ],
+      "component": "ProductList",
+      "change": "重新核对最新 136:39483、136:40098、136:40212 原稿；列表示例同步新商卡数据、单位、供应商与三种布局。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 10,
+      "annotationNode": "139:52906",
+      "screenshotNodes": [
+        "139:52904"
+      ],
+      "component": "ProductCollection",
+      "change": "保留猜你喜欢标题＋灰色信息流，示例同步最新商卡，白色商卡不融入白底。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 11,
+      "annotationNode": "139:52910",
+      "screenshotNodes": [
+        "139:52908"
+      ],
+      "component": "CartGroup",
+      "change": "收紧分组标题到底部首行的重复 padding，保留标题和商品行本身的间距。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 12,
+      "annotationNode": "139:52914",
+      "screenshotNodes": [
+        "139:52912"
+      ],
+      "component": "AddressForm",
+      "change": "增加显式 surface=white/gray；地图与表单统一承载，字段使用对比底色，补充适配页面背景规则。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 13,
+      "annotationNode": "139:52919",
+      "screenshotNodes": [
+        "139:52916"
+      ],
+      "component": "OrderCard",
+      "change": "去除商品图容器底部多余 padding，将数量／总额距图片控制为基础间距。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 14,
+      "annotationNode": "139:53122",
+      "screenshotNodes": [
+        "139:52921"
+      ],
+      "component": "ReviewEditor",
+      "change": "移除内部 Submit 和 onSubmit；页面级提交保留在 Page.footer 操作栏。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 15,
+      "annotationNode": "139:53126",
+      "screenshotNodes": [
+        "139:53124"
+      ],
+      "component": "PromoCodeForm",
+      "change": "白色展示承载区、灰色胶囊输入框；明确输入焦点边界，加载时禁止重复提交。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 16,
+      "annotationNode": "139:53130",
+      "screenshotNodes": [
+        "139:53128"
+      ],
+      "component": "MembershipBenefits",
+      "change": "未找到可靠原稿和页面调用，删除虚构权益组件、示例、目录和页面模板依赖。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 17,
+      "annotationNode": "139:53134",
+      "screenshotNodes": [
+        "139:53132"
+      ],
+      "component": "OrderRemarks",
+      "change": "按用户澄清“灰色内容不要放灰色背景”落实：白色备注任务区，灰色输入框与选项。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 18,
+      "annotationNode": "139:53138",
+      "screenshotNodes": [
+        "139:53136"
+      ],
+      "component": "PromotionGroup",
+      "change": "复用原稿 CartPromotionBar 与真实活动商品，去掉虚构全选框、绿色提示卡与重复卡片。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    },
+    {
+      "number": 19,
+      "annotationNode": "139:53142",
+      "screenshotNodes": [
+        "139:53140"
+      ],
+      "component": "CategoryLayout",
+      "change": "SKU 促销另占价格／购买区下方完整一行，避免数量控件挤压；分类文案、筛选、排序、重量翻译为英文。",
+      "implementation": "implemented",
+      "visualReview": "pending"
+    }
+  ]
+}

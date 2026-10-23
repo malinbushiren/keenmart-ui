@@ -1,0 +1,21 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="127.804" height="90.7528" viewBox="0 0 127.804 90.7528" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 9243">
+<path id="Ellipse 111" opacity="0.5" d="M21.3415 68.4334C39.8101 66.1451 58.0928 75.6715 63.902 81.6264H0C2.50537 76.5087 8.86778 69.9788 21.3415 68.4334Z" fill="url(#paint0_linear_0_78)"/>
+<g id="Group 9238">
+<path id="Rectangle 3149" d="M41.0134 80.3907C41.0134 80.3907 43.6813 79.5929 53.1384 77.4063C62.5956 75.2196 65.0134 74.8718 65.0134 74.8718V12C65.0134 5.37258 59.6409 0 53.0134 0C46.386 0 41.0134 5.37258 41.0134 12V80.3907Z" fill="#CCCCCC"/>
+<path id="Rectangle 3149_2" d="M78.0134 35C78.0134 42.1797 72.1931 48 65.0134 48V35.325C66.8263 35.325 68.2959 33.8554 68.2959 32.0425V13.8587C68.2959 11.1753 70.4713 9 73.1547 9C75.8381 9 78.0134 11.1753 78.0134 13.8588V35Z" fill="#D9D9D9"/>
+<path id="Rectangle 3149_3" d="M24.3981 50.2769C24.3981 59.4533 31.837 66.8923 41.0135 66.8923V50.6923C38.6964 50.6923 36.8181 48.814 36.8181 46.4969V36.9638C36.8181 33.5342 34.0378 30.7538 30.6081 30.7538C27.1784 30.7538 24.3981 33.5342 24.3981 36.9638V50.2769Z" fill="#D9D9D9"/>
+</g>
+<path id="Ellipse 111_2" d="M88.0134 72.5C63.4368 72.5 37.5001 82.2528 5.34058e-05 90.7528H127.804C124.304 80.2528 100.513 72.5 88.0134 72.5Z" fill="url(#paint1_linear_0_78)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_78" x1="25.2034" y1="80.3595" x2="25.2034" y2="69.2857" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D9D9D9" stop-opacity="0"/>
+<stop offset="1" stop-color="#D9D9D9"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_78" x1="77.3973" y1="89" x2="77.3973" y2="73.6792" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D9D9D9" stop-opacity="0"/>
+<stop offset="1" stop-color="#D9D9D9"/>
+</linearGradient>
+</defs>
+</svg>

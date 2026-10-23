@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-20",
+  "version": "0.5",
+  "method": "Live in-app browser DOM, computed styles and UI actions",
+  "components": 127,
+  "basic": 64,
+  "business": 63,
+  "componentStates": {
+    "total": 335,
+    "rendered": 335,
+    "horizontalOverflow": 0
+  },
+  "pageAssemblies": {
+    "total": 135,
+    "rendered": 135,
+    "nodeMismatch": 0,
+    "horizontalOverflow": 0
+  },
+  "interactions": [
+    {
+      "name": "numeric-keyboard-source-layout",
+      "passed": true
+    },
+    {
+      "name": "country-picker-hides-keyboard",
+      "passed": true
+    },
+    {
+      "name": "country-updates-phone-field",
+      "passed": true
+    },
+    {
+      "name": "otp-digits-and-limit",
+      "passed": true
+    },
+    {
+      "name": "consent-source-fonts-and-equal-actions",
+      "passed": true
+    },
+    {
+      "name": "clear-confirm-not-empty-cart",
+      "passed": true
+    },
+    {
+      "name": "cancel-preserves-cart-items",
+      "passed": true
+    },
+    {
+      "name": "clear-cart-updates-empty-state",
+      "passed": true
+    },
+    {
+      "name": "search-history-clears",
+      "passed": true
+    },
+    {
+      "name": "search-can-be-cleared",
+      "passed": true
+    },
+    {
+      "name": "category-source-product-list",
+      "passed": true
+    },
+    {
+      "name": "home-source-header-and-categories",
+      "passed": true
+    }
+  ],
+  "undefinedTokenReferences": [],
+  "visualAcceptance": "pending",
+  "limitations": [
+    "Container checks are at current preview width, not every supported screen size.",
+    "No full pixel comparison or visual acceptance of all 135 pages.",
+    "Complex marketing masks and sample content in remaining domains still need alignment.",
+    "Original source screens have not been replaced."
+  ],
+  "catalogSource": "Exported functions, TypeScript interfaces and public JSX dependencies",
+  "previewCasesMissing": [],
+  "missingSourceAssets": [],
+  "textAuditPages": 135
+}

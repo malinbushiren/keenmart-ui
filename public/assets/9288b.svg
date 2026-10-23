@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="14.3042" height="24.4199" viewBox="0 0 14.3042 24.4199" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Intersect" filter="url(#filter0_i_0_757)">
+<path d="M6.17631 0C10.8091 1.11398 14.3042 6.10486 14.3042 12.0938C14.304 18.9012 9.78806 24.4199 4.2183 24.4199C3.55479 24.4199 2.90657 24.3399 2.27885 24.1904C1.42562 20.7109 0.633657 17.3918 0.382362 16.0605C-0.542266 11.1621 0.099992 5.875 3.52592 2.25391C3.60855 2.16656 3.68896 2.08261 3.76713 2.00293C4.43771 1.31943 5.31551 0.621389 6.17631 0Z" fill="#2A2A2A"/>
+</g>
+<defs>
+<filter id="filter0_i_0_757" x="-0.560287" y="0" width="14.8645" height="24.9802" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-0.560287" dy="0.560287"/>
+<feGaussianBlur stdDeviation="0.560287"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_0_757"/>
+</filter>
+</defs>
+</svg>

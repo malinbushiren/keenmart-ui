@@ -1,0 +1,226 @@
+{
+  "colors": {
+    "dark": {
+      "black": {
+        "value": "#000000",
+        "status": "confirmed",
+        "note": "纯黑细节或系统控件。"
+      },
+      "black90": {
+        "value": "#1A1A1A",
+        "status": "confirmed",
+        "note": "主文字、标题、正文、价格；原 textCommerce 与 textAccount 统一为 #1A1A1A。"
+      },
+      "black70": {
+        "value": "#4D4D4D",
+        "status": "confirmed",
+        "note": "次级说明及较强辅助文字。"
+      },
+      "black50": {
+        "value": "#808080",
+        "status": "confirmed",
+        "note": "辅助文字、日期及说明。"
+      },
+      "black30": {
+        "value": "#B3B3B3",
+        "status": "confirmed",
+        "note": "弱化文字、占位与失效状态。"
+      },
+      "black20": {
+        "value": "#CCCCCC",
+        "status": "confirmed",
+        "note": "边框、禁用按钮及弱描边。"
+      },
+      "black10": {
+        "value": "#E6E6E6",
+        "status": "confirmed",
+        "note": "列表分隔线、虚线及中性占位。"
+      },
+      "black4": {
+        "value": "#F5F5F5",
+        "status": "confirmed",
+        "note": "页面底色、输入底色、中性标签。"
+      }
+    },
+    "light": {
+      "white": {
+        "value": "rgb(255 255 255 / 1)",
+        "status": "confirmed",
+        "note": "白色卡片、浮层及反白按钮文字。"
+      },
+      "primary": {
+        "value": "rgb(255 255 255 / 0.93)",
+        "status": "confirmed",
+        "note": "深色表面主文字，白色 93% 透明度。"
+      },
+      "secondary": {
+        "value": "rgb(255 255 255 / 0.65)",
+        "status": "confirmed",
+        "note": "深色表面辅助文字，白色 65% 透明度。"
+      },
+      "tertiary": {
+        "value": "rgb(255 255 255 / 0.35)",
+        "status": "confirmed",
+        "note": "深色表面弱化信息，白色 35% 透明度。"
+      },
+      "background": {
+        "value": "rgb(255 255 255 / 0.1)",
+        "status": "confirmed",
+        "note": "深色表面底色叠加，白色 10% 透明度。"
+      },
+      "quaternary": {
+        "value": "rgb(255 255 255 / 0.02)",
+        "status": "confirmed",
+        "note": "深色表面极弱叠加，白色 2% 透明度。"
+      }
+    },
+    "green": {
+      "pressed": {
+        "value": "#00992B",
+        "status": "confirmed",
+        "note": "主按钮与加购按下态、绿色强调文字。"
+      },
+      "primary": {
+        "value": "#00B740",
+        "status": "confirmed",
+        "note": "成功状态、优惠券标签文字；参考图 primary 绿色。"
+      },
+      "hover": {
+        "value": "#21CC46",
+        "status": "confirmed",
+        "note": "主操作与加购悬停态。"
+      },
+      "tint50": {
+        "value": "#80DB9F",
+        "status": "confirmed",
+        "note": "来自用户颜色参考图；用于该色系浅色背景或分层装饰。"
+      },
+      "tint30": {
+        "value": "#B3E9C6",
+        "status": "confirmed",
+        "note": "来自用户颜色参考图；用于该色系浅色背景或分层装饰。"
+      },
+      "tint05": {
+        "value": "#F2FBF5",
+        "status": "confirmed",
+        "note": "来自用户颜色参考图；用于该色系浅色背景或分层装饰。"
+      },
+      "alpha09": {
+        "value": "rgb(0 183 64 / 0.09)",
+        "status": "confirmed",
+        "note": "绿色透明浅底，叠加于白色时接近 #E8F9EE。"
+      },
+      "bright": {
+        "value": "#00BF20",
+        "status": "confirmed",
+        "note": "加购按钮、主操作按钮、数量增加按钮；用户确认的交互绿色。"
+      },
+      "tint09": {
+        "value": "#E8F9EE",
+        "status": "confirmed",
+        "note": "选中备注标签的固定底色；不依赖底层表面颜色。；用于该色系浅色背景或分层装饰。"
+      },
+      "promotionStart": {
+        "value": "#24D64E",
+        "status": "confirmed",
+        "note": "优惠券 Use now 渐变起点。"
+      },
+      "promotionEnd": {
+        "value": "#2DBA59",
+        "status": "confirmed",
+        "note": "优惠券 Use now 渐变终点。"
+      },
+      "header": {
+        "value": "#01A334",
+        "status": "confirmed",
+        "note": "首页顶部背景；来源 1:1965。按钮与加购仍用 green.bright。"
+      }
+    },
+    "red": {
+      "pressed": {
+        "value": "#EC1212",
+        "status": "confirmed",
+        "note": "危险操作按下态。"
+      },
+      "primary": {
+        "value": "#FF3133",
+        "status": "confirmed",
+        "note": "促销价格、错误及警示文字。"
+      },
+      "hover": {
+        "value": "#FF5F5F",
+        "status": "confirmed",
+        "note": "危险操作悬停态。"
+      },
+      "tint50": {
+        "value": "#FF9899",
+        "status": "confirmed",
+        "note": "来自用户颜色参考图；用于该色系浅色背景或分层装饰。"
+      },
+      "tint30": {
+        "value": "#FFC1C2",
+        "status": "confirmed",
+        "note": "来自用户颜色参考图；用于该色系浅色背景或分层装饰。"
+      },
+      "tint20": {
+        "value": "#FFD6D6",
+        "status": "confirmed",
+        "note": "来自用户颜色参考图；用于该色系浅色背景或分层装饰。"
+      },
+      "tint05": {
+        "value": "#FFF5F5",
+        "status": "confirmed",
+        "note": "促销、危险标签浅底。"
+      }
+    },
+    "yellow": {
+      "pressed": {
+        "value": "#D28C11",
+        "status": "confirmed",
+        "note": "黄色操作按下态。"
+      },
+      "primary": {
+        "value": "#FFB51C",
+        "status": "confirmed",
+        "note": "星级评分、警示强调。"
+      },
+      "hover": {
+        "value": "#FFC745",
+        "status": "confirmed",
+        "note": "黄色操作悬停态。"
+      },
+      "soft": {
+        "value": "#FFD86E",
+        "status": "confirmed",
+        "note": "来自用户颜色参考图"
+      },
+      "alpha30": {
+        "value": "rgb(255 181 28 / 0.3)",
+        "status": "proposed",
+        "note": "参考图后三项文字重复；按 Primary 派生的候选透明色，待确认"
+      },
+      "alpha20": {
+        "value": "rgb(255 181 28 / 0.2)",
+        "status": "proposed",
+        "note": "参考图后三项文字重复；按 Primary 派生的候选透明色，待确认"
+      },
+      "alpha05": {
+        "value": "rgb(255 181 28 / 0.05)",
+        "status": "proposed",
+        "note": "参考图后三项文字重复；按 Primary 派生的候选透明色，待确认"
+      }
+    },
+    "blue": {
+      "primary": {
+        "value": "#0066E0",
+        "status": "confirmed",
+        "note": "原稿营销分类卡的背景基色；不用于交互选中态。"
+      },
+      "alpha05": {
+        "value": "rgb(0 102 224 / 0.05)",
+        "status": "confirmed",
+        "note": "分类入口的浅蓝底；来源 1:1965。"
+      }
+    }
+  }
+}

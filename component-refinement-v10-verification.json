@@ -1,0 +1,160 @@
+{
+  "version": "v0.10",
+  "date": "2026-10-23",
+  "pages": [
+    {
+      "background": "rgb(245, 245, 245)",
+      "broken": [],
+      "error": false,
+      "horizontalOverflow": false,
+      "node": "10:11809"
+    },
+    {
+      "background": "rgb(245, 245, 245)",
+      "broken": [],
+      "error": false,
+      "horizontalOverflow": false,
+      "node": "10:11841"
+    },
+    {
+      "background": "rgb(245, 245, 245)",
+      "broken": [],
+      "error": false,
+      "horizontalOverflow": false,
+      "node": "10:11887"
+    },
+    {
+      "background": "rgb(245, 245, 245)",
+      "broken": [],
+      "error": false,
+      "horizontalOverflow": false,
+      "node": "10:11980"
+    },
+    {
+      "background": "rgb(245, 245, 245)",
+      "broken": [],
+      "error": false,
+      "horizontalOverflow": false,
+      "node": "21:12475"
+    },
+    {
+      "background": "rgb(245, 245, 245)",
+      "broken": [],
+      "error": false,
+      "horizontalOverflow": false,
+      "node": "21:12509"
+    },
+    {
+      "background": "rgb(245, 245, 245)",
+      "broken": [],
+      "error": false,
+      "horizontalOverflow": false,
+      "node": "21:13732"
+    },
+    {
+      "background": "rgb(245, 245, 245)",
+      "broken": [],
+      "error": false,
+      "horizontalOverflow": false,
+      "node": "21:13777"
+    },
+    {
+      "background": "rgb(245, 245, 245)",
+      "broken": [],
+      "error": false,
+      "horizontalOverflow": false,
+      "node": "21:13817"
+    },
+    {
+      "background": "rgb(245, 245, 245)",
+      "broken": [],
+      "error": false,
+      "horizontalOverflow": false,
+      "node": "23:15280"
+    },
+    {
+      "background": "rgb(245, 245, 245)",
+      "broken": [],
+      "error": false,
+      "horizontalOverflow": false,
+      "node": "28:19480"
+    }
+  ],
+  "componentStates": [
+    {
+      "broken": 0,
+      "component": "VoucherList",
+      "error": false,
+      "variant": "default"
+    },
+    {
+      "broken": 0,
+      "component": "VoucherList",
+      "error": false,
+      "variant": "empty"
+    },
+    {
+      "broken": 0,
+      "component": "VoucherList",
+      "error": false,
+      "variant": "expired"
+    },
+    {
+      "broken": 0,
+      "component": "VoucherSuccessDialog",
+      "error": false,
+      "variant": "default"
+    },
+    {
+      "broken": 0,
+      "component": "VoucherSuccessDialog",
+      "error": false,
+      "variant": "closable"
+    },
+    {
+      "broken": 0,
+      "component": "HomeVoucherBanner",
+      "error": false,
+      "variant": "default"
+    },
+    {
+      "broken": 0,
+      "component": "Result",
+      "error": false,
+      "variant": "reasons"
+    },
+    {
+      "broken": 0,
+      "component": "ProductCollection",
+      "error": false,
+      "variant": "default"
+    },
+    {
+      "broken": 0,
+      "component": "EmptyState",
+      "error": false,
+      "variant": "vouchers"
+    }
+  ],
+  "checks": {
+    "build": "passed",
+    "catalogBuild": "passed",
+    "voucherEmptyIllustration": "/assets/48e4a.svg",
+    "emptyWhitespaceRatio": 1.999956766104626,
+    "feedBackground": "rgb(245, 245, 245)",
+    "productCardBackground": "rgb(255, 255, 255)",
+    "failureReasons": 2,
+    "failureButtonWidth": 351,
+    "failureCardWidth": 351,
+    "voucherSuccessDefaultCloseButtons": 0,
+    "voucherSuccessFooterBorder": "0px",
+    "voucherSuccessOptionalClose": "opened and closed successfully",
+    "promoFlow": "RED99 → Add → success dialog → Got it → Past Vouchers → Back passed",
+    "homeCategoryHeight": 127,
+    "homeCategoryBackground": "rgb(81, 206, 128)",
+    "originalInputVoucherBackground": "rgb(245, 245, 245)",
+    "originalInputVoucherCard": "rgb(255, 255, 255)"
+  },
+  "designRules": 28,
+  "visualReview": "pending user review; render checks do not imply pixel-perfect approval"
+}

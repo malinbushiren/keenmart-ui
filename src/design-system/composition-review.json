@@ -1,0 +1,659 @@
+[
+  {
+    "id": "v06-orders",
+    "kind": "fixed",
+    "title": "订单状态不再套用通用结果页",
+    "components": [
+      "OrderStatusHeader",
+      "OrderStageProgress",
+      "OrderArrival",
+      "OrderCard",
+      "OrderDeliveryDetails"
+    ],
+    "templates": [],
+    "nodeIds": [
+      "34:32519",
+      "34:32718",
+      "34:32912",
+      "34:33091",
+      "34:33303",
+      "34:33605",
+      "34:34156"
+    ],
+    "detail": "每个节点保留实际状态、文案、来源插画、到达时间、可用动作、原订单号和商品缩略图，再组合为对应页面；不再用 Result 或无关时间线替代。"
+  },
+  {
+    "id": "v06-payment",
+    "kind": "fixed",
+    "title": "支付方式与卡输入恢复领域结构",
+    "components": [
+      "PaymentMethodPicker",
+      "PaymentMethodRow",
+      "BankCardForm",
+      "TextButton"
+    ],
+    "templates": [
+      "checkout",
+      "payment-methods",
+      "card-form"
+    ],
+    "nodeIds": [],
+    "detail": "支付选择恢复底部弹层，在线方式与已绑卡分组；新增卡使用文字操作。卡输入包含 placeholder、到期日与安全码双列；各字段驱动正确键盘，弹层单选组与底层页面隔离。配送图复用原车与商品图层。"
+  },
+  {
+    "id": "v06-review",
+    "kind": "fixed",
+    "title": "评价业务结构与提交弹层重新组合",
+    "components": [
+      "Rating",
+      "ProductRatingPanel",
+      "TextArea",
+      "BottomSheet",
+      "TextButton",
+      "ActionBar"
+    ],
+    "templates": [],
+    "nodeIds": [
+      "34:24295",
+      "34:24304",
+      "34:24326"
+    ],
+    "detail": "星形改为原稿圆角矢量；Taste／Fresh 为标签选择而非第二组星星。输入补 placeholder 和 400／200 字计数。提交确认恢复底部面板，保留 Continue Rate 与 Submit 两个操作。"
+  },
+  {
+    "id": "v06-navigation",
+    "kind": "fixed",
+    "title": "返回图标与 Tab 布局修正",
+    "components": [
+      "NavBar",
+      "Tabs"
+    ],
+    "templates": [
+      "order-list"
+    ],
+    "nodeIds": [
+      "34:24304",
+      "34:24295"
+    ],
+    "detail": "修复原页面返回实例缺少 24px 框导致的偏移；组合返回触点固定 44px。订单栏按原稿三项等分，直接接在标题栏下方，空态选中 Unpayment。"
+  },
+  {
+    "id": "v06-type-page",
+    "kind": "fixed",
+    "title": "统一字阶与页面背景已应用",
+    "components": [
+      "Page",
+      "Text",
+      "Card"
+    ],
+    "templates": [],
+    "nodeIds": [],
+    "detail": "删除 10 号业务字阶；12 号统一为 12/18。连续正文／表单用 white，商品与信息卡分组用 gray；组合页使用 Page 管理状态栏和手势区。规则与选择示例见基础规范。"
+  },
+  {
+    "id": "system-chrome",
+    "kind": "fixed",
+    "title": "状态栏与选中状态修正",
+    "detail": "状态栏原资源是反白图，已补充普通／反白滤镜；分类图标替换为已导入的 Category 图标；底栏初始选中项按页面场景确定。单选项改为绿色圆底白色对勾，保留原生键盘操作。",
+    "components": [
+      "StatusBar",
+      "TabBar",
+      "RadioRow",
+      "PaymentMethodRow"
+    ],
+    "templates": [
+      "account",
+      "language",
+      "category",
+      "checkout",
+      "payment-methods"
+    ],
+    "nodeIds": []
+  },
+  {
+    "id": "language-composition",
+    "kind": "fixed",
+    "title": "语言弹窗和账户背景结构对齐",
+    "detail": "移除账户页多余标题栏、My cards 和会员权益；菜单拆为两组并恢复图标、头像和订单角标。新增 AccountHeader profile 变体；语言弹窗使用 selection 变体，隐藏原页面没有的关闭按钮，Confirm 改为 Continue，补安全区指示条。",
+    "components": [
+      "AccountHeader",
+      "SettingGroup",
+      "BottomSheet",
+      "RadioRow",
+      "AppShell"
+    ],
+    "templates": [],
+    "nodeIds": [
+      "10:10765"
+    ]
+  },
+  {
+    "id": "card-data",
+    "kind": "fixed",
+    "title": "26 个商卡恢复原价格、商品图与状态",
+    "detail": "逐个读取原商卡：修正紧凑卡状态映射、35.56 价格、原价、数量、700g 规格和商品图；补充绿色胶囊数量步进器，数量为 1 时支持删除。图片加 3px 内边距和圆角。无需新增一套商卡。",
+    "components": [
+      "ProductCard",
+      "QuantityStepper",
+      "Price"
+    ],
+    "templates": [
+      "product-card"
+    ],
+    "nodeIds": []
+  },
+  {
+    "id": "voucher-data",
+    "kind": "fixed",
+    "title": "优惠券内容与页面背景修正",
+    "detail": "恢复当前券、历史券的原稿文案和有效期；列表统一灰色承载背景与白色券卡。Past Vouchers 位于标题栏，空券使用原券插画及 1:2 留白，兑换成功使用独立渐变弹窗。用户本轮背景修正优先于原页面历史值。",
+    "components": [
+      "CouponCard",
+      "PromoCodeForm",
+      "AppShell",
+      "NavBar"
+    ],
+    "templates": [
+      "vouchers"
+    ],
+    "nodeIds": []
+  },
+  {
+    "id": "payment-assets",
+    "kind": "fixed",
+    "title": "支付方式恢复真实标识",
+    "detail": "Apple Pay、Stc pay 和银行卡改用原页面已有素材，替代字符占位图；修正选中状态。",
+    "components": [
+      "PaymentMethodRow"
+    ],
+    "templates": [
+      "checkout",
+      "payment-methods"
+    ],
+    "nodeIds": []
+  },
+  {
+    "id": "checkout-parts",
+    "kind": "fixed",
+    "title": "结算专用变体恢复地址、配送进度和一体式提交栏",
+    "detail": "AddressCard 补 delivery 变体与地图背景；DeliveryProgress 恢复绿色时间、时钟、配送车及进度轨道；OrderSubmitBar 补 integrated 变体，金额和 Apple Pay 提交按钮组合为绿色胶囊。保留默认变体供其他场景使用，未直接覆盖旧结算页面。",
+    "components": [
+      "AddressCard",
+      "DeliveryProgress",
+      "OrderSubmitBar",
+      "PaymentMethodRow"
+    ],
+    "templates": [
+      "checkout"
+    ],
+    "nodeIds": []
+  },
+  {
+    "id": "cart-source-states",
+    "kind": "fixed",
+    "title": "购物车状态和内容恢复",
+    "components": [
+      "CartHeader",
+      "CartItem",
+      "UnavailableProductsGroup",
+      "Dialog",
+      "EmptyState",
+      "TabBar"
+    ],
+    "templates": [],
+    "nodeIds": [
+      "10:5197",
+      "10:5383",
+      "10:5565",
+      "10:5811",
+      "10:6051",
+      "28:19480",
+      "28:19661",
+      "28:19777"
+    ],
+    "detail": "28:19661 保留空态、1 个失效商品及推荐区；10:6051 恢复清空确认。商品行支持数量编辑，移除误加优惠券并使用原底栏图标。"
+  },
+  {
+    "id": "search-source-states",
+    "kind": "fixed",
+    "title": "搜索三种状态分别组合",
+    "components": [
+      "SearchHeader",
+      "SearchSuggestions",
+      "Tabs",
+      "EmptyState",
+      "ProductList"
+    ],
+    "templates": [
+      "search"
+    ],
+    "nodeIds": [],
+    "detail": "历史记录支持展开与清除；10:3007 恢复无结果提示，10:3045 接入 7 个原商卡，不再统一套用示例列表。"
+  },
+  {
+    "id": "home-category-source",
+    "kind": "fixed",
+    "title": "首页和分类恢复实际模块",
+    "components": [
+      "HomeHeader",
+      "CategoryGrid",
+      "CategoryLayout",
+      "ProductList",
+      "Artwork"
+    ],
+    "templates": [
+      "home",
+      "category"
+    ],
+    "nodeIds": [],
+    "detail": "首页恢复 Logo／配送／地址／辅助信息／搜索和 15 项分类；分类使用主分类、图文次分类及真实商品列表。复杂营销遮罩仍需核对。"
+  },
+  {
+    "id": "auth-source-groups",
+    "kind": "fixed",
+    "title": "登录与授权恢复原结构",
+    "components": [
+      "PhoneField",
+      "PhoneLoginForm",
+      "CountryPicker",
+      "OTPInput",
+      "VerificationCodeField",
+      "ConsentSheet",
+      "ActionBar"
+    ],
+    "templates": [
+      "login",
+      "country-picker",
+      "verify",
+      "consent"
+    ],
+    "nodeIds": [],
+    "detail": "登录移除商品图和二级标题栏；手机号支持带／不带区号，验证码支持四／六位。1:590 恢复区号选择。授权正文 12/18、标题 18/23，无关闭按钮，底部双按钮等宽。"
+  },
+  {
+    "id": "migration-card",
+    "kind": "proposal",
+    "title": "覆盖候选：用 ProductCard 替换原商卡实现",
+    "detail": "可用 ProductCard 的密度、缺货、促销、数量和删除状态统一维护 26 个旧商卡。请先确认图片裁切、字号及卡片高度；同意后再迁移旧页面，当前原页面保持原实现。",
+    "components": [
+      "ProductCard"
+    ],
+    "templates": [
+      "product-card"
+    ],
+    "nodeIds": []
+  },
+  {
+    "id": "migration-language",
+    "kind": "proposal",
+    "title": "覆盖候选：语言面板采用公共选择弹层",
+    "detail": "若你认可右侧选择弹层的分隔线、统一对勾和安全区表现，可用 BottomSheet + RadioRow 覆盖旧语言面板；账户背景还需核对，不建议直接整页替换。",
+    "components": [
+      "BottomSheet",
+      "RadioRow"
+    ],
+    "templates": [],
+    "nodeIds": [
+      "10:10765"
+    ]
+  },
+  {
+    "id": "keyboard-source-layout",
+    "kind": "fixed",
+    "title": "键盘恢复原页面结构",
+    "detail": "移除 Done 行，恢复数字键下字母、空白占位、删除键和安全区。仅用于本地演示。",
+    "components": [
+      "Keyboard"
+    ],
+    "templates": [],
+    "nodeIds": [
+      "1:519",
+      "1:569",
+      "21:12475",
+      "34:24211",
+      "34:24295"
+    ]
+  },
+  {
+    "id": "assembly-content",
+    "kind": "pending",
+    "title": "组合数据仍需逐页对齐，不能据此覆盖原页面",
+    "detail": "当前该模板仍复用示例商品、文案或状态，部分段落和模块与原页面存在差异。应优先补齐页面数据与状态映射；缺内容不是合理的设计优化，也不应新增整页组件来掩盖差异。",
+    "components": [
+      "PageAssembly"
+    ],
+    "templates": [
+      "product-spec",
+      "product-detail",
+      "invalid-cart",
+      "cart-address",
+      "address-sheet",
+      "delivery-slots",
+      "bank-cards",
+      "remarks",
+      "cancel-reason",
+      "account",
+      "delete-account",
+      "address-book",
+      "address-form",
+      "map-address",
+      "new-user-popup",
+      "review-list",
+      "review-editor",
+      "review-result",
+      "image-viewer",
+      "media-picker",
+      "support-home",
+      "support-orders",
+      "chat",
+      "faq-list",
+      "service-tickets",
+      "faq-detail",
+      "checkout"
+    ],
+    "nodeIds": [
+      "23:16641"
+    ]
+  },
+  {
+    "id": "campaign-asset",
+    "kind": "pending",
+    "title": "活动头图应保留原营销资产",
+    "detail": "活动插画、人物和营销字形应使用原切图或完整导出素材；不建议用近似 CSS 图形覆盖原设计。NewUserOffer 与 CampaignBanner 的插槽划分可保留，素材及比例还需对齐。",
+    "components": [
+      "NewUserOffer",
+      "CampaignBanner"
+    ],
+    "templates": [
+      "home",
+      "new-user-popup"
+    ],
+    "nodeIds": [
+      "23:16641"
+    ]
+  },
+  {
+    "id": "v08-cart",
+    "kind": "fixed",
+    "title": "促销购物车按来源恢复商品、赠品与活动分区",
+    "nodeIds": [
+      "52:44486",
+      "52:44962",
+      "52:45491",
+      "52:45707"
+    ],
+    "templates": [],
+    "components": [
+      "CartHeader",
+      "CartItem",
+      "CartSummaryBar"
+    ],
+    "detail": "恢复实际商品素材、数量、GIFT/SALE 分区与买二赠一赠品；缩小商品行重复留白，修正币种和底部白色结算按钮。 已实现并检查，仍保留逐页视觉验收状态。"
+  },
+  {
+    "id": "v08-help",
+    "kind": "fixed",
+    "title": "客服进度、问答和聊天恢复各自结构",
+    "nodeIds": [
+      "34:42611",
+      "34:42652",
+      "34:42672",
+      "34:42580",
+      "34:41773",
+      "34:42505",
+      "34:42033",
+      "34:42083",
+      "34:42140",
+      "34:42209",
+      "34:42300",
+      "34:42398"
+    ],
+    "templates": [],
+    "components": [
+      "ServiceTicketCard",
+      "ServiceTicketDetail",
+      "SupportOrderCard",
+      "ChatMessage",
+      "ChatComposer"
+    ],
+    "detail": "原页面进度的两张记录均修正溢出间距；组件组合恢复真实时间与状态。帮助正文和问题列表使用原文，订单选择抽屉使用灰底与三张紧凑订单卡。聊天按原始排队、接入、长消息和附件状态组合。 已实现并检查，仍保留逐页视觉验收状态。"
+  },
+  {
+    "id": "v08-address",
+    "kind": "fixed",
+    "title": "地址重复标签确认恢复底部弹窗",
+    "nodeIds": [
+      "34:39101",
+      "34:39182",
+      "34:39241",
+      "34:39300"
+    ],
+    "templates": [],
+    "components": [
+      "AddressForm",
+      "BottomSheet"
+    ],
+    "detail": "保留地图、实际地址、附加地址、联系人和标签；重复标签确认显示原地址摘要、两个纵排操作与手势条。 已实现并检查，仍保留逐页视觉验收状态。"
+  },
+  {
+    "id": "v08-bank",
+    "kind": "fixed",
+    "title": "银行卡外观与删除方式恢复",
+    "nodeIds": [
+      "34:31276",
+      "34:31419",
+      "34:31555"
+    ],
+    "templates": [],
+    "components": [
+      "BankCard",
+      "BankCardForm",
+      "SwipeAction"
+    ],
+    "detail": "新增 Mastercard/Amex/Mada/Visa 外观；左滑才显示删除动作。输入页恢复统一总额字阶、字段错误与 Save and use。 已实现并检查，仍保留逐页视觉验收状态。"
+  },
+  {
+    "id": "v08-review",
+    "kind": "fixed",
+    "title": "评价、图片与媒体选择细节修正",
+    "nodeIds": [
+      "34:24225",
+      "34:24246",
+      "34:24279",
+      "34:24304",
+      "34:24321",
+      "34:24326",
+      "34:24372"
+    ],
+    "templates": [],
+    "components": [
+      "ReviewCard",
+      "RiderReviewCard",
+      "TextArea",
+      "ImageViewer",
+      "MediaPicker",
+      "Button"
+    ],
+    "detail": "补充只读骑手评价和紧凑商品评价；展开收起使用白色胶囊按钮。字数位于输入框内，提交确认补手势条，图片黑底全屏 fit，媒体选择保留单一标题栏和灰色占位网格。 已实现并检查，仍保留逐页视觉验收状态。"
+  },
+  {
+    "id": "v08-other",
+    "kind": "fixed",
+    "title": "账户、备注、规格及订单模板修正",
+    "nodeIds": [
+      "34:41971",
+      "34:36924",
+      "34:36706",
+      "34:34820",
+      "34:34746",
+      "52:46299",
+      "52:46431",
+      "34:22043",
+      "34:22337",
+      "34:34156",
+      "34:29988"
+    ],
+    "templates": [],
+    "components": [
+      "AccountHeader",
+      "OrderRemarks",
+      "ProductSpecPicker",
+      "OrderArrival",
+      "OrderSubmitBar"
+    ],
+    "detail": "访客账户去除头像和未登录计数，补齐原稿入口；备注恢复白底及真实选项。规格标题左对齐，数量使用框式变体。展开更多入口恢复为已完成订单，取消订单移除进度条；按钮补充 36/40px 尺寸。 已实现并检查，仍保留逐页视觉验收状态。"
+  },
+  {
+    "id": "v09-chrome",
+    "kind": "fixed",
+    "title": "头部背景统一",
+    "nodeIds": [
+      "52:45707",
+      "52:45491",
+      "52:44962",
+      "52:44486",
+      "34:41971",
+      "34:36924"
+    ],
+    "templates": [],
+    "components": [
+      "Page",
+      "StatusBar",
+      "NavBar",
+      "CartHeader",
+      "AccountHeader"
+    ],
+    "detail": "Page 增加 chromeBackground；购物车状态栏和导航统一白色，账户渐变从状态栏延续到内容。 已实现并检查；逐页视觉审核仍保留待确认。"
+  },
+  {
+    "id": "v09-cart",
+    "kind": "fixed",
+    "title": "步进器、左滑删除、间距与地址选择",
+    "nodeIds": [
+      "52:45707",
+      "52:45491",
+      "52:44962",
+      "52:44486",
+      "28:19661"
+    ],
+    "templates": [],
+    "components": [
+      "QuantityStepper",
+      "SwipeAction",
+      "CartItem",
+      "UnavailableProductsGroup",
+      "AddressPicker"
+    ],
+    "detail": "步进器最小值为 1，减号置灰禁用，移除步进器删除接口和旧删除状态。商品统一左滑删除并联动赠品；压缩不可用分组重复留白。地址入口打开抽屉，选择后更新地址。 已实现并检查；逐页视觉审核仍保留待确认。"
+  },
+  {
+    "id": "v09-promotion",
+    "kind": "fixed",
+    "title": "活动条成为独立业务组件",
+    "nodeIds": [
+      "52:44962",
+      "52:44486"
+    ],
+    "templates": [],
+    "components": [
+      "CartPromotionBar"
+    ],
+    "detail": "GIFT/SALE 标签、标题、View 同排，说明独立行，按原稿分隔商品；不再使用通用绿色提示块。 已实现并检查；逐页视觉审核仍保留待确认。"
+  },
+  {
+    "id": "v09-empty",
+    "kind": "fixed",
+    "title": "整页空状态按 1:2 分配留白",
+    "nodeIds": [
+      "34:42652"
+    ],
+    "templates": [],
+    "components": [
+      "EmptyState"
+    ],
+    "detail": "提供 page/inline 布局；page 以剩余内容区计算插画和文字整体的上/下留白，实测比例 1:2。 已实现并检查；逐页视觉审核仍保留待确认。"
+  },
+  {
+    "id": "v09-support",
+    "kind": "fixed",
+    "title": "列表组标题与底部主操作",
+    "nodeIds": [
+      "34:42505",
+      "34:41773"
+    ],
+    "templates": [],
+    "components": [
+      "ListGroup",
+      "ActionBar",
+      "StatusLabel",
+      "SupportOrderCard"
+    ],
+    "detail": "ListGroup 支持卡片内、卡片外两种标题。帮助页恢复原稿卡片内标题、完整图标、吸底 Get help with my orders。订单状态改为 400 字重，支持绿色和灰色。 已实现并检查；逐页视觉审核仍保留待确认。"
+  },
+  {
+    "id": "v09-chat",
+    "kind": "fixed",
+    "title": "聊天气泡与操作位置",
+    "nodeIds": [
+      "34:42033",
+      "34:42083",
+      "34:42140",
+      "34:42209",
+      "34:42300",
+      "34:42398"
+    ],
+    "templates": [],
+    "components": [
+      "ChatMessage",
+      "ChatComposer",
+      "ServiceQueue"
+    ],
+    "detail": "欢迎语和队列消息使用白色客服气泡；用户消息绿底白字；时间左右对齐，图片不带彩色外框；客服接入提示带头像。End service 恢复输入区上方，输入区右侧为绿色加号或关闭，附件区按原稿显示。 已实现并检查；逐页视觉审核仍保留待确认。"
+  },
+  {
+    "id": "v09-map",
+    "kind": "fixed",
+    "title": "地址搜索的输入框、结果和键盘",
+    "nodeIds": [
+      "34:39364"
+    ],
+    "templates": [],
+    "components": [
+      "MapAddressPicker",
+      "SearchBar",
+      "Keyboard"
+    ],
+    "detail": "恢复 Select address/Riyadh、原始搜索词和六条结果；白底上的灰色搜索框可见，选择结果后更新位置并收起键盘。SearchBar 另提供白色描边、白色背景变体。 已实现并检查；逐页视觉审核仍保留待确认。"
+  },
+  {
+    "id": "v10-surfaces-and-source",
+    "kind": "fixed",
+    "title": "优惠券、账户信息、首页和推荐流按本轮标注修正",
+    "components": [
+      "VoucherList",
+      "VoucherSuccessDialog",
+      "HomeVoucherBanner",
+      "ProductCollection",
+      "Result",
+      "Page",
+      "EmptyState",
+      "ListRow",
+      "Card"
+    ],
+    "templates": [],
+    "nodeIds": [
+      "10:11809",
+      "10:11841",
+      "10:11887",
+      "10:11980",
+      "21:12475",
+      "21:12509",
+      "21:13732",
+      "21:13777",
+      "21:13817",
+      "23:15280",
+      "28:19480"
+    ],
+    "detail": "优惠券和推荐流组件自带灰色承载层；无券插画与 1:2 留白；兑换成功弹窗使用固定浅绿渐变、可选关闭与无分割线操作区；Profile 三卡、About 版本卡、失败原因卡与通栏操作恢复；未登录长首页恢复源素材和分类结构。构建与渲染检查不等于人工视觉验收。"
+  }
+]

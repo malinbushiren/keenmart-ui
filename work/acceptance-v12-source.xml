@@ -1,0 +1,42 @@
+<canvas id="137:52176" name="gpt 组件验收01" x="0" y="0" width="0" height="0">
+  <rounded-rectangle id="137:52178" name="image 1" x="-427" y="-464" width="852" height="925" />
+  <text id="137:52180" name="为什么要创新呢， 左侧是一个抽屉 +单选列表 +带开关操作的提示条 +吸底btn 严格参考重新生成 没有组件就重新生成 有的话就严格调用 这个规则也写到设计规则里 不要乱创新" x="229" y="-190" width="360" height="532" />
+  <rounded-rectangle id="138:52182" name="image 2" x="-427" y="488" width="907" height="945" />
+  <text id="138:52184" name="这个组件的下拉框做的圆角样式不对 下拉框右侧icon 的间距也不对 下拉面板的样式，根据基础样式 以及其他组件的风格重新生成 这个能力对你来说很重要 即使是没有提供给你设计稿 你也要根据之前的组件有能力去生成 风格一致的组件" x="500" y="694" width="448" height="420" />
+  <text id="139:52875" name="没看明白这个组件是哪儿来的 做什么用 如果没用 或者可以用其他组件代替 就删掉他" x="500" y="1796" width="364" height="245" />
+  <text id="139:52879" name="对勾改为白色" x="500" y="3045" width="168" height="35" />
+  <text id="139:52886" name="这个action sheet 操作布局改为 列表样式 从上往下布局 不要这个乱着布局" x="1387" y="3986" width="288" height="140" />
+  <text id="139:52890" name="增加两个操作 三个操作的样式 其他操作颜色要中性，红色只留给灾难性操作" x="500" y="4980" width="560" height="140" />
+  <text id="139:52894" name="看不懂这个组件是干什么 要么优化组件 要么优化描述" x="532" y="5922" width="308" height="140" />
+  <text id="139:52898" name="吸附底部的操作 是一个交互 组件层面这个操作拦 应该会有不同的形式 一个btn 两个btn 内容+btn 这个看看怎么优化" x="581" y="6751" width="512" height="420" />
+  <text id="139:52902" name="我更新了商卡组件 这里的商卡也要同步更新" x="564" y="8034" width="308" height="105" />
+  <text id="139:52906" name="这个是猜你喜欢 就是标题+信息流 这里的商卡要更新" x="603" y="8946" width="224" height="175" />
+  <text id="139:52910" name="这个间距太大了，有问题" x="584" y="10011" width="308" height="35" />
+  <text id="139:52914" name="这个样式肯定不对 地图+表单 背景色为白色，则表单为灰色 背景为灰色，则表单为白色 你这个页面做的太差了 不管是组件还是页面 都要分析 他由哪些组件构成 然后用什么颜色的背景色比较好 组件适合的背景色 最好写到规则里 这样你去拼页面的时候，可以根据组件规则选择页面背景色" x="556" y="10668" width="728" height="700" />
+  <text id="139:52919" name="红色区域看起来间距很大" x="583" y="12085" width="308" height="35" />
+  <text id="139:53122" name="这个submmit 是页面层级的 不应该在这个组件里" x="612" y="13142" width="377" height="105" />
+  <text id="139:53126" name="这个兑换组件应该是有个输入框的 展示的背景应该是白色 说过很多遍了 白色背景放灰色内容 内容和背景的颜色不要一样" x="521" y="13869" width="420" height="315" />
+  <text id="139:53130" name="这个组件没看出来出处和作用 重新检查下是否正确和有必要" x="597" y="14952" width="364" height="70" />
+  <text id="139:53134" name="灰色内容不要展示在白色背景上" x="457" y="15993" width="392" height="35" />
+  <text id="139:53138" name="这个组件样式不对 参考原图进行优化" x="653" y="17106" width="224" height="105" />
+  <text id="139:53142" name="这里出现了展示不完全 要优化 然后页面的里的中文 翻译为英文" x="877" y="18201" width="280" height="210" />
+  <rounded-rectangle id="139:52873" name="image 3" x="-434" y="1460" width="921" height="1106" />
+  <rounded-rectangle id="139:52877" name="image 4" x="-439" y="2593" width="919" height="1024" />
+  <rounded-rectangle id="139:52881" name="image 5" x="-399" y="3648" width="899" height="1072" />
+  <rounded-rectangle id="139:52884" name="image 6" x="410" y="3729" width="935" height="976" />
+  <rounded-rectangle id="139:52888" name="image 7" x="-444" y="4786" width="922" height="668" />
+  <rounded-rectangle id="139:52892" name="image 8" x="-444" y="5473" width="976" height="989" />
+  <rounded-rectangle id="139:52896" name="image 9" x="-468" y="6462" width="1023" height="1118" />
+  <rounded-rectangle id="139:52900" name="image 10" x="-361" y="7593" width="883" height="986" />
+  <rounded-rectangle id="139:52904" name="image 11" x="-391" y="8579" width="913" height="967" />
+  <rounded-rectangle id="139:52908" name="image 12" x="-371" y="9527" width="943" height="847" />
+  <rounded-rectangle id="139:52912" name="image 13" x="-352" y="10385" width="874" height="1105" />
+  <rounded-rectangle id="139:52916" name="image 14" x="-385" y="11509" width="958" height="1080" />
+  <rounded-rectangle id="139:52918" name="Rectangle 1" x="94" y="12032" width="368" height="17" />
+  <rounded-rectangle id="139:52921" name="image 15" x="-385" y="12551" width="982" height="977" />
+  <rounded-rectangle id="139:53124" name="image 16" x="-385" y="13528" width="888" height="997" />
+  <rounded-rectangle id="139:53128" name="image 17" x="-412" y="14482" width="942" height="1095" />
+  <rounded-rectangle id="139:53132" name="image 18" x="-431" y="15598" width="888" height="991" />
+  <rounded-rectangle id="139:53136" name="image 19" x="-452" y="16630" width="1071" height="1252" />
+  <rounded-rectangle id="139:53140" name="image 20" x="-480" y="17978" width="1326" height="966" />
+</canvas>

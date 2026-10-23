@@ -1,0 +1,1815 @@
+[
+  {
+    "nodeId": "1:470",
+    "template": "login",
+    "rendered": true,
+    "sourceLines": 5,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:519",
+    "template": "login",
+    "rendered": true,
+    "sourceLines": 5,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "213451124123"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:569",
+    "template": "verify",
+    "rendered": true,
+    "sourceLines": 6,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:590",
+    "template": "country-picker",
+    "rendered": true,
+    "sourceLines": 8,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:743",
+    "template": "consent",
+    "rendered": true,
+    "sourceLines": 3,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:765",
+    "template": "consent",
+    "rendered": true,
+    "sourceLines": 5,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:1965",
+    "template": "home",
+    "rendered": true,
+    "sourceLines": 22,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "Free Delivery on orders above SAR 25",
+      "Search products"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3325",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "500-700g"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3326",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "500-700g"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3327",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "500-700g"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3328",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "500-700g"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3329",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "500-700g"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3330",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 3,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "500-700g"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3331",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 3,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "500-700g"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3332",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "500-700g"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3333",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "500-700g"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3334",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "500-700g"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3335",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "500-700g"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3336",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "500-700g"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3337",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "500-700g"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3674",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 1,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3675",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 1,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3676",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 1,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3677",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 1,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3678",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3679",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 1,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3680",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3681",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3682",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3683",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 1,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3684",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 1,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3685",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 1,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "1:3686",
+    "template": "product-card",
+    "rendered": true,
+    "sourceLines": 1,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:22799",
+    "template": "category",
+    "rendered": true,
+    "sourceLines": 10,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "Catrgories"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:2048",
+    "template": "category",
+    "rendered": true,
+    "sourceLines": 9,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "Vegetable & Bean Products& Bea..."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:2123",
+    "template": "category",
+    "rendered": true,
+    "sourceLines": 22,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "SAR 40.76"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:2960",
+    "template": "search",
+    "rendered": true,
+    "sourceLines": 4,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:3007",
+    "template": "search",
+    "rendered": true,
+    "sourceLines": 6,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:3045",
+    "template": "search",
+    "rendered": true,
+    "sourceLines": 6,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "halloween broccoli",
+      "1 Piece (500-700g)"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:3556",
+    "template": "product-detail",
+    "rendered": true,
+    "sourceLines": 16,
+    "unmatchedLines": 11,
+    "unmatchedExamples": [
+      "Zhangji  Cream Strawberry 300g",
+      "The fruit body is fragile, handle with care when cleaning, it is recommended to refrigerate for storage, the size and quantity are not fixed, images are for reference only, please consider before purchasing.",
+      "Similar items",
+      "Specifications",
+      "Country of origin",
+      "United Arab Emirates",
+      "Net content",
+      "Storage requirement"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:3660",
+    "template": "product-detail",
+    "rendered": true,
+    "sourceLines": 7,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "Zhangji  Cream Strawberry 300g",
+      "The fruit body is fragile, handle with care when cleaning, it is recommended to refrigerate for storage, the size and quantity are not fixed, images are for reference only, please consider before purchasing."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:3738",
+    "template": "product-detail",
+    "rendered": true,
+    "sourceLines": 7,
+    "unmatchedLines": 3,
+    "unmatchedExamples": [
+      "Zhangji  Cream Strawberry 300g",
+      "The fruit body is fragile, handle with care when cleaning, it is recommended to refrigerate for storage, the size and quantity are not fixed, images are for reference only, please consider before purchasing.",
+      "Available soon"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:3815",
+    "template": "product-detail",
+    "rendered": true,
+    "sourceLines": 6,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "Zhangji  Cream Strawberry 300g",
+      "The fruit body is fragile, handle with care when cleaning, it is recommended to refrigerate for storage, the size and quantity are not fixed, images are for reference only, please consider before purchasing."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:3900",
+    "template": "product-detail",
+    "rendered": true,
+    "sourceLines": 6,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "Zhangji  Cream Strawberry 300g",
+      "The fruit body is fragile, handle with care when cleaning, it is recommended to refrigerate for storage, the size and quantity are not fixed, images are for reference only, please consider before purchasing."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:5197",
+    "template": "cart",
+    "rendered": true,
+    "sourceLines": 11,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "Catrgories"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:5383",
+    "template": "cart",
+    "rendered": true,
+    "sourceLines": 10,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "Catrgories"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:5565",
+    "template": "cart-address",
+    "rendered": true,
+    "sourceLines": 16,
+    "unmatchedLines": 6,
+    "unmatchedExamples": [
+      "SAR 40.76",
+      "Catrgories",
+      "Saved Address",
+      "Building 1，2nd floorBuilding 1，2nd floorBuilding 1，2nd floorBuilding 1",
+      "Dingxiaodong  +86 16660654099",
+      "MA218+141,18210 King Faisal Rd,As King FaisalKing Faisal"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:5811",
+    "template": "invalid-cart",
+    "rendered": true,
+    "sourceLines": 17,
+    "unmatchedLines": 5,
+    "unmatchedExamples": [
+      "SAR 40.76",
+      "Order another",
+      "to get free delivery",
+      "Catrgories",
+      "xxxx文案@产品"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:6051",
+    "template": "cart",
+    "rendered": true,
+    "sourceLines": 15,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "SAR 40.76",
+      "Catrgories"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:9300",
+    "template": "address-sheet",
+    "rendered": true,
+    "sourceLines": 14,
+    "unmatchedLines": 12,
+    "unmatchedExamples": [
+      "Checkout",
+      "Dingxiaodong  +86 16660654099",
+      "Delivery time",
+      "11:30AM-13:00PM",
+      "Payment Methods",
+      "WeChat Pay",
+      "Items Price（6）",
+      "Delivery Fee"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:9507",
+    "template": "delivery-slots",
+    "rendered": true,
+    "sourceLines": 23,
+    "unmatchedLines": 21,
+    "unmatchedExamples": [
+      "Checkout",
+      "King Saud University Building one King",
+      "Dingxiaodong  +86 16660654099",
+      "11:30AM-13:00PM",
+      "Payment Methods",
+      "WeChat Pay",
+      "Items Price（6）",
+      "Delivery Fee"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:10108",
+    "template": "order-list",
+    "rendered": true,
+    "sourceLines": 17,
+    "unmatchedLines": 4,
+    "unmatchedExamples": [
+      "(Delivery fee SAR 5)",
+      "Payment timeout",
+      "Ningxia Mini Fresh Broccoli-Spain",
+      "Per Item:"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:10304",
+    "template": "order-list",
+    "rendered": true,
+    "sourceLines": 10,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "19 Set,2024  18:23:21 xxxxxxxxxxxxxx",
+      "(Delivery fee SAR 5)"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:36924",
+    "template": "account",
+    "rendered": true,
+    "sourceLines": 10,
+    "unmatchedLines": 7,
+    "unmatchedExamples": [
+      "Log In or register to start shopping",
+      "Sign up or log in",
+      "Refer More，Earn More",
+      "Earn each for SAR50 Voucher",
+      "Earn Now",
+      "My cards",
+      "Customer service"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:36706",
+    "template": "account",
+    "rendered": true,
+    "sourceLines": 10,
+    "unmatchedLines": 5,
+    "unmatchedExamples": [
+      "Refer More，Earn More",
+      "Earn each for SAR50 Voucher",
+      "Earn Now",
+      "My cards",
+      "Customer service"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:10765",
+    "template": "language",
+    "rendered": true,
+    "sourceLines": 5,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "Category"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:11809",
+    "template": "vouchers",
+    "rendered": true,
+    "sourceLines": 13,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:11841",
+    "template": "vouchers",
+    "rendered": true,
+    "sourceLines": 17,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "Valid from 30 Sep 2024 23:59 to 30 Dec 2024 23:50.",
+      "Applies to Selected Products."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:11887",
+    "template": "vouchers",
+    "rendered": true,
+    "sourceLines": 3,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "10:11980",
+    "template": "vouchers",
+    "rendered": true,
+    "sourceLines": 13,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "Only coupons from the past 3 months can be viewed"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "21:12475",
+    "template": "vouchers",
+    "rendered": true,
+    "sourceLines": 13,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "21:12509",
+    "template": "vouchers",
+    "rendered": true,
+    "sourceLines": 14,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "21:12840",
+    "template": "map-address",
+    "rendered": true,
+    "sourceLines": 4,
+    "unmatchedLines": 4,
+    "unmatchedExamples": [
+      "Select address",
+      "OKDA+M92sdduad,Sulaymaniyah,Saudiad,Sulaymaniyah,uad,Sulaymaniyah",
+      "OKDA+M92 abiduad,Sulaymaniyah, Saudiad,Sulayyah,",
+      "OKDA+M92,abi duad, Saniyah, ,Riyadh, Saudi arabia,King R..."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "21:12886",
+    "template": "map-address",
+    "rendered": true,
+    "sourceLines": 4,
+    "unmatchedLines": 4,
+    "unmatchedExamples": [
+      "Select address",
+      "Out of delivery area",
+      "No Result in this location",
+      "Move pin to find delivery address"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "21:13037",
+    "template": "address-sheet",
+    "rendered": true,
+    "sourceLines": 21,
+    "unmatchedLines": 21,
+    "unmatchedExamples": [
+      "You might also like",
+      "Categories",
+      "Vegetables",
+      "Bean Products",
+      "Meat, Roultry & Eggs",
+      "Fruit & Flowers",
+      "Aquatic & Seafood",
+      "Milk & Yogurt"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "21:13706",
+    "template": "delete-account",
+    "rendered": true,
+    "sourceLines": 9,
+    "unmatchedLines": 3,
+    "unmatchedExamples": [
+      "After the account is cancelled, you will give up the following rights, please operate with caution:",
+      "After the account is cancelled, all order information will be cleared and cannot be restored",
+      "The rights and interests such as fund return that may be generated by historical orders will be deemed to be automatically waived"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "21:13732",
+    "template": "profile",
+    "rendered": true,
+    "sourceLines": 6,
+    "unmatchedLines": 6,
+    "unmatchedExamples": [
+      "Account and Safe",
+      "User Photo",
+      "User Name",
+      "DingDong Saudi",
+      "Mobile phone number",
+      "+966 1712****1231"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "21:13777",
+    "template": "about",
+    "rendered": true,
+    "sourceLines": 4,
+    "unmatchedLines": 3,
+    "unmatchedExamples": [
+      "Account and Safe",
+      "V 1.5.200_5412",
+      "Term of use"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "21:13817",
+    "template": "delete-failed",
+    "rendered": true,
+    "sourceLines": 3,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "There are uncompleted order ongoing",
+      "The current time is greater than or equal to 15 days from the most recently completed order"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "23:15280",
+    "template": "new-user",
+    "rendered": true,
+    "sourceLines": 23,
+    "unmatchedLines": 19,
+    "unmatchedExamples": [
+      "New user vouchers",
+      "Abhur ‧ Abuhur AI",
+      "Delivery: 15-29min",
+      "Search products",
+      "Keen Point",
+      "exclusive at keenmart",
+      "SHOP NOW",
+      "Gathering"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "23:15718",
+    "template": "new-user-popup",
+    "rendered": true,
+    "sourceLines": 28,
+    "unmatchedLines": 21,
+    "unmatchedExamples": [
+      "Abhur ‧ Abuhur AI",
+      "Delivery: 15-29min",
+      "Search products",
+      "Keen Point",
+      "exclusive at keenmart",
+      "check it",
+      "Gathering",
+      "Must-haves"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "23:16641",
+    "template": "new-user",
+    "rendered": true,
+    "sourceLines": 26,
+    "unmatchedLines": 20,
+    "unmatchedExamples": [
+      "SAR100 unused",
+      "new user vouchers",
+      "Save Up to SAR 20",
+      "Abhur ‧ Abuhur AI",
+      "Delivery: 15-29min",
+      "Search products",
+      "Keen Point",
+      "exclusive at keenmart"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "28:19480",
+    "template": "cart",
+    "rendered": true,
+    "sourceLines": 10,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "Catrgories"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "28:19661",
+    "template": "cart",
+    "rendered": true,
+    "sourceLines": 10,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "Catrgories"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "28:19777",
+    "template": "cart",
+    "rendered": true,
+    "sourceLines": 5,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "Catrgories"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:21920",
+    "template": "order-list",
+    "rendered": true,
+    "sourceLines": 11,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "Ningxia Mini Fresh Broccoli-Spain",
+      "Per Item:"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:22043",
+    "template": "review-list",
+    "rendered": true,
+    "sourceLines": 15,
+    "unmatchedLines": 15,
+    "unmatchedExamples": [
+      "Completed",
+      "peisongzhongdemiaoshu",
+      "Arriving",
+      "Today,Expedite deliver 06:33",
+      "Write Reviews",
+      "Delivery man",
+      "2410291209730120070",
+      "View details"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:22337",
+    "template": "review-list",
+    "rendered": true,
+    "sourceLines": 16,
+    "unmatchedLines": 16,
+    "unmatchedExamples": [
+      "Completed",
+      "peisongzhongdemiaoshu",
+      "Arriving",
+      "Today,Expedite deliver 06:33",
+      "Write Reviews",
+      "Delivery man",
+      "2410291209730120070",
+      "View details"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:24211",
+    "template": "review-editor",
+    "rendered": true,
+    "sourceLines": 9,
+    "unmatchedLines": 5,
+    "unmatchedExamples": [
+      "Rate The Items (0/5)",
+      "Fresh broccoli from Spain Fresh broccoli from Spain",
+      "Tell us more about the items",
+      "Fresh broccoli from Spain",
+      "Tell us more about delivery services"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:24225",
+    "template": "review-list",
+    "rendered": true,
+    "sourceLines": 11,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "View More 2 Items",
+      "Great! Delivered very quickly. Great! Delivered very quickly. Great! Delivered very quickly."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:24246",
+    "template": "review-result",
+    "rendered": true,
+    "sourceLines": 4,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:24264",
+    "template": "review-list",
+    "rendered": true,
+    "sourceLines": 8,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:24279",
+    "template": "review-list",
+    "rendered": true,
+    "sourceLines": 11,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "Tell us more about the items",
+      "Tell us more about delivery services"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:24295",
+    "template": "review-editor",
+    "rendered": true,
+    "sourceLines": 4,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "Tell us more about the items"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:24304",
+    "template": "review-list",
+    "rendered": true,
+    "sourceLines": 10,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "It's delicious and fresh. I'll buy it again next time. It's delicious and fresh. I'll buy it again next time. It's delicious and fresh. I'll buy it again next time. It's delicious and fresh. I'll",
+      "Great service, delivered very quickly. Great service, delivered very quickly. Great service, delivered very quickly. Great service, very quickly."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:24321",
+    "template": "image-viewer",
+    "rendered": true,
+    "sourceLines": 0,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:24326",
+    "template": "review-submit",
+    "rendered": true,
+    "sourceLines": 7,
+    "unmatchedLines": 5,
+    "unmatchedExamples": [
+      "Confirm submission of rating？",
+      "弹窗高度随内容撑高：",
+      "最小高度：screenheight*0.35",
+      "最大高度：screenheight*0.88",
+      "达到最大高度，内容区支持滑动查看更多"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:24372",
+    "template": "media-picker",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "Done (1)"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:29988",
+    "template": "checkout",
+    "rendered": true,
+    "sourceLines": 12,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "Dingxiaodong  +86 16660654099",
+      "Items Price（6）"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:30234",
+    "template": "checkout",
+    "rendered": true,
+    "sourceLines": 11,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "Dingxiaodong  +86 16660654099",
+      "Items Price（6）"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:30436",
+    "template": "checkout",
+    "rendered": true,
+    "sourceLines": 9,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "Dingxiaodong  +86 16660654099",
+      "Items Price（6）"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:30629",
+    "template": "payment-methods",
+    "rendered": true,
+    "sourceLines": 13,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "Dingxiaodong  +86 16660654099",
+      "Items Price（6）"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:30886",
+    "template": "payment-methods",
+    "rendered": true,
+    "sourceLines": 17,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "Dingxiaodong  +86 16660654099",
+      "Items Price（6）"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:31170",
+    "template": "card-form",
+    "rendered": true,
+    "sourceLines": 7,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "Please enter Cardholder name",
+      "0000  0000  0000  0000"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:31276",
+    "template": "bank-cards",
+    "rendered": true,
+    "sourceLines": 3,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "OLIVIA RHYE",
+      "Card not available"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:31419",
+    "template": "bank-cards",
+    "rendered": true,
+    "sourceLines": 4,
+    "unmatchedLines": 3,
+    "unmatchedExamples": [
+      "澳洲黑毛和牛西冷200kg",
+      "澳大利亚｜免费宰杀｜便宜",
+      "You don't have any saved cards"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:31555",
+    "template": "card-form",
+    "rendered": true,
+    "sourceLines": 9,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "6617  7788  9988  667",
+      "Save and use"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:32377",
+    "template": "order-list",
+    "rendered": true,
+    "sourceLines": 6,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:32519",
+    "template": "order-detail",
+    "rendered": true,
+    "sourceLines": 10,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:32718",
+    "template": "order-result",
+    "rendered": true,
+    "sourceLines": 10,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:32912",
+    "template": "order-result",
+    "rendered": true,
+    "sourceLines": 10,
+    "unmatchedLines": 1,
+    "unmatchedExamples": [
+      "Payment successful！"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:33091",
+    "template": "order-result",
+    "rendered": true,
+    "sourceLines": 13,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:33303",
+    "template": "order-detail",
+    "rendered": true,
+    "sourceLines": 13,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:33605",
+    "template": "order-detail",
+    "rendered": true,
+    "sourceLines": 14,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:34156",
+    "template": "order-detail",
+    "rendered": true,
+    "sourceLines": 13,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:34746",
+    "template": "remarks",
+    "rendered": true,
+    "sourceLines": 14,
+    "unmatchedLines": 5,
+    "unmatchedExamples": [
+      "Order notes",
+      "Don't worry, pay attention to safety",
+      "I don't have time to pick up the goods, so I left them at my neighbor's doorstep",
+      "Please fill in other requirements here",
+      "If you have special requirements for delivery, products, etc., we will do our best to cooperate. There may be situations where we cannot meet them, please forgive."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:34820",
+    "template": "remarks",
+    "rendered": true,
+    "sourceLines": 13,
+    "unmatchedLines": 4,
+    "unmatchedExamples": [
+      "Order notes",
+      "Don't worry, pay attention to safety",
+      "I don't have time to pick up the goods, so I left them at my neighbor's doorstep",
+      "If you have special requirements for delivery, products, etc., we will do our best to cooperate. There may be situations where we cannot meet them, please forgive."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:35122",
+    "template": "cancel-reason",
+    "rendered": true,
+    "sourceLines": 22,
+    "unmatchedLines": 22,
+    "unmatchedExamples": [
+      "Your Orders",
+      "After-sale service",
+      "Active Orders",
+      "Past orders",
+      "19 Set,2024  18:23:21",
+      "Pending payment",
+      "(Delivery fee SAR 5)",
+      "Arriving Today,Expedite deliver 06:33"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:35150",
+    "template": "cancel-reason",
+    "rendered": true,
+    "sourceLines": 23,
+    "unmatchedLines": 23,
+    "unmatchedExamples": [
+      "Your Orders",
+      "After-sale service",
+      "Active Orders",
+      "Past orders",
+      "19 Set,2024  18:23:21",
+      "Pending payment",
+      "(Delivery fee SAR 5)",
+      "Arriving Today,Expedite deliver 06:33"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:38863",
+    "template": "address-sheet",
+    "rendered": true,
+    "sourceLines": 23,
+    "unmatchedLines": 22,
+    "unmatchedExamples": [
+      "You might also like",
+      "Categories",
+      "Vegetables",
+      "Bean Products",
+      "Meat, Roultry & Eggs",
+      "Fruit & Flowers",
+      "Aquatic & Seafood",
+      "Milk & Yogurt"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:38968",
+    "template": "address-book",
+    "rendered": true,
+    "sourceLines": 7,
+    "unmatchedLines": 6,
+    "unmatchedExamples": [
+      "Delivery address",
+      "Building 1，2nd floorBuilding 1，2nd floorBuilding 1，2nd floor,2nd floor,2...",
+      "Dingxiaodong  +86 16660654099",
+      "GYM GYm GYM GYM GYM GYM GYM...",
+      "MA218+141,18210 King Faisal Rd,As SulayMA218+141,18210 King Faisal Rd...",
+      "DingxiaoDong, +966 5240192123"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:39101",
+    "template": "address-form",
+    "rendered": true,
+    "sourceLines": 13,
+    "unmatchedLines": 8,
+    "unmatchedExamples": [
+      "2601 Ibn Jadid street，2nd floorBuilding 1，2ndfloorBding 1，2nd floorBuilding 12nd floorBuilding 12nd ,200415",
+      "Additional address informaiton",
+      "Flat no./Building/Street/Area",
+      "Dark 251012 123121231451",
+      "Building 1，2nd floor",
+      "Dingxiaodong  +86 16660654099",
+      "Already have another address with same label name. Do you want to use this label for current editing address?",
+      "Use label for current address"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:39182",
+    "template": "address-form",
+    "rendered": true,
+    "sourceLines": 7,
+    "unmatchedLines": 3,
+    "unmatchedExamples": [
+      "2601 Ibn Jadid street，2nd floorBuilding 1，2ndfloorBding 1，2nd floorBuilding 12nd floorBuilding 12nd ,200415",
+      "Additional address informaiton",
+      "Flat no./Building/Street/Area"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:39241",
+    "template": "address-form",
+    "rendered": true,
+    "sourceLines": 8,
+    "unmatchedLines": 5,
+    "unmatchedExamples": [
+      "2601 Ibn Jadid street，2nd floorBuilding 1，2ndfloorBding 1，2nd floorBuilding 12nd floorBuilding 12nd ,200415",
+      "Additional address informaiton",
+      "Flat no./Building/Street/Area",
+      "Dark 2510 . 12312121512 12",
+      "reach 20 character limit"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:39300",
+    "template": "address-form",
+    "rendered": true,
+    "sourceLines": 9,
+    "unmatchedLines": 5,
+    "unmatchedExamples": [
+      "2601 Ibn Jadid street，2nd floorBuilding 1，2ndfloorBding 1，2nd floorBuilding 12nd floorBuilding 12nd ,200415",
+      "Additional address informaiton",
+      "Flat no./Building/Street/Area",
+      "Dark 251012 123121231451",
+      "Please fill in additional address info"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:39364",
+    "template": "map-address",
+    "rendered": true,
+    "sourceLines": 7,
+    "unmatchedLines": 7,
+    "unmatchedExamples": [
+      "Select address",
+      "al shahiewen",
+      "OKDA+M92sdduad,Sulaymaniyah,Saudiad,Sulaymaniyah,uad,Sulaymaniyah",
+      "al shahiewen st",
+      "Building 1，2nd floorBuilding 1，",
+      "meat 1 house 2",
+      "Building 1，2nd floorBuilding 1，2ndfloorBding 1，2nd floorBuilding 12nd floorBuilding 12nd"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:41773",
+    "template": "support-orders",
+    "rendered": true,
+    "sourceLines": 17,
+    "unmatchedLines": 8,
+    "unmatchedExamples": [
+      "On-time Promise",
+      "Campaign and voucher",
+      "Order Number 24544377643333",
+      "Delivering",
+      "(Total: 9 items)",
+      "Delivered 2021-11-11  09:22:22",
+      "Delivering 2021-11-11  09:22:22-09:30:22",
+      "Only supports inquiries for orders within the last 30 days."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:41971",
+    "template": "account",
+    "rendered": true,
+    "sourceLines": 7,
+    "unmatchedLines": 3,
+    "unmatchedExamples": [
+      "Catrgories",
+      "My cards",
+      "Customer service and help"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:42033",
+    "template": "chat",
+    "rendered": true,
+    "sourceLines": 8,
+    "unmatchedLines": 5,
+    "unmatchedExamples": [
+      "12:34:23",
+      "Wishing you all the sweetness life has to offer and happiness fulfilled! Please describe your issue in one sentence, we will assist you.",
+      "Order Number 24544377643333",
+      "(Total: 999 items)",
+      "Delivering 2021-11-11  09:22:22-09:30:22"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:42083",
+    "template": "chat",
+    "rendered": true,
+    "sourceLines": 10,
+    "unmatchedLines": 6,
+    "unmatchedExamples": [
+      "12:34:23",
+      "Wishing you all the sweetness life has to offer and happiness fulfilled! Please describe your issue in one sentence, we will assist you.",
+      "Order Number 24544377643333",
+      "(Total: 999 items)",
+      "Delivered 2021-11-11  09:22",
+      "You are currently No.4 in line. Please wait patiently."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:42140",
+    "template": "chat",
+    "rendered": true,
+    "sourceLines": 11,
+    "unmatchedLines": 7,
+    "unmatchedExamples": [
+      "12:34:23",
+      "Wishing you all the sweetness life has to offer and happiness fulfilled! Please describe your issue in one sentence, we will assist you.",
+      "Order Number 24544377643333",
+      "(Total: 999 items)",
+      "Delivered 2021-11-11  09:22",
+      "Keen Customer Service: Xiyu (ID: D1234567) at your service.",
+      "End service"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:42209",
+    "template": "chat",
+    "rendered": true,
+    "sourceLines": 15,
+    "unmatchedLines": 11,
+    "unmatchedExamples": [
+      "12:34:23",
+      "Wishing you all the sweetness life has to offer and happiness fulfilled! Please describe your issue in one sentence, we will assist you.",
+      "Order Number 24544377643333",
+      "(Total: 999 items)",
+      "Delivered 2021-11-11  09:22",
+      "Dingdong Customer Service: Xiyu (ID: D1234567) at your service.",
+      "07:34:23",
+      "There is a quality issue."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:42300",
+    "template": "chat",
+    "rendered": true,
+    "sourceLines": 17,
+    "unmatchedLines": 12,
+    "unmatchedExamples": [
+      "12:34:23",
+      "Wishing you all the sweetness life has to offer and happiness fulfilled! Please describe your issue in one sentence, we will assist you.",
+      "Order Number 24544377643333",
+      "(Total: 999 items)",
+      "Delivered 2021-11-11  09:22",
+      "Dingdong Customer Service: Xiyu (ID: D1234567) at your service.",
+      "07:34:23",
+      "There is a quality issue."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:42398",
+    "template": "chat",
+    "rendered": true,
+    "sourceLines": 13,
+    "unmatchedLines": 9,
+    "unmatchedExamples": [
+      "12:34:23",
+      "Ding-dong~ Wishing you all the sweetness life has to offer and happiness fulfilled! Please describe your issue in one sentence, and Xiao-Dong will assist you.",
+      "Order Number 24544377643333",
+      "(Total: 999 items)",
+      "Delivered 2021-11-11  09:22",
+      "Keen Customer Service: Xiyu (ID: D1234567) at your service.",
+      "07:34:23",
+      "There is a quality issue."
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:42505",
+    "template": "support-home",
+    "rendered": true,
+    "sourceLines": 8,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "On-time Promise",
+      "Campaign and voucher Campaign and voucher Campaign and voucher voucherpaign and voucher voucher"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:42580",
+    "template": "faq-list",
+    "rendered": true,
+    "sourceLines": 4,
+    "unmatchedLines": 3,
+    "unmatchedExamples": [
+      "I didn’t receive the SMS verification code verification code",
+      "Having trouble logging in",
+      "Delete my account"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:42611",
+    "template": "service-tickets",
+    "rendered": true,
+    "sourceLines": 6,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "2021-11-11  09:22:22-09:30:22",
+      "Countinue to chat"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:42652",
+    "template": "service-tickets",
+    "rendered": true,
+    "sourceLines": 2,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "34:42672",
+    "template": "faq-detail",
+    "rendered": true,
+    "sourceLines": 5,
+    "unmatchedLines": 2,
+    "unmatchedExamples": [
+      "Hello, you can enable or disable password-free payment by going to [My Account] → [Settings] → [Account and Security] → [Password-Free Payment Management].",
+      "这是超链接，支持跳转。"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "52:44486",
+    "template": "cart",
+    "rendered": true,
+    "sourceLines": 14,
+    "unmatchedLines": 8,
+    "unmatchedExamples": [
+      "Deliver to:",
+      "3 For SAR 100",
+      "Ningxia Mini Fresh Broccoli-Spain Mini Ningxia Mini Fresh",
+      "Ningxia Mini Fresh Broccoli-Spain Mini",
+      "Currently Unavailable（6）",
+      "Text xxxx",
+      "View all",
+      "Catrgories"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "52:44962",
+    "template": "cart",
+    "rendered": true,
+    "sourceLines": 15,
+    "unmatchedLines": 11,
+    "unmatchedExamples": [
+      "Deliver to:",
+      "One gift voucher can use",
+      "Ningxia Mini Fresh Broccoli-Spain Mini",
+      "3 For SAR 100",
+      "Already discounted by",
+      "Ningxia Mini Fresh Broccoli-Spain Mini Ningxia Mini Fresh",
+      "Choose 1 more item to participate",
+      "Currently Unavailable（6）"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "52:45491",
+    "template": "cart",
+    "rendered": true,
+    "sourceLines": 13,
+    "unmatchedLines": 8,
+    "unmatchedExamples": [
+      "Deliver to:",
+      "Ningxia Mini fresh steak fresh steak",
+      "Ningxia Mini Fresh Broccoli-Spain Mini Ningxia Mini Fresh",
+      "Ningxia Mini Fresh Broccoli-Spain Mini",
+      "Currently Unavailable（6）",
+      "Text xxxx",
+      "View all",
+      "Catrgories"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "52:45707",
+    "template": "cart",
+    "rendered": true,
+    "sourceLines": 13,
+    "unmatchedLines": 8,
+    "unmatchedExamples": [
+      "Deliver to:",
+      "Ningxia Mini fresh steak fresh steak",
+      "Ningxia Mini Fresh Broccoli-Spain Mini Ningxia Mini Fresh",
+      "Ningxia Mini Fresh Broccoli-Spain Mini",
+      "Currently Unavailable（6）",
+      "Text xxxx",
+      "View all",
+      "Catrgories"
+    ],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "52:46299",
+    "template": "product-spec",
+    "rendered": true,
+    "sourceLines": 17,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "nodeId": "52:46431",
+    "template": "product-spec",
+    "rendered": true,
+    "sourceLines": 16,
+    "unmatchedLines": 0,
+    "unmatchedExamples": [],
+    "visualReview": "pending",
+    "checkedAt": "2026-10-21"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "name": "keenmart-ui-review",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "tokens:build": "node scripts/build-design-tokens.mjs",
+    "catalog:build": "python3 scripts/build-component-catalog.py && node scripts/sync-component-dependencies.mjs && python3 scripts/build-page-recipes.py && node scripts/sync-page-usage.mjs && node scripts/extract-component-api.mjs && python3 scripts/write-component-docs.py && python3 scripts/build-component-usage.py && python3 scripts/write-design-rules.py"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@fontsource/poppins": "^5.2.0",
+    "@fontsource/leckerli-one": "^5.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@playwright/test": "^1.56.0"
+  }
+}

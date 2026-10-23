@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="18.993" height="27.1004" viewBox="0 0 18.993 27.1004" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Intersect" filter="url(#filter0_f_0_449)">
+<path d="M8.40372 3.56876C7.67242 5.76219 6.07835 7.52438 5.60294 10.852C5.04265 14.774 6.13533 16.5196 8.96426 18.1361C11.7758 19.7427 13.4265 18.1557 13.4467 18.1361L15.6313 19.2279L14.4574 21.0815L9.52481 23.7387L6.64297 23.0981L3.36172 19.8168C3.36266 19.8064 3.82707 14.6913 4.48282 11.4125C4.57663 10.9435 4.68851 10.448 4.8129 9.94376C5.40726 7.53433 6.49524 5.24509 8.04239 3.36172L8.40372 3.56876Z" fill="white" fill-opacity="0.3"/>
+</g>
+<defs>
+<filter id="filter0_f_0_449" x="0" y="0" width="18.993" height="27.1004" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="1.68086" result="effect1_foregroundBlur_0_449"/>
+</filter>
+</defs>
+</svg>

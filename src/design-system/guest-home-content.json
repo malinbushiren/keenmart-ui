@@ -1,0 +1,654 @@
+{
+  "categories": [
+    {
+      "id": "51:44137",
+      "label": "Gathering\nMust-haves",
+      "promotion": true,
+      "layers": [
+        {
+          "src": "/assets/cbf39.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": -30.856,
+          "imageY": -49.938,
+          "imageWidth": 188.063,
+          "imageHeight": 164.469,
+          "opacity": 0.04,
+          "blend": "lighten"
+        },
+        {
+          "src": "/assets/61b77.svg",
+          "x": 0,
+          "y": 10.24,
+          "width": 100,
+          "height": 89.76,
+          "imageX": -19.84,
+          "imageY": 0,
+          "imageWidth": 166.284,
+          "imageHeight": 162.005
+        },
+        {
+          "src": "/assets/a1631.png",
+          "x": 27.904,
+          "y": 53.949,
+          "width": 72.096,
+          "height": 46.051,
+          "imageX": 0,
+          "imageY": 0,
+          "imageWidth": 109.522,
+          "imageHeight": 171.547
+        },
+        {
+          "src": "/assets/60656.png",
+          "x": 56.221,
+          "y": 67.54,
+          "width": 43.779,
+          "height": 32.46,
+          "imageX": 0,
+          "imageY": 0,
+          "imageWidth": 146.56,
+          "imageHeight": 188.326
+        },
+        {
+          "src": "/assets/353b6.png",
+          "x": 6.3,
+          "y": 61.432,
+          "width": 67.215,
+          "height": 38.568,
+          "imageX": 0,
+          "imageY": 0,
+          "imageWidth": 100,
+          "imageHeight": 176.394
+        }
+      ]
+    },
+    {
+      "id": "51:44153",
+      "label": "Bean Products\nhahahhha",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/ba190.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 17.117,
+          "imageY": 2.597,
+          "imageWidth": 45.538,
+          "imageHeight": 89.509
+        },
+        {
+          "src": "/assets/07eb6.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 38.158,
+          "imageY": 28.626,
+          "imageWidth": 43.828,
+          "imageHeight": 69.229
+        }
+      ]
+    },
+    {
+      "id": "51:44163",
+      "label": "Bean Products",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/3e258.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 17.314,
+          "imageY": 4.221,
+          "imageWidth": 45.791,
+          "imageHeight": 88.028
+        },
+        {
+          "src": "/assets/d2f53.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 53.816,
+          "imageY": 29.259,
+          "imageWidth": 28.166,
+          "imageHeight": 67.476
+        }
+      ]
+    },
+    {
+      "id": "51:44171",
+      "label": "Meat, Roultry & Eggs",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/7337d.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 17.117,
+          "imageY": 1.299,
+          "imageWidth": 47.818,
+          "imageHeight": 94.014
+        },
+        {
+          "src": "/assets/a11c3.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 50.45,
+          "imageY": 38.88,
+          "imageWidth": 31.883,
+          "imageHeight": 58.523
+        }
+      ]
+    },
+    {
+      "id": "51:44180",
+      "label": "Fruit & Flowers",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/b480a.png",
+          "x": 32.798,
+          "y": 2.597,
+          "width": 29.547,
+          "height": 91.295,
+          "imageX": -124.869,
+          "imageY": -16.27,
+          "imageWidth": 267.937,
+          "imageHeight": 253.901
+        },
+        {
+          "src": "/assets/d4d87.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 18.018,
+          "imageY": 2.597,
+          "imageWidth": 26.028,
+          "imageHeight": 91.295
+        },
+        {
+          "src": "/assets/b2fa9.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 39.119,
+          "imageY": 35.065,
+          "imageWidth": 42.244,
+          "imageHeight": 64.935
+        }
+      ]
+    },
+    {
+      "id": "51:44191",
+      "label": "Aquatic & Seafood",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/98979.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 18.018,
+          "imageY": 5.195,
+          "imageWidth": 46.903,
+          "imageHeight": 90.158
+        },
+        {
+          "src": "/assets/98ac6.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 50.704,
+          "imageY": 40.016,
+          "imageWidth": 31.278,
+          "imageHeight": 57.386
+        }
+      ]
+    },
+    {
+      "id": "51:44200",
+      "label": "Milk & Yogurt",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/a796e.png",
+          "x": 17.117,
+          "y": 2.597,
+          "width": 48.226,
+          "height": 92.695,
+          "imageX": -28.138,
+          "imageY": -21.147,
+          "imageWidth": 151.401,
+          "imageHeight": 139.229
+        },
+        {
+          "src": "/assets/0b31d.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 49.254,
+          "imageY": 38.413,
+          "imageWidth": 33.629,
+          "imageHeight": 58.989
+        }
+      ]
+    },
+    {
+      "id": "51:44209",
+      "label": "Drink & Beer",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/353b6.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 18.018,
+          "imageY": 1.299,
+          "imageWidth": 46.903,
+          "imageHeight": 94.237
+        },
+        {
+          "src": "/assets/9fa6b.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 49.282,
+          "imageY": 38.17,
+          "imageWidth": 32.7,
+          "imageHeight": 59.436
+        }
+      ]
+    },
+    {
+      "id": "51:44218",
+      "label": "Bean Products\nhahahhha",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/bcd1e.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 16.216,
+          "imageY": 6.494,
+          "imageWidth": 43.004,
+          "imageHeight": 82.67
+        },
+        {
+          "src": "/assets/3b6e2.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 44.886,
+          "imageY": 26.205,
+          "imageWidth": 38.001,
+          "imageHeight": 65.61
+        }
+      ]
+    },
+    {
+      "id": "51:44227",
+      "label": "Meat, Roultry & Eggs",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/ba190.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 17.117,
+          "imageY": 2.597,
+          "imageWidth": 45.538,
+          "imageHeight": 89.509
+        },
+        {
+          "src": "/assets/07eb6.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 38.158,
+          "imageY": 28.626,
+          "imageWidth": 43.828,
+          "imageHeight": 69.229
+        }
+      ]
+    },
+    {
+      "id": "51:44237",
+      "label": "Pets",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/a1631.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 16.216,
+          "imageY": 1.299,
+          "imageWidth": 48.888,
+          "imageHeight": 93.953
+        },
+        {
+          "src": "/assets/2cbe8.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 44.355,
+          "imageY": 37.581,
+          "imageWidth": 38.528,
+          "imageHeight": 59.821
+        }
+      ]
+    },
+    {
+      "id": "51:44246",
+      "label": "Meat, Roultry & Eggs",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/3e698.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 17.117,
+          "imageY": 2.597,
+          "imageWidth": 48.226,
+          "imageHeight": 92.695
+        },
+        {
+          "src": "/assets/dc428.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 50.732,
+          "imageY": 38.413,
+          "imageWidth": 32.151,
+          "imageHeight": 58.989
+        }
+      ]
+    },
+    {
+      "id": "guest-category-0",
+      "label": "Candy & Chocolate",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/3d650.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 15,
+          "imageY": 5,
+          "imageWidth": 50,
+          "imageHeight": 90
+        },
+        {
+          "src": "/assets/d6c7b.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 45,
+          "imageY": 30,
+          "imageWidth": 50,
+          "imageHeight": 65
+        }
+      ]
+    },
+    {
+      "id": "guest-category-1",
+      "label": "Candy & Chocolate",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/3a405.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 15,
+          "imageY": 5,
+          "imageWidth": 50,
+          "imageHeight": 90
+        },
+        {
+          "src": "/assets/b6d6e.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 45,
+          "imageY": 30,
+          "imageWidth": 50,
+          "imageHeight": 65
+        }
+      ]
+    },
+    {
+      "id": "guest-category-2",
+      "label": "Candy & Chocolate",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/e89fd.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 15,
+          "imageY": 5,
+          "imageWidth": 50,
+          "imageHeight": 90
+        },
+        {
+          "src": "/assets/1e1e8.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 45,
+          "imageY": 30,
+          "imageWidth": 50,
+          "imageHeight": 65
+        }
+      ]
+    },
+    {
+      "id": "guest-category-3",
+      "label": "Bean Products\nhahahhha",
+      "promotion": false,
+      "layers": [
+        {
+          "src": "/assets/ba190.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 15,
+          "imageY": 5,
+          "imageWidth": 50,
+          "imageHeight": 90
+        },
+        {
+          "src": "/assets/07eb6.png",
+          "x": 0,
+          "y": 0,
+          "width": 100,
+          "height": 100,
+          "imageX": 45,
+          "imageY": 30,
+          "imageWidth": 50,
+          "imageHeight": 65
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "51:44315",
+      "name": "Ningxia Mini Fresh Broccoli-Spain",
+      "amount": "38.76",
+      "original": "40.76",
+      "weight": "500-700g",
+      "image": "/assets/58501.png",
+      "unavailable": false,
+      "action": "add",
+      "quantity": 1,
+      "imageFit": "contain",
+      "imageCrop": {
+        "x": 9.195075757575758,
+        "y": 6.770833333333333,
+        "width": 81.60984848484848,
+        "height": 88.39962121212122
+      }
+    },
+    {
+      "id": "51:44316",
+      "name": "Ningxia Mini Fresh Broccoli-Spain",
+      "amount": "38.76",
+      "original": "40.76",
+      "weight": "500-700g",
+      "image": "/assets/735bb.png",
+      "unavailable": false,
+      "action": "add",
+      "quantity": 1,
+      "imageFit": "cover",
+      "imageCrop": {
+        "x": -2.3768939393939394,
+        "y": 9.611742424242424,
+        "width": 104.74431818181817,
+        "height": 80.64393939393939
+      }
+    },
+    {
+      "id": "51:44317",
+      "name": "Ningxia Mini Fresh Broccoli-Spain",
+      "amount": "38.76",
+      "weight": "500-700g",
+      "image": "/assets/87766.png",
+      "unavailable": false,
+      "action": "count",
+      "quantity": 1,
+      "imageFit": "cover",
+      "imageCrop": {
+        "x": 0,
+        "y": -0.3693181818181818,
+        "width": 100,
+        "height": 100
+      }
+    },
+    {
+      "id": "51:44318",
+      "name": "Ningxia Mini Fresh Broccoli-Spain",
+      "amount": "38.76",
+      "weight": "500-700g",
+      "image": "/assets/4c126.png",
+      "unavailable": false,
+      "action": "add",
+      "quantity": 1,
+      "imageFit": "cover",
+      "imageCrop": {
+        "x": 0.056818181818181816,
+        "y": 13.683712121212121,
+        "width": 100,
+        "height": 72.63257575757575
+      }
+    },
+    {
+      "id": "51:44319",
+      "name": "Ningxia Mini Fresh Broccoli-Spain",
+      "amount": "38.76",
+      "weight": "500-700g",
+      "image": "/assets/b960e.png",
+      "unavailable": false,
+      "action": "add",
+      "quantity": 1,
+      "imageFit": "cover",
+      "imageCrop": {
+        "x": -10.12310606060606,
+        "y": 11.496212121212121,
+        "width": 122.74621212121212,
+        "height": 81.875
+      }
+    },
+    {
+      "id": "51:44320",
+      "name": "Ningxia Mini Fresh Broccoli-Spain",
+      "amount": "38.76",
+      "weight": "500-700g",
+      "image": "/assets/69a44.png",
+      "unavailable": false,
+      "action": "add",
+      "quantity": 1,
+      "imageFit": "cover",
+      "imageCrop": {
+        "x": 15.246212121212121,
+        "y": 4.8768939393939394,
+        "width": 69.50757575757575,
+        "height": 90.25568181818183
+      }
+    },
+    {
+      "id": "51:44321",
+      "name": "Ningxia Mini Fresh Broccoli-Spain",
+      "amount": "38.76",
+      "weight": "500-700g",
+      "image": "/assets/1c17d.png",
+      "unavailable": false,
+      "action": "add",
+      "quantity": 1,
+      "imageFit": "cover",
+      "imageCrop": {
+        "x": 0,
+        "y": 8.87310606060606,
+        "width": 102.74621212121211,
+        "height": 82.26325757575758
+      }
+    },
+    {
+      "id": "51:44322",
+      "name": "Ningxia Mini Fresh Broccoli-Spain",
+      "amount": "38.76",
+      "weight": "500-700g",
+      "image": "/assets/c7eef.png",
+      "unavailable": false,
+      "action": "add",
+      "quantity": 1,
+      "imageFit": "cover",
+      "imageCrop": {
+        "x": 0,
+        "y": 0,
+        "width": 100,
+        "height": 100
+      }
+    }
+  ]
+}

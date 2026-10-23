@@ -1,0 +1,693 @@
+{
+  "checkedAt": "2026-10-21",
+  "scope": [
+    "SwipeAction",
+    "Tag",
+    "ChoiceChip",
+    "Rating",
+    "EmptyState",
+    "ListRow",
+    "BottomSheet",
+    "ActionBar",
+    "PhoneField",
+    "Divider",
+    "Card",
+    "Section",
+    "Badge",
+    "HomeIndicator",
+    "NavBar",
+    "Tabs",
+    "SegmentedControl",
+    "SearchBar",
+    "FormField"
+  ],
+  "build": "passed",
+  "states": [
+    {
+      "name": "Tag",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Tag",
+      "variant": "neutral",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Tag",
+      "variant": "marketing",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Tag",
+      "variant": "warning",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "ChoiceChip",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "ChoiceChip",
+      "variant": "selected",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "ChoiceChip",
+      "variant": "white",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "ChoiceChip",
+      "variant": "white-selected",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "ChoiceChip",
+      "variant": "disabled",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Rating",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Rating",
+      "variant": "rated",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Rating",
+      "variant": "readonly",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Rating",
+      "variant": "sentiment",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Rating",
+      "variant": "sentiment-selected",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "ListRow",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "ListRow",
+      "variant": "description",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "BottomSheet",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "BottomSheet",
+      "variant": "long",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "BottomSheet",
+      "variant": "selection",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "ActionBar",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "ActionBar",
+      "variant": "single",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Divider",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Divider",
+      "variant": "label",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Card",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Card",
+      "variant": "header-footer",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Section",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Section",
+      "variant": "action",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Badge",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Badge",
+      "variant": "two-digits",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Badge",
+      "variant": "dot",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Badge",
+      "variant": "overflow",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "HomeIndicator",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "HomeIndicator",
+      "variant": "on-action-background",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "NavBar",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "NavBar",
+      "variant": "long",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "NavBar",
+      "variant": "no-back",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "NavBar",
+      "variant": "no-actions",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Tabs",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Tabs",
+      "variant": "scroll",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "Tabs",
+      "variant": "disabled",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "SegmentedControl",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "SegmentedControl",
+      "variant": "disabled",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "SearchBar",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "SearchBar",
+      "variant": "filled",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "SearchBar",
+      "variant": "disabled",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "FormField",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "FormField",
+      "variant": "error",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "action",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "orders",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "search",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "network",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "cart",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "favorites",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "points",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "goods",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "content",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "waiting",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "load-error",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "server-error",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "closed",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "location",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "SwipeAction",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "SwipeAction",
+      "variant": "disabled",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "PhoneField",
+      "variant": "default",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "PhoneField",
+      "variant": "filled",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "PhoneField",
+      "variant": "without-country",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "PhoneField",
+      "variant": "error",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "PhoneField",
+      "variant": "disabled",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "messages",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "vouchers",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "address",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "nothing",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "EmptyState",
+      "variant": "network-alt",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    },
+    {
+      "name": "ActionBar",
+      "variant": "content-width",
+      "brokenImages": [],
+      "overflow": false,
+      "rendered": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "FormField",
+      "variant": "default",
+      "pass": true,
+      "placeholder": "e.g. Leave at the door"
+    },
+    {
+      "name": "ActionBar",
+      "variant": "default",
+      "homeCount": 0,
+      "padding": "12px",
+      "pass": true
+    },
+    {
+      "name": "Badge",
+      "variant": "two-digits",
+      "height": "16px",
+      "pass": true,
+      "width": "17.8516px"
+    },
+    {
+      "name": "NavBar",
+      "variant": "no-actions",
+      "buttons": 0,
+      "pass": true
+    },
+    {
+      "name": "Divider",
+      "variant": "label",
+      "labelBackground": "rgba(0, 0, 0, 0)",
+      "pass": true
+    },
+    {
+      "name": "Tabs",
+      "variant": "scroll",
+      "layout": "flex",
+      "pass": true,
+      "scrollWidth": 759,
+      "width": 375
+    },
+    {
+      "name": "SegmentedControl",
+      "variant": "default",
+      "buttons": [
+        {
+          "label": "Recommended",
+          "scroll": 168,
+          "width": 168
+        },
+        {
+          "label": "Price",
+          "scroll": 92,
+          "width": 92
+        },
+        {
+          "label": "New in",
+          "scroll": 104,
+          "width": 104
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "SearchBar",
+      "variant": "default",
+      "field": "rgb(245, 245, 245)",
+      "pass": true,
+      "preview": "rgb(255, 255, 255)"
+    },
+    {
+      "name": "HomeIndicator",
+      "variant": "default",
+      "background": "rgba(0, 0, 0, 0)",
+      "pass": true
+    },
+    {
+      "name": "Rating active Bad",
+      "assets": [
+        "/assets/19aa3.svg",
+        "/assets/a8883.svg",
+        "/assets/8a76b.svg",
+        "/assets/7dfc3.svg",
+        "/assets/1eb23.svg",
+        "/assets/68073.svg"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Rating active Fair",
+      "assets": [
+        "/assets/3d182.svg",
+        "/assets/114a9.svg",
+        "/assets/00148.svg",
+        "/assets/00148.svg"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Rating active Average",
+      "assets": [
+        "/assets/6567c.svg",
+        "/assets/a3fb8.svg"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Rating active Good",
+      "assets": [
+        "/assets/a431a.svg"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Rating active Excellent",
+      "assets": [
+        "/assets/cb848.svg"
+      ],
+      "pass": true
+    },
+    {
+      "name": "PhoneField belongs to business",
+      "pass": true
+    },
+    {
+      "name": "Space removed from public catalogue",
+      "pass": true
+    },
+    {
+      "name": "Swipe reveal and delete",
+      "pass": true,
+      "evidence": "Native left drag opened actions; Delete click returned Removed and closed actions."
+    },
+    {
+      "name": "BottomSheet title",
+      "pass": true,
+      "font": "18px",
+      "line": "23px"
+    }
+  ],
+  "visualAcceptance": "Requested components inspected; existing full pages remain pending separate visual acceptance."
+}

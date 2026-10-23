@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+
+# Local credentials and machine settings
+.env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.key
+.idea/
+.vscode/
+coverage/
+playwright-report/
+test-results/
+__pycache__/
+*.pyc
