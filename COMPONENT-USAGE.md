@@ -10,7 +10,7 @@
 - 主要提交用 Button；取消、完成、查看、重发、新增入口用 TextButton。
 - 列表同层切换用 Tabs；应用主栏目用 TabBar；不要重复添加导航。
 
-## Button
+## 按钮（Button）
 
 **定义**：有填充或描边的明确操作按钮；执行当前区域的主要或次要任务。
 
@@ -26,7 +26,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Button&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## AddButton
+## 加购按钮（AddButton）
 
 **定义**：商品图片角落的圆形加购入口；只表达加入购物车这一操作。
 
@@ -38,7 +38,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=AddButton&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## QuantityStepper
+## 数量步进器（QuantityStepper）
 
 **定义**：一个商品的数量编辑控件；处理增加、减少、上限和数量为一时禁用减号。
 
@@ -56,7 +56,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=QuantityStepper&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Price
+## 价格（Price）
 
 **定义**：金额格式组件；统一币种、整数、小数、原价和促销价格的层级。
 
@@ -70,7 +70,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Price&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Tag
+## 标签（Tag）
 
 **定义**：不可点击的短状态标签；标记促销、门槛或商品状态。
 
@@ -88,7 +88,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Tag&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ChoiceChip
+## 选择标签（ChoiceChip）
 
 **定义**：可点击的单项选择标签；选中状态由页面传入，适合短选项。
 
@@ -114,7 +114,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ChoiceChip&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## TextField
+## 单行输入框（TextField）
 
 **定义**：有名称、占位提示、输入值和校验反馈的单行输入项。
 
@@ -136,7 +136,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=TextField&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## RadioRow
+## 单选行（RadioRow）
 
 **定义**：整行可点击的单选项；同组只能选择一个值。
 
@@ -150,7 +150,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=RadioRow&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Rating
+## 评分（Rating）
 
 **定义**：五级评分控件；商品用圆角星形 stars，配送服务用表情 sentiment，可编辑也可只读。
 
@@ -166,7 +166,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Rating&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## CouponCard
+## 优惠券卡片（CouponCard）
 
 **定义**：一张优惠券的权益、使用条件、有效期和可用状态。
 
@@ -182,7 +182,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=CouponCard&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ListRow
+## 列表行（ListRow）
 
 **定义**：单条设置或信息入口；由标题、说明、前置图标和尾部动作组成。
 
@@ -202,7 +202,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ListRow&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Notice
+## 提示条（Notice）
 
 **定义**：留在内容中的提示文字；解释规则、校验失败或注意事项。
 
@@ -214,7 +214,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Notice&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## BottomSheet
+## 底部抽屉（BottomSheet）
 
 **定义**：从页面底部出现的任务面板；背景保留上下文，内容过长时内部滚动。
 
@@ -238,7 +238,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=BottomSheet&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## StatusLabel
+## 状态文字（StatusLabel）
 
 **定义**：常规字重的纯文字状态，支持绿色和灰色。
 
@@ -258,7 +258,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=StatusLabel&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Text
+## 文本（Text）
 
 **定义**：按字阶和强调程度显示文本；不承载点击操作。
 
@@ -272,7 +272,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Text&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## TextButton
+## 文字按钮（TextButton）
 
 **定义**：无色块的文字操作；用于取消、完成、更多、重发、查看详情或新增入口。
 
@@ -288,7 +288,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=TextButton&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ActionBar
+## 操作栏（ActionBar）
 
 **定义**：底部操作按钮组；自带上下 12px 间距，支持等宽或按内容宽度，不包含 HomeIndicator。
 
@@ -308,7 +308,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ActionBar&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## OTPInput
+## 验证码输入框（OTPInput）
 
 **定义**：四位或六位验证码的分格输入；只接收数字并限制长度。
 
@@ -320,7 +320,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=OTPInput&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Grid
+## 网格布局（Grid）
 
 **定义**：把同层内容排成固定列数；不负责数据、选择或业务标题。
 
@@ -334,7 +334,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Grid&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Divider
+## 分割线（Divider）
 
 **定义**：分隔相邻内容，或在分隔线上显示短分组文字。
 
@@ -346,7 +346,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Divider&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Card
+## 卡片（Card）
 
 **定义**：白色内容容器；把同一小任务的信息组合起来，放在灰色页面上形成分区。
 
@@ -370,7 +370,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Card&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Section
+## 内容分区（Section）
 
 **定义**：统一“标题＋右侧可选入口＋内容”关系的布局工具；不绘制白卡、商品或背景，可由普通布局替代，不是独立业务控件。
 
@@ -394,7 +394,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Section&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Image
+## 图片（Image）
 
 **定义**：单张有明确含义的图片；负责填充方式、比例和加载失败状态。
 
@@ -406,7 +406,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Image&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Avatar
+## 头像（Avatar）
 
 **定义**：人的头像；缺图时显示姓名首字母，不能用商品图代替。
 
@@ -418,7 +418,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Avatar&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Badge
+## 角标（Badge）
 
 **定义**：附着在图标或入口上的数量或红点；不能当成独立任务按钮。
 
@@ -436,7 +436,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Badge&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## StatusBar
+## 状态栏（StatusBar）
 
 **定义**：系统状态栏外观；由 Page 默认提供，不在每张业务卡里重复放置。
 
@@ -450,7 +450,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=StatusBar&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## HomeIndicator
+## 底部手势条（HomeIndicator）
 
 **定义**：底部系统手势指示条；由 Page 或键盘持有且同屏只出现一次。
 
@@ -468,7 +468,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=HomeIndicator&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Page
+## 页面容器（Page）
 
 **定义**：页面底层容器；统一白／浅灰背景、状态栏、内容区和底部手势安全区。
 
@@ -502,7 +502,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Page&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## AppShell
+## 应用外壳（AppShell）
 
 **定义**：旧外壳兼容层；内部调用 Page，新组合页面直接使用 Page。
 
@@ -518,7 +518,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=AppShell&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## IconButton
+## 图标按钮（IconButton）
 
 **定义**：只有图标的操作入口；必须提供可理解的无障碍名称和点击事件。
 
@@ -530,7 +530,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=IconButton&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## NavBar
+## 顶部导航栏（NavBar）
 
 **定义**：页面标题栏；返回触点固定 44px，标题支持居中或左对齐，右侧可放文字操作。
 
@@ -552,7 +552,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=NavBar&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Tabs
+## 标签页（Tabs）
 
 **定义**：同一页面内的并列内容切换；等分或横向滚动，标题栏下直接放置。
 
@@ -570,7 +570,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Tabs&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## SegmentedControl
+## 分段选择器（SegmentedControl）
 
 **定义**：少量互斥视图的胶囊切换；用于同层模式，不用于底部主导航。
 
@@ -592,7 +592,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=SegmentedControl&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## TabBar
+## 底部导航栏（TabBar）
 
 **定义**：应用主栏目导航；首页、分类、购物车、账户四个入口保持相同宽度。
 
@@ -604,7 +604,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=TabBar&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Sidebar
+## 侧边分类栏（Sidebar）
 
 **定义**：纯文字的纵向分类选择；有图片的商品分类应使用 CategoryLayout。
 
@@ -616,7 +616,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Sidebar&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## SearchBar
+## 搜索框（SearchBar）
 
 **定义**：搜索输入原子项；包含搜索图标、placeholder、输入值和清除操作。
 
@@ -632,7 +632,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=SearchBar&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## FormField
+## 表单字段（FormField）
 
 **定义**：给自定义控件增加标签、必填标记和错误；不再嵌套另一个有标签输入项。
 
@@ -650,7 +650,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=FormField&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## TextArea
+## 多行输入框（TextArea）
 
 **定义**：多行输入；提供 placeholder、最大字数和实时计数。
 
@@ -664,7 +664,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=TextArea&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Checkbox
+## 复选框（Checkbox）
 
 **定义**：独立的勾选项；适用于多选和全选，不用于同组唯一选项。
 
@@ -678,7 +678,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Checkbox&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Switch
+## 开关（Switch）
 
 **定义**：立即切换生效的二元设置；不用于提交前的条款同意。
 
@@ -692,7 +692,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Switch&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## SelectField
+## 下拉选择框（SelectField）
 
 **定义**：从有限文字选项中选一个值；不承担国家旗帜或商品分类结构。
 
@@ -710,7 +710,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=SelectField&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Picker
+## 选择器（Picker）
 
 **定义**：打开底部选择面板的触发器；适合较长选项列表。
 
@@ -722,7 +722,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Picker&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## DatePicker
+## 日期选择器（DatePicker）
 
 **定义**：选择一个日期；配送时间段使用 DeliverySlotPicker。
 
@@ -734,7 +734,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=DatePicker&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Slider
+## 滑块（Slider）
 
 **定义**：在连续范围中选择数值；精确购买件数应使用 QuantityStepper。
 
@@ -746,7 +746,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Slider&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Uploader
+## 上传控件（Uploader）
 
 **定义**：有限数量的图片／视频选择和移除；文件发送由业务层接入。
 
@@ -758,7 +758,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Uploader&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## FilterBar
+## 筛选栏（FilterBar）
 
 **定义**：对结果集施加多个筛选条件；可重置，不取代主分类导航。
 
@@ -770,7 +770,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=FilterBar&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Carousel
+## 轮播图（Carousel）
 
 **定义**：在同一图片区切换图片或活动内容；带分页指示和当前页状态。
 
@@ -782,7 +782,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Carousel&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Collapse
+## 折叠面板（Collapse）
 
 **定义**：折叠展开一段补充信息；主流程必读内容不默认藏起。
 
@@ -794,7 +794,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Collapse&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Progress
+## 进度条（Progress）
 
 **定义**：一个已知比例的进度；不能用它冒充订单的离散状态。
 
@@ -806,7 +806,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Progress&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Steps
+## 步骤条（Steps）
 
 **定义**：一个流程的步骤关系；物流状态外观使用 OrderStageProgress。
 
@@ -818,7 +818,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Steps&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## EmptyState
+## 空状态（EmptyState）
 
 **定义**：列表为空或搜索无结果时的说明与下一步；插画必须对应当前场景。
 
@@ -836,7 +836,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=EmptyState&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Result
+## 结果展示（Result）
 
 **定义**：简单任务完成后的通用反馈；订单状态页应组合订单领域组件。
 
@@ -854,7 +854,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Result&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Loading
+## 加载指示器（Loading）
 
 **定义**：短时间等待的加载提示；需要保留布局时使用 Skeleton。
 
@@ -866,7 +866,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Loading&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Skeleton
+## 骨架屏（Skeleton）
 
 **定义**：加载前的结构占位；不显示虚构业务内容。
 
@@ -878,7 +878,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Skeleton&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Toast
+## 轻提示（Toast）
 
 **定义**：短暂、非阻塞的操作反馈；不承载必须点击确认的信息。
 
@@ -896,7 +896,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Toast&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Dialog
+## 对话框（Dialog）
 
 **定义**：页面中央的短确认框；只用于独立、简短、阻断式确认。
 
@@ -914,7 +914,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Dialog&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ActionSheet
+## 操作面板（ActionSheet）
 
 **定义**：底部的若干动作选择；适合拍照、选相册等命令，不承载长表单。
 
@@ -928,7 +928,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ActionSheet&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Popover
+## 气泡浮层（Popover）
 
 **定义**：紧贴触发入口的少量解释或操作；不适合手机长列表。
 
@@ -940,7 +940,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Popover&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ImageViewer
+## 图片查看器（ImageViewer）
 
 **定义**：查看一张图片的大图覆盖层；不是普通商品卡图片。
 
@@ -954,7 +954,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ImageViewer&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## SwipeAction
+## 左滑操作（SwipeAction）
 
 **定义**：列表行侧滑后出现的操作区；删除行为由页面决定。
 
@@ -978,7 +978,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=SwipeAction&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## PullRefresh
+## 下拉刷新（PullRefresh）
 
 **定义**：规范补充的下拉手势容器，不来自某张原稿的独立控件；达到阈值松手后触发 onRefresh，并展示刷新中或失败反馈。
 
@@ -996,7 +996,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=PullRefresh&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## LoadMore
+## 加载更多（LoadMore）
 
 **定义**：列表底部的加载、失败重试或到底提示。
 
@@ -1008,7 +1008,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=LoadMore&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## StickyBar
+## 吸底操作栏（StickyBar）
 
 **定义**：滚动容器底部的操作栏；支持单按钮、双按钮和内容＋按钮，页面级固定位置由 Page.footer 管理。
 
@@ -1028,7 +1028,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=StickyBar&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Keyboard
+## 模拟键盘（Keyboard）
 
 **定义**：本地演示的系统键盘外观；保留原稿结构，不能替代真实系统键盘。
 
@@ -1040,7 +1040,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Keyboard&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Countdown
+## 倒计时（Countdown）
 
 **定义**：按秒变化的剩余时间显示；重发校验和业务计时由调用方决定。
 
@@ -1052,7 +1052,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Countdown&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Artwork
+## 业务插画（Artwork）
 
 **定义**：有限插画区域的素材图层；只用于已有营销插画、状态插画和图标组合。
 
@@ -1064,7 +1064,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Artwork&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ListGroup
+## 列表分组（ListGroup）
 
 **定义**：一组有标题的信息入口；标题可放在卡片内部或外部。
 
@@ -1086,7 +1086,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ListGroup&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ProductCard
+## 商品卡片（ProductCard）
 
 **定义**：Figma 定制商卡；grid 双列、full-width 通栏、category 分类单列三种布局，共用价格、供应商、促销和购买状态。
 
@@ -1108,7 +1108,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ProductCard&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ProductPriceGroup
+## 商品价格组合（ProductPriceGroup）
 
 **定义**：价格业务组合；当前售价、币种、单位、单位价与划线原价的四种组合。
 
@@ -1122,7 +1122,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ProductPriceGroup&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ProductPurchaseControl
+## 商品购买控件（ProductPurchaseControl）
 
 **定义**：商卡购买状态；加购、数量、到达上限、多规格、到货提醒和找相似。
 
@@ -1136,7 +1136,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ProductPurchaseControl&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ProductStatusOverlay
+## 商品状态蒙层（ProductStatusOverlay）
 
 **定义**：商品图上的售罄、下架、非卖品蒙层；支持中英文。
 
@@ -1150,7 +1150,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ProductStatusOverlay&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ProductSupplierTag
+## 供应商标签（ProductSupplierTag）
 
 **定义**：商卡供应商入口；灰色底承载供应商图标、名称和箭头。
 
@@ -1164,7 +1164,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ProductSupplierTag&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ProductList
+## 商品列表（ProductList）
 
 **定义**：同一批商品卡的数据列表；统一网格／横向布局并回传商品操作。
 
@@ -1178,7 +1178,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ProductList&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ProductCollection
+## 推荐商品区（ProductCollection）
 
 **定义**：带标题和商品列表的推荐区；底层复用 ProductList。
 
@@ -1198,7 +1198,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ProductCollection&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ProductDetailHeader
+## 商品详情头部（ProductDetailHeader）
 
 **定义**：详情页的商品图片、价格和标题摘要；不包含配送和推荐商品。
 
@@ -1210,7 +1210,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ProductDetailHeader&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ProductSpecPicker
+## 商品规格选择器（ProductSpecPicker）
 
 **定义**：商品规格任务；包含商品摘要、必选项、加工方式、数量和确认动作。
 
@@ -1226,7 +1226,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ProductSpecPicker&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## CartItem
+## 购物车商品行（CartItem）
 
 **定义**：购物车或订单中的单个商品行；有数量、价格、赠品或失效状态。
 
@@ -1244,7 +1244,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=CartItem&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## CartGroup
+## 购物车商品组（CartGroup）
 
 **定义**：同一购买分组的商品容器与全选；不把所有优惠活动硬塞成一个组。
 
@@ -1256,7 +1256,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=CartGroup&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## CartSummaryBar
+## 购物车结算栏（CartSummaryBar）
 
 **定义**：购物车底部总额和结算入口；汇总值从购物车状态传入。
 
@@ -1268,7 +1268,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=CartSummaryBar&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## InvalidProductsSheet
+## 失效商品抽屉（InvalidProductsSheet）
 
 **定义**：结算前的失效商品拦截面板；保留返回与继续两条路径。
 
@@ -1280,7 +1280,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=InvalidProductsSheet&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## AddressCard
+## 地址卡片（AddressCard）
 
 **定义**：一个收货地址的摘要；结算 delivery 变体带地址标题和轻地图背景。
 
@@ -1292,7 +1292,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=AddressCard&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## AddressPicker
+## 地址选择器（AddressPicker）
 
 **定义**：从地址簿选择一个收货地址；提供空态和新增地址入口。
 
@@ -1306,7 +1306,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=AddressPicker&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## AddressForm
+## 地址表单（AddressForm）
 
 **定义**：编辑地址、联系人、手机号和标签的完整地址任务。
 
@@ -1326,7 +1326,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=AddressForm&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## MapAddressPicker
+## 地图选址（MapAddressPicker）
 
 **定义**：地图选点任务；地图服务放入受限插槽，地点值由页面回传。
 
@@ -1342,7 +1342,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=MapAddressPicker&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## DeliverySlotPicker
+## 配送时段选择器（DeliverySlotPicker）
 
 **定义**：选择配送日期和时间段；展示已满或不可选的时段。
 
@@ -1354,7 +1354,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=DeliverySlotPicker&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## DeliveryProgress
+## 配送进度（DeliveryProgress）
 
 **定义**：配送时间入口与小车进度条；不能替代订单物流状态条。
 
@@ -1366,7 +1366,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=DeliveryProgress&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## PaymentMethodRow
+## 支付方式行（PaymentMethodRow）
 
 **定义**：一种支付方式的单选行；统一标识尺寸、名称和选择状态。
 
@@ -1378,7 +1378,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=PaymentMethodRow&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## BankCard
+## 银行卡片（BankCard）
 
 **定义**：已绑定银行卡的摘要与管理操作；不是支付方式列表的大广告卡。
 
@@ -1392,7 +1392,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=BankCard&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## BankCardForm
+## 银行卡表单（BankCardForm）
 
 **定义**：新增银行卡输入任务；姓名、卡号、到期日、安全码及逐项校验。
 
@@ -1404,7 +1404,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=BankCardForm&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## PaymentMethodPicker
+## 支付方式选择器（PaymentMethodPicker）
 
 **定义**：支付方式选择任务；在线支付与已绑定卡分组，底部提供新增卡文字入口。
 
@@ -1420,7 +1420,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=PaymentMethodPicker&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## CheckoutSummary
+## 结算明细（CheckoutSummary）
 
 **定义**：结算金额明细；展示商品、优惠、运费及总额，所有金额由页面传入。
 
@@ -1432,7 +1432,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=CheckoutSummary&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## OrderCard
+## 订单卡片（OrderCard）
 
 **定义**：订单摘要；列表变体用于订单列表，overview 变体用于状态页的订单号与商品缩略图。
 
@@ -1444,7 +1444,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=OrderCard&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## OrderStatusHeader
+## 订单状态头部（OrderStatusHeader）
 
 **定义**：订单当前状态的标题、说明与插画；待支付、失败、成功等保持独立数据。
 
@@ -1460,7 +1460,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=OrderStatusHeader&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## OrderTimeline
+## 订单时间线（OrderTimeline）
 
 **定义**：订单事件的时间记录；仅在有时间节点的详情中使用。
 
@@ -1472,7 +1472,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=OrderTimeline&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## OrderInfo
+## 订单信息（OrderInfo）
 
 **定义**：订单号、下单时间等标签值信息；可提供复制操作。
 
@@ -1484,7 +1484,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=OrderInfo&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## CancelReasonPicker
+## 取消原因选择器（CancelReasonPicker）
 
 **定义**：取消订单原因任务；包含单选原因、其他说明及确认。
 
@@ -1502,7 +1502,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=CancelReasonPicker&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ReviewCard
+## 评价卡片（ReviewCard）
 
 **定义**：已经提交的商品评价；只读展示评分、细分结果、文字和照片。
 
@@ -1514,7 +1514,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ReviewCard&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ProductRatingPanel
+## 商品评分面板（ProductRatingPanel）
 
 **定义**：一个商品的评价任务；商品摘要、星级、口味／新鲜度、文字和媒体属于同一领域结构。
 
@@ -1530,7 +1530,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ProductRatingPanel&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## RiderRatingPanel
+## 配送评分面板（RiderRatingPanel）
 
 **定义**：配送服务评价；骑手、送达时间、五档表情评分、等级文字和补充意见。
 
@@ -1542,7 +1542,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=RiderRatingPanel&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ReviewEditor
+## 评价编辑器（ReviewEditor）
 
 **定义**：只编辑商品评分、细分选项、文字和媒体；复用 ProductRatingPanel，提交按钮由页面操作栏提供。
 
@@ -1560,7 +1560,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ReviewEditor&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## MediaPicker
+## 媒体选择器（MediaPicker）
 
 **定义**：本地演示的媒体网格选择；相机、相册权限与真实媒体由服务接入。
 
@@ -1574,7 +1574,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=MediaPicker&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## PromoCodeForm
+## 优惠码表单（PromoCodeForm）
 
 **定义**：优惠码输入与兑换任务；包含清除、可提交状态、加载和错误反馈。
 
@@ -1592,7 +1592,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=PromoCodeForm&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## CampaignBanner
+## 活动横幅（CampaignBanner）
 
 **定义**：一个活动的图文入口；活动素材和文案由配置提供，不代替商品分类。
 
@@ -1604,7 +1604,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=CampaignBanner&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## NewUserOffer
+## 新客优惠（NewUserOffer）
 
 **定义**：新人券包活动；展示总权益、券列表和查看详情入口。
 
@@ -1616,7 +1616,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=NewUserOffer&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## AccountHeader
+## 账户头部（AccountHeader）
 
 **定义**：账户身份摘要；区分游客登录入口与已登录头像姓名。
 
@@ -1630,7 +1630,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=AccountHeader&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## SettingGroup
+## 设置分组（SettingGroup）
 
 **定义**：同组设置入口；管理标题、辅助值和图标，不执行真实设置请求。
 
@@ -1642,7 +1642,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=SettingGroup&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## SupportEntryGrid
+## 客服入口网格（SupportEntryGrid）
 
 **定义**：客服问题类型入口；每项映射一个问题类别，不用于商城商品分类。
 
@@ -1654,7 +1654,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=SupportEntryGrid&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ChatMessage
+## 聊天消息（ChatMessage）
 
 **定义**：客服聊天中的单条用户、客服或系统消息。
 
@@ -1678,7 +1678,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ChatMessage&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ChatComposer
+## 聊天输入栏（ChatComposer）
 
 **定义**：客服聊天的输入与发送区；消息内容和发送状态由页面管理。
 
@@ -1692,7 +1692,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ChatComposer&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ServiceQueue
+## 客服排队提示（ServiceQueue）
 
 **定义**：等待人工客服的排队状态；展示排位与取消等待。
 
@@ -1710,7 +1710,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ServiceQueue&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ServiceTicketCard
+## 售后工单卡片（ServiceTicketCard）
 
 **定义**：一次客服工单摘要；展示状态、时间及继续或查看历史操作。
 
@@ -1724,7 +1724,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ServiceTicketCard&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ServiceTicketDetail
+## 售后工单详情（ServiceTicketDetail）
 
 **定义**：一个客服问题的详情和联系入口；不混入购物订单的状态。
 
@@ -1736,7 +1736,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ServiceTicketDetail&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## FAQList
+## 常见问题列表（FAQList）
 
 **定义**：常见问题的折叠问答列表；仅供查询，不收集表单。
 
@@ -1748,7 +1748,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=FAQList&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## BrandLogo
+## 品牌标志（BrandLogo）
 
 **定义**：已有品牌标识；只在登录或首页品牌区域使用，不作为普通标题字体。
 
@@ -1760,7 +1760,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=BrandLogo&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## LegalText
+## 法律条款文本（LegalText）
 
 **定义**：带服务条款／隐私链接的合规文字；主文和链接共用同一字阶。
 
@@ -1772,7 +1772,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=LegalText&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## CountryPicker
+## 国家或地区选择器（CountryPicker）
 
 **定义**：手机号区号选择任务；国家、旗帜、区号保持一行的业务关系。
 
@@ -1784,7 +1784,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=CountryPicker&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## PhoneLoginForm
+## 手机号登录表单（PhoneLoginForm）
 
 **定义**：登录手机号任务；标题、区号、手机号、继续、协议和邮箱替代入口整体复用。
 
@@ -1796,7 +1796,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=PhoneLoginForm&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## VerificationCodeField
+## 验证码字段（VerificationCodeField）
 
 **定义**：验证码验证任务；包含接收号码、OTPInput、重发和更多方式。
 
@@ -1808,7 +1808,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=VerificationCodeField&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## ConsentSheet
+## 授权确认抽屉（ConsentSheet）
 
 **定义**：授权告知任务；正文可滚动，接受与拒绝等宽，是否可关闭遵循授权流程。
 
@@ -1820,7 +1820,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ConsentSheet&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## OrderRemarks
+## 订单备注（OrderRemarks）
 
 **定义**：配送备注任务；快捷标签、历史备注、多行补充和确认。
 
@@ -1834,7 +1834,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=OrderRemarks&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## OrderSubmitBar
+## 订单提交栏（OrderSubmitBar）
 
 **定义**：结算底部的金额与下单操作；可展示当前支付方式标识。
 
@@ -1846,7 +1846,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=OrderSubmitBar&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## AccountDeletionNotice
+## 账户注销说明（AccountDeletionNotice）
 
 **定义**：注销前提及权益说明；使用正常文档流，避免文字重叠。
 
@@ -1858,7 +1858,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=AccountDeletionNotice&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## PromotionGroup
+## 促销商品组（PromotionGroup）
 
 **定义**：原稿购物车活动条与参与商品的分组；复用 CartPromotionBar 和商品行，不加虚构全选框、绿色提示卡或额外白卡。
 
@@ -1876,7 +1876,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=PromotionGroup&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## UnavailableProductsGroup
+## 不可用商品组（UnavailableProductsGroup）
 
 **定义**：购物车失效商品分组；展示失效原因、数量、展开和移除。
 
@@ -1890,7 +1890,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=UnavailableProductsGroup&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## CartHeader
+## 购物车头部（CartHeader）
 
 **定义**：购物车标题、商品总数、收货地址入口和清空操作。
 
@@ -1908,7 +1908,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=CartHeader&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## SearchHeader
+## 搜索页头部（SearchHeader）
 
 **定义**：独立搜索页面头部；返回、搜索输入、购物车入口共同组成。
 
@@ -1920,7 +1920,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=SearchHeader&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## SearchSuggestions
+## 搜索建议（SearchSuggestions）
 
 **定义**：搜索历史或热门词区域；支持词条点击、历史清除和展开。
 
@@ -1932,7 +1932,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=SearchSuggestions&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## CategoryTile
+## 分类入口卡片（CategoryTile）
 
 **定义**：首页一个商品分类入口；可用普通图文或营销首项变体。
 
@@ -1944,7 +1944,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=CategoryTile&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## CategoryGrid
+## 分类入口网格（CategoryGrid）
 
 **定义**：首页商品分类入口网格；每个入口对应真实分类数据。
 
@@ -1956,7 +1956,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=CategoryGrid&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## HomeHeader
+## 首页头部（HomeHeader）
 
 **定义**：商城首页头部；品牌、地址、配送承诺、辅助信息和搜索组成。
 
@@ -1968,7 +1968,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=HomeHeader&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## CategoryLayout
+## 分类页框架（CategoryLayout）
 
 **定义**：商品分类浏览任务；主分类、带图次分类和商品列表一起协同。
 
@@ -1986,7 +1986,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=CategoryLayout&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## OrderStageProgress
+## 订单阶段进度（OrderStageProgress）
 
 **定义**：订单离散进展的横向状态条；对应下单、备货、配送、签收。
 
@@ -1998,7 +1998,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=OrderStageProgress&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## OrderArrival
+## 订单送达信息（OrderArrival）
 
 **定义**：订单到达时间和当前允许的动作；待支付用 Repay，配送中可联系配送员。
 
@@ -2012,7 +2012,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=OrderArrival&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## OrderDeliveryDetails
+## 订单配送详情（OrderDeliveryDetails）
 
 **定义**：订单配送信息分区；统一时间、收货地址和联系人标签值布局。
 
@@ -2024,7 +2024,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=OrderDeliveryDetails&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## PhoneField
+## 手机号输入框（PhoneField）
 
 **定义**：手机号单行输入；可带区号入口，也可仅输入手机号。
 
@@ -2042,7 +2042,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=PhoneField&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## SupportOrderCard
+## 客服订单卡片（SupportOrderCard）
 
 **定义**：客服选择订单及聊天引用的紧凑订单卡；展示原稿订单编号、四张商品图、数量、状态和时间。
 
@@ -2056,7 +2056,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=SupportOrderCard&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## RiderReviewCard
+## 配送评价卡片（RiderReviewCard）
 
 **定义**：已提交配送评价的只读摘要；展示骑手、已选表情和评价正文。
 
@@ -2068,7 +2068,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=RiderReviewCard&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## CartPromotionBar
+## 购物车活动条（CartPromotionBar）
 
 **定义**：购物车 GIFT/SALE 活动条；标签、活动标题、操作和辅助说明按原稿分层。
 
@@ -2086,7 +2086,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=CartPromotionBar&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## VoucherList
+## 优惠券列表（VoucherList）
 
 **定义**：优惠券列表承载层；统一灰色背景、白色券卡，以及无券和历史券状态。
 
@@ -2104,7 +2104,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=VoucherList&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## VoucherSuccessDialog
+## 兑券成功弹窗（VoucherSuccessDialog）
 
 **定义**：兑换券成功弹窗；固定浅绿渐变背景、白色券卡和 Got it，关闭按钮可选。
 
@@ -2122,7 +2122,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=VoucherSuccessDialog&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## HomeVoucherBanner
+## 首页新客券横幅（HomeVoucherBanner）
 
 **定义**：首页新客券营销头图；使用原稿手部素材、SAR100 权益和入口。
 
@@ -2138,7 +2138,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=HomeVoucherBanner&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
-## Icon
+## 图标（Icon）
 
 **定义**：本地 SVG 图标库入口；必须选择与含义相符的名称和状态。
 

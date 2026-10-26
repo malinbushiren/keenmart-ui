@@ -10,3 +10,5 @@
 - 优惠券列表和推荐 feeds 使用组件自带的灰色承载层与白卡；Profile、About 使用灰底白卡。单操作结果页用通栏按钮，多条失败原因放在卡片中。
 - 商卡统一使用 ProductCard 的 grid / full-width / category 三种变体，分类框架使用 CategoryLayout；不得恢复旧商卡入口、旧基础 ProductCard 或 CategoryBrowser。新增页面先核对 commerce-anatomy、category-framework 规则。
 - Figma 验收 137:52176：取消原因使用原稿底部抽屉组合；ReviewEditor 不包含 Submit；灰内容不放灰背景；新控件风格沿用基础规范。按验收编号记录修改，不扩大未标注区域。
+
+- 组件展示名称统一中文为主、英文为辅助。`src/design-system/component-names.json` 为中文名称源；新增组件必须补齐唯一中文名。代码标识、导出、URL 与接口仍使用原英文名称，搜索同时支持中英文。

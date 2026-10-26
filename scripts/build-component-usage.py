@@ -178,7 +178,7 @@ text='# 组件定义与使用手册 · v0.12\n\n基础组件处理通用外观�
 text+='## 从页面开始选择\n\n- 连续正文、登录、输入银行卡：Page white。\n- 分类、商品网格、购物车、结算、订单、评价、地址簿：Page gray，内容卡片 white。\n- 原稿是底部选择或确认面板：BottomSheet；独立短确认才用 Dialog。\n- 主要提交用 Button；取消、完成、查看、重发、新增入口用 TextButton。\n- 列表同层切换用 Tabs；应用主栏目用 TabBar；不要重复添加导航。\n\n'
 rules=json.loads((p/'design-rules.json').read_text())
 for x in catalog:
- u=rows[x['name']];text+='## '+x['name']+'\n\n**定义**：'+u['definition']+'\n\n**何时使用**：'+u['when']+'\n\n**不要这样用**：'+u['avoid']+'\n\n**职责边界**：'+u['boundary']+'\n\n'
+ u=rows[x['name']];text+='## '+x['displayName']+'（'+x['name']+'）'+'\n\n**定义**：'+u['definition']+'\n\n**何时使用**：'+u['when']+'\n\n**不要这样用**：'+u['avoid']+'\n\n**职责边界**：'+u['boundary']+'\n\n'
  for rule in rules:
   if x['name'] in rule['components']:text+='**设计规则 · '+rule['title']+'**：'+rule['rule']+'\n\n'
  if u['example']:text+='```tsx\n'+u['example']+'\n```\n\n'

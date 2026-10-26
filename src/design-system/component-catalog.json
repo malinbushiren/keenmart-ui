@@ -1,6 +1,7 @@
 [
   {
     "name": "Button",
+    "displayName": "按钮",
     "kind": "basic",
     "category": "操作",
     "origin": "observed",
@@ -24,6 +25,7 @@
   },
   {
     "name": "AddButton",
+    "displayName": "加购按钮",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -44,6 +46,7 @@
   },
   {
     "name": "QuantityStepper",
+    "displayName": "数量步进器",
     "kind": "basic",
     "category": "操作",
     "origin": "observed",
@@ -67,6 +70,7 @@
   },
   {
     "name": "Price",
+    "displayName": "价格",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -89,6 +93,7 @@
   },
   {
     "name": "Tag",
+    "displayName": "标签",
     "kind": "basic",
     "category": "展示",
     "origin": "observed",
@@ -110,6 +115,7 @@
   },
   {
     "name": "ChoiceChip",
+    "displayName": "选择标签",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "observed",
@@ -132,6 +138,7 @@
   },
   {
     "name": "TextField",
+    "displayName": "单行输入框",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "observed",
@@ -153,6 +160,7 @@
   },
   {
     "name": "RadioRow",
+    "displayName": "单选行",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "observed",
@@ -173,6 +181,7 @@
   },
   {
     "name": "Rating",
+    "displayName": "评分",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "observed",
@@ -195,6 +204,7 @@
   },
   {
     "name": "CouponCard",
+    "displayName": "优惠券卡片",
     "kind": "business",
     "category": "优惠与账户",
     "origin": "observed",
@@ -217,6 +227,7 @@
   },
   {
     "name": "ListRow",
+    "displayName": "列表行",
     "kind": "basic",
     "category": "展示",
     "origin": "observed",
@@ -235,6 +246,7 @@
   },
   {
     "name": "Notice",
+    "displayName": "提示条",
     "kind": "basic",
     "category": "反馈",
     "origin": "observed",
@@ -254,6 +266,7 @@
   },
   {
     "name": "BottomSheet",
+    "displayName": "底部抽屉",
     "kind": "basic",
     "category": "反馈",
     "origin": "observed",
@@ -274,6 +287,7 @@
   },
   {
     "name": "StatusLabel",
+    "displayName": "状态文字",
     "kind": "basic",
     "category": "展示",
     "origin": "observed",
@@ -292,6 +306,7 @@
   },
   {
     "name": "Text",
+    "displayName": "文本",
     "kind": "basic",
     "category": "展示",
     "origin": "observed",
@@ -311,6 +326,7 @@
   },
   {
     "name": "TextButton",
+    "displayName": "文字按钮",
     "kind": "basic",
     "category": "操作",
     "origin": "observed",
@@ -330,6 +346,7 @@
   },
   {
     "name": "ActionBar",
+    "displayName": "操作栏",
     "kind": "basic",
     "category": "页面与布局",
     "origin": "observed",
@@ -349,6 +366,7 @@
   },
   {
     "name": "OTPInput",
+    "displayName": "验证码输入框",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "observed",
@@ -371,6 +389,7 @@
   },
   {
     "name": "Grid",
+    "displayName": "网格布局",
     "kind": "basic",
     "category": "页面与布局",
     "origin": "supplemental",
@@ -386,6 +405,7 @@
   },
   {
     "name": "Divider",
+    "displayName": "分割线",
     "kind": "basic",
     "category": "页面与布局",
     "origin": "observed",
@@ -404,6 +424,7 @@
   },
   {
     "name": "Card",
+    "displayName": "卡片",
     "kind": "basic",
     "category": "页面与布局",
     "origin": "observed",
@@ -422,6 +443,7 @@
   },
   {
     "name": "Section",
+    "displayName": "内容分区",
     "kind": "basic",
     "category": "页面与布局",
     "origin": "observed",
@@ -440,6 +462,7 @@
   },
   {
     "name": "Image",
+    "displayName": "图片",
     "kind": "basic",
     "category": "展示",
     "origin": "supplemental",
@@ -456,6 +479,7 @@
   },
   {
     "name": "Avatar",
+    "displayName": "头像",
     "kind": "basic",
     "category": "展示",
     "origin": "supplemental",
@@ -471,6 +495,7 @@
   },
   {
     "name": "Badge",
+    "displayName": "角标",
     "kind": "basic",
     "category": "展示",
     "origin": "observed",
@@ -491,6 +516,7 @@
   },
   {
     "name": "StatusBar",
+    "displayName": "状态栏",
     "kind": "basic",
     "category": "页面与布局",
     "origin": "observed",
@@ -509,6 +535,7 @@
   },
   {
     "name": "HomeIndicator",
+    "displayName": "底部手势条",
     "kind": "basic",
     "category": "页面与布局",
     "origin": "observed",
@@ -527,6 +554,7 @@
   },
   {
     "name": "Page",
+    "displayName": "页面容器",
     "kind": "basic",
     "category": "页面与布局",
     "origin": "observed",
@@ -549,6 +577,7 @@
   },
   {
     "name": "AppShell",
+    "displayName": "应用外壳",
     "kind": "basic",
     "category": "页面与布局",
     "origin": "observed",
@@ -572,6 +601,7 @@
   },
   {
     "name": "IconButton",
+    "displayName": "图标按钮",
     "kind": "basic",
     "category": "操作",
     "origin": "observed",
@@ -592,6 +622,7 @@
   },
   {
     "name": "NavBar",
+    "displayName": "顶部导航栏",
     "kind": "basic",
     "category": "导航",
     "origin": "observed",
@@ -614,6 +645,7 @@
   },
   {
     "name": "Tabs",
+    "displayName": "标签页",
     "kind": "basic",
     "category": "导航",
     "origin": "observed",
@@ -633,6 +665,7 @@
   },
   {
     "name": "SegmentedControl",
+    "displayName": "分段选择器",
     "kind": "basic",
     "category": "导航",
     "origin": "observed",
@@ -653,6 +686,7 @@
   },
   {
     "name": "TabBar",
+    "displayName": "底部导航栏",
     "kind": "basic",
     "category": "导航",
     "origin": "observed",
@@ -674,6 +708,7 @@
   },
   {
     "name": "Sidebar",
+    "displayName": "侧边分类栏",
     "kind": "basic",
     "category": "导航",
     "origin": "observed",
@@ -692,6 +727,7 @@
   },
   {
     "name": "SearchBar",
+    "displayName": "搜索框",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "observed",
@@ -716,6 +752,7 @@
   },
   {
     "name": "FormField",
+    "displayName": "表单字段",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "supplemental",
@@ -731,6 +768,7 @@
   },
   {
     "name": "TextArea",
+    "displayName": "多行输入框",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "observed",
@@ -752,6 +790,7 @@
   },
   {
     "name": "Checkbox",
+    "displayName": "复选框",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "observed",
@@ -772,6 +811,7 @@
   },
   {
     "name": "Switch",
+    "displayName": "开关",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "supplemental",
@@ -788,6 +828,7 @@
   },
   {
     "name": "SelectField",
+    "displayName": "下拉选择框",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "observed",
@@ -809,6 +850,7 @@
   },
   {
     "name": "Picker",
+    "displayName": "选择器",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "observed",
@@ -831,6 +873,7 @@
   },
   {
     "name": "DatePicker",
+    "displayName": "日期选择器",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "supplemental",
@@ -846,6 +889,7 @@
   },
   {
     "name": "Slider",
+    "displayName": "滑块",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "supplemental",
@@ -861,6 +905,7 @@
   },
   {
     "name": "Uploader",
+    "displayName": "上传控件",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "observed",
@@ -882,6 +927,7 @@
   },
   {
     "name": "FilterBar",
+    "displayName": "筛选栏",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "observed",
@@ -904,6 +950,7 @@
   },
   {
     "name": "Carousel",
+    "displayName": "轮播图",
     "kind": "basic",
     "category": "展示",
     "origin": "observed",
@@ -925,6 +972,7 @@
   },
   {
     "name": "Collapse",
+    "displayName": "折叠面板",
     "kind": "basic",
     "category": "展示",
     "origin": "observed",
@@ -943,6 +991,7 @@
   },
   {
     "name": "Progress",
+    "displayName": "进度条",
     "kind": "basic",
     "category": "展示",
     "origin": "observed",
@@ -961,6 +1010,7 @@
   },
   {
     "name": "Steps",
+    "displayName": "步骤条",
     "kind": "basic",
     "category": "展示",
     "origin": "observed",
@@ -979,6 +1029,7 @@
   },
   {
     "name": "EmptyState",
+    "displayName": "空状态",
     "kind": "basic",
     "category": "反馈",
     "origin": "observed",
@@ -1016,6 +1067,7 @@
   },
   {
     "name": "Result",
+    "displayName": "结果展示",
     "kind": "basic",
     "category": "反馈",
     "origin": "observed",
@@ -1039,6 +1091,7 @@
   },
   {
     "name": "Loading",
+    "displayName": "加载指示器",
     "kind": "basic",
     "category": "反馈",
     "origin": "supplemental",
@@ -1053,6 +1106,7 @@
   },
   {
     "name": "Skeleton",
+    "displayName": "骨架屏",
     "kind": "basic",
     "category": "反馈",
     "origin": "supplemental",
@@ -1068,6 +1122,7 @@
   },
   {
     "name": "Toast",
+    "displayName": "轻提示",
     "kind": "basic",
     "category": "反馈",
     "origin": "observed",
@@ -1085,6 +1140,7 @@
   },
   {
     "name": "Dialog",
+    "displayName": "对话框",
     "kind": "basic",
     "category": "反馈",
     "origin": "observed",
@@ -1104,6 +1160,7 @@
   },
   {
     "name": "ActionSheet",
+    "displayName": "操作面板",
     "kind": "basic",
     "category": "反馈",
     "origin": "observed",
@@ -1125,6 +1182,7 @@
   },
   {
     "name": "Popover",
+    "displayName": "气泡浮层",
     "kind": "basic",
     "category": "反馈",
     "origin": "supplemental",
@@ -1139,6 +1197,7 @@
   },
   {
     "name": "ImageViewer",
+    "displayName": "图片查看器",
     "kind": "basic",
     "category": "反馈",
     "origin": "observed",
@@ -1161,6 +1220,7 @@
   },
   {
     "name": "SwipeAction",
+    "displayName": "左滑操作",
     "kind": "basic",
     "category": "反馈",
     "origin": "observed",
@@ -1182,6 +1242,7 @@
   },
   {
     "name": "PullRefresh",
+    "displayName": "下拉刷新",
     "kind": "basic",
     "category": "反馈",
     "origin": "supplemental",
@@ -1197,6 +1258,7 @@
   },
   {
     "name": "LoadMore",
+    "displayName": "加载更多",
     "kind": "basic",
     "category": "反馈",
     "origin": "supplemental",
@@ -1216,6 +1278,7 @@
   },
   {
     "name": "StickyBar",
+    "displayName": "吸底操作栏",
     "kind": "basic",
     "category": "页面与布局",
     "origin": "supplemental",
@@ -1232,6 +1295,7 @@
   },
   {
     "name": "Keyboard",
+    "displayName": "模拟键盘",
     "kind": "basic",
     "category": "输入与筛选",
     "origin": "observed",
@@ -1254,6 +1318,7 @@
   },
   {
     "name": "Countdown",
+    "displayName": "倒计时",
     "kind": "basic",
     "category": "展示",
     "origin": "observed",
@@ -1272,6 +1337,7 @@
   },
   {
     "name": "Artwork",
+    "displayName": "业务插画",
     "kind": "basic",
     "category": "展示",
     "origin": "observed",
@@ -1289,6 +1355,7 @@
   },
   {
     "name": "ListGroup",
+    "displayName": "列表分组",
     "kind": "basic",
     "category": "页面与布局",
     "origin": "observed",
@@ -1310,6 +1377,7 @@
   },
   {
     "name": "ProductCard",
+    "displayName": "商品卡片",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1350,6 +1418,7 @@
   },
   {
     "name": "ProductPriceGroup",
+    "displayName": "商品价格组合",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1371,6 +1440,7 @@
   },
   {
     "name": "ProductPurchaseControl",
+    "displayName": "商品购买控件",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1399,6 +1469,7 @@
   },
   {
     "name": "ProductStatusOverlay",
+    "displayName": "商品状态蒙层",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1420,6 +1491,7 @@
   },
   {
     "name": "ProductSupplierTag",
+    "displayName": "供应商标签",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1436,6 +1508,7 @@
   },
   {
     "name": "ProductList",
+    "displayName": "商品列表",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1460,6 +1533,7 @@
   },
   {
     "name": "ProductCollection",
+    "displayName": "推荐商品区",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1482,6 +1556,7 @@
   },
   {
     "name": "ProductDetailHeader",
+    "displayName": "商品详情头部",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1507,6 +1582,7 @@
   },
   {
     "name": "ProductSpecPicker",
+    "displayName": "商品规格选择器",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1532,6 +1608,7 @@
   },
   {
     "name": "CartItem",
+    "displayName": "购物车商品行",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1559,6 +1636,7 @@
   },
   {
     "name": "CartGroup",
+    "displayName": "购物车商品组",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1582,6 +1660,7 @@
   },
   {
     "name": "CartSummaryBar",
+    "displayName": "购物车结算栏",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1605,6 +1684,7 @@
   },
   {
     "name": "InvalidProductsSheet",
+    "displayName": "失效商品抽屉",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1625,6 +1705,7 @@
   },
   {
     "name": "AddressCard",
+    "displayName": "地址卡片",
     "kind": "business",
     "category": "地址与配送",
     "origin": "observed",
@@ -1650,6 +1731,7 @@
   },
   {
     "name": "AddressPicker",
+    "displayName": "地址选择器",
     "kind": "business",
     "category": "地址与配送",
     "origin": "observed",
@@ -1674,6 +1756,7 @@
   },
   {
     "name": "AddressForm",
+    "displayName": "地址表单",
     "kind": "business",
     "category": "地址与配送",
     "origin": "observed",
@@ -1706,6 +1789,7 @@
   },
   {
     "name": "MapAddressPicker",
+    "displayName": "地图选址",
     "kind": "business",
     "category": "地址与配送",
     "origin": "observed",
@@ -1730,6 +1814,7 @@
   },
   {
     "name": "DeliverySlotPicker",
+    "displayName": "配送时段选择器",
     "kind": "business",
     "category": "地址与配送",
     "origin": "observed",
@@ -1753,6 +1838,7 @@
   },
   {
     "name": "DeliveryProgress",
+    "displayName": "配送进度",
     "kind": "business",
     "category": "地址与配送",
     "origin": "observed",
@@ -1777,6 +1863,7 @@
   },
   {
     "name": "PaymentMethodRow",
+    "displayName": "支付方式行",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -1797,6 +1884,7 @@
   },
   {
     "name": "BankCard",
+    "displayName": "银行卡片",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -1822,6 +1910,7 @@
   },
   {
     "name": "BankCardForm",
+    "displayName": "银行卡表单",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -1846,6 +1935,7 @@
   },
   {
     "name": "PaymentMethodPicker",
+    "displayName": "支付方式选择器",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -1869,6 +1959,7 @@
   },
   {
     "name": "CheckoutSummary",
+    "displayName": "结算明细",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -1891,6 +1982,7 @@
   },
   {
     "name": "OrderCard",
+    "displayName": "订单卡片",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -1916,6 +2008,7 @@
   },
   {
     "name": "OrderStatusHeader",
+    "displayName": "订单状态头部",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -1943,6 +2036,7 @@
   },
   {
     "name": "OrderTimeline",
+    "displayName": "订单时间线",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -1965,6 +2059,7 @@
   },
   {
     "name": "OrderInfo",
+    "displayName": "订单信息",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -1987,6 +2082,7 @@
   },
   {
     "name": "CancelReasonPicker",
+    "displayName": "取消原因选择器",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -2010,6 +2106,7 @@
   },
   {
     "name": "ReviewCard",
+    "displayName": "评价卡片",
     "kind": "business",
     "category": "评价与媒体",
     "origin": "observed",
@@ -2030,6 +2127,7 @@
   },
   {
     "name": "ProductRatingPanel",
+    "displayName": "商品评分面板",
     "kind": "business",
     "category": "评价与媒体",
     "origin": "observed",
@@ -2054,6 +2152,7 @@
   },
   {
     "name": "RiderRatingPanel",
+    "displayName": "配送评分面板",
     "kind": "business",
     "category": "评价与媒体",
     "origin": "observed",
@@ -2077,6 +2176,7 @@
   },
   {
     "name": "ReviewEditor",
+    "displayName": "评价编辑器",
     "kind": "business",
     "category": "评价与媒体",
     "origin": "observed",
@@ -2099,6 +2199,7 @@
   },
   {
     "name": "MediaPicker",
+    "displayName": "媒体选择器",
     "kind": "business",
     "category": "评价与媒体",
     "origin": "observed",
@@ -2121,6 +2222,7 @@
   },
   {
     "name": "PromoCodeForm",
+    "displayName": "优惠码表单",
     "kind": "business",
     "category": "优惠与账户",
     "origin": "observed",
@@ -2145,6 +2247,7 @@
   },
   {
     "name": "CampaignBanner",
+    "displayName": "活动横幅",
     "kind": "business",
     "category": "优惠与账户",
     "origin": "observed",
@@ -2167,6 +2270,7 @@
   },
   {
     "name": "NewUserOffer",
+    "displayName": "新客优惠",
     "kind": "business",
     "category": "优惠与账户",
     "origin": "observed",
@@ -2189,6 +2293,7 @@
   },
   {
     "name": "AccountHeader",
+    "displayName": "账户头部",
     "kind": "business",
     "category": "优惠与账户",
     "origin": "observed",
@@ -2213,6 +2318,7 @@
   },
   {
     "name": "SettingGroup",
+    "displayName": "设置分组",
     "kind": "business",
     "category": "优惠与账户",
     "origin": "observed",
@@ -2237,6 +2343,7 @@
   },
   {
     "name": "SupportEntryGrid",
+    "displayName": "客服入口网格",
     "kind": "business",
     "category": "客服与帮助",
     "origin": "observed",
@@ -2258,6 +2365,7 @@
   },
   {
     "name": "ChatMessage",
+    "displayName": "聊天消息",
     "kind": "business",
     "category": "客服与帮助",
     "origin": "observed",
@@ -2279,6 +2387,7 @@
   },
   {
     "name": "ChatComposer",
+    "displayName": "聊天输入栏",
     "kind": "business",
     "category": "客服与帮助",
     "origin": "observed",
@@ -2301,6 +2410,7 @@
   },
   {
     "name": "ServiceQueue",
+    "displayName": "客服排队提示",
     "kind": "business",
     "category": "客服与帮助",
     "origin": "observed",
@@ -2320,6 +2430,7 @@
   },
   {
     "name": "ServiceTicketCard",
+    "displayName": "售后工单卡片",
     "kind": "business",
     "category": "客服与帮助",
     "origin": "observed",
@@ -2342,6 +2453,7 @@
   },
   {
     "name": "ServiceTicketDetail",
+    "displayName": "售后工单详情",
     "kind": "business",
     "category": "客服与帮助",
     "origin": "observed",
@@ -2365,6 +2477,7 @@
   },
   {
     "name": "FAQList",
+    "displayName": "常见问题列表",
     "kind": "business",
     "category": "客服与帮助",
     "origin": "observed",
@@ -2386,6 +2499,7 @@
   },
   {
     "name": "BrandLogo",
+    "displayName": "品牌标志",
     "kind": "business",
     "category": "登录与授权",
     "origin": "observed",
@@ -2405,6 +2519,7 @@
   },
   {
     "name": "LegalText",
+    "displayName": "法律条款文本",
     "kind": "business",
     "category": "登录与授权",
     "origin": "observed",
@@ -2424,6 +2539,7 @@
   },
   {
     "name": "CountryPicker",
+    "displayName": "国家或地区选择器",
     "kind": "business",
     "category": "登录与授权",
     "origin": "observed",
@@ -2445,6 +2561,7 @@
   },
   {
     "name": "PhoneLoginForm",
+    "displayName": "手机号登录表单",
     "kind": "business",
     "category": "登录与授权",
     "origin": "observed",
@@ -2473,6 +2590,7 @@
   },
   {
     "name": "VerificationCodeField",
+    "displayName": "验证码字段",
     "kind": "business",
     "category": "登录与授权",
     "origin": "observed",
@@ -2498,6 +2616,7 @@
   },
   {
     "name": "ConsentSheet",
+    "displayName": "授权确认抽屉",
     "kind": "business",
     "category": "登录与授权",
     "origin": "observed",
@@ -2522,6 +2641,7 @@
   },
   {
     "name": "OrderRemarks",
+    "displayName": "订单备注",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -2546,6 +2666,7 @@
   },
   {
     "name": "OrderSubmitBar",
+    "displayName": "订单提交栏",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -2571,6 +2692,7 @@
   },
   {
     "name": "AccountDeletionNotice",
+    "displayName": "账户注销说明",
     "kind": "business",
     "category": "优惠与账户",
     "origin": "observed",
@@ -2592,6 +2714,7 @@
   },
   {
     "name": "PromotionGroup",
+    "displayName": "促销商品组",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -2616,6 +2739,7 @@
   },
   {
     "name": "UnavailableProductsGroup",
+    "displayName": "不可用商品组",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -2639,6 +2763,7 @@
   },
   {
     "name": "CartHeader",
+    "displayName": "购物车头部",
     "kind": "business",
     "category": "导航",
     "origin": "observed",
@@ -2661,6 +2786,7 @@
   },
   {
     "name": "SearchHeader",
+    "displayName": "搜索页头部",
     "kind": "business",
     "category": "导航",
     "origin": "observed",
@@ -2683,6 +2809,7 @@
   },
   {
     "name": "SearchSuggestions",
+    "displayName": "搜索建议",
     "kind": "business",
     "category": "输入与筛选",
     "origin": "observed",
@@ -2703,6 +2830,7 @@
   },
   {
     "name": "CategoryTile",
+    "displayName": "分类入口卡片",
     "kind": "business",
     "category": "导航",
     "origin": "observed",
@@ -2722,6 +2850,7 @@
   },
   {
     "name": "CategoryGrid",
+    "displayName": "分类入口网格",
     "kind": "business",
     "category": "导航",
     "origin": "observed",
@@ -2740,6 +2869,7 @@
   },
   {
     "name": "HomeHeader",
+    "displayName": "首页头部",
     "kind": "business",
     "category": "导航",
     "origin": "observed",
@@ -2760,6 +2890,7 @@
   },
   {
     "name": "CategoryLayout",
+    "displayName": "分类页框架",
     "kind": "business",
     "category": "导航",
     "origin": "observed",
@@ -2787,6 +2918,7 @@
   },
   {
     "name": "OrderStageProgress",
+    "displayName": "订单阶段进度",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -2806,6 +2938,7 @@
   },
   {
     "name": "OrderArrival",
+    "displayName": "订单送达信息",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -2829,6 +2962,7 @@
   },
   {
     "name": "OrderDeliveryDetails",
+    "displayName": "订单配送详情",
     "kind": "business",
     "category": "支付与订单",
     "origin": "observed",
@@ -2849,6 +2983,7 @@
   },
   {
     "name": "PhoneField",
+    "displayName": "手机号输入框",
     "kind": "business",
     "category": "登录与授权",
     "origin": "observed",
@@ -2871,6 +3006,7 @@
   },
   {
     "name": "SupportOrderCard",
+    "displayName": "客服订单卡片",
     "kind": "business",
     "category": "客服与帮助",
     "origin": "observed",
@@ -2891,6 +3027,7 @@
   },
   {
     "name": "RiderReviewCard",
+    "displayName": "配送评价卡片",
     "kind": "business",
     "category": "评价与媒体",
     "origin": "observed",
@@ -2912,6 +3049,7 @@
   },
   {
     "name": "CartPromotionBar",
+    "displayName": "购物车活动条",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -2935,6 +3073,7 @@
   },
   {
     "name": "VoucherList",
+    "displayName": "优惠券列表",
     "kind": "business",
     "category": "优惠与账户",
     "origin": "observed",
@@ -2958,6 +3097,7 @@
   },
   {
     "name": "VoucherSuccessDialog",
+    "displayName": "兑券成功弹窗",
     "kind": "business",
     "category": "优惠与账户",
     "origin": "observed",
@@ -2979,6 +3119,7 @@
   },
   {
     "name": "HomeVoucherBanner",
+    "displayName": "首页新客券横幅",
     "kind": "business",
     "category": "优惠与账户",
     "origin": "observed",
@@ -2995,6 +3136,7 @@
   },
   {
     "name": "Icon",
+    "displayName": "图标",
     "kind": "basic",
     "category": "展示",
     "origin": "observed",

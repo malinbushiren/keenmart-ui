@@ -3,3 +3,11 @@
 
 .assembly-body-account{padding-top:4px}
 .assembly-body-account>.kc-account-profile{margin-bottom:-12px}
+
+/* 组件名称：中文主标题，英文接口名作辅助，不改变业务预览文案。 */
+.cw-component-name{display:inline-flex;flex-direction:column;gap:2px;vertical-align:top;max-width:100%}
+.cw-component-name>small[lang]{font-size:11px;line-height:16px;font-weight:400;color:#808080;overflow-wrap:anywhere;margin:0}
+.cw-detail-head h3 .cw-component-name>small{font-size:12px;line-height:18px}
+.cw-source-links .cw-component-name{margin-bottom:6px}
+.cw-list .cw-component-name{margin:0;font:inherit;color:inherit}
+.cw-list .cw-component-name>span{margin:0;font:inherit;color:inherit}

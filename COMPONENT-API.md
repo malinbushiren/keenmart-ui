@@ -2,7 +2,7 @@
 
 接口从实际 TypeScript 源码提取。具体状态和来源见组件目录；每个组件均在 `.km-system` 下使用。
 
-## Button
+## 按钮（Button）
 
 基础组件 · 操作
 
@@ -10,7 +10,7 @@
 React.ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'primary'|'outline'|'text'|'promotion';size?:'regular'|'medium'|'small'|'compact';loading?:boolean}
 ```
 
-## AddButton
+## 加购按钮（AddButton）
 
 业务组件 · 商品与购物车
 
@@ -18,7 +18,7 @@ React.ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'primary'|'outline'|'tex
 {onClick?:()=>void;disabled?:boolean}
 ```
 
-## QuantityStepper
+## 数量步进器（QuantityStepper）
 
 基础组件 · 操作
 
@@ -26,7 +26,7 @@ React.ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'primary'|'outline'|'tex
 {value:number;onChange:(v:number)=>void;max?:number;disabled?:boolean;variant?:'default'|'overlay'|'field'}
 ```
 
-## Price
+## 价格（Price）
 
 业务组件 · 商品与购物车
 
@@ -34,7 +34,7 @@ React.ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'primary'|'outline'|'tex
 {amount:string;original?:string;promotion?:boolean;currency?:string;unit?:string}
 ```
 
-## Tag
+## 标签（Tag）
 
 基础组件 · 展示
 
@@ -42,7 +42,7 @@ React.ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'primary'|'outline'|'tex
 {children:React.ReactNode;tone?:'success'|'neutral'|'danger'|'marketing'|'warning';variant?:'outline'}
 ```
 
-## ChoiceChip
+## 选择标签（ChoiceChip）
 
 基础组件 · 输入与筛选
 
@@ -50,7 +50,7 @@ React.ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'primary'|'outline'|'tex
 {children:React.ReactNode;selected:boolean;onClick:()=>void;disabled?:boolean;background?:'white'|'gray'}
 ```
 
-## TextField
+## 单行输入框（TextField）
 
 基础组件 · 输入与筛选
 
@@ -58,7 +58,7 @@ React.ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'primary'|'outline'|'tex
 React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:string}
 ```
 
-## RadioRow
+## 单选行（RadioRow）
 
 基础组件 · 输入与筛选
 
@@ -66,7 +66,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {label:string;description?:string;checked:boolean;onChange:()=>void;name:string;value:string;disabled?:boolean}
 ```
 
-## Rating
+## 评分（Rating）
 
 基础组件 · 输入与筛选
 
@@ -74,7 +74,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {value:number;onChange?:(value:number)=>void;size?:16|20|24|28;variant?:'stars'|'sentiment'}
 ```
 
-## CouponCard
+## 优惠券卡片（CouponCard）
 
 业务组件 · 优惠与账户
 
@@ -82,7 +82,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {coupon:CouponData;onUse?:()=>void;onDetails:()=>void}
 ```
 
-## ListRow
+## 列表行（ListRow）
 
 基础组件 · 展示
 
@@ -90,7 +90,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {title:string;description?:string;trailing?:React.ReactNode;leading?:React.ReactNode;onClick?:()=>void;disabled?:boolean;danger?:boolean}
 ```
 
-## Notice
+## 提示条（Notice）
 
 基础组件 · 反馈
 
@@ -98,7 +98,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {children:React.ReactNode}
 ```
 
-## BottomSheet
+## 底部抽屉（BottomSheet）
 
 基础组件 · 反馈
 
@@ -106,7 +106,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {open:boolean;title:string;children:React.ReactNode;onClose:()=>void;footer?:React.ReactNode;showClose?:boolean;variant?:'default'|'selection'|'consent'|'country'|'product'|'review-confirm'|'payment'|'address-conflict'|'support-orders'|'cancel-reason';maxHeight?:number;titleScrollable?:boolean}
 ```
 
-## StatusLabel
+## 状态文字（StatusLabel）
 
 基础组件 · 展示
 
@@ -114,7 +114,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {children:React.ReactNode;tone?:'green'|'gray'}
 ```
 
-## Text
+## 文本（Text）
 
 基础组件 · 展示
 
@@ -122,7 +122,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {as?:'span'|'p'|'h1'|'h2'|'h3';tone?:'primary'|'secondary'|'danger'|'success';size?:'caption'|'body'|'control'|'title'|'heading';children:React.ReactNode}
 ```
 
-## TextButton
+## 文字按钮（TextButton）
 
 基础组件 · 操作
 
@@ -130,7 +130,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {children:React.ReactNode;onClick?:()=>void;disabled?:boolean;tone?:'primary'|'brand'|'danger';icon?:React.ReactNode}
 ```
 
-## ActionBar
+## 操作栏（ActionBar）
 
 基础组件 · 页面与布局
 
@@ -138,7 +138,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {children:React.ReactNode;safeArea?:boolean;layout?:'equal'|'content'}
 ```
 
-## OTPInput
+## 验证码输入框（OTPInput）
 
 基础组件 · 输入与筛选
 
@@ -146,7 +146,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {value:string;onChange:(v:string)=>void;length?:4|6;error?:string;disabled?:boolean;focused?:boolean;onFocus?:()=>void}
 ```
 
-## Grid
+## 网格布局（Grid）
 
 基础组件 · 页面与布局
 
@@ -154,7 +154,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {children:React.ReactNode;columns?:1|2|3|4}
 ```
 
-## Divider
+## 分割线（Divider）
 
 基础组件 · 页面与布局
 
@@ -162,7 +162,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {label?:string}
 ```
 
-## Card
+## 卡片（Card）
 
 基础组件 · 页面与布局
 
@@ -170,7 +170,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {children:React.ReactNode;header?:React.ReactNode;footer?:React.ReactNode;className?:string}
 ```
 
-## Section
+## 内容分区（Section）
 
 基础组件 · 页面与布局
 
@@ -178,7 +178,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {title:string;action?:React.ReactNode;children:React.ReactNode}
 ```
 
-## Image
+## 图片（Image）
 
 基础组件 · 展示
 
@@ -186,7 +186,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {src:string;alt:string;fit?:'contain'|'cover';ratio?:string;onClick?:()=>void}
 ```
 
-## Avatar
+## 头像（Avatar）
 
 基础组件 · 展示
 
@@ -194,7 +194,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {src?:string;name:string;size?:24|40|64|72}
 ```
 
-## Badge
+## 角标（Badge）
 
 基础组件 · 展示
 
@@ -202,7 +202,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {count?:number;dot?:boolean;children?:React.ReactNode}
 ```
 
-## StatusBar
+## 状态栏（StatusBar）
 
 基础组件 · 页面与布局
 
@@ -210,7 +210,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 {time?:string;inverse?:boolean}
 ```
 
-## HomeIndicator
+## 底部手势条（HomeIndicator）
 
 基础组件 · 页面与布局
 
@@ -218,7 +218,7 @@ React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:st
 No props
 ```
 
-## Page
+## 页面容器（Page）
 
 基础组件 · 页面与布局
 
@@ -226,7 +226,7 @@ No props
 {children:React.ReactNode;header?:React.ReactNode;footer?:React.ReactNode;chromeBackground?:string;background?:'white'|'gray';height?:number;showStatusBar?:boolean;showHomeIndicator?:boolean;inverse?:boolean;className?:string}
 ```
 
-## AppShell
+## 应用外壳（AppShell）
 
 基础组件 · 页面与布局
 
@@ -234,7 +234,7 @@ No props
 {children:React.ReactNode;header?:React.ReactNode;footer?:React.ReactNode;inverse?:boolean;surface?:'default'|'plain'|'account'|'home';height?:number;showStatusBar?:boolean;showHomeIndicator?:boolean}
 ```
 
-## IconButton
+## 图标按钮（IconButton）
 
 基础组件 · 操作
 
@@ -242,7 +242,7 @@ No props
 {name:IconName;label:string;onClick?:()=>void;disabled?:boolean}
 ```
 
-## NavBar
+## 顶部导航栏（NavBar）
 
 基础组件 · 导航
 
@@ -250,7 +250,7 @@ No props
 {title:string;onBack?:()=>void;right?:React.ReactNode;left?:React.ReactNode;align?:'center'|'left'}
 ```
 
-## Tabs
+## 标签页（Tabs）
 
 基础组件 · 导航
 
@@ -258,7 +258,7 @@ No props
 {options:Option[];value:string;onChange:(v:string)=>void;variant?:'line'|'pill';layout?:'equal'|'scroll'}
 ```
 
-## SegmentedControl
+## 分段选择器（SegmentedControl）
 
 基础组件 · 导航
 
@@ -266,7 +266,7 @@ No props
 Omit<React.ComponentProps<typeof Tabs>,'variant'>
 ```
 
-## TabBar
+## 底部导航栏（TabBar）
 
 基础组件 · 导航
 
@@ -274,7 +274,7 @@ Omit<React.ComponentProps<typeof Tabs>,'variant'>
 {options:Option[];value:string;onChange:(v:string)=>void}
 ```
 
-## Sidebar
+## 侧边分类栏（Sidebar）
 
 基础组件 · 导航
 
@@ -282,7 +282,7 @@ Omit<React.ComponentProps<typeof Tabs>,'variant'>
 {options:Option[];value:string;onChange:(v:string)=>void}
 ```
 
-## SearchBar
+## 搜索框（SearchBar）
 
 基础组件 · 输入与筛选
 
@@ -290,7 +290,7 @@ Omit<React.ComponentProps<typeof Tabs>,'variant'>
 {surface?:'gray'|'outline'|'white';onFocus?:()=>void;value:string;onChange:(v:string)=>void;onSubmit?:(v:string)=>void;placeholder?:string;disabled?:boolean;showSubmit?:boolean;submitIcon?:boolean}
 ```
 
-## FormField
+## 表单字段（FormField）
 
 基础组件 · 输入与筛选
 
@@ -298,7 +298,7 @@ Omit<React.ComponentProps<typeof Tabs>,'variant'>
 {label:string;required?:boolean;error?:string;children:React.ReactNode}
 ```
 
-## TextArea
+## 多行输入框（TextArea）
 
 基础组件 · 输入与筛选
 
@@ -306,7 +306,7 @@ Omit<React.ComponentProps<typeof Tabs>,'variant'>
 {label:string;value:string;onChange:(v:string)=>void;maxLength?:number;disabled?:boolean;error?:string;placeholder?:string;hideLabel?:boolean}
 ```
 
-## Checkbox
+## 复选框（Checkbox）
 
 基础组件 · 输入与筛选
 
@@ -314,7 +314,7 @@ Omit<React.ComponentProps<typeof Tabs>,'variant'>
 {label:string;checked:boolean;onChange:(v:boolean)=>void;disabled?:boolean}
 ```
 
-## Switch
+## 开关（Switch）
 
 基础组件 · 输入与筛选
 
@@ -322,7 +322,7 @@ Omit<React.ComponentProps<typeof Tabs>,'variant'>
 {label:string;checked:boolean;onChange:(v:boolean)=>void;disabled?:boolean}
 ```
 
-## SelectField
+## 下拉选择框（SelectField）
 
 基础组件 · 输入与筛选
 
@@ -330,7 +330,7 @@ Omit<React.ComponentProps<typeof Tabs>,'variant'>
 {label:string;options:Option[];value:string;onChange:(v:string)=>void;disabled?:boolean}
 ```
 
-## Picker
+## 选择器（Picker）
 
 基础组件 · 输入与筛选
 
@@ -338,7 +338,7 @@ Omit<React.ComponentProps<typeof Tabs>,'variant'>
 React.ComponentProps<typeof SelectField>
 ```
 
-## DatePicker
+## 日期选择器（DatePicker）
 
 基础组件 · 输入与筛选
 
@@ -346,7 +346,7 @@ React.ComponentProps<typeof SelectField>
 {label:string;value:string;onChange:(v:string)=>void;min?:string;disabled?:boolean}
 ```
 
-## Slider
+## 滑块（Slider）
 
 基础组件 · 输入与筛选
 
@@ -354,7 +354,7 @@ React.ComponentProps<typeof SelectField>
 {label:string;value:number;onChange:(v:number)=>void;min?:number;max?:number;disabled?:boolean}
 ```
 
-## Uploader
+## 上传控件（Uploader）
 
 基础组件 · 输入与筛选
 
@@ -362,7 +362,7 @@ React.ComponentProps<typeof SelectField>
 {files:File[];onChange:(f:File[])=>void;max?:number;disabled?:boolean}
 ```
 
-## FilterBar
+## 筛选栏（FilterBar）
 
 基础组件 · 输入与筛选
 
@@ -370,7 +370,7 @@ React.ComponentProps<typeof SelectField>
 {options:Option[];value:string[];onChange:(v:string[])=>void;onReset?:()=>void}
 ```
 
-## Carousel
+## 轮播图（Carousel）
 
 基础组件 · 展示
 
@@ -378,7 +378,7 @@ React.ComponentProps<typeof SelectField>
 {images?:{src:string;alt:string}[];slides?:React.ReactNode[];initialIndex?:number;label?:string}
 ```
 
-## Collapse
+## 折叠面板（Collapse）
 
 基础组件 · 展示
 
@@ -386,7 +386,7 @@ React.ComponentProps<typeof SelectField>
 {items:{id:string;title:string;content:React.ReactNode}[]}
 ```
 
-## Progress
+## 进度条（Progress）
 
 基础组件 · 展示
 
@@ -394,7 +394,7 @@ React.ComponentProps<typeof SelectField>
 {value:number;label?:string}
 ```
 
-## Steps
+## 步骤条（Steps）
 
 基础组件 · 展示
 
@@ -402,7 +402,7 @@ React.ComponentProps<typeof SelectField>
 {items:{title:string;description?:string}[];current?:number}
 ```
 
-## EmptyState
+## 空状态（EmptyState）
 
 基础组件 · 反馈
 
@@ -410,7 +410,7 @@ React.ComponentProps<typeof SelectField>
 {title?:string;description?:string;action?:React.ReactNode;illustration?:React.ReactNode;kind?:EmptyIllustrationKind;layout?:'inline'|'page'}
 ```
 
-## Result
+## 结果展示（Result）
 
 基础组件 · 反馈
 
@@ -418,7 +418,7 @@ React.ComponentProps<typeof SelectField>
 {status?:'success'|'error'|'warning';title:string;description?:string;details?:string[];action?:React.ReactNode;fullWidthAction?:boolean}
 ```
 
-## Loading
+## 加载指示器（Loading）
 
 基础组件 · 反馈
 
@@ -426,7 +426,7 @@ React.ComponentProps<typeof SelectField>
 {label?:string}
 ```
 
-## Skeleton
+## 骨架屏（Skeleton）
 
 基础组件 · 反馈
 
@@ -434,7 +434,7 @@ React.ComponentProps<typeof SelectField>
 {rows?:number}
 ```
 
-## Toast
+## 轻提示（Toast）
 
 基础组件 · 反馈
 
@@ -442,7 +442,7 @@ React.ComponentProps<typeof SelectField>
 {open:boolean;message:string;onClose:()=>void;duration?:number}
 ```
 
-## Dialog
+## 对话框（Dialog）
 
 基础组件 · 反馈
 
@@ -450,7 +450,7 @@ React.ComponentProps<typeof SelectField>
 {open:boolean;title:string;children:React.ReactNode;onClose:()=>void;actions?:React.ReactNode;variant?:'default'|'poster'|'voucher-success';showClose?:boolean}
 ```
 
-## ActionSheet
+## 操作面板（ActionSheet）
 
 基础组件 · 反馈
 
@@ -458,7 +458,7 @@ React.ComponentProps<typeof SelectField>
 {open:boolean;options:Option[];onSelect:(v:string)=>void;onClose:()=>void}
 ```
 
-## Popover
+## 气泡浮层（Popover）
 
 基础组件 · 反馈
 
@@ -466,7 +466,7 @@ React.ComponentProps<typeof SelectField>
 {label:string;children:React.ReactNode}
 ```
 
-## ImageViewer
+## 图片查看器（ImageViewer）
 
 基础组件 · 反馈
 
@@ -474,7 +474,7 @@ React.ComponentProps<typeof SelectField>
 {open:boolean;src:string;alt:string;onClose:()=>void}
 ```
 
-## SwipeAction
+## 左滑操作（SwipeAction）
 
 基础组件 · 反馈
 
@@ -482,7 +482,7 @@ React.ComponentProps<typeof SelectField>
 {children:React.ReactNode;onDelete?:()=>void;actions?:{label:string;onAction:()=>void;tone?:'neutral'|'destructive'}[];disabled?:boolean}
 ```
 
-## PullRefresh
+## 下拉刷新（PullRefresh）
 
 基础组件 · 反馈
 
@@ -490,7 +490,7 @@ React.ComponentProps<typeof SelectField>
 {children:React.ReactNode;onRefresh:()=>Promise<void>}
 ```
 
-## LoadMore
+## 加载更多（LoadMore）
 
 基础组件 · 反馈
 
@@ -498,7 +498,7 @@ React.ComponentProps<typeof SelectField>
 {loading?:boolean;hasMore?:boolean;onLoad:()=>void;error?:boolean}
 ```
 
-## StickyBar
+## 吸底操作栏（StickyBar）
 
 基础组件 · 页面与布局
 
@@ -506,7 +506,7 @@ React.ComponentProps<typeof SelectField>
 {children:React.ReactNode;layout?:'single'|'equal'|'content'}
 ```
 
-## Keyboard
+## 模拟键盘（Keyboard）
 
 基础组件 · 输入与筛选
 
@@ -514,7 +514,7 @@ React.ComponentProps<typeof SelectField>
 {allowDecimal?:boolean;type?:'numeric'|'alphabetic';value:string;onChange:(v:string)=>void;onDone:()=>void;maxLength?:number;disabled?:boolean}
 ```
 
-## Countdown
+## 倒计时（Countdown）
 
 基础组件 · 展示
 
@@ -522,7 +522,7 @@ React.ComponentProps<typeof SelectField>
 {seconds:number;onComplete?:()=>void}
 ```
 
-## Artwork
+## 业务插画（Artwork）
 
 基础组件 · 展示
 
@@ -530,7 +530,7 @@ React.ComponentProps<typeof SelectField>
 {layers:ArtworkLayer[];label:string;ratio?:string}
 ```
 
-## ListGroup
+## 列表分组（ListGroup）
 
 基础组件 · 页面与布局
 
@@ -538,7 +538,7 @@ React.ComponentProps<typeof SelectField>
 {title:string;titlePlacement?:'inside'|'outside';items:{id:string;title:string;description?:string;leading?:React.ReactNode;trailing?:React.ReactNode;onClick?:()=>void;disabled?:boolean}[]}
 ```
 
-## ProductCard
+## 商品卡片（ProductCard）
 
 业务组件 · 商品与购物车
 
@@ -551,7 +551,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {product:CommerceProduct;variant?:ProductCardVariant;quantity?:number;onAdd:()=>void;onQuantity?:(value:number)=>void;onSKUQuantity?:(id:string,value:number)=>void;skuQuantities?:Record<string,number>;initialExpanded?:boolean;onNotify?:()=>void;onSimilar?:()=>void;onSupplier?:()=>void;locale?:'en'|'zh'}
 ```
 
-## ProductPriceGroup
+## 商品价格组合（ProductPriceGroup）
 
 业务组件 · 商品与购物车
 
@@ -559,7 +559,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {amount:string;original?:string;currency?:string;unit?:string;unitPrice?:string;promotion?:boolean;originalPlacement?:'inline'|'below'}
 ```
 
-## ProductPurchaseControl
+## 商品购买控件（ProductPurchaseControl）
 
 业务组件 · 商品与购物车
 
@@ -567,7 +567,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {mode?:'add'|'quantity'|'count'|'notify'|'similar'|'specs'|'none';value?:number;max?:number;expanded?:boolean;onAdd:()=>void;onQuantity?:(v:number)=>void;onToggle?:()=>void;onNotify?:()=>void;onSimilar?:()=>void}
 ```
 
-## ProductStatusOverlay
+## 商品状态蒙层（ProductStatusOverlay）
 
 业务组件 · 商品与购物车
 
@@ -575,7 +575,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {status:ProductAvailability;locale?:'en'|'zh'}
 ```
 
-## ProductSupplierTag
+## 供应商标签（ProductSupplierTag）
 
 业务组件 · 商品与购物车
 
@@ -583,7 +583,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {name:string;onClick?:()=>void}
 ```
 
-## ProductList
+## 商品列表（ProductList）
 
 业务组件 · 商品与购物车
 
@@ -591,7 +591,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;onRemove?:(id:string)=>void;layout?:'grid'|'row';density?:'regular'|'compact'}
 ```
 
-## ProductCollection
+## 推荐商品区（ProductCollection）
 
 业务组件 · 商品与购物车
 
@@ -599,7 +599,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;onRemove?:(id:string)=>void;layout?:'grid'|'row';title?:string;density?:'regular'|'compact'}
 ```
 
-## ProductDetailHeader
+## 商品详情头部（ProductDetailHeader）
 
 业务组件 · 商品与购物车
 
@@ -607,7 +607,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {product:Product;images:{src:string;alt:string}[];onAdd:()=>void}
 ```
 
-## ProductSpecPicker
+## 商品规格选择器（ProductSpecPicker）
 
 业务组件 · 商品与购物车
 
@@ -615,7 +615,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {groups:{id:string;title:string;description?:string;required?:boolean;options:Option[]}[];values:Record<string,string>;onChange:(v:Record<string,string>)=>void;onConfirm:()=>void;product?:Product;quantity?:number;onQuantity?:(n:number)=>void}
 ```
 
-## CartItem
+## 购物车商品行（CartItem）
 
 业务组件 · 商品与购物车
 
@@ -623,7 +623,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {product:Product;quantity:number;selected:boolean;onSelect:(v:boolean)=>void;onQuantity:(v:number)=>void;onRemove:()=>void;readOnly?:boolean;selectable?:boolean}
 ```
 
-## CartGroup
+## 购物车商品组（CartGroup）
 
 业务组件 · 商品与购物车
 
@@ -631,7 +631,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {title:string;children:React.ReactNode;selected:boolean;onSelect:(v:boolean)=>void}
 ```
 
-## CartSummaryBar
+## 购物车结算栏（CartSummaryBar）
 
 业务组件 · 商品与购物车
 
@@ -639,7 +639,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {total:string;selectedCount:number;onCheckout:()=>void;disabled?:boolean}
 ```
 
-## InvalidProductsSheet
+## 失效商品抽屉（InvalidProductsSheet）
 
 业务组件 · 商品与购物车
 
@@ -647,7 +647,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {open:boolean;products:Product[];onClose:()=>void;onContinue:()=>void}
 ```
 
-## AddressCard
+## 地址卡片（AddressCard）
 
 业务组件 · 地址与配送
 
@@ -655,7 +655,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {address:Address;selected?:boolean;onSelect?:()=>void;onEdit?:()=>void;variant?:'default'|'delivery'}
 ```
 
-## AddressPicker
+## 地址选择器（AddressPicker）
 
 业务组件 · 地址与配送
 
@@ -663,7 +663,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {addresses:Address[];value:string;onChange:(v:string)=>void;onAdd:()=>void}
 ```
 
-## AddressForm
+## 地址表单（AddressForm）
 
 业务组件 · 地址与配送
 
@@ -671,7 +671,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {surface?:'white'|'gray';value:Address;onChange:(v:Address)=>void;onSubmit:()=>void;error?:string;disabled?:boolean;onRemove?:()=>void;labelConflict?:boolean;onResolveLabel?:(use:boolean)=>void}
 ```
 
-## MapAddressPicker
+## 地图选址（MapAddressPicker）
 
 业务组件 · 地址与配送
 
@@ -679,7 +679,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {onSearchFocus?:()=>void;map:React.ReactNode;query:string;onQuery:(v:string)=>void;address?:Address;onConfirm:()=>void;results?:{id:string;title:string}[];onSelect?:(id:string)=>void}
 ```
 
-## DeliverySlotPicker
+## 配送时段选择器（DeliverySlotPicker）
 
 业务组件 · 地址与配送
 
@@ -687,7 +687,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {days:Option[];day:string;onDay:(v:string)=>void;slots:Option[];value:string;onChange:(v:string)=>void}
 ```
 
-## DeliveryProgress
+## 配送进度（DeliveryProgress）
 
 业务组件 · 地址与配送
 
@@ -695,7 +695,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {time:string;progress:number;description?:string;onSelect?:()=>void}
 ```
 
-## PaymentMethodRow
+## 支付方式行（PaymentMethodRow）
 
 业务组件 · 支付与订单
 
@@ -703,7 +703,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {method:Payment;selected:boolean;onSelect:()=>void;groupName?:string}
 ```
 
-## BankCard
+## 银行卡片（BankCard）
 
 业务组件 · 支付与订单
 
@@ -711,7 +711,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {brand:string;last4:string;expiry:string;holder?:string;selected?:boolean;onSelect?:()=>void;onDelete?:()=>void;unavailable?:boolean}
 ```
 
-## BankCardForm
+## 银行卡表单（BankCardForm）
 
 业务组件 · 支付与订单
 
@@ -719,7 +719,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {value:CardData;onFieldFocus?:(field:keyof CardData)=>void;onChange:(v:CardData)=>void;onSubmit:()=>void;error?:string;errors?:Partial<Record<keyof CardData,string>>;total?:string}
 ```
 
-## PaymentMethodPicker
+## 支付方式选择器（PaymentMethodPicker）
 
 业务组件 · 支付与订单
 
@@ -727,7 +727,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {value:string;onChange:(v:string)=>void;cards?:{id:string;brand:string;last4:string;logo:string}[];onNewCard:()=>void}
 ```
 
-## CheckoutSummary
+## 结算明细（CheckoutSummary）
 
 业务组件 · 支付与订单
 
@@ -735,7 +735,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {rows:{label:string;value:string;original?:string;discount?:boolean}[];total:string}
 ```
 
-## OrderCard
+## 订单卡片（OrderCard）
 
 业务组件 · 支付与订单
 
@@ -743,7 +743,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {order:Order;onAction:(action:string)=>void;actions?:string[];variant?:'list'|'overview';itemCount?:number}
 ```
 
-## OrderStatusHeader
+## 订单状态头部（OrderStatusHeader）
 
 业务组件 · 支付与订单
 
@@ -751,7 +751,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {state:OrderState;description?:string;countdown?:string;title?:string;artwork?:ArtworkLayer[]}
 ```
 
-## OrderTimeline
+## 订单时间线（OrderTimeline）
 
 业务组件 · 支付与订单
 
@@ -759,7 +759,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {events:{title:string;description?:string}[];current:number}
 ```
 
-## OrderInfo
+## 订单信息（OrderInfo）
 
 业务组件 · 支付与订单
 
@@ -767,7 +767,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {rows:{label:string;value:string;copyable?:boolean}[];onCopy?:(v:string)=>void}
 ```
 
-## CancelReasonPicker
+## 取消原因选择器（CancelReasonPicker）
 
 业务组件 · 支付与订单
 
@@ -775,7 +775,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {options:Option[];value:string;onChange:(v:string)=>void;onConfirm:()=>void;open:boolean;onClose:()=>void;putBack?:boolean;onPutBack?:(v:boolean)=>void;error?:string}
 ```
 
-## ReviewCard
+## 评价卡片（ReviewCard）
 
 业务组件 · 评价与媒体
 
@@ -783,7 +783,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {product:Product;rating:number;comment:string;images:string[];onView?:(src:string)=>void}
 ```
 
-## ProductRatingPanel
+## 商品评分面板（ProductRatingPanel）
 
 业务组件 · 评价与媒体
 
@@ -791,7 +791,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {product:Product;rating:number;onRating:(v:number)=>void;dimensions:Record<string,number>;onDimension:(name:string,value:number)=>void;expanded?:boolean;onToggle?:()=>void;comment?:string;onComment?:(v:string)=>void;files?:File[];onFiles?:(v:File[])=>void;maxLength?:number}
 ```
 
-## RiderRatingPanel
+## 配送评分面板（RiderRatingPanel）
 
 业务组件 · 评价与媒体
 
@@ -799,7 +799,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {name:string;rating:number;onChange:(v:number)=>void;comment?:string;onComment?:(v:string)=>void}
 ```
 
-## ReviewEditor
+## 评价编辑器（ReviewEditor）
 
 业务组件 · 评价与媒体
 
@@ -807,7 +807,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {value:ReviewData;onChange:(v:ReviewData)=>void;error?:string;tagOptions?:string[]}
 ```
 
-## MediaPicker
+## 媒体选择器（MediaPicker）
 
 业务组件 · 评价与媒体
 
@@ -815,7 +815,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {items:{id:string;src:string}[];selected:string[];onChange:(v:string[])=>void;max?:number;onDone:()=>void;onCamera:()=>void}
 ```
 
-## PromoCodeForm
+## 优惠码表单（PromoCodeForm）
 
 业务组件 · 优惠与账户
 
@@ -823,7 +823,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {value:string;onChange:(v:string)=>void;onSubmit:()=>void;onFocus?:()=>void;error?:string;loading?:boolean}
 ```
 
-## CampaignBanner
+## 活动横幅（CampaignBanner）
 
 业务组件 · 优惠与账户
 
@@ -831,7 +831,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {variant?:'default'|'source';src?:string;alt:string;onClick:()=>void;ratio?:string;title?:string;subtitle?:string;actionLabel?:string;artwork?:React.ReactNode;background?:string}
 ```
 
-## NewUserOffer
+## 新客优惠（NewUserOffer）
 
 业务组件 · 优惠与账户
 
@@ -839,7 +839,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {amount:string;coupons:CouponData[];onUse:()=>void;onDetails:()=>void;header?:React.ReactNode}
 ```
 
-## AccountHeader
+## 账户头部（AccountHeader）
 
 业务组件 · 优惠与账户
 
@@ -847,7 +847,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {name?:string;phone?:string;avatarSrc?:string;variant?:'card'|'profile';onLogin:()=>void}
 ```
 
-## SettingGroup
+## 设置分组（SettingGroup）
 
 业务组件 · 优惠与账户
 
@@ -855,7 +855,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {items:{id:string;title:string;description?:string;value?:React.ReactNode;icon?:IconName;leading?:React.ReactNode}[];onAction:(v:string)=>void}
 ```
 
-## SupportEntryGrid
+## 客服入口网格（SupportEntryGrid）
 
 业务组件 · 客服与帮助
 
@@ -863,7 +863,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {entries:Option[];onSelect:(v:string)=>void}
 ```
 
-## ChatMessage
+## 聊天消息（ChatMessage）
 
 业务组件 · 客服与帮助
 
@@ -871,7 +871,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {side?:'agent'|'user'|'system';text?:string;time?:string;children?:React.ReactNode;variant?:'bubble'|'notice'|'media'}
 ```
 
-## ChatComposer
+## 聊天输入栏（ChatComposer）
 
 业务组件 · 客服与帮助
 
@@ -879,7 +879,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {value:string;onChange:(v:string)=>void;onSend:()=>void;onAttach:()=>void;disabled?:boolean;expanded?:boolean}
 ```
 
-## ServiceQueue
+## 客服排队提示（ServiceQueue）
 
 业务组件 · 客服与帮助
 
@@ -887,7 +887,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {position:number;onCancel:()=>void}
 ```
 
-## ServiceTicketCard
+## 售后工单卡片（ServiceTicketCard）
 
 业务组件 · 客服与帮助
 
@@ -895,7 +895,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {id:string;time:string;status:'ongoing'|'ended';onContinue:()=>void;onHistory:()=>void}
 ```
 
-## ServiceTicketDetail
+## 售后工单详情（ServiceTicketDetail）
 
 业务组件 · 客服与帮助
 
@@ -903,7 +903,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {question:string;answer:string;onContact:()=>void;onLink?:()=>void}
 ```
 
-## FAQList
+## 常见问题列表（FAQList）
 
 业务组件 · 客服与帮助
 
@@ -911,7 +911,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {items:{id:string;title:string;content:React.ReactNode}[]}
 ```
 
-## BrandLogo
+## 品牌标志（BrandLogo）
 
 业务组件 · 登录与授权
 
@@ -919,7 +919,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {variant?:'full'|'short'}
 ```
 
-## LegalText
+## 法律条款文本（LegalText）
 
 业务组件 · 登录与授权
 
@@ -927,7 +927,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {text:string;onLink?:(label:string)=>void}
 ```
 
-## CountryPicker
+## 国家或地区选择器（CountryPicker）
 
 业务组件 · 登录与授权
 
@@ -935,7 +935,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {open:boolean;onClose:()=>void;value:string;onChange:(value:string)=>void}
 ```
 
-## PhoneLoginForm
+## 手机号登录表单（PhoneLoginForm）
 
 业务组件 · 登录与授权
 
@@ -943,7 +943,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {country:string;phone:string;onCountry:(v:string)=>void;onPhone:(v:string)=>void;onSubmit:()=>void;error?:string;loading?:boolean;showCountry?:boolean;initialCountryOpen?:boolean;onEmail?:()=>void;onPolicy?:(title:string)=>void;onInputFocus?:()=>void;onCountryOpen?:()=>void;focused?:boolean}
 ```
 
-## VerificationCodeField
+## 验证码字段（VerificationCodeField）
 
 业务组件 · 登录与授权
 
@@ -951,7 +951,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {value:string;onChange:(v:string)=>void;length?:4|6;error?:string;onResend:()=>void;remaining?:number;phone?:string;onMore?:()=>void;onFocus?:()=>void}
 ```
 
-## ConsentSheet
+## 授权确认抽屉（ConsentSheet）
 
 业务组件 · 登录与授权
 
@@ -959,7 +959,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {open:boolean;children?:React.ReactNode;onAccept:()=>void;onDecline:()=>void;onClose:()=>void;longForm?:boolean}
 ```
 
-## OrderRemarks
+## 订单备注（OrderRemarks）
 
 业务组件 · 支付与订单
 
@@ -967,7 +967,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {options:string[];selected:string[];onSelect:(v:string[])=>void;history:string[];note:string;onNote:(v:string)=>void;onConfirm:()=>void}
 ```
 
-## OrderSubmitBar
+## 订单提交栏（OrderSubmitBar）
 
 业务组件 · 支付与订单
 
@@ -975,7 +975,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {total:string;label?:string;onSubmit:()=>void;disabled?:boolean;loading?:boolean;variant?:'default'|'integrated';paymentLogo?:string}
 ```
 
-## AccountDeletionNotice
+## 账户注销说明（AccountDeletionNotice）
 
 业务组件 · 优惠与账户
 
@@ -983,7 +983,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {conditions:string[];consequences:string[];onApply:()=>void}
 ```
 
-## PromotionGroup
+## 促销商品组（PromotionGroup）
 
 业务组件 · 商品与购物车
 
@@ -991,7 +991,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {kind?:'sale'|'gift'|'buy-get';title:string;eligible:boolean;remainingCount?:number;discount?:string;selected?:boolean;onSelect?:(v:boolean)=>void;onAction:()=>void;children:React.ReactNode}
 ```
 
-## UnavailableProductsGroup
+## 不可用商品组（UnavailableProductsGroup）
 
 业务组件 · 商品与购物车
 
@@ -999,7 +999,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {products:Product[];expanded:boolean;onExpand:()=>void;onRemoveAll:()=>void;onRemove:(id:string)=>void;totalCount?:number}
 ```
 
-## CartHeader
+## 购物车头部（CartHeader）
 
 业务组件 · 导航
 
@@ -1007,7 +1007,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {count:number;address?:string;onAddress?:()=>void;onClear:()=>void}
 ```
 
-## SearchHeader
+## 搜索页头部（SearchHeader）
 
 业务组件 · 导航
 
@@ -1015,7 +1015,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {value:string;onChange:(v:string)=>void;onSearch:(v:string)=>void;onBack:()=>void;onCart:()=>void;cartCount?:number}
 ```
 
-## SearchSuggestions
+## 搜索建议（SearchSuggestions）
 
 业务组件 · 输入与筛选
 
@@ -1023,7 +1023,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {title:string;items:string[];onSelect:(v:string)=>void;onClear?:()=>void;expandable?:boolean}
 ```
 
-## CategoryTile
+## 分类入口卡片（CategoryTile）
 
 业务组件 · 导航
 
@@ -1031,7 +1031,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {item:CategoryItem;onSelect:()=>void}
 ```
 
-## CategoryGrid
+## 分类入口网格（CategoryGrid）
 
 业务组件 · 导航
 
@@ -1039,7 +1039,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {items:CategoryItem[];onSelect:(id:string)=>void}
 ```
 
-## HomeHeader
+## 首页头部（HomeHeader）
 
 业务组件 · 导航
 
@@ -1047,7 +1047,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {address:string;delivery:string;information:string;query:string;onQuery:(v:string)=>void;onAddress:()=>void;onSearch?:()=>void}
 ```
 
-## CategoryLayout
+## 分类页框架（CategoryLayout）
 
 业务组件 · 导航
 
@@ -1060,7 +1060,7 @@ type CommerceCategory = {id:string;label:string;image?:string;selectedImage?:str
 {variant?:'image-primary'|'text-primary';title:string;categories:CommerceCategory[];selected:string;onSelect:(id:string)=>void;products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;primaryCategories?:CommerceCategory[];primaryOptions:string[];primaryValue?:string;onPrimaryChange:(value:string)=>void;expanded?:boolean;onExpand:()=>void;query?:string;onQuery?:(v:string)=>void;onSearch?:()=>void;tertiaryOptions?:string[];tertiaryValue?:string;onTertiaryChange?:(v:string)=>void;sort?:'default'|'sales'|'price';onSort?:(sort:'default'|'sales'|'price')=>void}
 ```
 
-## OrderStageProgress
+## 订单阶段进度（OrderStageProgress）
 
 业务组件 · 支付与订单
 
@@ -1068,7 +1068,7 @@ type CommerceCategory = {id:string;label:string;image?:string;selectedImage?:str
 {current?:number}
 ```
 
-## OrderArrival
+## 订单送达信息（OrderArrival）
 
 业务组件 · 支付与订单
 
@@ -1076,7 +1076,7 @@ type CommerceCategory = {id:string;label:string;image?:string;selectedImage?:str
 {time:string;actions?:string[];onAction:(action:string)=>void}
 ```
 
-## OrderDeliveryDetails
+## 订单配送详情（OrderDeliveryDetails）
 
 业务组件 · 支付与订单
 
@@ -1084,7 +1084,7 @@ type CommerceCategory = {id:string;label:string;image?:string;selectedImage?:str
 {time:string;address:Address}
 ```
 
-## PhoneField
+## 手机号输入框（PhoneField）
 
 业务组件 · 登录与授权
 
@@ -1092,7 +1092,7 @@ type CommerceCategory = {id:string;label:string;image?:string;selectedImage?:str
 {value:string;onChange:(v:string)=>void;country?:string;showCountry?:boolean;onCountry?:()=>void;placeholder?:string;disabled?:boolean;error?:string;focused?:boolean;onFocus?:()=>void}
 ```
 
-## SupportOrderCard
+## 客服订单卡片（SupportOrderCard）
 
 业务组件 · 客服与帮助
 
@@ -1100,7 +1100,7 @@ type CommerceCategory = {id:string;label:string;image?:string;selectedImage?:str
 {status?:string;count?:number;time?:string;onSelect?:()=>void}
 ```
 
-## RiderReviewCard
+## 配送评价卡片（RiderReviewCard）
 
 业务组件 · 评价与媒体
 
@@ -1108,7 +1108,7 @@ type CommerceCategory = {id:string;label:string;image?:string;selectedImage?:str
 {comment:string;rating?:number;name?:string}
 ```
 
-## CartPromotionBar
+## 购物车活动条（CartPromotionBar）
 
 业务组件 · 商品与购物车
 
@@ -1116,7 +1116,7 @@ type CommerceCategory = {id:string;label:string;image?:string;selectedImage?:str
 {kind?:'sale'|'gift';title:string;description?:string;actionLabel?:string;onAction?:()=>void;celebrate?:boolean}
 ```
 
-## VoucherList
+## 优惠券列表（VoucherList）
 
 业务组件 · 优惠与账户
 
@@ -1124,7 +1124,7 @@ type CommerceCategory = {id:string;label:string;image?:string;selectedImage?:str
 {coupons:CouponData[];onUse:()=>void;onDetails:(index:number)=>void;empty?:boolean}
 ```
 
-## VoucherSuccessDialog
+## 兑券成功弹窗（VoucherSuccessDialog）
 
 业务组件 · 优惠与账户
 
@@ -1132,7 +1132,7 @@ type CommerceCategory = {id:string;label:string;image?:string;selectedImage?:str
 {open:boolean;coupon:CouponData;onClose:()=>void;onUse:()=>void;onDetails:()=>void;showClose?:boolean}
 ```
 
-## HomeVoucherBanner
+## 首页新客券横幅（HomeVoucherBanner）
 
 业务组件 · 优惠与账户
 
@@ -1140,7 +1140,7 @@ type CommerceCategory = {id:string;label:string;image?:string;selectedImage?:str
 {onClick:()=>void}
 ```
 
-## Icon
+## 图标（Icon）
 
 基础组件 · 展示
 

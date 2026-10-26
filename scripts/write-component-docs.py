@@ -30,10 +30,10 @@ s=f'''# KeenMart 组件体系 · v0.12
 ## 规范补充项
 
 '''
-s+='、'.join(x['name'] for x in added)+'。\n\n这些组件或交互状态未在原页面中单独展示，按现有颜色、字体、间距与控件尺寸补齐。属于公共能力，不是假定已出现过的原稿组件。\n\n'
+s+='、'.join(x['displayName']+'（'+x['name']+'）' for x in added)+'。\n\n这些组件或交互状态未在原页面中单独展示，按现有颜色、字体、间距与控件尺寸补齐。属于公共能力，不是假定已出现过的原稿组件。\n\n'
 for title,rows in [('基础组件',basic),('业务组件',biz)]:
  s+='## '+title+'\n\n| 组件 | 分组 | 来源 | 状态 |\n|---|---|---|---|\n'
- for x in rows:s+='| '+x['name']+' | '+x['category']+' | '+('规范补充' if x['origin']=='supplemental' else '页面提取')+' | '+', '.join(x['states'])+' |\n'
+ for x in rows:s+='| '+x['displayName']+'（'+x['name']+'） | '+x['category']+' | '+('规范补充' if x['origin']=='supplemental' else '页面提取')+' | '+', '.join(x['states'])+' |\n'
 s+='''
 ## 页面覆盖与组合
 
@@ -66,6 +66,6 @@ page-recipes.json 为每一条原页面记录组合类型、初始状态、尺�
 '''
 (p/'COMPONENT-SYSTEM.md').write_text(s)
 text='# 组件接口参考\n\n接口从实际 TypeScript 源码提取。具体状态和来源见组件目录；每个组件均在 `.km-system` 下使用。\n\n'
-for x in c:text+='## '+x['name']+'\n\n'+('业务组件' if x['kind']=='business' else '基础组件')+' · '+x['category']+'\n\n```ts\n'+api[x['name']]['props']+'\n```\n\n'
+for x in c:text+='## '+x['displayName']+'（'+x['name']+'）\n\n'+('业务组件' if x['kind']=='business' else '基础组件')+' · '+x['category']+'\n\n```ts\n'+api[x['name']]['props']+'\n```\n\n'
 (p/'COMPONENT-API.md').write_text(text)
 print('Wrote component system and API docs')
