@@ -2,6 +2,8 @@
 
 本仓库保存源码、本地图片与字体、组件规范、生成脚本和验收记录。预览服务与聊天记录不会通过 Git 同步。
 
+私有仓库：https://github.com/malinbushiren/keenmart-ui 。默认分支为 `main`。
+
 ## 另一台电脑首次使用
 
 1. 安装 Git、Node.js 24 和 Python 3（生成组件目录时使用）。
@@ -15,6 +17,15 @@ npm run dev -- --port 5173
 ```
 
 打开 http://127.0.0.1:5173/?view=system 。只有启动本机服务后，该链接才能访问。
+
+可使用 GitHub Desktop 登录后克隆，或使用已配置认证的 Git：
+
+```bash
+git clone https://github.com/malinbushiren/keenmart-ui.git
+cd keenmart-ui
+```
+
+公司电脑已配置专用 SSH 密钥，通过 GitHub SSH 的 443 端口连接。该配置只保存在本机 `.git/config`；不要复制或上传私钥，家里电脑需单独登录或配置自己的 SSH 密钥。
 
 ## 每次换电脑
 
