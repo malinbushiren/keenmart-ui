@@ -473,5 +473,30 @@
     ],
     "source": "用户 139:52875、139:52894、139:53130、138:52184 验收标注",
     "priority": "用户修正优先于原稿历史值"
+  },
+  {
+    "id": "bottom-navigation",
+    "category": "导航",
+    "title": "底部导航支持四项和五项",
+    "rule": "TabBar 使用 Figma 140:53147 的 30px 原稿选中与未选中图标，导航内容高 48px，四项或五项等分；五项可增加 Order。Badge 沿用当前逻辑：零不显示、单数字圆形、多位胶囊、超过 99 显示 99+。TabBar 不重复绘制手势区，由 Page 统一提供 34px 安全区。现有四项页面保留栏目数量并使用新样式。",
+    "components": [
+      "TabBar",
+      "Badge",
+      "Page",
+      "HomeIndicator"
+    ],
+    "source": "用户要求；Figma 140:53219、140:53865",
+    "priority": "用户修正优先于原稿历史值"
+  },
+  {
+    "id": "order-stage-progress",
+    "category": "业务组件",
+    "title": "订单进度使用完整阶段图标与部分连接线",
+    "rule": "OrderStageProgress 使用 28px 完整阶段图标，不能把原稿自带圆底的图标缩小后再套圆底。连接线为 6px；当前阶段通向下一阶段的线填充约 53.33%，此前连接线全填充，后续灰色；完成状态全部填充。保留四阶段的辅助文本。",
+    "components": [
+      "OrderStageProgress"
+    ],
+    "source": "用户要求；Figma 152:57104、152:57164、152:57211、152:57267",
+    "priority": "用户修正优先于原稿历史值"
   }
 ]

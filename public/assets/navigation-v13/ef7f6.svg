@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="tab icon ">
+<path id="&#231;&#159;&#169;&#229;&#189;&#162;" d="M11 13C11 11.3431 12.3431 10 14 10L21 10C22.6569 10 24 11.3431 24 13V22C24 23.6569 22.6569 25 21 25H14C12.3431 25 11 23.6569 11 22V13Z" fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint0_linear_0_189)"/>
+<path id="Rectangle 2124" d="M24 9.77778V23C24 24.1046 23.1046 25 22 25H8C6.89543 25 6 24.1046 6 23V9.77778C6 8.67321 6.89543 7.77778 8 7.77778H9.7971C10.2455 7.77778 10.6391 7.47924 10.7601 7.04741L11.1288 5.73037C11.2497 5.29854 11.6434 5 12.0918 5H17.9082C18.3566 5 18.7503 5.29854 18.8712 5.73037L19.2399 7.04741C19.3609 7.47924 19.7545 7.77778 20.2029 7.77778H22C23.1046 7.77778 24 8.67321 24 9.77778Z" stroke-width="1.5" stroke="#1A1A1A"/>
+<path id="Vector 90" d="M11 13H19" stroke-width="1.5" stroke-linecap="round" stroke="#1A1A1A"/>
+<path id="Vector 91" d="M11 18H17" stroke-width="1.5" stroke-linecap="round" stroke="#1A1A1A"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_189" x1="9.9707" y1="15.0517" x2="14.6998" y2="25.9921" gradientUnits="userSpaceOnUse">
+<stop stop-color="#7AEE92"/>
+<stop offset="1" stop-color="#33BA5D"/>
+</linearGradient>
+</defs>
+</svg>

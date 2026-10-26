@@ -669,17 +669,19 @@
     "origin": "observed",
     "states": [
       "default",
-      "badge"
+      "badge",
+      "five",
+      "five-badge"
     ],
     "sources": [
-      "34:22799",
-      "10:10108"
+      "140:53219",
+      "140:53865"
     ],
     "dependencies": [
       "Badge",
       "Icon"
     ],
-    "rationale": "应用主栏目导航；首页、分类、购物车、账户四个入口保持相同宽度。",
+    "rationale": "应用主栏目导航；支持四项与五项等分布局，五项增加订单入口；图标使用原稿选中与未选中素材，角标沿用 Badge 规则，安全区由 Page 提供。",
     "status": "implemented-candidate",
     "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
   },
@@ -2295,28 +2297,6 @@
     "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
   },
   {
-    "name": "SupportEntryGrid",
-    "displayName": "客服入口网格",
-    "kind": "business",
-    "category": "客服与帮助",
-    "origin": "observed",
-    "states": [
-      "default"
-    ],
-    "sources": [
-      "34:41773",
-      "34:42209",
-      "34:42611"
-    ],
-    "dependencies": [
-      "Grid",
-      "Icon"
-    ],
-    "rationale": "客服问题类型入口；每项映射一个问题类别，不用于商城商品分类。",
-    "status": "implemented-candidate",
-    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
-  },
-  {
     "name": "ChatMessage",
     "displayName": "聊天消息",
     "kind": "business",
@@ -2802,7 +2782,7 @@
   },
   {
     "name": "CategoryGrid",
-    "displayName": "分类入口网格",
+    "displayName": "金刚区入口",
     "kind": "business",
     "category": "导航",
     "origin": "observed",
@@ -2815,7 +2795,7 @@
     "dependencies": [
       "CategoryTile"
     ],
-    "rationale": "首页商品分类入口网格；每个入口对应真实分类数据。",
+    "rationale": "首页金刚区入口；按网格组织真实业务分类入口。",
     "status": "implemented-candidate",
     "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
   },
@@ -2876,15 +2856,18 @@
     "origin": "observed",
     "states": [
       "default",
+      "preparing",
+      "delivering",
       "complete"
     ],
     "sources": [
-      "34:30234",
-      "34:31555",
-      "34:33605"
+      "152:57104",
+      "152:57164",
+      "152:57211",
+      "152:57267"
     ],
     "dependencies": [],
-    "rationale": "订单离散进展的横向状态条；对应下单、备货、配送、签收。",
+    "rationale": "订单四阶段进度；对应下单、备货、配送、签收，当前阶段后的连接线填充约一半，已完成连接线全填充，待达阶段灰色。",
     "status": "implemented-candidate",
     "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
   },

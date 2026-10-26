@@ -2279,22 +2279,23 @@
     "height": 812,
     "density": "regular",
     "components": [
-      "BottomSheet",
-      "Button",
-      "FAQList",
-      "ListRow",
-      "NavBar",
-      "OrderCard",
       "Page",
-      "Section",
-      "SupportEntryGrid",
-      "Toast"
+      "Toast",
+      "NavBar",
+      "Card",
+      "ListRow",
+      "ListGroup",
+      "BottomSheet",
+      "SupportOrderCard",
+      "ActionBar",
+      "Button",
+      "HomeIndicator"
     ],
     "source": "https://www.figma.com/design/muIyl7AhHSieD13gdjfEw1/keen-mart-UIkits?node-id=34-41773",
     "background": "gray",
     "visualReview": "pending",
     "scope": "公共组件组合验证；不等于已与原稿逐像素验收通过。",
-    "usageSource": "PageAssembly.tsx JSX + bounded helper dependencies"
+    "usageSource": "PageAssembly.tsx explicit domain composition"
   },
   {
     "nodeId": "34:41971",
@@ -2469,20 +2470,23 @@
     "height": 812,
     "density": "regular",
     "components": [
-      "Button",
-      "FAQList",
-      "ListRow",
-      "NavBar",
       "Page",
-      "Section",
-      "SupportEntryGrid",
-      "Toast"
+      "Toast",
+      "NavBar",
+      "Card",
+      "ListRow",
+      "ListGroup",
+      "BottomSheet",
+      "SupportOrderCard",
+      "ActionBar",
+      "Button",
+      "HomeIndicator"
     ],
     "source": "https://www.figma.com/design/muIyl7AhHSieD13gdjfEw1/keen-mart-UIkits?node-id=34-42505",
     "background": "gray",
     "visualReview": "pending",
     "scope": "公共组件组合验证；不等于已与原稿逐像素验收通过。",
-    "usageSource": "PageAssembly.tsx JSX + bounded helper dependencies"
+    "usageSource": "PageAssembly.tsx explicit domain composition"
   },
   {
     "nodeId": "34:42580",

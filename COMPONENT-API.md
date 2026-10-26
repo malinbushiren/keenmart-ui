@@ -839,14 +839,6 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {items:{id:string;title:string;description?:string;value?:React.ReactNode;icon?:IconName;leading?:React.ReactNode}[];onAction:(v:string)=>void}
 ```
 
-## 客服入口网格（SupportEntryGrid）
-
-业务组件 · 客服与帮助
-
-```ts
-{entries:Option[];onSelect:(v:string)=>void}
-```
-
 ## 聊天消息（ChatMessage）
 
 业务组件 · 客服与帮助
@@ -1015,7 +1007,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {item:CategoryItem;onSelect:()=>void}
 ```
 
-## 分类入口网格（CategoryGrid）
+## 金刚区入口（CategoryGrid）
 
 业务组件 · 导航
 

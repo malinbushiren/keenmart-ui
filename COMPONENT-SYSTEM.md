@@ -1,6 +1,6 @@
 # KeenMart 组件体系 · v0.12
 
-本轮范围：现有 109 个页面／状态；65 个基础组件、75 个业务组件，共 140 个可运行候选组件。13 个组件属于规范补充，其他组件从原页面中的结构或交互提取。共有 424 个状态检查项。
+本轮范围：现有 109 个页面／状态；65 个基础组件、74 个业务组件，共 139 个可运行候选组件。13 个组件属于规范补充，其他组件从原页面中的结构或交互提取。共有 427 个状态检查项。
 
 组件库、组合页面与原页面分开维护：组合页不导入旧 Screen 模块；原页面继续保留作对照。109 个入口都有公共组件拼装方案，覆盖 47 类页面组合。运行检查与视觉验收分开记录；visualReview=pending 不会因加载成功而自动标成通过。
 
@@ -62,7 +62,7 @@
 | 顶部导航栏（NavBar） | 导航 | 页面提取 | default, long, no-back, no-actions |
 | 标签页（Tabs） | 导航 | 页面提取 | default, scroll, disabled |
 | 分段选择器（SegmentedControl） | 导航 | 页面提取 | default, disabled |
-| 底部导航栏（TabBar） | 导航 | 页面提取 | default, badge |
+| 底部导航栏（TabBar） | 导航 | 页面提取 | default, badge, five, five-badge |
 | 侧边分类栏（Sidebar） | 导航 | 页面提取 | default, long |
 | 搜索框（SearchBar） | 输入与筛选 | 页面提取 | default, outline, white, filled, disabled |
 | 表单字段（FormField） | 输入与筛选 | 规范补充 | default, error |
@@ -141,7 +141,6 @@
 | 新客优惠（NewUserOffer） | 优惠与账户 | 页面提取 | default, long |
 | 账户头部（AccountHeader） | 优惠与账户 | 页面提取 | default, guest, profile |
 | 设置分组（SettingGroup） | 优惠与账户 | 页面提取 | default, long |
-| 客服入口网格（SupportEntryGrid） | 客服与帮助 | 页面提取 | default |
 | 聊天消息（ChatMessage） | 客服与帮助 | 页面提取 | default, user, system, media, long |
 | 聊天输入栏（ChatComposer） | 客服与帮助 | 页面提取 | default, filled, disabled |
 | 客服排队提示（ServiceQueue） | 客服与帮助 | 页面提取 | default |
@@ -163,10 +162,10 @@
 | 搜索页头部（SearchHeader） | 导航 | 页面提取 | default, filled |
 | 搜索建议（SearchSuggestions） | 输入与筛选 | 页面提取 | default, empty |
 | 分类入口卡片（CategoryTile） | 导航 | 页面提取 | default, promotion |
-| 分类入口网格（CategoryGrid） | 导航 | 页面提取 | default |
+| 金刚区入口（CategoryGrid） | 导航 | 页面提取 | default |
 | 首页头部（HomeHeader） | 导航 | 页面提取 | default, filled |
 | 分类页框架（CategoryLayout） | 导航 | 页面提取 | text-primary, image-primary, empty |
-| 订单阶段进度（OrderStageProgress） | 支付与订单 | 页面提取 | default, complete |
+| 订单阶段进度（OrderStageProgress） | 支付与订单 | 页面提取 | default, preparing, delivering, complete |
 | 订单送达信息（OrderArrival） | 支付与订单 | 页面提取 | default, unpaid |
 | 订单配送详情（OrderDeliveryDetails） | 支付与订单 | 页面提取 | default |
 | 手机号输入框（PhoneField） | 登录与授权 | 页面提取 | default, filled, without-country, error, disabled |

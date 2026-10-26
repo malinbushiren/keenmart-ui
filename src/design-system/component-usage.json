@@ -416,7 +416,7 @@
     "preview": "?component-preview=SegmentedControl&variant=default"
   },
   "TabBar": {
-    "definition": "应用主栏目导航；首页、分类、购物车、账户四个入口保持相同宽度。",
+    "definition": "应用主栏目导航；支持四项与五项等分布局，五项增加订单入口；图标使用原稿选中与未选中素材，角标沿用 Badge 规则，安全区由 Page 提供。",
     "when": "需要在同一层级切换内容或在应用主栏目之间跳转时。",
     "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
     "boundary": "只负责通用外观与交互，不读取商品、订单或账户接口。",
@@ -1351,19 +1351,6 @@
     "example": null,
     "preview": "?component-preview=SettingGroup&variant=default"
   },
-  "SupportEntryGrid": {
-    "definition": "客服问题类型入口；每项映射一个问题类别，不用于商城商品分类。",
-    "when": "查问题、等待客服、发送消息或查看工单时。",
-    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
-    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
-    "steps": [
-      "选择与当前任务相符的组件及状态。",
-      "按接口传入数据，绑定 onChange／onAction 等事件。",
-      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
-    ],
-    "example": null,
-    "preview": "?component-preview=SupportEntryGrid&variant=default"
-  },
   "ChatMessage": {
     "definition": "客服聊天中的单条用户、客服或系统消息。",
     "when": "客服、欢迎语和排队提示使用白色气泡；用户消息使用绿色气泡白字，图片消息使用 media，接入提示使用 notice。",
@@ -1638,7 +1625,7 @@
     "preview": "?component-preview=CategoryTile&variant=default"
   },
   "CategoryGrid": {
-    "definition": "首页商品分类入口网格；每个入口对应真实分类数据。",
+    "definition": "首页金刚区入口；按网格组织真实业务分类入口。",
     "when": "需要在同一层级切换内容或在应用主栏目之间跳转时。",
     "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
     "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
@@ -1677,7 +1664,7 @@
     "preview": "?component-preview=CategoryLayout&variant=default"
   },
   "OrderStageProgress": {
-    "definition": "订单离散进展的横向状态条；对应下单、备货、配送、签收。",
+    "definition": "订单四阶段进度；对应下单、备货、配送、签收，当前阶段后的连接线填充约一半，已完成连接线全填充，待达阶段灰色。",
     "when": "选择付款方式、填写卡信息、查看金额或订单状态时。",
     "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
     "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",

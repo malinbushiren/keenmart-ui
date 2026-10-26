@@ -415,10 +415,6 @@
     "file": "business.tsx",
     "props": "{items:{id:string;title:string;description?:string;value?:React.ReactNode;icon?:IconName;leading?:React.ReactNode}[];onAction:(v:string)=>void}"
   },
-  "SupportEntryGrid": {
-    "file": "business.tsx",
-    "props": "{entries:Option[];onSelect:(v:string)=>void}"
-  },
   "ChatMessage": {
     "file": "business.tsx",
     "props": "{side?:'agent'|'user'|'system';text?:string;time?:string;children?:React.ReactNode;variant?:'bubble'|'notice'|'media'}"
