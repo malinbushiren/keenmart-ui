@@ -27,8 +27,8 @@
   },
   "QuantityStepper": {
     "definition": "一个商品的数量编辑控件；处理增加、减少、上限和数量为一时禁用减号。",
-    "when": "编辑商品数量，最小值为 1。数量为 1 时减号置灰并禁用，删除统一由左滑操作提供。",
-    "avoid": "禁止通过步进器删除，也不以垃圾桶替代减号。",
+    "when": "购物车数量默认下限为 1；商卡加购通过 min={0} 允许减到零，随后恢复加购按钮。",
+    "avoid": "购物车删除使用左滑；商卡数量为 1 时减号可点击。不要用垃圾桶替代减号。",
     "boundary": "只负责通用外观与交互，不读取商品、订单或账户接口。",
     "steps": [
       "选择与当前任务相符的组件及状态。",
@@ -37,19 +37,6 @@
     ],
     "example": "<QuantityStepper value={quantity} onChange={setQuantity} />",
     "preview": "?component-preview=QuantityStepper&variant=default"
-  },
-  "Price": {
-    "definition": "金额格式组件；统一币种、整数、小数、原价和促销价格的层级。",
-    "when": "商品被浏览、选择规格、加入购物车或结算前检查时。",
-    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
-    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
-    "steps": [
-      "选择与当前任务相符的组件及状态。",
-      "按接口传入数据，绑定 onChange／onAction 等事件。",
-      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
-    ],
-    "example": null,
-    "preview": "?component-preview=Price&variant=default"
   },
   "Tag": {
     "definition": "不可点击的短状态标签；标记促销、门槛或商品状态。",
@@ -911,80 +898,67 @@
   },
   "ProductStatusOverlay": {
     "definition": "商品图上的售罄、下架、非卖品蒙层；支持中英文。",
-    "when": "商品被浏览、选择规格、加入购物车或结算前检查时。",
-    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
+    "when": "两套商卡图片蒙层：regular=165、compact=72；各支持售罄、已下架、非卖品以及中英文，共 12 种组合。",
+    "avoid": "遮罩为白色 50%，状态胶囊为黑色 60%；不能用不透明灰底盖掉商品图。",
     "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
     "steps": [
       "选择与当前任务相符的组件及状态。",
       "按接口传入数据，绑定 onChange／onAction 等事件。",
       "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
     ],
-    "example": null,
+    "example": "<ProductStatusOverlay status=\"unavailable\" size=\"compact\" locale=\"zh\" />",
     "preview": "?component-preview=ProductStatusOverlay&variant=default"
   },
   "ProductSupplierTag": {
     "definition": "商卡供应商入口；灰色底承载供应商图标、名称和箭头。",
-    "when": "商品被浏览、选择规格、加入购物车或结算前检查时。",
-    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
+    "when": "同一标签支持 supplier 供应商名称、comparison 更多供应商比价两种变体。",
+    "avoid": "保留店铺图标与箭头；不要另建一个重复的比价标签组件。",
     "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
     "steps": [
       "选择与当前任务相符的组件及状态。",
       "按接口传入数据，绑定 onChange／onAction 等事件。",
       "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
     ],
-    "example": null,
+    "example": "<ProductSupplierTag name=\"foodmax\" variant=\"comparison\" onClick={compare} />",
     "preview": "?component-preview=ProductSupplierTag&variant=default"
   },
   "ProductList": {
     "definition": "同一批商品卡的数据列表；统一网格／横向布局并回传商品操作。",
-    "when": "商品被浏览、选择规格、加入购物车或结算前检查时。",
-    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
+    "when": "feeds 商品流；layout=grid 双列瀑布流，layout=row 单列通栏，density=compact 分类单列。",
+    "avoid": "使用定制商卡，不恢复旧商卡结构。",
     "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
     "steps": [
       "选择与当前任务相符的组件及状态。",
       "按接口传入数据，绑定 onChange／onAction 等事件。",
       "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
     ],
-    "example": null,
+    "example": "<ProductList products={products} layout=\"row\" onAdd={add} />",
     "preview": "?component-preview=ProductList&variant=default"
   },
   "ProductCollection": {
     "definition": "带标题和商品列表的推荐区；底层复用 ProductList。",
-    "when": "推荐 feeds 流，组件提供灰色背景、标题和白色商品卡。",
-    "avoid": "不要去掉灰底，也不要把整个推荐区放进另一张白卡。",
+    "when": "猜你喜欢：灰色承载层、标题和白色商品卡；layout=grid 双列、layout=row 单列。",
+    "avoid": "不能让白色商品卡融入白色背景。",
     "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
     "steps": [
       "选择与当前任务相符的组件及状态。",
       "按接口传入数据，绑定 onChange／onAction 等事件。",
       "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
     ],
-    "example": "<ProductCollection products={products} onAdd={add} />",
+    "example": "<ProductCollection products={products} layout=\"row\" onAdd={add} />",
     "preview": "?component-preview=ProductCollection&variant=default"
-  },
-  "ProductDetailHeader": {
-    "definition": "详情页的商品图片、价格和标题摘要；不包含配送和推荐商品。",
-    "when": "商品被浏览、选择规格、加入购物车或结算前检查时。",
-    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
-    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
-    "steps": [
-      "选择与当前任务相符的组件及状态。",
-      "按接口传入数据，绑定 onChange／onAction 等事件。",
-      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
-    ],
-    "example": null,
-    "preview": "?component-preview=ProductDetailHeader&variant=default"
   },
   "ProductSpecPicker": {
     "definition": "商品规格任务；包含商品摘要、必选项、加工方式、数量和确认动作。",
-    "when": "商品被浏览、选择规格、加入购物车或结算前检查时。",
-    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
+    "when": "完整白色商品规格抽屉：商品图与摘要、处理方式、口味、数量、加购及安全区；传 open/onClose 控制抽屉，省略 open 可内嵌预览面板。",
+    "avoid": "不再仅抽取孤立选项；不要重复套一层 BottomSheet 或重复安全区。",
     "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
     "steps": [
       "选择与当前任务相符的组件及状态。",
       "按接口传入数据，绑定 onChange／onAction 等事件。",
       "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
     ],
-    "example": null,
+    "example": "<ProductSpecPicker open={open} onClose={close} product={product} groups={groups} values={values} onChange={setValues} quantity={quantity} onQuantity={setQuantity} onConfirm={add} />",
     "preview": "?component-preview=ProductSpecPicker&variant=default"
   },
   "CartItem": {
@@ -1067,7 +1041,7 @@
   },
   "AddressForm": {
     "definition": "编辑地址、联系人、手机号和标签的完整地址任务。",
-    "when": "地图摘要＋地址与联系人表单。surface=white 适合灰色页面、输入为灰色；surface=gray 适合白色页面、输入为白色。",
+    "when": "地图摘要＋地址与联系人表单；字段标签放在框内，不再单独展示一行。surface=white 适合灰色页面、输入为灰色；surface=gray 适合白色页面、输入为白色。",
     "avoid": "表单和承载背景不能同色；不要给字段和整个表单重复叠加灰色底。",
     "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
     "steps": [

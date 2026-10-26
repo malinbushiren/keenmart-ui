@@ -28,7 +28,7 @@
 
 白底上使用灰色组件，或有描边的白色组件；灰底上使用白色或明确的彩色组件。输入框、搜索框和预览容器都要有可见边界，不能融入背景。 优惠券列表、历史券列表、Profile、About 和推荐商品 feeds 流必须使用灰色承载背景与白色卡片；即使原页面误用白底，也按此规则纠正。ProductCollection、VoucherList 自己提供灰色承载层，页面不能把它覆盖回白色。白底上白色组件只有具备明确描边时才可使用。 通用 SVG 包装层修正规则不得命中 VoucherList 或优惠券页面等带明确背景的语义容器；验证时检查浏览器计算后的背景色，不能只检查 CSS 声明。
 
-**适用组件**：页面容器（Page）, 搜索框（SearchBar）, 单行输入框（TextField）, 选择标签（ChoiceChip）, 卡片（Card）, 地图选址（MapAddressPicker）, 优惠券列表（VoucherList）, 优惠券卡片（CouponCard）, 推荐商品区（ProductCollection）。
+**适用组件**：页面容器（Page）, 搜索框（SearchBar）, 单行输入框（TextField）, 选择标签（ChoiceChip）, 卡片（Card）, 地图选址（MapAddressPicker）, 优惠券列表（VoucherList）, 优惠券卡片（CouponCard）, 猜你喜欢（ProductCollection）。
 
 ## empty · 整页空状态的上下留白为 1:2
 
@@ -60,7 +60,7 @@
 
 导航和底部弹窗标题使用 18/23px，正文 14/19px，辅助文案 12/18px；文字不因模板复用随意放大。状态标签使用常规字重，价格保留币种、整数和小数的明确层级。
 
-**适用组件**：文本（Text）, 底部抽屉（BottomSheet）, 顶部导航栏（NavBar）, 价格（Price）, 状态文字（StatusLabel）。
+**适用组件**：文本（Text）, 底部抽屉（BottomSheet）, 顶部导航栏（NavBar）, 状态文字（StatusLabel）。
 
 ## button · 按钮尺寸按操作层级使用
 
@@ -70,11 +70,11 @@ regular 48px 用于提交和结算，medium 40px 用于区域操作，small 36px
 
 **适用组件**：按钮（Button）, 订单送达信息（OrderArrival）, 分段选择器（SegmentedControl）。
 
-## quantity · 数量为 1 时减号禁用
+## quantity · 数量下限按场景区分
 
 **类别**：交互。**依据**：用户明确要求（含前轮确认）。
 
-数量为 1 时保留减号并置灰，不能通过步进器删除商品，也不能用垃圾桶替代减号。删除商品统一左滑后展示删除操作。
+购物车步进器下限为 1，减号保留并置灰，删除使用左滑。商卡加购控件下限为 0，数量为 1 时减号可点击，减到 0 后恢复加购按钮；达到上限时加号禁用。
 
 **适用组件**：数量步进器（QuantityStepper）, 购物车商品行（CartItem）, 商品卡片（ProductCard）, 商品规格选择器（ProductSpecPicker）, 左滑操作（SwipeAction）。
 
@@ -234,9 +234,9 @@ VoucherSuccessDialog 统一使用浅绿渐变背景、绿色标题、白色优�
 
 **类别**：业务组件。**依据**：用户本轮要求；Figma 136:39431 的三类商卡结构，基础元素遵循现有规范。
 
-ProductCard 的 grid、full-width、category 分别用于双列瀑布流、通栏单列和分类单列；保留商品图、标题、重量、价格层级、促销、供应商和购买状态。图片槽位分别为自适应正方形、120px、72px；尺寸来自本轮原稿。价格、标签、数量、按钮和文字使用当前基础规范与令牌，不在页面重新实现旧商卡。双列商卡多规格通过抽屉选择，宽屏商卡可在卡内展开规格。数量为 1 时减号禁用，不能改成删除。
+ProductCard 的 grid、full-width、category 分别用于双列瀑布流、通栏单列和分类单列；保留商品图、标题、重量、价格层级、促销、供应商和购买状态。图片槽位分别为自适应正方形、120px、72px；尺寸来自本轮原稿。价格、标签、数量、按钮和文字使用当前基础规范与令牌，不在页面重新实现旧商卡。双列商卡多规格通过抽屉选择，宽屏商卡可在卡内展开规格。商卡加购数量为 1 时减号可点击，减到 0 恢复加购按钮。 状态蒙层使用白色 50% 遮罩和黑色 60% 胶囊，支持 165 与 72 两套尺寸、售罄/已下架/非卖品及中英文共 12 个变体；供应商名称与比价共用一个可切换标签组件。购物车商品图片占位始终为 1:1。规格选择作为完整白色底部抽屉，包含商品摘要、规格、数量、主按钮与安全区。地址表单字段名称放在输入框内，保留无障碍标签。
 
-**适用组件**：商品卡片（ProductCard）, 商品列表（ProductList）, 推荐商品区（ProductCollection）, 商品价格组合（ProductPriceGroup）, 商品购买控件（ProductPurchaseControl）, 商品状态蒙层（ProductStatusOverlay）, 供应商标签（ProductSupplierTag）。
+**适用组件**：商品卡片（ProductCard）, feeds（ProductList）, 猜你喜欢（ProductCollection）, 商品价格组合（ProductPriceGroup）, 商品购买控件（ProductPurchaseControl）, 商品状态蒙层（ProductStatusOverlay）, 供应商标签（ProductSupplierTag）, 购物车商品行（CartItem）, 商品规格选择器（ProductSpecPicker）。
 
 ## category-framework · 分类框架独立于页面外壳
 
@@ -258,7 +258,7 @@ CategoryLayout 提供 text-primary 与 image-primary 两种原稿结构。前者
 
 **类别**：页面与背景。**依据**：用户 139:52914、139:53126、139:53134；用户澄清第 18 张笔误。
 
-先判断页面背景，再选择组件承载层：灰色页面放白色表单，白色页面放灰色或明确描边的表单；字段与表单再形成层次。灰色内容不能展示在灰色背景上。AddressForm 的 surface 指表单本身颜色；OrderRemarks 使用白色承载层和灰色输入／选项；PromoCodeForm 使用白色承载层和灰色胶囊输入框。
+先判断页面背景，再选择组件承载层：灰色页面放白色表单，白色页面放灰色或明确描边的表单；字段与表单再形成层次。灰色内容不能展示在灰色背景上。AddressForm 的 surface 指表单本身颜色；OrderRemarks 使用白色承载层和灰色输入／选项；PromoCodeForm 使用白色承载层和灰色胶囊输入框。 地址与联系人字段名称置于输入框内部，保留可访问的标签，不再逐项占用框外独立标题行。
 
 **适用组件**：地址表单（AddressForm）, 订单备注（OrderRemarks）, 优惠码表单（PromoCodeForm）, 页面容器（Page）, 单行输入框（TextField）, 选择标签（ChoiceChip）。
 

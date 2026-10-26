@@ -69,29 +69,6 @@
     "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
   },
   {
-    "name": "Price",
-    "displayName": "价格",
-    "kind": "business",
-    "category": "商品与购物车",
-    "origin": "observed",
-    "states": [
-      "default",
-      "integer",
-      "large",
-      "promotion"
-    ],
-    "sources": [
-      "136:39483",
-      "136:40098",
-      "28:19480",
-      "52:46299"
-    ],
-    "dependencies": [],
-    "rationale": "金额格式组件；统一币种、整数、小数、原价和促销价格的层级。",
-    "status": "implemented-candidate",
-    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
-  },
-  {
     "name": "Tag",
     "displayName": "标签",
     "kind": "basic",
@@ -1431,9 +1408,7 @@
     "sources": [
       "136:39643"
     ],
-    "dependencies": [
-      "Price"
-    ],
+    "dependencies": [],
     "rationale": "价格业务组合；当前售价、币种、单位、单位价与划线原价的四种组合。",
     "status": "implemented-candidate",
     "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
@@ -1474,11 +1449,18 @@
     "category": "商品与购物车",
     "origin": "observed",
     "states": [
-      "sold-out",
-      "unavailable",
-      "not-for-sale",
-      "chinese",
-      "compact"
+      "sold-out-en",
+      "sold-out-zh",
+      "unavailable-en",
+      "unavailable-zh",
+      "not-for-sale-en",
+      "not-for-sale-zh",
+      "sold-out-en-compact",
+      "sold-out-zh-compact",
+      "unavailable-en-compact",
+      "unavailable-zh-compact",
+      "not-for-sale-en-compact",
+      "not-for-sale-zh-compact"
     ],
     "sources": [
       "136:39533",
@@ -1496,10 +1478,12 @@
     "category": "商品与购物车",
     "origin": "observed",
     "states": [
-      "default"
+      "default",
+      "comparison"
     ],
     "sources": [
-      "136:39576"
+      "136:39576",
+      "136:39583"
     ],
     "dependencies": [],
     "rationale": "商卡供应商入口；灰色底承载供应商图标、名称和箭头。",
@@ -1508,7 +1492,7 @@
   },
   {
     "name": "ProductList",
-    "displayName": "商品列表",
+    "displayName": "feeds",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1533,7 +1517,7 @@
   },
   {
     "name": "ProductCollection",
-    "displayName": "推荐商品区",
+    "displayName": "猜你喜欢",
     "kind": "business",
     "category": "商品与购物车",
     "origin": "observed",
@@ -1555,32 +1539,6 @@
     "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
   },
   {
-    "name": "ProductDetailHeader",
-    "displayName": "商品详情头部",
-    "kind": "business",
-    "category": "商品与购物车",
-    "origin": "observed",
-    "states": [
-      "default",
-      "promotion",
-      "unavailable"
-    ],
-    "sources": [
-      "136:39483",
-      "136:40098",
-      "28:19480",
-      "52:46299"
-    ],
-    "dependencies": [
-      "Button",
-      "Carousel",
-      "Price"
-    ],
-    "rationale": "详情页的商品图片、价格和标题摘要；不包含配送和推荐商品。",
-    "status": "implemented-candidate",
-    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
-  },
-  {
     "name": "ProductSpecPicker",
     "displayName": "商品规格选择器",
     "kind": "business",
@@ -1596,10 +1554,10 @@
     ],
     "dependencies": [
       "ActionBar",
+      "BottomSheet",
       "Button",
       "ChoiceChip",
       "HomeIndicator",
-      "Price",
       "QuantityStepper"
     ],
     "rationale": "商品规格任务；包含商品摘要、必选项、加工方式、数量和确认动作。",
@@ -1627,7 +1585,6 @@
     "dependencies": [
       "Checkbox",
       "Icon",
-      "Price",
       "QuantityStepper"
     ],
     "rationale": "购物车或订单中的单个商品行；有数量、价格、赠品或失效状态。",
@@ -1675,8 +1632,7 @@
       "52:46299"
     ],
     "dependencies": [
-      "Button",
-      "Price"
+      "Button"
     ],
     "rationale": "购物车底部总额和结算入口；汇总值从购物车状态传入。",
     "status": "implemented-candidate",
@@ -1926,7 +1882,6 @@
     "dependencies": [
       "Button",
       "Notice",
-      "Price",
       "TextField"
     ],
     "rationale": "新增银行卡输入任务；姓名、卡号、到期日、安全码及逐项校验。",
@@ -1973,8 +1928,7 @@
       "34:33605"
     ],
     "dependencies": [
-      "Card",
-      "Price"
+      "Card"
     ],
     "rationale": "结算金额明细；展示商品、优惠、运费及总额，所有金额由页面传入。",
     "status": "implemented-candidate",
@@ -1999,7 +1953,6 @@
     "dependencies": [
       "Button",
       "Card",
-      "Price",
       "TextButton"
     ],
     "rationale": "订单摘要；列表变体用于订单列表，overview 变体用于状态页的订单号与商品缩略图。",
@@ -2683,7 +2636,6 @@
     ],
     "dependencies": [
       "Button",
-      "Price",
       "StickyBar"
     ],
     "rationale": "结算底部的金额与下单操作；可展示当前支付方式标识。",

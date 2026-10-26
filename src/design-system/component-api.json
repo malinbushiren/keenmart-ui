@@ -9,11 +9,7 @@
   },
   "QuantityStepper": {
     "file": "components.tsx",
-    "props": "{value:number;onChange:(v:number)=>void;max?:number;disabled?:boolean;variant?:'default'|'overlay'|'field'}"
-  },
-  "Price": {
-    "file": "components.tsx",
-    "props": "{amount:string;original?:string;promotion?:boolean;currency?:string;unit?:string}"
+    "props": "{value:number;onChange:(v:number)=>void;max?:number;min?:number;disabled?:boolean;variant?:'default'|'overlay'|'field'}"
   },
   "Tag": {
     "file": "components.tsx",
@@ -25,7 +21,7 @@
   },
   "TextField": {
     "file": "components.tsx",
-    "props": "React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:string}"
+    "props": "React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:string;labelPlacement?:'outside'|'inside'}"
   },
   "RadioRow": {
     "file": "components.tsx",
@@ -269,7 +265,7 @@
   },
   "ProductCard": {
     "file": "business.tsx",
-    "props": "type ProductCardVariant = 'grid'|'full-width'|'category';\ntype ProductAvailability = 'available'|'sold-out'|'unavailable'|'not-for-sale';\ntype ProductSKU = {id:string;label:string;amount:string;unitPrice?:string;promotion?:string;max?:number};\ntype CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;promotion?:string;supplier?:string;orderBy?:string;availability?:ProductAvailability;purchase?:'add'|'quantity'|'count'|'notify'|'similar'|'none';max?:number;skus?:ProductSKU[]};\n\n{product:CommerceProduct;variant?:ProductCardVariant;quantity?:number;onAdd:()=>void;onQuantity?:(value:number)=>void;onSKUQuantity?:(id:string,value:number)=>void;skuQuantities?:Record<string,number>;initialExpanded?:boolean;onNotify?:()=>void;onSimilar?:()=>void;onSupplier?:()=>void;locale?:'en'|'zh'}"
+    "props": "type ProductCardVariant = 'grid'|'full-width'|'category';\ntype ProductAvailability = 'available'|'sold-out'|'unavailable'|'not-for-sale';\ntype ProductSKU = {id:string;label:string;amount:string;unitPrice?:string;promotion?:string;max?:number};\ntype CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;promotion?:string;supplier?:string;supplierVariant?:'supplier'|'comparison';orderBy?:string;availability?:ProductAvailability;purchase?:'add'|'quantity'|'count'|'notify'|'similar'|'none';max?:number;skus?:ProductSKU[]};\n\n{product:CommerceProduct;variant?:ProductCardVariant;quantity?:number;onAdd:()=>void;onQuantity?:(value:number)=>void;onSKUQuantity?:(id:string,value:number)=>void;skuQuantities?:Record<string,number>;initialExpanded?:boolean;onNotify?:()=>void;onSimilar?:()=>void;onSupplier?:()=>void;locale?:'en'|'zh'}"
   },
   "ProductPriceGroup": {
     "file": "business.tsx",
@@ -281,11 +277,11 @@
   },
   "ProductStatusOverlay": {
     "file": "business.tsx",
-    "props": "{status:ProductAvailability;locale?:'en'|'zh'}"
+    "props": "{status:ProductAvailability;locale?:'en'|'zh';size?:'regular'|'compact'}"
   },
   "ProductSupplierTag": {
     "file": "business.tsx",
-    "props": "{name:string;onClick?:()=>void}"
+    "props": "{name:string;variant?:'supplier'|'comparison';onClick?:()=>void}"
   },
   "ProductList": {
     "file": "business.tsx",
@@ -295,13 +291,9 @@
     "file": "business.tsx",
     "props": "{products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;onRemove?:(id:string)=>void;layout?:'grid'|'row';title?:string;density?:'regular'|'compact'}"
   },
-  "ProductDetailHeader": {
-    "file": "business.tsx",
-    "props": "{product:Product;images:{src:string;alt:string}[];onAdd:()=>void}"
-  },
   "ProductSpecPicker": {
     "file": "business.tsx",
-    "props": "{groups:{id:string;title:string;description?:string;required?:boolean;options:Option[]}[];values:Record<string,string>;onChange:(v:Record<string,string>)=>void;onConfirm:()=>void;product?:Product;quantity?:number;onQuantity?:(n:number)=>void}"
+    "props": "{groups:{id:string;title:string;description?:string;required?:boolean;options:Option[]}[];values:Record<string,string>;onChange:(v:Record<string,string>)=>void;onConfirm:()=>void;product?:Product;quantity?:number;onQuantity?:(n:number)=>void;onClose?:()=>void;open?:boolean}"
   },
   "CartItem": {
     "file": "business.tsx",
@@ -521,7 +513,7 @@
   },
   "CategoryLayout": {
     "file": "business.tsx",
-    "props": "type ProductAvailability = 'available'|'sold-out'|'unavailable'|'not-for-sale';\ntype ProductSKU = {id:string;label:string;amount:string;unitPrice?:string;promotion?:string;max?:number};\ntype CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;promotion?:string;supplier?:string;orderBy?:string;availability?:ProductAvailability;purchase?:'add'|'quantity'|'count'|'notify'|'similar'|'none';max?:number;skus?:ProductSKU[]};\ntype CommerceCategory = {id:string;label:string;image?:string;selectedImage?:string;layers?:ArtworkLayer[]};\n\n{variant?:'image-primary'|'text-primary';title:string;categories:CommerceCategory[];selected:string;onSelect:(id:string)=>void;products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;primaryCategories?:CommerceCategory[];primaryOptions:string[];primaryValue?:string;onPrimaryChange:(value:string)=>void;expanded?:boolean;onExpand:()=>void;query?:string;onQuery?:(v:string)=>void;onSearch?:()=>void;tertiaryOptions?:string[];tertiaryValue?:string;onTertiaryChange?:(v:string)=>void;sort?:'default'|'sales'|'price';onSort?:(sort:'default'|'sales'|'price')=>void}"
+    "props": "type ProductAvailability = 'available'|'sold-out'|'unavailable'|'not-for-sale';\ntype ProductSKU = {id:string;label:string;amount:string;unitPrice?:string;promotion?:string;max?:number};\ntype CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;promotion?:string;supplier?:string;supplierVariant?:'supplier'|'comparison';orderBy?:string;availability?:ProductAvailability;purchase?:'add'|'quantity'|'count'|'notify'|'similar'|'none';max?:number;skus?:ProductSKU[]};\ntype CommerceCategory = {id:string;label:string;image?:string;selectedImage?:string;layers?:ArtworkLayer[]};\n\n{variant?:'image-primary'|'text-primary';title:string;categories:CommerceCategory[];selected:string;onSelect:(id:string)=>void;products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;primaryCategories?:CommerceCategory[];primaryOptions:string[];primaryValue?:string;onPrimaryChange:(value:string)=>void;expanded?:boolean;onExpand:()=>void;query?:string;onQuery?:(v:string)=>void;onSearch?:()=>void;tertiaryOptions?:string[];tertiaryValue?:string;onTertiaryChange?:(v:string)=>void;sort?:'default'|'sales'|'price';onSort?:(sort:'default'|'sales'|'price')=>void}"
   },
   "OrderStageProgress": {
     "file": "business.tsx",

@@ -23,15 +23,7 @@ React.ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'primary'|'outline'|'tex
 基础组件 · 操作
 
 ```ts
-{value:number;onChange:(v:number)=>void;max?:number;disabled?:boolean;variant?:'default'|'overlay'|'field'}
-```
-
-## 价格（Price）
-
-业务组件 · 商品与购物车
-
-```ts
-{amount:string;original?:string;promotion?:boolean;currency?:string;unit?:string}
+{value:number;onChange:(v:number)=>void;max?:number;min?:number;disabled?:boolean;variant?:'default'|'overlay'|'field'}
 ```
 
 ## 标签（Tag）
@@ -55,7 +47,7 @@ React.ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'primary'|'outline'|'tex
 基础组件 · 输入与筛选
 
 ```ts
-React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:string}
+React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:string;labelPlacement?:'outside'|'inside'}
 ```
 
 ## 单选行（RadioRow）
@@ -546,7 +538,7 @@ React.ComponentProps<typeof SelectField>
 type ProductCardVariant = 'grid'|'full-width'|'category';
 type ProductAvailability = 'available'|'sold-out'|'unavailable'|'not-for-sale';
 type ProductSKU = {id:string;label:string;amount:string;unitPrice?:string;promotion?:string;max?:number};
-type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;promotion?:string;supplier?:string;orderBy?:string;availability?:ProductAvailability;purchase?:'add'|'quantity'|'count'|'notify'|'similar'|'none';max?:number;skus?:ProductSKU[]};
+type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;promotion?:string;supplier?:string;supplierVariant?:'supplier'|'comparison';orderBy?:string;availability?:ProductAvailability;purchase?:'add'|'quantity'|'count'|'notify'|'similar'|'none';max?:number;skus?:ProductSKU[]};
 
 {product:CommerceProduct;variant?:ProductCardVariant;quantity?:number;onAdd:()=>void;onQuantity?:(value:number)=>void;onSKUQuantity?:(id:string,value:number)=>void;skuQuantities?:Record<string,number>;initialExpanded?:boolean;onNotify?:()=>void;onSimilar?:()=>void;onSupplier?:()=>void;locale?:'en'|'zh'}
 ```
@@ -572,7 +564,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 业务组件 · 商品与购物车
 
 ```ts
-{status:ProductAvailability;locale?:'en'|'zh'}
+{status:ProductAvailability;locale?:'en'|'zh';size?:'regular'|'compact'}
 ```
 
 ## 供应商标签（ProductSupplierTag）
@@ -580,10 +572,10 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 业务组件 · 商品与购物车
 
 ```ts
-{name:string;onClick?:()=>void}
+{name:string;variant?:'supplier'|'comparison';onClick?:()=>void}
 ```
 
-## 商品列表（ProductList）
+## feeds（ProductList）
 
 业务组件 · 商品与购物车
 
@@ -591,7 +583,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;onRemove?:(id:string)=>void;layout?:'grid'|'row';density?:'regular'|'compact'}
 ```
 
-## 推荐商品区（ProductCollection）
+## 猜你喜欢（ProductCollection）
 
 业务组件 · 商品与购物车
 
@@ -599,20 +591,12 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 {products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;onRemove?:(id:string)=>void;layout?:'grid'|'row';title?:string;density?:'regular'|'compact'}
 ```
 
-## 商品详情头部（ProductDetailHeader）
-
-业务组件 · 商品与购物车
-
-```ts
-{product:Product;images:{src:string;alt:string}[];onAdd:()=>void}
-```
-
 ## 商品规格选择器（ProductSpecPicker）
 
 业务组件 · 商品与购物车
 
 ```ts
-{groups:{id:string;title:string;description?:string;required?:boolean;options:Option[]}[];values:Record<string,string>;onChange:(v:Record<string,string>)=>void;onConfirm:()=>void;product?:Product;quantity?:number;onQuantity?:(n:number)=>void}
+{groups:{id:string;title:string;description?:string;required?:boolean;options:Option[]}[];values:Record<string,string>;onChange:(v:Record<string,string>)=>void;onConfirm:()=>void;product?:Product;quantity?:number;onQuantity?:(n:number)=>void;onClose?:()=>void;open?:boolean}
 ```
 
 ## 购物车商品行（CartItem）
@@ -1054,7 +1038,7 @@ type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;
 ```ts
 type ProductAvailability = 'available'|'sold-out'|'unavailable'|'not-for-sale';
 type ProductSKU = {id:string;label:string;amount:string;unitPrice?:string;promotion?:string;max?:number};
-type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;promotion?:string;supplier?:string;orderBy?:string;availability?:ProductAvailability;purchase?:'add'|'quantity'|'count'|'notify'|'similar'|'none';max?:number;skus?:ProductSKU[]};
+type CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;promotion?:string;supplier?:string;supplierVariant?:'supplier'|'comparison';orderBy?:string;availability?:ProductAvailability;purchase?:'add'|'quantity'|'count'|'notify'|'similar'|'none';max?:number;skus?:ProductSKU[]};
 type CommerceCategory = {id:string;label:string;image?:string;selectedImage?:string;layers?:ArtworkLayer[]};
 
 {variant?:'image-primary'|'text-primary';title:string;categories:CommerceCategory[];selected:string;onSelect:(id:string)=>void;products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;primaryCategories?:CommerceCategory[];primaryOptions:string[];primaryValue?:string;onPrimaryChange:(value:string)=>void;expanded?:boolean;onExpand:()=>void;query?:string;onQuery?:(v:string)=>void;onSearch?:()=>void;tertiaryOptions?:string[];tertiaryValue?:string;onTertiaryChange?:(v:string)=>void;sort?:'default'|'sales'|'price';onSort?:(sort:'default'|'sales'|'price')=>void}

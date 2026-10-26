@@ -21,7 +21,7 @@ for(const file of ['components.tsx','foundations.tsx','business.tsx','Icon.tsx']
 }
 for(const row of catalog){
  if(!dependencies.has(row.name))throw new Error('Missing public component declaration: '+row.name);
- row.dependencies=delegated[row.name]||dependencies.get(row.name);
+ row.dependencies=(delegated[row.name]||dependencies.get(row.name)).filter(name=>known.has(name));
  row.dependencySource='Public JSX in '+(['components.tsx','foundations.tsx','business.tsx','Icon.tsx'].join(' / '));
 }
 await fs.writeFile(root+'component-catalog.json',JSON.stringify(catalog,null,2));

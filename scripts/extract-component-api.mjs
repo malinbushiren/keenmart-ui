@@ -17,4 +17,6 @@ for(const [name,implementation] of Object.entries(delegates)){
  const shared=name==='ProductCard'?['ProductCardVariant','ProductAvailability','ProductSKU','CommerceProduct']:name==='CategoryLayout'?['ProductAvailability','ProductSKU','CommerceProduct','CommerceCategory']:[];
  out[name].props=shared.map(type=>'type '+type+' = '+aliases[type]+';').join('\n')+(shared.length?'\n\n':'')+props;
 }
+const publicNames=new Set(JSON.parse(await fs.readFile(root+'component-catalog.json','utf8')).map(row=>row.name));
+for(const name of Object.keys(out))if(!publicNames.has(name))delete out[name];
 await fs.writeFile(root+'component-api.json',JSON.stringify(out,null,2));console.log('Extracted',Object.keys(out).length,'APIs');

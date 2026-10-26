@@ -97,7 +97,6 @@
       "Text",
       "BottomSheet",
       "NavBar",
-      "Price",
       "StatusLabel"
     ],
     "source": "用户的间距／字阶要求；具体尺寸由原稿与现有规范归纳",
@@ -119,8 +118,8 @@
   {
     "id": "quantity",
     "category": "交互",
-    "title": "数量为 1 时减号禁用",
-    "rule": "数量为 1 时保留减号并置灰，不能通过步进器删除商品，也不能用垃圾桶替代减号。删除商品统一左滑后展示删除操作。",
+    "title": "数量下限按场景区分",
+    "rule": "购物车步进器下限为 1，减号保留并置灰，删除使用左滑。商卡加购控件下限为 0，数量为 1 时减号可点击，减到 0 后恢复加购按钮；达到上限时加号禁用。",
     "components": [
       "QuantityStepper",
       "CartItem",
@@ -374,7 +373,7 @@
     "id": "commerce-anatomy",
     "category": "业务组件",
     "title": "商卡统一使用三种定制结构",
-    "rule": "ProductCard 的 grid、full-width、category 分别用于双列瀑布流、通栏单列和分类单列；保留商品图、标题、重量、价格层级、促销、供应商和购买状态。图片槽位分别为自适应正方形、120px、72px；尺寸来自本轮原稿。价格、标签、数量、按钮和文字使用当前基础规范与令牌，不在页面重新实现旧商卡。双列商卡多规格通过抽屉选择，宽屏商卡可在卡内展开规格。数量为 1 时减号禁用，不能改成删除。",
+    "rule": "ProductCard 的 grid、full-width、category 分别用于双列瀑布流、通栏单列和分类单列；保留商品图、标题、重量、价格层级、促销、供应商和购买状态。图片槽位分别为自适应正方形、120px、72px；尺寸来自本轮原稿。价格、标签、数量、按钮和文字使用当前基础规范与令牌，不在页面重新实现旧商卡。双列商卡多规格通过抽屉选择，宽屏商卡可在卡内展开规格。商卡加购数量为 1 时减号可点击，减到 0 恢复加购按钮。 状态蒙层使用白色 50% 遮罩和黑色 60% 胶囊，支持 165 与 72 两套尺寸、售罄/已下架/非卖品及中英文共 12 个变体；供应商名称与比价共用一个可切换标签组件。购物车商品图片占位始终为 1:1。规格选择作为完整白色底部抽屉，包含商品摘要、规格、数量、主按钮与安全区。地址表单字段名称放在输入框内，保留无障碍标签。",
     "components": [
       "ProductCard",
       "ProductList",
@@ -382,7 +381,9 @@
       "ProductPriceGroup",
       "ProductPurchaseControl",
       "ProductStatusOverlay",
-      "ProductSupplierTag"
+      "ProductSupplierTag",
+      "CartItem",
+      "ProductSpecPicker"
     ],
     "source": "用户本轮要求；Figma 136:39431 的三类商卡结构，基础元素遵循现有规范",
     "priority": "用户修正优先于原稿历史值"
@@ -421,7 +422,7 @@
     "id": "form-surface",
     "category": "页面与背景",
     "title": "表单内容与承载层使用相反明度",
-    "rule": "先判断页面背景，再选择组件承载层：灰色页面放白色表单，白色页面放灰色或明确描边的表单；字段与表单再形成层次。灰色内容不能展示在灰色背景上。AddressForm 的 surface 指表单本身颜色；OrderRemarks 使用白色承载层和灰色输入／选项；PromoCodeForm 使用白色承载层和灰色胶囊输入框。",
+    "rule": "先判断页面背景，再选择组件承载层：灰色页面放白色表单，白色页面放灰色或明确描边的表单；字段与表单再形成层次。灰色内容不能展示在灰色背景上。AddressForm 的 surface 指表单本身颜色；OrderRemarks 使用白色承载层和灰色输入／选项；PromoCodeForm 使用白色承载层和灰色胶囊输入框。 地址与联系人字段名称置于输入框内部，保留可访问的标签，不再逐项占用框外独立标题行。",
     "components": [
       "AddressForm",
       "OrderRemarks",

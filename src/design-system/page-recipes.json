@@ -295,12 +295,13 @@
     "density": "regular",
     "components": [
       "Card",
+      "Carousel",
       "Collapse",
       "NavBar",
       "OrderSubmitBar",
       "Page",
       "ProductCollection",
-      "ProductDetailHeader",
+      "ProductPriceGroup",
       "Text",
       "Toast"
     ],
@@ -321,12 +322,13 @@
     "density": "regular",
     "components": [
       "Card",
+      "Carousel",
       "Collapse",
       "NavBar",
       "OrderSubmitBar",
       "Page",
       "ProductCollection",
-      "ProductDetailHeader",
+      "ProductPriceGroup",
       "Text",
       "Toast"
     ],
@@ -347,12 +349,13 @@
     "density": "regular",
     "components": [
       "Card",
+      "Carousel",
       "Collapse",
       "NavBar",
       "OrderSubmitBar",
       "Page",
       "ProductCollection",
-      "ProductDetailHeader",
+      "ProductPriceGroup",
       "Text",
       "Toast"
     ],
@@ -373,12 +376,13 @@
     "density": "regular",
     "components": [
       "Card",
+      "Carousel",
       "Collapse",
       "NavBar",
       "OrderSubmitBar",
       "Page",
       "ProductCollection",
-      "ProductDetailHeader",
+      "ProductPriceGroup",
       "Text",
       "Toast"
     ],
@@ -399,12 +403,13 @@
     "density": "regular",
     "components": [
       "Card",
+      "Carousel",
       "Collapse",
       "NavBar",
       "OrderSubmitBar",
       "Page",
       "ProductCollection",
-      "ProductDetailHeader",
+      "ProductPriceGroup",
       "Text",
       "Toast"
     ],
@@ -2718,7 +2723,6 @@
     "height": 812,
     "density": "regular",
     "components": [
-      "BottomSheet",
       "CategoryLayout",
       "Page",
       "ProductSpecPicker",
@@ -2741,7 +2745,6 @@
     "height": 812,
     "density": "regular",
     "components": [
-      "BottomSheet",
       "CategoryLayout",
       "Page",
       "ProductSpecPicker",

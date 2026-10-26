@@ -1,6 +1,6 @@
 import FoundationGuide from './FoundationGuide';import React,{useState} from 'react';
 import tokens from './tokens.json';import resolved from './resolved-tokens.json';import evidence from './evidence.json';import {registry} from './registry';
-import {Button,AddButton,QuantityStepper,Price,Tag,ChoiceChip,TextField,RadioRow,Rating,CouponCard,ListRow,Notice,BottomSheet,CouponData} from './components';
+import {Button,AddButton,QuantityStepper,Tag,ChoiceChip,TextField,RadioRow,Rating,CouponCard,ListRow,Notice,BottomSheet,CouponData} from './components';
 import './lab.css';import IconLibrary from './IconLibrary';import {ComponentWorkbench} from './ComponentWorkbench';import {CoverageWorkbench,CompositionWorkbench} from './CoverageWorkbench';import catalog from './component-catalog.json';
 const coupon:CouponData={title:'20%OFF',tags:['No minimum','Save up to SAR 2000'],description:'New users exclusive voucher',date:'Expires today at 23:59',count:6,expiryTone:'success'};
 const original='https://www.figma.com/design/muIyl7AhHSieD13gdjfEw1/keen-mart-UIkits?node-id=';

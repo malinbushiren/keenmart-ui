@@ -12,3 +12,17 @@
 
 .kc-delivery-vehicle{position:absolute;bottom:-3px;width:28px;height:28px;overflow:hidden}.kc-delivery-vehicle>img{position:absolute;width:296.24%;height:211.91%;max-width:none;left:-92.96%;top:-62.99%}
 .kc-account-profile .kb-avatar img{object-fit:fill;object-position:bottom}
+
+/* Full product-options panel; shared by the inline library preview and bottom sheet. */
+.km-system .kc-spec{position:relative;background:var(--ds-color-light-white);border-radius:18px 18px 0 0;padding:12px 15px 0;color:var(--ds-color-dark-black90)}
+.ds-sheet-product>.ds-sheet-body:has(>.kc-spec){padding:0}
+.kc-spec-close{position:absolute;right:15px;top:12px;width:24px;height:24px;border:0;background:transparent;color:var(--ds-color-dark-black90);font:400 24px/24px var(--ds-font);z-index:1}
+.km-system .kc-spec-options>.ds-chip{background:var(--ds-color-dark-black4);border:1px solid transparent}
+.km-system .kc-spec-options>.ds-chip[aria-pressed="true"]{background:var(--ds-color-green-tint09);border-color:var(--ds-color-green-primary);color:var(--ds-color-green-primary)}
+.km-system .kc-spec-actions .kb-action-bar{gap:9px;align-items:center}
+.km-system .kc-spec-actions .ds-stepper{width:120px;flex:none;height:48px;border:1px solid var(--ds-color-green-primary);border-radius:var(--ds-radius-100)}
+.km-system .kc-spec-actions .ds-button{min-width:0}
+.km-system .kc-cart-item>img{aspect-ratio:1;object-fit:contain;flex:none;max-height:none}
+.kc-address-editor .ds-field-inside{position:relative;display:block}
+.kc-address-editor .ds-field-inside>span{position:absolute;top:6px;left:12px;font:400 10px/14px var(--ds-font);color:var(--ds-color-dark-black50);z-index:1}
+.km-system .kc-address-editor .ds-field-inside>input{padding:23px 12px 9px;height:60px}
