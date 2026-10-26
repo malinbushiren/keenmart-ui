@@ -1,5 +1,13 @@
 # 公司 / 家里继续工作
 
+## 产品 AI 页面生成交付（2026-10-26）
+
+- 导出脚本：`node scripts/export-product-handoff.mjs`。默认输出到仓库同级 `keenmart-product-handoff-2026-10-26/`，避免把100MB资产副本重复提交Git。
+- 交付入口：`00-开始使用.html`；01～09文档涵盖规则、变量、139组件API、109页面状态/47模板、需求表、Claude提示词、Make接入及验收。`guidelines/Guidelines.md` 可复制到 Make 指南；data 包含原始机器可读数据。
+- 同时输出精简文档ZIP和完整工程ZIP；完整工程含源码、字体、本地素材及独立 `/handoff.html` 复用示例。没有发布 npm 包、Make kit 或 Figma 原生库；Make 文档说明了规则接入与真实组件接入的区别。
+- 已在导出的工程运行构建、navigation/commerce专项检查，浏览器实测示例加购0→1→0、角标联动，字体/素材加载正常。所有候选/待视觉验收状态仍保留，不声称全库已最终验收。
+- 导出不包含 .git、node_modules、凭据及历史验收截图，含 SHA256 与清单。导出验证时临时依赖链接和dist必须移除后再打最终ZIP。
+
 本仓库保存源码、本地图片与字体、组件规范、生成脚本和验收记录。预览服务与聊天记录不会通过 Git 同步。
 
 私有仓库：https://github.com/malinbushiren/keenmart-ui 。默认分支为 `main`。
