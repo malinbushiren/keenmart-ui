@@ -182,3 +182,13 @@ OrderStageProgress 使用 28px 完整阶段图标，不能把原稿自带圆底�
 ## 完成时输出
 
 列出所用组件、规则ID、本页交互与状态、素材来源。检查375px及另一档宽度、长文案、空/错/加载、底部遮挡和弹层关闭；只检查本页适用项。报告截图与实际操作结果，未验证的明确标注，不自动视为验收通过。
+
+## 代码组件、语言与页面入口（2026-10-28）
+
+从 keenmart-ui-kit 导入真实组件，先安装依赖并读取 Components.md 的 props，再实现页面。已有组件不得用手写 JSX 重画。页面根部统一使用 LocaleProvider 和 Page；入口只渲染 src/App.tsx 的产品页面，不导入组件工作台、DesignSystemLab、ComponentWorkbench、旧 Screen 或验收导航。
+
+需求为中文时配置 locale="zh-CN"；英文配置 locale="en"。中文正文用 PingFang SC，英文用 Poppins；价格始终使用独立价格字体。不要把整个页面的 font-family 强制覆盖到价格上。产品名、业务数据和业务说明由页面提供对应语言，语言切换不改变数字金额或币种。内置提示可通过 LocaleProvider.messages 补充翻译。
+
+生成顺序：1. 阅读四份指南；2. 列出页面模块与组件/变体映射；3. 实现页面和受控交互；4. 运行 npm run check；5. 在预览中核对灰底白卡、左右12px、图片比例、字体、价格、弹层和数量1减到0。静态检查不等于视觉验收。
+
+没有现成业务组件时，先找最接近的组件组合；确需扩展，在 src/components 中创建，不修改 node_modules，不拷贝演示页面。复用现有 Button、Card、ListRow、Tag 等基础元素，仅使用 tokens 的颜色、间距、圆角、字阶，并记录扩展原因。

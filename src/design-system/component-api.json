@@ -1,103 +1,103 @@
 {
   "Button": {
     "file": "components.tsx",
-    "props": "React.ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'primary'|'outline'|'text'|'promotion';size?:'regular'|'medium'|'small'|'compact';loading?:boolean}"
+    "props": "React.ButtonHTMLAttributes<HTMLButtonElement> & {\n    variant?: 'primary' | 'outline' | 'text' | 'promotion';\n    size?: 'regular' | 'medium' | 'small' | 'compact';\n    loading?: boolean;\n}"
   },
   "AddButton": {
     "file": "components.tsx",
-    "props": "{onClick?:()=>void;disabled?:boolean}"
+    "props": "{\n    onClick?: () => void;\n    disabled?: boolean;\n}"
   },
   "QuantityStepper": {
     "file": "components.tsx",
-    "props": "{value:number;onChange:(v:number)=>void;max?:number;min?:number;disabled?:boolean;variant?:'default'|'overlay'|'field'}"
+    "props": "{\n    value: number;\n    onChange: (v: number) => void;\n    max?: number;\n    min?: number;\n    disabled?: boolean;\n    variant?: 'default' | 'overlay' | 'field';\n}"
   },
   "Tag": {
     "file": "components.tsx",
-    "props": "{children:React.ReactNode;tone?:'success'|'neutral'|'danger'|'marketing'|'warning';variant?:'outline'}"
+    "props": "{\n    children: React.ReactNode;\n    tone?: 'success' | 'neutral' | 'danger' | 'marketing' | 'warning';\n    variant?: 'outline';\n}"
   },
   "ChoiceChip": {
     "file": "components.tsx",
-    "props": "{children:React.ReactNode;selected:boolean;onClick:()=>void;disabled?:boolean;background?:'white'|'gray'}"
+    "props": "{\n    children: React.ReactNode;\n    selected: boolean;\n    onClick: () => void;\n    disabled?: boolean;\n    background?: 'white' | 'gray';\n}"
   },
   "TextField": {
     "file": "components.tsx",
-    "props": "React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:string;labelPlacement?:'outside'|'inside'}"
+    "props": "React.InputHTMLAttributes<HTMLInputElement> & {\n    label: string;\n    error?: string;\n    hint?: string;\n    labelPlacement?: 'outside' | 'inside';\n}"
   },
   "RadioRow": {
     "file": "components.tsx",
-    "props": "{label:string;description?:string;checked:boolean;onChange:()=>void;name:string;value:string;disabled?:boolean}"
+    "props": "{\n    label: string;\n    description?: string;\n    checked: boolean;\n    onChange: () => void;\n    name: string;\n    value: string;\n    disabled?: boolean;\n}"
   },
   "Rating": {
     "file": "components.tsx",
-    "props": "{value:number;onChange?:(value:number)=>void;size?:16|20|24|28;variant?:'stars'|'sentiment'}"
+    "props": "{\n    value: number;\n    onChange?: (value: number) => void;\n    size?: 16 | 20 | 24 | 28;\n    variant?: 'stars' | 'sentiment';\n}"
   },
   "CouponCard": {
     "file": "components.tsx",
-    "props": "{coupon:CouponData;onUse?:()=>void;onDetails:()=>void}"
+    "props": "{\n    coupon: CouponData;\n    onUse?: () => void;\n    onDetails: () => void;\n}"
   },
   "ListRow": {
     "file": "components.tsx",
-    "props": "{title:string;description?:string;trailing?:React.ReactNode;leading?:React.ReactNode;onClick?:()=>void;disabled?:boolean;danger?:boolean}"
+    "props": "{\n    title: string;\n    description?: string;\n    trailing?: React.ReactNode;\n    leading?: React.ReactNode;\n    onClick?: () => void;\n    disabled?: boolean;\n    danger?: boolean;\n}"
   },
   "Notice": {
     "file": "components.tsx",
-    "props": "{children:React.ReactNode}"
+    "props": "{\n    children: React.ReactNode;\n}"
   },
   "BottomSheet": {
     "file": "components.tsx",
-    "props": "{open:boolean;title:string;children:React.ReactNode;onClose:()=>void;footer?:React.ReactNode;showClose?:boolean;variant?:'default'|'selection'|'consent'|'country'|'product'|'review-confirm'|'payment'|'address-conflict'|'support-orders'|'cancel-reason';maxHeight?:number;titleScrollable?:boolean}"
+    "props": "{\n    open: boolean;\n    title: string;\n    children: React.ReactNode;\n    onClose: () => void;\n    footer?: React.ReactNode;\n    showClose?: boolean;\n    variant?: 'default' | 'selection' | 'consent' | 'country' | 'product' | 'review-confirm' | 'payment' | 'address-conflict' | 'support-orders' | 'cancel-reason';\n    maxHeight?: number;\n    titleScrollable?: boolean;\n}"
   },
   "StatusLabel": {
     "file": "components.tsx",
-    "props": "{children:React.ReactNode;tone?:'green'|'gray'}"
+    "props": "{\n    children: React.ReactNode;\n    tone?: 'green' | 'gray';\n}"
   },
   "Text": {
     "file": "foundations.tsx",
-    "props": "{as?:'span'|'p'|'h1'|'h2'|'h3';tone?:'primary'|'secondary'|'danger'|'success';size?:'caption'|'body'|'control'|'title'|'heading';children:React.ReactNode}"
+    "props": "{\n    as?: 'span' | 'p' | 'h1' | 'h2' | 'h3';\n    tone?: 'primary' | 'secondary' | 'danger' | 'success';\n    size?: 'caption' | 'body' | 'control' | 'title' | 'heading';\n    children: React.ReactNode;\n}"
   },
   "TextButton": {
     "file": "foundations.tsx",
-    "props": "{children:React.ReactNode;onClick?:()=>void;disabled?:boolean;tone?:'primary'|'brand'|'danger';icon?:React.ReactNode}"
+    "props": "{\n    children: React.ReactNode;\n    onClick?: () => void;\n    disabled?: boolean;\n    tone?: 'primary' | 'brand' | 'danger';\n    icon?: React.ReactNode;\n}"
   },
   "ActionBar": {
     "file": "foundations.tsx",
-    "props": "{children:React.ReactNode;safeArea?:boolean;layout?:'equal'|'content'}"
+    "props": "{\n    children: React.ReactNode;\n    safeArea?: boolean;\n    layout?: 'equal' | 'content';\n}"
   },
   "OTPInput": {
     "file": "foundations.tsx",
-    "props": "{value:string;onChange:(v:string)=>void;length?:4|6;error?:string;disabled?:boolean;focused?:boolean;onFocus?:()=>void}"
+    "props": "{\n    value: string;\n    onChange: (v: string) => void;\n    length?: 4 | 6;\n    error?: string;\n    disabled?: boolean;\n    focused?: boolean;\n    onFocus?: () => void;\n}"
   },
   "Grid": {
     "file": "foundations.tsx",
-    "props": "{children:React.ReactNode;columns?:1|2|3|4}"
+    "props": "{\n    children: React.ReactNode;\n    columns?: 1 | 2 | 3 | 4;\n}"
   },
   "Divider": {
     "file": "foundations.tsx",
-    "props": "{label?:string}"
+    "props": "{\n    label?: string;\n}"
   },
   "Card": {
     "file": "foundations.tsx",
-    "props": "{children:React.ReactNode;header?:React.ReactNode;footer?:React.ReactNode;className?:string}"
+    "props": "{\n    children: React.ReactNode;\n    header?: React.ReactNode;\n    footer?: React.ReactNode;\n    className?: string;\n}"
   },
   "Section": {
     "file": "foundations.tsx",
-    "props": "{title:string;action?:React.ReactNode;children:React.ReactNode}"
+    "props": "{\n    title: string;\n    action?: React.ReactNode;\n    children: React.ReactNode;\n}"
   },
   "Image": {
     "file": "foundations.tsx",
-    "props": "{src:string;alt:string;fit?:'contain'|'cover';ratio?:string;onClick?:()=>void}"
+    "props": "{\n    src: string;\n    alt: string;\n    fit?: 'contain' | 'cover';\n    ratio?: string;\n    onClick?: () => void;\n}"
   },
   "Avatar": {
     "file": "foundations.tsx",
-    "props": "{src?:string;name:string;size?:24|40|64|72}"
+    "props": "{\n    src?: string;\n    name: string;\n    size?: 24 | 40 | 64 | 72;\n}"
   },
   "Badge": {
     "file": "foundations.tsx",
-    "props": "{count?:number;dot?:boolean;children?:React.ReactNode}"
+    "props": "{\n    count?: number;\n    dot?: boolean;\n    children?: React.ReactNode;\n}"
   },
   "StatusBar": {
     "file": "foundations.tsx",
-    "props": "{time?:string;inverse?:boolean}"
+    "props": "{\n    time?: string;\n    inverse?: boolean;\n}"
   },
   "HomeIndicator": {
     "file": "foundations.tsx",
@@ -105,59 +105,59 @@
   },
   "Page": {
     "file": "foundations.tsx",
-    "props": "{children:React.ReactNode;header?:React.ReactNode;footer?:React.ReactNode;chromeBackground?:string;background?:'white'|'gray';height?:number;showStatusBar?:boolean;showHomeIndicator?:boolean;inverse?:boolean;className?:string}"
+    "props": "{\n    children: React.ReactNode;\n    header?: React.ReactNode;\n    footer?: React.ReactNode;\n    chromeBackground?: string;\n    background?: 'white' | 'gray';\n    height?: number;\n    showStatusBar?: boolean;\n    showHomeIndicator?: boolean;\n    inverse?: boolean;\n    className?: string;\n}"
   },
   "AppShell": {
     "file": "foundations.tsx",
-    "props": "{children:React.ReactNode;header?:React.ReactNode;footer?:React.ReactNode;inverse?:boolean;surface?:'default'|'plain'|'account'|'home';height?:number;showStatusBar?:boolean;showHomeIndicator?:boolean}"
+    "props": "{\n    children: React.ReactNode;\n    header?: React.ReactNode;\n    footer?: React.ReactNode;\n    inverse?: boolean;\n    surface?: 'default' | 'plain' | 'account' | 'home';\n    height?: number;\n    showStatusBar?: boolean;\n    showHomeIndicator?: boolean;\n}"
   },
   "IconButton": {
     "file": "foundations.tsx",
-    "props": "{name:IconName;label:string;onClick?:()=>void;disabled?:boolean}"
+    "props": "{\n    name: IconName;\n    label: string;\n    onClick?: () => void;\n    disabled?: boolean;\n}"
   },
   "NavBar": {
     "file": "foundations.tsx",
-    "props": "{title:string;onBack?:()=>void;right?:React.ReactNode;left?:React.ReactNode;align?:'center'|'left'}"
+    "props": "{\n    title: string;\n    onBack?: () => void;\n    right?: React.ReactNode;\n    left?: React.ReactNode;\n    align?: 'center' | 'left';\n}"
   },
   "Tabs": {
     "file": "foundations.tsx",
-    "props": "{options:Option[];value:string;onChange:(v:string)=>void;variant?:'line'|'pill';layout?:'equal'|'scroll'}"
+    "props": "{\n    options: Option[];\n    value: string;\n    onChange: (v: string) => void;\n    variant?: 'line' | 'pill';\n    layout?: 'equal' | 'scroll';\n}"
   },
   "SegmentedControl": {
     "file": "foundations.tsx",
-    "props": "Omit<React.ComponentProps<typeof Tabs>,'variant'>"
+    "props": "Omit<React.ComponentProps<typeof Tabs>, 'variant'>"
   },
   "TabBar": {
     "file": "foundations.tsx",
-    "props": "{options:Option[];value:string;onChange:(v:string)=>void}"
+    "props": "{\n    options: Option[];\n    value: string;\n    onChange: (v: string) => void;\n}"
   },
   "Sidebar": {
     "file": "foundations.tsx",
-    "props": "{options:Option[];value:string;onChange:(v:string)=>void}"
+    "props": "{\n    options: Option[];\n    value: string;\n    onChange: (v: string) => void;\n}"
   },
   "SearchBar": {
     "file": "foundations.tsx",
-    "props": "{surface?:'gray'|'outline'|'white';onFocus?:()=>void;value:string;onChange:(v:string)=>void;onSubmit?:(v:string)=>void;placeholder?:string;disabled?:boolean;showSubmit?:boolean;submitIcon?:boolean}"
+    "props": "{\n    surface?: 'gray' | 'outline' | 'white';\n    onFocus?: () => void;\n    value: string;\n    onChange: (v: string) => void;\n    onSubmit?: (v: string) => void;\n    placeholder?: string;\n    disabled?: boolean;\n    showSubmit?: boolean;\n    submitIcon?: boolean;\n}"
   },
   "FormField": {
     "file": "foundations.tsx",
-    "props": "{label:string;required?:boolean;error?:string;children:React.ReactNode}"
+    "props": "{\n    label: string;\n    required?: boolean;\n    error?: string;\n    children: React.ReactNode;\n}"
   },
   "TextArea": {
     "file": "foundations.tsx",
-    "props": "{label:string;value:string;onChange:(v:string)=>void;maxLength?:number;disabled?:boolean;error?:string;placeholder?:string;hideLabel?:boolean}"
+    "props": "{\n    label: string;\n    value: string;\n    onChange: (v: string) => void;\n    maxLength?: number;\n    disabled?: boolean;\n    error?: string;\n    placeholder?: string;\n    hideLabel?: boolean;\n}"
   },
   "Checkbox": {
     "file": "foundations.tsx",
-    "props": "{label:string;checked:boolean;onChange:(v:boolean)=>void;disabled?:boolean}"
+    "props": "{\n    label: string;\n    checked: boolean;\n    onChange: (v: boolean) => void;\n    disabled?: boolean;\n}"
   },
   "Switch": {
     "file": "foundations.tsx",
-    "props": "{label:string;checked:boolean;onChange:(v:boolean)=>void;disabled?:boolean}"
+    "props": "{\n    label: string;\n    checked: boolean;\n    onChange: (v: boolean) => void;\n    disabled?: boolean;\n}"
   },
   "SelectField": {
     "file": "foundations.tsx",
-    "props": "{label:string;options:Option[];value:string;onChange:(v:string)=>void;disabled?:boolean}"
+    "props": "{\n    label: string;\n    options: Option[];\n    value: string;\n    onChange: (v: string) => void;\n    disabled?: boolean;\n}"
   },
   "Picker": {
     "file": "foundations.tsx",
@@ -165,423 +165,423 @@
   },
   "DatePicker": {
     "file": "foundations.tsx",
-    "props": "{label:string;value:string;onChange:(v:string)=>void;min?:string;disabled?:boolean}"
+    "props": "{\n    label: string;\n    value: string;\n    onChange: (v: string) => void;\n    min?: string;\n    disabled?: boolean;\n}"
   },
   "Slider": {
     "file": "foundations.tsx",
-    "props": "{label:string;value:number;onChange:(v:number)=>void;min?:number;max?:number;disabled?:boolean}"
+    "props": "{\n    label: string;\n    value: number;\n    onChange: (v: number) => void;\n    min?: number;\n    max?: number;\n    disabled?: boolean;\n}"
   },
   "Uploader": {
     "file": "foundations.tsx",
-    "props": "{files:File[];onChange:(f:File[])=>void;max?:number;disabled?:boolean}"
+    "props": "{\n    files: File[];\n    onChange: (f: File[]) => void;\n    max?: number;\n    disabled?: boolean;\n}"
   },
   "FilterBar": {
     "file": "foundations.tsx",
-    "props": "{options:Option[];value:string[];onChange:(v:string[])=>void;onReset?:()=>void}"
+    "props": "{\n    options: Option[];\n    value: string[];\n    onChange: (v: string[]) => void;\n    onReset?: () => void;\n}"
   },
   "Carousel": {
     "file": "foundations.tsx",
-    "props": "{images?:{src:string;alt:string}[];slides?:React.ReactNode[];initialIndex?:number;label?:string}"
+    "props": "{\n    images?: {\n        src: string;\n        alt: string;\n    }[];\n    slides?: React.ReactNode[];\n    initialIndex?: number;\n    label?: string;\n}"
   },
   "Collapse": {
     "file": "foundations.tsx",
-    "props": "{items:{id:string;title:string;content:React.ReactNode}[]}"
+    "props": "{\n    items: {\n        id: string;\n        title: string;\n        content: React.ReactNode;\n    }[];\n}"
   },
   "Progress": {
     "file": "foundations.tsx",
-    "props": "{value:number;label?:string}"
+    "props": "{\n    value: number;\n    label?: string;\n}"
   },
   "Steps": {
     "file": "foundations.tsx",
-    "props": "{items:{title:string;description?:string}[];current?:number}"
+    "props": "{\n    items: {\n        title: string;\n        description?: string;\n    }[];\n    current?: number;\n}"
   },
   "EmptyState": {
     "file": "foundations.tsx",
-    "props": "{title?:string;description?:string;action?:React.ReactNode;illustration?:React.ReactNode;kind?:EmptyIllustrationKind;layout?:'inline'|'page'}"
+    "props": "{\n    title?: string;\n    description?: string;\n    action?: React.ReactNode;\n    illustration?: React.ReactNode;\n    kind?: EmptyIllustrationKind;\n    layout?: 'inline' | 'page';\n}"
   },
   "Result": {
     "file": "foundations.tsx",
-    "props": "{status?:'success'|'error'|'warning';title:string;description?:string;details?:string[];action?:React.ReactNode;fullWidthAction?:boolean}"
+    "props": "{\n    status?: 'success' | 'error' | 'warning';\n    title: string;\n    description?: string;\n    details?: string[];\n    action?: React.ReactNode;\n    fullWidthAction?: boolean;\n}"
   },
   "Loading": {
     "file": "foundations.tsx",
-    "props": "{label?:string}"
+    "props": "{\n    label?: string;\n}"
   },
   "Skeleton": {
     "file": "foundations.tsx",
-    "props": "{rows?:number}"
+    "props": "{\n    rows?: number;\n}"
   },
   "Toast": {
     "file": "foundations.tsx",
-    "props": "{open:boolean;message:string;onClose:()=>void;duration?:number}"
+    "props": "{\n    open: boolean;\n    message: string;\n    onClose: () => void;\n    duration?: number;\n}"
   },
   "Dialog": {
     "file": "foundations.tsx",
-    "props": "{open:boolean;title:string;children:React.ReactNode;onClose:()=>void;actions?:React.ReactNode;variant?:'default'|'poster'|'voucher-success';showClose?:boolean}"
+    "props": "{\n    open: boolean;\n    title: string;\n    children: React.ReactNode;\n    onClose: () => void;\n    actions?: React.ReactNode;\n    variant?: 'default' | 'poster' | 'voucher-success';\n    showClose?: boolean;\n}"
   },
   "ActionSheet": {
     "file": "foundations.tsx",
-    "props": "{open:boolean;options:Option[];onSelect:(v:string)=>void;onClose:()=>void}"
+    "props": "{\n    open: boolean;\n    options: Option[];\n    onSelect: (v: string) => void;\n    onClose: () => void;\n}"
   },
   "Popover": {
     "file": "foundations.tsx",
-    "props": "{label:string;children:React.ReactNode}"
+    "props": "{\n    label: string;\n    children: React.ReactNode;\n}"
   },
   "ImageViewer": {
     "file": "foundations.tsx",
-    "props": "{open:boolean;src:string;alt:string;onClose:()=>void;counter?:string}"
+    "props": "{\n    open: boolean;\n    src: string;\n    alt: string;\n    onClose: () => void;\n    counter?: string;\n}"
   },
   "SwipeAction": {
     "file": "foundations.tsx",
-    "props": "{children:React.ReactNode;onDelete?:()=>void;actions?:{label:string;onAction:()=>void;tone?:'neutral'|'destructive'}[];disabled?:boolean}"
+    "props": "{\n    children: React.ReactNode;\n    onDelete?: () => void;\n    actions?: {\n        label: string;\n        onAction: () => void;\n        tone?: 'neutral' | 'destructive';\n    }[];\n    disabled?: boolean;\n}"
   },
   "PullRefresh": {
     "file": "foundations.tsx",
-    "props": "{children:React.ReactNode;onRefresh:()=>Promise<void>}"
+    "props": "{\n    children: React.ReactNode;\n    onRefresh: () => Promise<void>;\n}"
   },
   "LoadMore": {
     "file": "foundations.tsx",
-    "props": "{loading?:boolean;hasMore?:boolean;onLoad:()=>void;error?:boolean}"
+    "props": "{\n    loading?: boolean;\n    hasMore?: boolean;\n    onLoad: () => void;\n    error?: boolean;\n}"
   },
   "StickyBar": {
     "file": "foundations.tsx",
-    "props": "{children:React.ReactNode;layout?:'single'|'equal'|'content'}"
+    "props": "{\n    children: React.ReactNode;\n    layout?: 'single' | 'equal' | 'content';\n}"
   },
   "Keyboard": {
     "file": "foundations.tsx",
-    "props": "{allowDecimal?:boolean;type?:'numeric'|'alphabetic';value:string;onChange:(v:string)=>void;onDone:()=>void;maxLength?:number;disabled?:boolean}"
+    "props": "{\n    allowDecimal?: boolean;\n    type?: 'numeric' | 'alphabetic';\n    value: string;\n    onChange: (v: string) => void;\n    onDone: () => void;\n    maxLength?: number;\n    disabled?: boolean;\n}"
   },
   "Countdown": {
     "file": "foundations.tsx",
-    "props": "{seconds:number;onComplete?:()=>void}"
+    "props": "{\n    seconds: number;\n    onComplete?: () => void;\n}"
   },
   "Artwork": {
     "file": "foundations.tsx",
-    "props": "{layers:ArtworkLayer[];label:string;ratio?:string}"
+    "props": "{\n    layers: ArtworkLayer[];\n    label: string;\n    ratio?: string;\n}"
   },
   "ListGroup": {
     "file": "foundations.tsx",
-    "props": "{title:string;titlePlacement?:'inside'|'outside';items:{id:string;title:string;description?:string;leading?:React.ReactNode;trailing?:React.ReactNode;onClick?:()=>void;disabled?:boolean}[]}"
+    "props": "{\n    title: string;\n    titlePlacement?: 'inside' | 'outside';\n    items: {\n        id: string;\n        title: string;\n        description?: string;\n        leading?: React.ReactNode;\n        trailing?: React.ReactNode;\n        onClick?: () => void;\n        disabled?: boolean;\n    }[];\n}"
   },
   "ProductCard": {
     "file": "business.tsx",
-    "props": "type ProductCardVariant = 'grid'|'full-width'|'category';\ntype ProductAvailability = 'available'|'sold-out'|'unavailable'|'not-for-sale';\ntype ProductSKU = {id:string;label:string;amount:string;unitPrice?:string;promotion?:string;max?:number};\ntype CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;promotion?:string;supplier?:string;supplierVariant?:'supplier'|'comparison';orderBy?:string;availability?:ProductAvailability;purchase?:'add'|'quantity'|'count'|'notify'|'similar'|'none';max?:number;skus?:ProductSKU[]};\n\n{product:CommerceProduct;variant?:ProductCardVariant;quantity?:number;onAdd:()=>void;onQuantity?:(value:number)=>void;onSKUQuantity?:(id:string,value:number)=>void;skuQuantities?:Record<string,number>;initialExpanded?:boolean;onNotify?:()=>void;onSimilar?:()=>void;onSupplier?:()=>void;locale?:'en'|'zh'}"
+    "props": "type ProductCardVariant = 'grid' | 'full-width' | 'category';\ntype ProductAvailability = 'available' | 'sold-out' | 'unavailable' | 'not-for-sale';\ntype ProductSKU = {\n    id: string;\n    label: string;\n    amount: string;\n    unitPrice?: string;\n    promotion?: string;\n    max?: number;\n};\ntype CommerceProduct = Product & {\n    currency?: string;\n    unit?: string;\n    unitPrice?: string;\n    promotion?: string;\n    supplier?: string;\n    supplierVariant?: 'supplier' | 'comparison';\n    orderBy?: string;\n    availability?: ProductAvailability;\n    purchase?: 'add' | 'quantity' | 'count' | 'notify' | 'similar' | 'none';\n    max?: number;\n    skus?: ProductSKU[];\n};\n\n{\n    product: CommerceProduct;\n    variant?: ProductCardVariant;\n    quantity?: number;\n    onAdd: () => void;\n    onQuantity?: (value: number) => void;\n    onSKUQuantity?: (id: string, value: number) => void;\n    skuQuantities?: Record<string, number>;\n    initialExpanded?: boolean;\n    onNotify?: () => void;\n    onSimilar?: () => void;\n    onSupplier?: () => void;\n    locale?: 'en' | 'zh';\n}"
   },
   "ProductPriceGroup": {
     "file": "business.tsx",
-    "props": "{amount:string;original?:string;currency?:string;unit?:string;unitPrice?:string;promotion?:boolean;originalPlacement?:'inline'|'below'}"
+    "props": "{\n    amount: string;\n    original?: string;\n    currency?: string;\n    unit?: string;\n    unitPrice?: string;\n    promotion?: boolean;\n    originalPlacement?: 'inline' | 'below';\n}"
   },
   "ProductPurchaseControl": {
     "file": "business.tsx",
-    "props": "{mode?:'add'|'quantity'|'count'|'notify'|'similar'|'specs'|'none';value?:number;max?:number;expanded?:boolean;onAdd:()=>void;onQuantity?:(v:number)=>void;onToggle?:()=>void;onNotify?:()=>void;onSimilar?:()=>void}"
+    "props": "{\n    mode?: 'add' | 'quantity' | 'count' | 'notify' | 'similar' | 'specs' | 'none';\n    value?: number;\n    max?: number;\n    expanded?: boolean;\n    onAdd: () => void;\n    onQuantity?: (v: number) => void;\n    onToggle?: () => void;\n    onNotify?: () => void;\n    onSimilar?: () => void;\n}"
   },
   "ProductStatusOverlay": {
     "file": "business.tsx",
-    "props": "{status:ProductAvailability;locale?:'en'|'zh';size?:'regular'|'compact'}"
+    "props": "{\n    status: ProductAvailability;\n    locale?: 'en' | 'zh';\n    size?: 'regular' | 'compact';\n}"
   },
   "ProductSupplierTag": {
     "file": "business.tsx",
-    "props": "{name:string;variant?:'supplier'|'comparison';onClick?:()=>void}"
+    "props": "{\n    name: string;\n    variant?: 'supplier' | 'comparison';\n    onClick?: () => void;\n}"
   },
   "ProductList": {
     "file": "business.tsx",
-    "props": "{products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;onRemove?:(id:string)=>void;layout?:'grid'|'row';density?:'regular'|'compact'}"
+    "props": "{\n    products: CommerceProduct[];\n    onAdd: (id: string) => void;\n    onQuantity?: (id: string, value: number) => void;\n    onRemove?: (id: string) => void;\n    layout?: 'grid' | 'row';\n    density?: 'regular' | 'compact';\n}"
   },
   "ProductCollection": {
     "file": "business.tsx",
-    "props": "{products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;onRemove?:(id:string)=>void;layout?:'grid'|'row';title?:string;density?:'regular'|'compact'}"
+    "props": "{\n    products: CommerceProduct[];\n    onAdd: (id: string) => void;\n    onQuantity?: (id: string, value: number) => void;\n    onRemove?: (id: string) => void;\n    layout?: 'grid' | 'row';\n    title?: string;\n    density?: 'regular' | 'compact';\n}"
   },
   "ProductSpecPicker": {
     "file": "business.tsx",
-    "props": "{groups:{id:string;title:string;description?:string;required?:boolean;options:Option[]}[];values:Record<string,string>;onChange:(v:Record<string,string>)=>void;onConfirm:()=>void;product?:Product;quantity?:number;onQuantity?:(n:number)=>void;onClose?:()=>void;open?:boolean}"
+    "props": "{\n    groups: {\n        id: string;\n        title: string;\n        description?: string;\n        required?: boolean;\n        options: Option[];\n    }[];\n    values: Record<string, string>;\n    onChange: (v: Record<string, string>) => void;\n    onConfirm: () => void;\n    product?: Product;\n    quantity?: number;\n    onQuantity?: (n: number) => void;\n    onClose?: () => void;\n    open?: boolean;\n}"
   },
   "CartItem": {
     "file": "business.tsx",
-    "props": "{product:Product;quantity:number;selected:boolean;onSelect:(v:boolean)=>void;onQuantity:(v:number)=>void;onRemove:()=>void;readOnly?:boolean;selectable?:boolean}"
+    "props": "{\n    product: Product;\n    quantity: number;\n    selected: boolean;\n    onSelect: (v: boolean) => void;\n    onQuantity: (v: number) => void;\n    onRemove: () => void;\n    readOnly?: boolean;\n    selectable?: boolean;\n}"
   },
   "CartGroup": {
     "file": "business.tsx",
-    "props": "{title:string;children:React.ReactNode;selected:boolean;onSelect:(v:boolean)=>void}"
+    "props": "{\n    title: string;\n    children: React.ReactNode;\n    selected: boolean;\n    onSelect: (v: boolean) => void;\n}"
   },
   "CartSummaryBar": {
     "file": "business.tsx",
-    "props": "{total:string;selectedCount:number;onCheckout:()=>void;disabled?:boolean}"
+    "props": "{\n    total: string;\n    selectedCount: number;\n    onCheckout: () => void;\n    disabled?: boolean;\n}"
   },
   "InvalidProductsSheet": {
     "file": "business.tsx",
-    "props": "{open:boolean;products:Product[];onClose:()=>void;onContinue:()=>void}"
+    "props": "{\n    open: boolean;\n    products: Product[];\n    onClose: () => void;\n    onContinue: () => void;\n}"
   },
   "AddressCard": {
     "file": "business.tsx",
-    "props": "{address:Address;selected?:boolean;onSelect?:()=>void;onEdit?:()=>void;variant?:'default'|'delivery'}"
+    "props": "{\n    address: Address;\n    selected?: boolean;\n    onSelect?: () => void;\n    onEdit?: () => void;\n    variant?: 'default' | 'delivery';\n}"
   },
   "AddressPicker": {
     "file": "business.tsx",
-    "props": "{addresses:Address[];value:string;onChange:(v:string)=>void;onAdd:()=>void}"
+    "props": "{\n    addresses: Address[];\n    value: string;\n    onChange: (v: string) => void;\n    onAdd: () => void;\n}"
   },
   "AddressForm": {
     "file": "business.tsx",
-    "props": "{surface?:'white'|'gray';value:Address;onChange:(v:Address)=>void;onSubmit:()=>void;error?:string;disabled?:boolean;onRemove?:()=>void;labelConflict?:boolean;onResolveLabel?:(use:boolean)=>void}"
+    "props": "{\n    surface?: 'white' | 'gray';\n    value: Address;\n    onChange: (v: Address) => void;\n    onSubmit: () => void;\n    error?: string;\n    disabled?: boolean;\n    onRemove?: () => void;\n    labelConflict?: boolean;\n    onResolveLabel?: (use: boolean) => void;\n}"
   },
   "MapAddressPicker": {
     "file": "business.tsx",
-    "props": "{onSearchFocus?:()=>void;map:React.ReactNode;query:string;onQuery:(v:string)=>void;address?:Address;onConfirm:()=>void;results?:{id:string;title:string}[];onSelect?:(id:string)=>void}"
+    "props": "{\n    onSearchFocus?: () => void;\n    map: React.ReactNode;\n    query: string;\n    onQuery: (v: string) => void;\n    address?: Address;\n    onConfirm: () => void;\n    results?: {\n        id: string;\n        title: string;\n    }[];\n    onSelect?: (id: string) => void;\n}"
   },
   "DeliverySlotPicker": {
     "file": "business.tsx",
-    "props": "{days:Option[];day:string;onDay:(v:string)=>void;slots:Option[];value:string;onChange:(v:string)=>void}"
+    "props": "{\n    days: Option[];\n    day: string;\n    onDay: (v: string) => void;\n    slots: Option[];\n    value: string;\n    onChange: (v: string) => void;\n}"
   },
   "DeliveryProgress": {
     "file": "business.tsx",
-    "props": "{time:string;progress:number;description?:string;onSelect?:()=>void}"
+    "props": "{\n    time: string;\n    progress: number;\n    description?: string;\n    onSelect?: () => void;\n}"
   },
   "PaymentMethodRow": {
     "file": "business.tsx",
-    "props": "{method:Payment;selected:boolean;onSelect:()=>void;groupName?:string}"
+    "props": "{\n    method: Payment;\n    selected: boolean;\n    onSelect: () => void;\n    groupName?: string;\n}"
   },
   "BankCard": {
     "file": "business.tsx",
-    "props": "{brand:string;last4:string;expiry:string;holder?:string;selected?:boolean;onSelect?:()=>void;onDelete?:()=>void;unavailable?:boolean}"
+    "props": "{\n    brand: string;\n    last4: string;\n    expiry: string;\n    holder?: string;\n    selected?: boolean;\n    onSelect?: () => void;\n    onDelete?: () => void;\n    unavailable?: boolean;\n}"
   },
   "BankCardForm": {
     "file": "business.tsx",
-    "props": "{value:CardData;onFieldFocus?:(field:keyof CardData)=>void;onChange:(v:CardData)=>void;onSubmit:()=>void;error?:string;errors?:Partial<Record<keyof CardData,string>>;total?:string}"
+    "props": "{\n    value: CardData;\n    onFieldFocus?: (field: keyof CardData) => void;\n    onChange: (v: CardData) => void;\n    onSubmit: () => void;\n    error?: string;\n    errors?: Partial<Record<keyof CardData, string>>;\n    total?: string;\n}"
   },
   "PaymentMethodPicker": {
     "file": "business.tsx",
-    "props": "{value:string;onChange:(v:string)=>void;cards?:{id:string;brand:string;last4:string;logo:string}[];onNewCard:()=>void}"
+    "props": "{\n    value: string;\n    onChange: (v: string) => void;\n    cards?: {\n        id: string;\n        brand: string;\n        last4: string;\n        logo: string;\n    }[];\n    onNewCard: () => void;\n}"
   },
   "CheckoutSummary": {
     "file": "business.tsx",
-    "props": "{rows:{label:string;value:string;original?:string;discount?:boolean}[];total:string}"
+    "props": "{\n    rows: {\n        label: string;\n        value: string;\n        original?: string;\n        discount?: boolean;\n    }[];\n    total: string;\n}"
   },
   "OrderCard": {
     "file": "business.tsx",
-    "props": "{order:Order;onAction:(action:string)=>void;actions?:string[];variant?:'list'|'overview';itemCount?:number}"
+    "props": "{\n    order: Order;\n    onAction: (action: string) => void;\n    actions?: string[];\n    variant?: 'list' | 'overview';\n    itemCount?: number;\n}"
   },
   "OrderStatusHeader": {
     "file": "business.tsx",
-    "props": "{state:OrderState;description?:string;countdown?:string;title?:string;artwork?:ArtworkLayer[]}"
+    "props": "{\n    state: OrderState;\n    description?: string;\n    countdown?: string;\n    title?: string;\n    artwork?: ArtworkLayer[];\n}"
   },
   "OrderTimeline": {
     "file": "business.tsx",
-    "props": "{events:{title:string;description?:string}[];current:number}"
+    "props": "{\n    events: {\n        title: string;\n        description?: string;\n    }[];\n    current: number;\n}"
   },
   "OrderInfo": {
     "file": "business.tsx",
-    "props": "{rows:{label:string;value:string;copyable?:boolean}[];onCopy?:(v:string)=>void}"
+    "props": "{\n    rows: {\n        label: string;\n        value: string;\n        copyable?: boolean;\n    }[];\n    onCopy?: (v: string) => void;\n}"
   },
   "CancelReasonPicker": {
     "file": "business.tsx",
-    "props": "{options:Option[];value:string;onChange:(v:string)=>void;onConfirm:()=>void;open:boolean;onClose:()=>void;putBack?:boolean;onPutBack?:(v:boolean)=>void;error?:string}"
+    "props": "{\n    options: Option[];\n    value: string;\n    onChange: (v: string) => void;\n    onConfirm: () => void;\n    open: boolean;\n    onClose: () => void;\n    putBack?: boolean;\n    onPutBack?: (v: boolean) => void;\n    error?: string;\n}"
   },
   "ReviewCard": {
     "file": "business.tsx",
-    "props": "{product:Product;rating:number;comment:string;images:string[];onView?:(src:string)=>void}"
+    "props": "{\n    product: Product;\n    rating: number;\n    comment: string;\n    images: string[];\n    onView?: (src: string) => void;\n}"
   },
   "ProductRatingPanel": {
     "file": "business.tsx",
-    "props": "{product:Product;rating:number;onRating:(v:number)=>void;dimensions:Record<string,number>;onDimension:(name:string,value:number)=>void;expanded?:boolean;onToggle?:()=>void;comment?:string;onComment?:(v:string)=>void;files?:File[];onFiles?:(v:File[])=>void;maxLength?:number}"
+    "props": "{\n    product: Product;\n    rating: number;\n    onRating: (v: number) => void;\n    dimensions: Record<string, number>;\n    onDimension: (name: string, value: number) => void;\n    expanded?: boolean;\n    onToggle?: () => void;\n    comment?: string;\n    onComment?: (v: string) => void;\n    files?: File[];\n    onFiles?: (v: File[]) => void;\n    maxLength?: number;\n}"
   },
   "RiderRatingPanel": {
     "file": "business.tsx",
-    "props": "{name:string;rating:number;onChange:(v:number)=>void;comment?:string;onComment?:(v:string)=>void}"
+    "props": "{\n    name: string;\n    rating: number;\n    onChange: (v: number) => void;\n    comment?: string;\n    onComment?: (v: string) => void;\n}"
   },
   "ReviewEditor": {
     "file": "business.tsx",
-    "props": "{value:ReviewData;onChange:(v:ReviewData)=>void;error?:string;tagOptions?:string[]}"
+    "props": "{\n    value: ReviewData;\n    onChange: (v: ReviewData) => void;\n    error?: string;\n    tagOptions?: string[];\n}"
   },
   "MediaPicker": {
     "file": "business.tsx",
-    "props": "{items:{id:string;src:string}[];selected:string[];onChange:(v:string[])=>void;max?:number;onDone:()=>void;onCamera:()=>void}"
+    "props": "{\n    items: {\n        id: string;\n        src: string;\n    }[];\n    selected: string[];\n    onChange: (v: string[]) => void;\n    max?: number;\n    onDone: () => void;\n    onCamera: () => void;\n}"
   },
   "PromoCodeForm": {
     "file": "business.tsx",
-    "props": "{value:string;onChange:(v:string)=>void;onSubmit:()=>void;onFocus?:()=>void;error?:string;loading?:boolean}"
+    "props": "{\n    value: string;\n    onChange: (v: string) => void;\n    onSubmit: () => void;\n    onFocus?: () => void;\n    error?: string;\n    loading?: boolean;\n}"
   },
   "CampaignBanner": {
     "file": "business.tsx",
-    "props": "{variant?:'default'|'source';src?:string;alt:string;onClick:()=>void;ratio?:string;title?:string;subtitle?:string;actionLabel?:string;artwork?:React.ReactNode;background?:string}"
+    "props": "{\n    variant?: 'default' | 'source';\n    src?: string;\n    alt: string;\n    onClick: () => void;\n    ratio?: string;\n    title?: string;\n    subtitle?: string;\n    actionLabel?: string;\n    artwork?: React.ReactNode;\n    background?: string;\n}"
   },
   "NewUserOffer": {
     "file": "business.tsx",
-    "props": "{amount:string;coupons:CouponData[];onUse:()=>void;onDetails:()=>void;header?:React.ReactNode}"
+    "props": "{\n    amount: string;\n    coupons: CouponData[];\n    onUse: () => void;\n    onDetails: () => void;\n    header?: React.ReactNode;\n}"
   },
   "AccountHeader": {
     "file": "business.tsx",
-    "props": "{name?:string;phone?:string;avatarSrc?:string;variant?:'card'|'profile';onLogin:()=>void}"
+    "props": "{\n    name?: string;\n    phone?: string;\n    avatarSrc?: string;\n    variant?: 'card' | 'profile';\n    onLogin: () => void;\n}"
   },
   "SettingGroup": {
     "file": "business.tsx",
-    "props": "{items:{id:string;title:string;description?:string;value?:React.ReactNode;icon?:IconName;leading?:React.ReactNode}[];onAction:(v:string)=>void}"
+    "props": "{\n    items: {\n        id: string;\n        title: string;\n        description?: string;\n        value?: React.ReactNode;\n        icon?: IconName;\n        leading?: React.ReactNode;\n    }[];\n    onAction: (v: string) => void;\n}"
   },
   "ChatMessage": {
     "file": "business.tsx",
-    "props": "{side?:'agent'|'user'|'system';text?:string;time?:string;children?:React.ReactNode;variant?:'bubble'|'notice'|'media'}"
+    "props": "{\n    side?: 'agent' | 'user' | 'system';\n    text?: string;\n    time?: string;\n    children?: React.ReactNode;\n    variant?: 'bubble' | 'notice' | 'media';\n}"
   },
   "ChatComposer": {
     "file": "business.tsx",
-    "props": "{value:string;onChange:(v:string)=>void;onSend:()=>void;onAttach:()=>void;disabled?:boolean;expanded?:boolean}"
+    "props": "{\n    value: string;\n    onChange: (v: string) => void;\n    onSend: () => void;\n    onAttach: () => void;\n    disabled?: boolean;\n    expanded?: boolean;\n}"
   },
   "ServiceQueue": {
     "file": "business.tsx",
-    "props": "{position:number;onCancel:()=>void}"
+    "props": "{\n    position: number;\n    onCancel: () => void;\n}"
   },
   "ServiceTicketCard": {
     "file": "business.tsx",
-    "props": "{id:string;time:string;status:'ongoing'|'ended';onContinue:()=>void;onHistory:()=>void}"
+    "props": "{\n    id: string;\n    time: string;\n    status: 'ongoing' | 'ended';\n    onContinue: () => void;\n    onHistory: () => void;\n}"
   },
   "ServiceTicketDetail": {
     "file": "business.tsx",
-    "props": "{question:string;answer:string;onContact:()=>void;onLink?:()=>void}"
+    "props": "{\n    question: string;\n    answer: string;\n    onContact: () => void;\n    onLink?: () => void;\n}"
   },
   "FAQList": {
     "file": "business.tsx",
-    "props": "{items:{id:string;title:string;content:React.ReactNode}[]}"
+    "props": "{\n    items: {\n        id: string;\n        title: string;\n        content: React.ReactNode;\n    }[];\n}"
   },
   "BrandLogo": {
     "file": "business.tsx",
-    "props": "{variant?:'full'|'short'}"
+    "props": "{\n    variant?: 'full' | 'short';\n}"
   },
   "LegalText": {
     "file": "business.tsx",
-    "props": "{text:string;onLink?:(label:string)=>void}"
+    "props": "{\n    text: string;\n    onLink?: (label: string) => void;\n}"
   },
   "CountryPicker": {
     "file": "business.tsx",
-    "props": "{open:boolean;onClose:()=>void;value:string;onChange:(value:string)=>void}"
+    "props": "{\n    open: boolean;\n    onClose: () => void;\n    value: string;\n    onChange: (value: string) => void;\n}"
   },
   "PhoneLoginForm": {
     "file": "business.tsx",
-    "props": "{country:string;phone:string;onCountry:(v:string)=>void;onPhone:(v:string)=>void;onSubmit:()=>void;error?:string;loading?:boolean;showCountry?:boolean;initialCountryOpen?:boolean;onEmail?:()=>void;onPolicy?:(title:string)=>void;onInputFocus?:()=>void;onCountryOpen?:()=>void;focused?:boolean}"
+    "props": "{\n    country: string;\n    phone: string;\n    onCountry: (v: string) => void;\n    onPhone: (v: string) => void;\n    onSubmit: () => void;\n    error?: string;\n    loading?: boolean;\n    showCountry?: boolean;\n    initialCountryOpen?: boolean;\n    onEmail?: () => void;\n    onPolicy?: (title: string) => void;\n    onInputFocus?: () => void;\n    onCountryOpen?: () => void;\n    focused?: boolean;\n}"
   },
   "VerificationCodeField": {
     "file": "business.tsx",
-    "props": "{value:string;onChange:(v:string)=>void;length?:4|6;error?:string;onResend:()=>void;remaining?:number;phone?:string;onMore?:()=>void;onFocus?:()=>void}"
+    "props": "{\n    value: string;\n    onChange: (v: string) => void;\n    length?: 4 | 6;\n    error?: string;\n    onResend: () => void;\n    remaining?: number;\n    phone?: string;\n    onMore?: () => void;\n    onFocus?: () => void;\n}"
   },
   "ConsentSheet": {
     "file": "business.tsx",
-    "props": "{open:boolean;children?:React.ReactNode;onAccept:()=>void;onDecline:()=>void;onClose:()=>void;longForm?:boolean}"
+    "props": "{\n    open: boolean;\n    children?: React.ReactNode;\n    onAccept: () => void;\n    onDecline: () => void;\n    onClose: () => void;\n    longForm?: boolean;\n}"
   },
   "OrderRemarks": {
     "file": "business.tsx",
-    "props": "{options:string[];selected:string[];onSelect:(v:string[])=>void;history:string[];note:string;onNote:(v:string)=>void;onConfirm:()=>void}"
+    "props": "{\n    options: string[];\n    selected: string[];\n    onSelect: (v: string[]) => void;\n    history: string[];\n    note: string;\n    onNote: (v: string) => void;\n    onConfirm: () => void;\n}"
   },
   "OrderSubmitBar": {
     "file": "business.tsx",
-    "props": "{total:string;label?:string;onSubmit:()=>void;disabled?:boolean;loading?:boolean;variant?:'default'|'integrated';paymentLogo?:string}"
+    "props": "{\n    total: string;\n    label?: string;\n    onSubmit: () => void;\n    disabled?: boolean;\n    loading?: boolean;\n    variant?: 'default' | 'integrated';\n    paymentLogo?: string;\n}"
   },
   "AccountDeletionNotice": {
     "file": "business.tsx",
-    "props": "{conditions:string[];consequences:string[];onApply:()=>void}"
+    "props": "{\n    conditions: string[];\n    consequences: string[];\n    onApply: () => void;\n}"
   },
   "PromotionGroup": {
     "file": "business.tsx",
-    "props": "{kind?:'sale'|'gift'|'buy-get';title:string;eligible:boolean;remainingCount?:number;discount?:string;selected?:boolean;onSelect?:(v:boolean)=>void;onAction:()=>void;children:React.ReactNode}"
+    "props": "{\n    kind?: 'sale' | 'gift' | 'buy-get';\n    title: string;\n    eligible: boolean;\n    remainingCount?: number;\n    discount?: string;\n    selected?: boolean;\n    onSelect?: (v: boolean) => void;\n    onAction: () => void;\n    children: React.ReactNode;\n}"
   },
   "UnavailableProductsGroup": {
     "file": "business.tsx",
-    "props": "{products:Product[];expanded:boolean;onExpand:()=>void;onRemoveAll:()=>void;onRemove:(id:string)=>void;totalCount?:number}"
+    "props": "{\n    products: Product[];\n    expanded: boolean;\n    onExpand: () => void;\n    onRemoveAll: () => void;\n    onRemove: (id: string) => void;\n    totalCount?: number;\n}"
   },
   "CartHeader": {
     "file": "business.tsx",
-    "props": "{count:number;address?:string;onAddress?:()=>void;onClear:()=>void}"
+    "props": "{\n    count: number;\n    address?: string;\n    onAddress?: () => void;\n    onClear: () => void;\n}"
   },
   "SearchHeader": {
     "file": "business.tsx",
-    "props": "{value:string;onChange:(v:string)=>void;onSearch:(v:string)=>void;onBack:()=>void;onCart:()=>void;cartCount?:number}"
+    "props": "{\n    value: string;\n    onChange: (v: string) => void;\n    onSearch: (v: string) => void;\n    onBack: () => void;\n    onCart: () => void;\n    cartCount?: number;\n}"
   },
   "SearchSuggestions": {
     "file": "business.tsx",
-    "props": "{title:string;items:string[];onSelect:(v:string)=>void;onClear?:()=>void;expandable?:boolean}"
+    "props": "{\n    title: string;\n    items: string[];\n    onSelect: (v: string) => void;\n    onClear?: () => void;\n    expandable?: boolean;\n}"
   },
   "CategoryTile": {
     "file": "business.tsx",
-    "props": "{item:CategoryItem;onSelect:()=>void}"
+    "props": "{\n    item: CategoryItem;\n    onSelect: () => void;\n}"
   },
   "CategoryGrid": {
     "file": "business.tsx",
-    "props": "{items:CategoryItem[];onSelect:(id:string)=>void}"
+    "props": "{\n    items: CategoryItem[];\n    onSelect: (id: string) => void;\n}"
   },
   "HomeHeader": {
     "file": "business.tsx",
-    "props": "{address:string;delivery:string;information:string;query:string;onQuery:(v:string)=>void;onAddress:()=>void;onSearch?:()=>void}"
+    "props": "{\n    address: string;\n    delivery: string;\n    information: string;\n    query: string;\n    onQuery: (v: string) => void;\n    onAddress: () => void;\n    onSearch?: () => void;\n}"
   },
   "CategoryLayout": {
     "file": "business.tsx",
-    "props": "type ProductAvailability = 'available'|'sold-out'|'unavailable'|'not-for-sale';\ntype ProductSKU = {id:string;label:string;amount:string;unitPrice?:string;promotion?:string;max?:number};\ntype CommerceProduct = Product&{currency?:string;unit?:string;unitPrice?:string;promotion?:string;supplier?:string;supplierVariant?:'supplier'|'comparison';orderBy?:string;availability?:ProductAvailability;purchase?:'add'|'quantity'|'count'|'notify'|'similar'|'none';max?:number;skus?:ProductSKU[]};\ntype CommerceCategory = {id:string;label:string;image?:string;selectedImage?:string;layers?:ArtworkLayer[]};\n\n{variant?:'image-primary'|'text-primary';title:string;categories:CommerceCategory[];selected:string;onSelect:(id:string)=>void;products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;primaryCategories?:CommerceCategory[];primaryOptions:string[];primaryValue?:string;onPrimaryChange:(value:string)=>void;expanded?:boolean;onExpand:()=>void;query?:string;onQuery?:(v:string)=>void;onSearch?:()=>void;tertiaryOptions?:string[];tertiaryValue?:string;onTertiaryChange?:(v:string)=>void;sort?:'default'|'sales'|'price';onSort?:(sort:'default'|'sales'|'price')=>void}"
+    "props": "type ProductAvailability = 'available' | 'sold-out' | 'unavailable' | 'not-for-sale';\ntype ProductSKU = {\n    id: string;\n    label: string;\n    amount: string;\n    unitPrice?: string;\n    promotion?: string;\n    max?: number;\n};\ntype CommerceProduct = Product & {\n    currency?: string;\n    unit?: string;\n    unitPrice?: string;\n    promotion?: string;\n    supplier?: string;\n    supplierVariant?: 'supplier' | 'comparison';\n    orderBy?: string;\n    availability?: ProductAvailability;\n    purchase?: 'add' | 'quantity' | 'count' | 'notify' | 'similar' | 'none';\n    max?: number;\n    skus?: ProductSKU[];\n};\ntype CommerceCategory = {\n    id: string;\n    label: string;\n    image?: string;\n    selectedImage?: string;\n    layers?: ArtworkLayer[];\n};\n\n{\n    variant?: 'image-primary' | 'text-primary';\n    title: string;\n    categories: CommerceCategory[];\n    selected: string;\n    onSelect: (id: string) => void;\n    products: CommerceProduct[];\n    onAdd: (id: string) => void;\n    onQuantity?: (id: string, value: number) => void;\n    primaryCategories?: CommerceCategory[];\n    primaryOptions: string[];\n    primaryValue?: string;\n    onPrimaryChange: (value: string) => void;\n    expanded?: boolean;\n    onExpand: () => void;\n    query?: string;\n    onQuery?: (v: string) => void;\n    onSearch?: () => void;\n    tertiaryOptions?: string[];\n    tertiaryValue?: string;\n    onTertiaryChange?: (v: string) => void;\n    sort?: 'default' | 'sales' | 'price';\n    onSort?: (sort: 'default' | 'sales' | 'price') => void;\n}"
   },
   "OrderStageProgress": {
     "file": "business.tsx",
-    "props": "{current?:number}"
+    "props": "{\n    current?: number;\n}"
   },
   "OrderArrival": {
     "file": "business.tsx",
-    "props": "{time:string;actions?:string[];onAction:(action:string)=>void}"
+    "props": "{\n    time: string;\n    actions?: string[];\n    onAction: (action: string) => void;\n}"
   },
   "OrderDeliveryDetails": {
     "file": "business.tsx",
-    "props": "{time:string;address:Address}"
+    "props": "{\n    time: string;\n    address: Address;\n}"
   },
   "PhoneField": {
     "file": "business.tsx",
-    "props": "{value:string;onChange:(v:string)=>void;country?:string;showCountry?:boolean;onCountry?:()=>void;placeholder?:string;disabled?:boolean;error?:string;focused?:boolean;onFocus?:()=>void}"
+    "props": "{\n    value: string;\n    onChange: (v: string) => void;\n    country?: string;\n    showCountry?: boolean;\n    onCountry?: () => void;\n    placeholder?: string;\n    disabled?: boolean;\n    error?: string;\n    focused?: boolean;\n    onFocus?: () => void;\n}"
   },
   "SupportOrderCard": {
     "file": "business.tsx",
-    "props": "{status?:string;count?:number;time?:string;onSelect?:()=>void}"
+    "props": "{\n    status?: string;\n    count?: number;\n    time?: string;\n    onSelect?: () => void;\n}"
   },
   "RiderReviewCard": {
     "file": "business.tsx",
-    "props": "{comment:string;rating?:number;name?:string}"
+    "props": "{\n    comment: string;\n    rating?: number;\n    name?: string;\n}"
   },
   "CartPromotionBar": {
     "file": "business.tsx",
-    "props": "{kind?:'sale'|'gift';title:string;description?:string;actionLabel?:string;onAction?:()=>void;celebrate?:boolean}"
+    "props": "{\n    kind?: 'sale' | 'gift';\n    title: string;\n    description?: string;\n    actionLabel?: string;\n    onAction?: () => void;\n    celebrate?: boolean;\n}"
   },
   "VoucherList": {
     "file": "business.tsx",
-    "props": "{coupons:CouponData[];onUse:()=>void;onDetails:(index:number)=>void;empty?:boolean}"
+    "props": "{\n    coupons: CouponData[];\n    onUse: () => void;\n    onDetails: (index: number) => void;\n    empty?: boolean;\n}"
   },
   "VoucherSuccessDialog": {
     "file": "business.tsx",
-    "props": "{open:boolean;coupon:CouponData;onClose:()=>void;onUse:()=>void;onDetails:()=>void;showClose?:boolean}"
+    "props": "{\n    open: boolean;\n    coupon: CouponData;\n    onClose: () => void;\n    onUse: () => void;\n    onDetails: () => void;\n    showClose?: boolean;\n}"
   },
   "HomeVoucherBanner": {
     "file": "business.tsx",
-    "props": "{onClick:()=>void}"
+    "props": "{\n    onClick: () => void;\n}"
   },
   "ProductMediaGallery": {
     "file": "business.tsx",
-    "props": "{images:{src:string;alt:string}[];onPreview?:(index:number)=>void}"
+    "props": "{\n    images: {\n        src: string;\n        alt: string;\n    }[];\n    onPreview?: (index: number) => void;\n}"
   },
   "ProductVariantPricing": {
     "file": "business.tsx",
-    "props": "{variants:DetailVariant[];value:string;onChange:(id:string)=>void;currency?:string;unit?:string;sales?:string}"
+    "props": "{\n    variants: DetailVariant[];\n    value: string;\n    onChange: (id: string) => void;\n    currency?: string;\n    unit?: string;\n    sales?: string;\n}"
   },
   "ProductSummary": {
     "file": "business.tsx",
-    "props": "{name:string;ranking?:string;attributes:DetailAttribute[];description:string;onDetails:()=>void}"
+    "props": "{\n    name: string;\n    ranking?: string;\n    attributes: DetailAttribute[];\n    description: string;\n    onDetails: () => void;\n}"
   },
   "ProductFulfillment": {
     "file": "business.tsx",
-    "props": "{delivery:string;deliveryDetail:string;afterSales:string;onAfterSales:()=>void}"
+    "props": "{\n    delivery: string;\n    deliveryDetail: string;\n    afterSales: string;\n    onAfterSales: () => void;\n}"
   },
   "ProductSupplierPanel": {
     "file": "business.tsx",
-    "props": "{name:string;metrics:DetailAttribute[];onClick:()=>void}"
+    "props": "{\n    name: string;\n    metrics: DetailAttribute[];\n    onClick: () => void;\n}"
   },
   "ProductAttributes": {
     "file": "business.tsx",
-    "props": "{title?:string;items:DetailAttribute[]}"
+    "props": "{\n    title?: string;\n    items: DetailAttribute[];\n}"
   },
   "ProductServiceBenefits": {
     "file": "business.tsx",
-    "props": "{title?:string;items:{id:string;label:string;icon:IconName;description:string}[];onSelect:(id:string)=>void}"
+    "props": "{\n    title?: string;\n    items: {\n        id: string;\n        label: string;\n        icon: IconName;\n        description: string;\n    }[];\n    onSelect: (id: string) => void;\n}"
   },
   "ProductPurchaseBar": {
     "file": "business.tsx",
-    "props": "{quantity:number;onQuantity:(v:number)=>void;favorite:boolean;onFavorite:()=>void;cartCount:number;onCart:()=>void;onAdd:()=>void;max?:number}"
+    "props": "{\n    quantity: number;\n    onQuantity: (v: number) => void;\n    favorite: boolean;\n    onFavorite: () => void;\n    cartCount: number;\n    onCart: () => void;\n    onAdd: () => void;\n    max?: number;\n}"
   },
   "Icon": {
     "file": "Icon.tsx",

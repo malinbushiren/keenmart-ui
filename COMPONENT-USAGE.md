@@ -24,6 +24,8 @@
 
 **设计规则 · 结果页原因使用卡片承载**：错误或失败页的多条原因放在同一张白色卡片内，以列表呈现；灰色页面承载白卡。状态图标、标题、原因卡、通栏操作依次排列，不能把多条原因压缩成一段居中文字。
 
+**设计规则 · 中英文正文分别选择字体，价格保持不变**：组件使用 LocaleProvider 设置 en 或 zh-CN。英文正文使用 Poppins，中文正文使用设备已安装的 PingFang SC；不存在时回退 Hiragino Sans GB、Microsoft YaHei、sans-serif。语言切换仅改变正文 --ds-font，不覆盖独立的 --ds-price-font，价格仍为 DdmcSans、Poppins、sans-serif。Page 与弹层保持同一语言。商品名、业务数据及页面文案由调用方提供对应语言；不得根据币种或价格猜测语言。PingFang 字体文件不随公共包分发。
+
 可运行示例：`http://127.0.0.1:5173/?component-preview=Button&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
 ## 加购按钮（AddButton）
@@ -115,6 +117,8 @@
 **设计规则 · 输入项提供具体占位信息**：FormField 内的 input 或 textarea 要有 placeholder，描述预期输入。TextArea 的字数上限显示在输入区域内部；焦点样式覆盖整个输入区域。
 
 **设计规则 · 表单内容与承载层使用相反明度**：先判断页面背景，再选择组件承载层：灰色页面放白色表单，白色页面放灰色或明确描边的表单；字段与表单再形成层次。灰色内容不能展示在灰色背景上。AddressForm 的 surface 指表单本身颜色；OrderRemarks 使用白色承载层和灰色输入／选项；PromoCodeForm 使用白色承载层和灰色胶囊输入框。 地址与联系人字段名称置于输入框内部，保留可访问的标签，不再逐项占用框外独立标题行。
+
+**设计规则 · 中英文正文分别选择字体，价格保持不变**：组件使用 LocaleProvider 设置 en 或 zh-CN。英文正文使用 Poppins，中文正文使用设备已安装的 PingFang SC；不存在时回退 Hiragino Sans GB、Microsoft YaHei、sans-serif。语言切换仅改变正文 --ds-font，不覆盖独立的 --ds-price-font，价格仍为 DdmcSans、Poppins、sans-serif。Page 与弹层保持同一语言。商品名、业务数据及页面文案由调用方提供对应语言；不得根据币种或价格猜测语言。PingFang 字体文件不随公共包分发。
 
 ```tsx
 <TextField label="Card number" placeholder="0000 0000 0000 0000" value={number} onChange={e => setNumber(e.target.value)} />
@@ -217,6 +221,8 @@
 **设计规则 · 地址选择打开抽屉**：购物车头部地址入口打开地址 BottomSheet，选择后更新地址并关闭面板。重复地址标签的确认保持底部弹窗，展示原地址摘要和纵排操作，不改为居中对话框。
 
 **设计规则 · 先分析组成，再复用已有组件**：按验收原稿拆解页面的容器、列表、提示和操作。已有组件必须通过正确参数组合；确无能力时才补充组件。取消原因必须是 BottomSheet＋RadioRow 列表＋Switch 提示条＋吸底 Confirm，不改为独立全屏表单，不增加原稿没有的输入区。
+
+**设计规则 · 中英文正文分别选择字体，价格保持不变**：组件使用 LocaleProvider 设置 en 或 zh-CN。英文正文使用 Poppins，中文正文使用设备已安装的 PingFang SC；不存在时回退 Hiragino Sans GB、Microsoft YaHei、sans-serif。语言切换仅改变正文 --ds-font，不覆盖独立的 --ds-price-font，价格仍为 DdmcSans、Poppins、sans-serif。Page 与弹层保持同一语言。商品名、业务数据及页面文案由调用方提供对应语言；不得根据币种或价格猜测语言。PingFang 字体文件不随公共包分发。
 
 ```tsx
 <BottomSheet open={open} title="Payment Methods" onClose={close}><PaymentMethodPicker ... /></BottomSheet>
@@ -487,6 +493,8 @@
 **设计规则 · 页面级提交由页面操作栏管理**：ReviewEditor 只负责评分、文字和媒体的编辑与回传，Submit 由 Page.footer 的操作栏提供。StickyBar 支持单按钮、两个等宽按钮、内容＋按钮；吸底位置由页面或明确的滚动容器管理，不能把某一页面的购买摘要当作唯一通用形式。
 
 **设计规则 · 底部导航支持四项和五项**：TabBar 使用 Figma 140:53147 的 30px 原稿选中与未选中图标，导航内容高 48px，四项或五项等分；五项可增加 Order。Badge 沿用当前逻辑：零不显示、单数字圆形、多位胶囊、超过 99 显示 99+。TabBar 不重复绘制手势区，由 Page 统一提供 34px 安全区。现有四项页面保留栏目数量并使用新样式。
+
+**设计规则 · 中英文正文分别选择字体，价格保持不变**：组件使用 LocaleProvider 设置 en 或 zh-CN。英文正文使用 Poppins，中文正文使用设备已安装的 PingFang SC；不存在时回退 Hiragino Sans GB、Microsoft YaHei、sans-serif。语言切换仅改变正文 --ds-font，不覆盖独立的 --ds-price-font，价格仍为 DdmcSans、Poppins、sans-serif。Page 与弹层保持同一语言。商品名、业务数据及页面文案由调用方提供对应语言；不得根据币种或价格猜测语言。PingFang 字体文件不随公共包分发。
 
 ```tsx
 <Page background="gray" chromeBackground="#fff" header={<CartHeader ... />}>...</Page>
@@ -902,6 +910,8 @@
 
 **设计规则 · 兑换成功弹窗固定绿色渐变背景**：VoucherSuccessDialog 统一使用浅绿渐变背景、绿色标题、白色优惠券卡和底部 Got it；关闭按钮是可选项，默认不显示。操作区域不加无意义分割线；标题和操作尺寸按原稿，不拆行孤立标点。
 
+**设计规则 · 中英文正文分别选择字体，价格保持不变**：组件使用 LocaleProvider 设置 en 或 zh-CN。英文正文使用 Poppins，中文正文使用设备已安装的 PingFang SC；不存在时回退 Hiragino Sans GB、Microsoft YaHei、sans-serif。语言切换仅改变正文 --ds-font，不覆盖独立的 --ds-price-font，价格仍为 DdmcSans、Poppins、sans-serif。Page 与弹层保持同一语言。商品名、业务数据及页面文案由调用方提供对应语言；不得根据币种或价格猜测语言。PingFang 字体文件不随公共包分发。
+
 ```tsx
 <Dialog open={open} title="Clear all items from the cart?" onClose={close} actions={actions}>...</Dialog>
 ```
@@ -1096,6 +1106,8 @@
 
 **设计规则 · 分类框架独立于页面外壳**：CategoryLayout 提供 text-primary 与 image-primary 两种原稿结构。前者使用文字一级分类和图片二级侧栏；后者使用图片一级分类、文字二级侧栏、三级筛选及排序。框架组合当前 ProductCard，状态栏、底部导航、安全区由 Page 管理；头部背景通过 Page 统一承接。分类栏和商品列表分别滚动，搜索、分类、筛选与排序通过受控接口交给业务层，不复制整页 Screen。
 
+**设计规则 · 中英文正文分别选择字体，价格保持不变**：组件使用 LocaleProvider 设置 en 或 zh-CN。英文正文使用 Poppins，中文正文使用设备已安装的 PingFang SC；不存在时回退 Hiragino Sans GB、Microsoft YaHei、sans-serif。语言切换仅改变正文 --ds-font，不覆盖独立的 --ds-price-font，价格仍为 DdmcSans、Poppins、sans-serif。Page 与弹层保持同一语言。商品名、业务数据及页面文案由调用方提供对应语言；不得根据币种或价格猜测语言。PingFang 字体文件不随公共包分发。
+
 ```tsx
 <ProductCard product={product} variant="category" quantity={quantity} onAdd={add} onQuantity={setQuantity} />
 ```
@@ -1113,6 +1125,8 @@
 **职责边界**：组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。
 
 **设计规则 · 商卡统一使用三种定制结构**：ProductCard 的 grid、full-width、category 分别用于双列瀑布流、通栏单列和分类单列；保留商品图、标题、重量、价格层级、促销、供应商和购买状态。图片槽位分别为自适应正方形、120px、72px；尺寸来自本轮原稿。价格、标签、数量、按钮和文字使用当前基础规范与令牌，不在页面重新实现旧商卡。双列商卡多规格通过抽屉选择，宽屏商卡可在卡内展开规格。商卡加购数量为 1 时减号可点击，减到 0 恢复加购按钮。 状态蒙层使用白色 50% 遮罩和黑色 60% 胶囊，支持 165 与 72 两套尺寸、售罄/已下架/非卖品及中英文共 12 个变体；供应商名称与比价共用一个可切换标签组件。购物车商品图片占位始终为 1:1。规格选择作为完整白色底部抽屉，包含商品摘要、规格、数量、主按钮与安全区。地址表单字段名称放在输入框内，保留无障碍标签。
+
+**设计规则 · 中英文正文分别选择字体，价格保持不变**：组件使用 LocaleProvider 设置 en 或 zh-CN。英文正文使用 Poppins，中文正文使用设备已安装的 PingFang SC；不存在时回退 Hiragino Sans GB、Microsoft YaHei、sans-serif。语言切换仅改变正文 --ds-font，不覆盖独立的 --ds-price-font，价格仍为 DdmcSans、Poppins、sans-serif。Page 与弹层保持同一语言。商品名、业务数据及页面文案由调用方提供对应语言；不得根据币种或价格猜测语言。PingFang 字体文件不随公共包分发。
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=ProductPriceGroup&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 

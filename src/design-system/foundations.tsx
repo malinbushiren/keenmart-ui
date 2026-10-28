@@ -1,78 +1,597 @@
-import {EmptyIllustration} from './EmptyIllustration';import type {EmptyIllustrationKind} from './EmptyIllustration';
-import React,{useEffect,useId,useRef,useState} from 'react';import {Button,BottomSheet,ChoiceChip,Notice,RadioRow,ListRow} from './components';import {Icon} from './Icon';import type {IconName} from './Icon';import './foundations.css';import './acceptance-v12.css';
-export type Option={value:string;label:string;disabled?:boolean;badge?:number;icon?:IconName;iconSrc?:string;activeIconSrc?:string};
-export function Text({as:El='span',tone='primary',size,children}: {as?:'span'|'p'|'h1'|'h2'|'h3';tone?:'primary'|'secondary'|'danger'|'success';size?:'caption'|'body'|'control'|'title'|'heading';children:React.ReactNode}){return <El className={'kb-text kb-text-'+tone+(size?' kb-text-size-'+size:'')}>{children}</El>}
-export function TextButton({children,onClick,disabled=false,tone='primary',icon}:{children:React.ReactNode;onClick?:()=>void;disabled?:boolean;tone?:'primary'|'brand'|'danger';icon?:React.ReactNode}){return <button type="button" className={'kb-text-button kb-text-button-'+tone} disabled={disabled} onClick={onClick}>{icon}{children}</button>}
-export function ActionBar({children,safeArea=false,layout='equal'}:{children:React.ReactNode;safeArea?:boolean;layout?:'equal'|'content'}){return <div className={'kb-action-bar kb-action-bar-'+layout+(safeArea?' kb-action-bar-safe':'')}><div>{children}</div></div>}
-export function OTPInput({value,onChange,length=4,error,disabled=false,focused=false,onFocus}:{value:string;onChange:(v:string)=>void;length?:4|6;error?:string;disabled?:boolean;focused?:boolean;onFocus?:()=>void}){const [active,setActive]=useState(false);return <div className={'kb-otp '+(error?'has-error':'')}><div className="kb-otp-cells" style={{gridTemplateColumns:`repeat(${length},1fr)`}}>{Array.from({length},(_,i)=><span key={i} className={(focused||active)&&i===Math.min(value.length,length-1)?'is-active':''}>{value[i]||''}</span>)}</div><input aria-label="Verification code" inputMode="numeric" autoComplete="one-time-code" value={value} disabled={disabled} maxLength={length} aria-invalid={!!error} onFocus={()=>{setActive(true);onFocus?.()}} onBlur={()=>setActive(false)} onChange={e=>onChange(e.target.value.replace(/\D/g,'').slice(0,length))}/>{error&&<small role="alert">{error}</small>}</div>}
-export function Grid({children,columns=2}:{children:React.ReactNode;columns?:1|2|3|4}){return <div className="kb-grid" style={{gridTemplateColumns:`repeat(${columns},minmax(0,1fr))`}}>{children}</div>}
-export function Divider({label}:{label?:string}){return <div className={'kb-divider'+(label?' kb-divider-label':'')} role="separator">{label&&<span>{label}</span>}</div>}
-export function Card({children,header,footer,className=''}:{children:React.ReactNode;header?:React.ReactNode;footer?:React.ReactNode;className?:string}){return <section className={'kb-card '+className}>{header&&<header>{header}</header>}<div>{children}</div>{footer&&<footer>{footer}</footer>}</section>}
-export function Section({title,action,children}:{title:string;action?:React.ReactNode;children:React.ReactNode}){return <section className="kb-section"><header><h3>{title}</h3>{action}</header>{children}</section>}
-export function Image({src,alt,fit='contain',ratio='1',onClick}:{src:string;alt:string;fit?:'contain'|'cover';ratio?:string;onClick?:()=>void}){const [failed,setFailed]=useState(false);useEffect(()=>setFailed(false),[src]);const image=failed?<span role="img" aria-label={alt+' unavailable'}>Image unavailable</span>:<img src={src} alt={alt} style={{objectFit:fit}} onError={()=>setFailed(true)}/>;return onClick?<button type="button" className="kb-image" style={{aspectRatio:ratio}} onClick={onClick}>{image}</button>:<div className="kb-image" style={{aspectRatio:ratio}}>{image}</div>}
-export function Avatar({src,name,size=40}:{src?:string;name:string;size?:24|40|64|72}){return <span className="kb-avatar" style={{width:size,height:size}}>{src?<img src={src} alt={name}/>:<span aria-label={name}>{name.slice(0,1)}</span>}</span>}
-export function Badge({count,dot=false,children}:{count?:number;dot?:boolean;children?:React.ReactNode}){return <span className={'kb-badge'+(!children?' kb-badge-inline':'')}>{children}{(dot||(count??0)>0)&&<span className={'kb-badge-value '+(dot?'kb-badge-dot':'')} aria-label={dot?'New notification':`${count} notifications`}>{!dot&&((count??0)>99?'99+':count)}</span>}</span>}
-export function StatusBar({time='9:41',inverse=false}:{time?:string;inverse?:boolean}){return <div className={'kb-status '+(inverse?'is-inverse':'')} aria-label={`Device status ${time}`}><span>{time}</span><img src="/assets/addd3.svg" width="66.664" height="11.337" alt="Signal Wi-Fi battery"/></div>}
-export function HomeIndicator(){return <div className="kb-home" aria-hidden="true"><i/></div>}
-export function Page({children,header,footer,background='gray',height=812,showStatusBar=true,showHomeIndicator=true,inverse=false,className='',chromeBackground}:{children:React.ReactNode;header?:React.ReactNode;footer?:React.ReactNode;chromeBackground?:string;background?:'white'|'gray';height?:number;showStatusBar?:boolean;showHomeIndicator?:boolean;inverse?:boolean;className?:string}){return <div style={{height,'--kb-chrome-background':chromeBackground||(inverse?'var(--ds-color-green-header)':background==='white'?'#fff':'#f5f5f5')} as React.CSSProperties} data-page-background={background} className={'km-system kb-app kb-page kb-page-'+background+' '+className}>{showStatusBar&&<StatusBar inverse={inverse}/ >}{header}<main>{children}</main>{footer&&<footer>{footer}</footer>}{showHomeIndicator&&<HomeIndicator/>}</div>}
-export function AppShell({children,header,footer,inverse=false,surface='default',height=812,showStatusBar=true,showHomeIndicator=true}:{children:React.ReactNode;header?:React.ReactNode;footer?:React.ReactNode;inverse?:boolean;surface?:'default'|'plain'|'account'|'home';height?:number;showStatusBar?:boolean;showHomeIndicator?:boolean}){return <Page background={surface==='plain'?'white':'gray'} height={height} showStatusBar={showStatusBar} showHomeIndicator={showHomeIndicator} inverse={inverse} className={surface==='home'?'kb-app-home':''} header={header} footer={footer}>{children}</Page>}
-export function IconButton({name,label,onClick,disabled=false}:{name:IconName;label:string;onClick?:()=>void;disabled?:boolean}){return <button type="button" className="kb-icon-button" onClick={onClick} disabled={disabled} aria-label={label}><Icon name={name}/></button>}
-export function NavBar({title,onBack,right,left,align='center'}:{title:string;onBack?:()=>void;right?:React.ReactNode;left?:React.ReactNode;align?:'center'|'left'}){return <header className={'kb-nav kb-nav-'+align}><span>{left||onBack&&<IconButton name="left-2-24" label="Back" onClick={onBack}/>}</span><h1>{title}</h1><span>{right}</span></header>}
-function optionKey(e:React.KeyboardEvent,options:Option[],value:string,onChange:(v:string)=>void){if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const enabled=options.filter(x=>!x.disabled);if(!enabled.length)return;const i=enabled.findIndex(x=>x.value===value);const next=e.key==='Home'?0:e.key==='End'?enabled.length-1:(i+(e.key==='ArrowRight'?1:-1)+enabled.length)%enabled.length;onChange(enabled[next].value);const parent=e.currentTarget.parentElement;requestAnimationFrame(()=>Array.from(parent?.querySelectorAll<HTMLButtonElement>('button[data-option]')||[]).find(b=>b.dataset.option===enabled[next].value)?.focus());}
-export function Tabs({options,value,onChange,variant='line',layout='equal'}:{options:Option[];value:string;onChange:(v:string)=>void;variant?:'line'|'pill';layout?:'equal'|'scroll'}){return <div className={'kb-tabs kb-tabs-'+variant+' kb-tabs-'+layout} role="tablist" aria-label="Sections">{options.map(o=><button type="button" role="tab" aria-selected={o.value===value} tabIndex={o.value===value?0:-1} data-option={o.value} key={o.value} disabled={o.disabled} onClick={()=>onChange(o.value)} onKeyDown={e=>optionKey(e,options,value,onChange)}>{o.label}{o.badge?<small>{o.badge}</small>:null}</button>)}</div>}
-export function SegmentedControl({layout='scroll',...props}:Omit<React.ComponentProps<typeof Tabs>,'variant'>){return <Tabs {...props} layout={layout} variant="pill"/>}
-const tabIcons:Record<string,{idle:string;active:string;inset?:boolean}>={home:{idle:'f1075.svg',active:'e2b80.svg'},category:{idle:'a7245.svg',active:'cef31.svg'},cart:{idle:'29a27.svg',active:'aa28f.svg',inset:true},order:{idle:'30772.svg',active:'ef7f6.svg'},account:{idle:'25236.svg',active:'621fa.svg'}};
-export function TabBar({options,value,onChange}:{options:Option[];value:string;onChange:(v:string)=>void}){return <nav className="kb-tabbar" data-tab-count={options.length} aria-label="Main navigation">{options.map(o=>{const active=o.value===value,art=tabIcons[o.value],src=art?'/assets/navigation-v13/'+(active?art.active:art.idle):active&&o.activeIconSrc?o.activeIconSrc:o.iconSrc;return <button type="button" aria-current={active?'page':undefined} key={o.value} onClick={()=>onChange(o.value)} disabled={o.disabled}>{(src||o.icon)&&<Badge count={o.badge}><span className={'kb-tab-icon'+(art?.inset&&!active?' kb-tab-icon-inset':'')}>{src?<img src={src} alt=""/>:<Icon name={o.icon!}/>}</span></Badge>}<span>{o.label}</span></button>})}</nav>}
-
-export function Sidebar({options,value,onChange}:{options:Option[];value:string;onChange:(v:string)=>void}){return <nav className="kb-sidebar" aria-label="Categories">{options.map(o=><button type="button" key={o.value} aria-current={o.value===value?'true':undefined} disabled={o.disabled} onClick={()=>onChange(o.value)}>{o.label}</button>)}</nav>}
-export function SearchBar({value,onChange,onSubmit,placeholder='Search products',disabled=false,showSubmit=true,submitIcon=false,surface='gray',onFocus}:{surface?:'gray'|'outline'|'white';onFocus?:()=>void;value:string;onChange:(v:string)=>void;onSubmit?:(v:string)=>void;placeholder?:string;disabled?:boolean;showSubmit?:boolean;submitIcon?:boolean}){return <form className={'kb-search kb-search-'+surface} onSubmit={e=>{e.preventDefault();onSubmit?.(value)}}><Icon name="search-24"/><input onFocus={onFocus} aria-label={placeholder} value={value} onChange={e=>onChange(e.target.value)} placeholder={placeholder} disabled={disabled}/>{value&&<button type="button" aria-label="Clear search" onClick={()=>onChange('')}>×</button>}{onSubmit&&showSubmit&&<button type="submit" aria-label="Search" disabled={disabled}>{submitIcon?<Icon name="search-24"/>:'Search'}</button>}</form>}
-export function FormField({label,required,error,children}:{label:string;required?:boolean;error?:string;children:React.ReactNode}){const id=useId();return <fieldset className="kb-field" aria-describedby={error?id:undefined}><legend>{label}{required&&<span aria-label="Required"> *</span>}</legend>{children}{error&&<small id={id} className="kb-error">{error}</small>}</fieldset>}
-export function TextArea({label,value,onChange,maxLength=400,disabled=false,error,placeholder='Please enter',hideLabel=false}:{label:string;value:string;onChange:(v:string)=>void;maxLength?:number;disabled?:boolean;error?:string;placeholder?:string;hideLabel?:boolean}){const id=useId();return <label className="kb-textarea"><span className={hideLabel?'ds-sr':''} id={id+'-label'}>{label}</span><textarea placeholder={placeholder} aria-labelledby={id+'-label'} value={value} maxLength={maxLength} disabled={disabled} aria-invalid={!!error} aria-describedby={error?id:undefined} onChange={e=>onChange(e.target.value)}/><small>{value.length}/{maxLength}</small>{error&&<span id={id} className="kb-error">{error}</span>}</label>}
-export function Checkbox({label,checked,onChange,disabled=false}:{label:string;checked:boolean;onChange:(v:boolean)=>void;disabled?:boolean}){return <label className="kb-check"><input type="checkbox" checked={checked} onChange={e=>onChange(e.target.checked)} disabled={disabled}/><span>{label}</span></label>}
-export function Switch({label,checked,onChange,disabled=false}:{label:string;checked:boolean;onChange:(v:boolean)=>void;disabled?:boolean}){return <label className="kb-switch"><span>{label}</span><input role="switch" type="checkbox" checked={checked} onChange={e=>onChange(e.target.checked)} disabled={disabled}/></label>}
-export function SelectField({label,options,value,onChange,disabled=false}:{label:string;options:Option[];value:string;onChange:(v:string)=>void;disabled?:boolean}){
- const id=useId(),root=useRef<HTMLDivElement>(null),[open,setOpen]=useState(false),[active,setActive]=useState(0);
- const selected=options.findIndex(o=>o.value===value),enabled=options.map((o,i)=>o.disabled?-1:i).filter(i=>i>=0);
- useEffect(()=>{if(!open)return;const close=(event:PointerEvent)=>{if(!root.current?.contains(event.target as Node))setOpen(false)};document.addEventListener('pointerdown',close);return()=>document.removeEventListener('pointerdown',close)},[open]);
- useEffect(()=>{if(open)document.getElementById(id+'-option-'+active)?.scrollIntoView({block:'nearest'})},[open,active,id]);
- function show(){if(disabled||!enabled.length)return;setActive(selected>=0&&!options[selected].disabled?selected:enabled[0]??0);setOpen(true)}
- function choose(index:number){const option=options[index];if(!option||option.disabled)return;onChange(option.value);setOpen(false);root.current?.querySelector<HTMLButtonElement>('[role=combobox]')?.focus()}
- return <div className="kb-select" ref={root} onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node))setOpen(false)}}><span id={id+'-label'}>{label}</span><button type="button" className="kb-select-trigger" role="combobox" aria-labelledby={id+'-label'} aria-controls={id+'-list'} aria-expanded={open} aria-haspopup="listbox" aria-activedescendant={open?id+'-option-'+active:undefined} disabled={disabled} onClick={()=>open?setOpen(false):show()} onKeyDown={e=>{if(['ArrowDown','ArrowUp','Home','End'].includes(e.key)){e.preventDefault();if(!enabled.length)return;if(!open){show();return}const i=enabled.indexOf(active);setActive(e.key==='Home'?enabled[0]:e.key==='End'?enabled[enabled.length-1]:enabled[(i+(e.key==='ArrowDown'?1:-1)+enabled.length)%enabled.length])}else if(open&&(e.key==='Enter'||e.key===' ')){e.preventDefault();choose(active)}else if(e.key==='Escape'){e.preventDefault();setOpen(false)}else if(e.key==='Tab')setOpen(false)}}><span>{options[selected]?.label||'Select an option'}</span><Icon name={open?'up-2-12':'down-2-12'}/></button>{open&&<div className="kb-select-menu" id={id+'-list'} role="listbox" aria-labelledby={id+'-label'}>{options.map((o,i)=><button key={o.value} type="button" role="option" id={id+'-option-'+i} aria-selected={value===o.value} className={active===i?'is-active':''} disabled={o.disabled} tabIndex={-1} onPointerMove={()=>!o.disabled&&setActive(i)} onMouseDown={e=>e.preventDefault()} onClick={()=>choose(i)}>{o.label}{value===o.value&&<span aria-hidden="true">✓</span>}</button>)}</div>}</div>
+import { useKeenLocale } from './locale';
+import { EmptyIllustration } from './EmptyIllustration';
+import type { EmptyIllustrationKind } from './EmptyIllustration';
+import React, { useEffect, useId, useRef, useState } from 'react';
+import { Button, BottomSheet, ChoiceChip, Notice, RadioRow, ListRow } from './components';
+import { Icon } from './Icon';
+import type { IconName } from './Icon';
+import './foundations.css';
+import './acceptance-v12.css';
+export type Option = {
+    value: string;
+    label: string;
+    disabled?: boolean;
+    badge?: number;
+    icon?: IconName;
+    iconSrc?: string;
+    activeIconSrc?: string;
+};
+export function Text({ as: El = 'span', tone = 'primary', size, children }: {
+    as?: 'span' | 'p' | 'h1' | 'h2' | 'h3';
+    tone?: 'primary' | 'secondary' | 'danger' | 'success';
+    size?: 'caption' | 'body' | 'control' | 'title' | 'heading';
+    children: React.ReactNode;
+}) { const { t: kmText } = useKeenLocale(); return <El className={'kb-text kb-text-' + tone + (size ? ' kb-text-size-' + size : '')}>{children}</El>; }
+export function TextButton({ children, onClick, disabled = false, tone = 'primary', icon }: {
+    children: React.ReactNode;
+    onClick?: () => void;
+    disabled?: boolean;
+    tone?: 'primary' | 'brand' | 'danger';
+    icon?: React.ReactNode;
+}) { const { t: kmText } = useKeenLocale(); return <button type="button" className={'kb-text-button kb-text-button-' + tone} disabled={disabled} onClick={onClick}>{icon}{children}</button>; }
+export function ActionBar({ children, safeArea = false, layout = 'equal' }: {
+    children: React.ReactNode;
+    safeArea?: boolean;
+    layout?: 'equal' | 'content';
+}) { const { t: kmText } = useKeenLocale(); return <div className={'kb-action-bar kb-action-bar-' + layout + (safeArea ? ' kb-action-bar-safe' : '')}><div>{children}</div></div>; }
+export function OTPInput({ value, onChange, length = 4, error, disabled = false, focused = false, onFocus }: {
+    value: string;
+    onChange: (v: string) => void;
+    length?: 4 | 6;
+    error?: string;
+    disabled?: boolean;
+    focused?: boolean;
+    onFocus?: () => void;
+}) { const { t: kmText } = useKeenLocale(); const [active, setActive] = useState(false); return <div className={'kb-otp ' + (error ? 'has-error' : '')}><div className="kb-otp-cells" style={{ gridTemplateColumns: `repeat(${length},1fr)` }}>{Array.from({ length }, (_, i) => <span key={i} className={(focused || active) && i === Math.min(value.length, length - 1) ? 'is-active' : ''}>{value[i] || ''}</span>)}</div><input aria-label={kmText("Verification code")} inputMode="numeric" autoComplete="one-time-code" value={value} disabled={disabled} maxLength={length} aria-invalid={!!error} onFocus={() => { setActive(true); onFocus?.(); }} onBlur={() => setActive(false)} onChange={e => onChange(e.target.value.replace(/\D/g, '').slice(0, length))}/>{error && <small role="alert">{error}</small>}</div>; }
+export function Grid({ children, columns = 2 }: {
+    children: React.ReactNode;
+    columns?: 1 | 2 | 3 | 4;
+}) { const { t: kmText } = useKeenLocale(); return <div className="kb-grid" style={{ gridTemplateColumns: `repeat(${columns},minmax(0,1fr))` }}>{children}</div>; }
+export function Divider({ label }: {
+    label?: string;
+}) { const { t: kmText } = useKeenLocale(); return <div className={'kb-divider' + (label ? ' kb-divider-label' : '')} role="separator">{label && <span>{label}</span>}</div>; }
+export function Card({ children, header, footer, className = '' }: {
+    children: React.ReactNode;
+    header?: React.ReactNode;
+    footer?: React.ReactNode;
+    className?: string;
+}) { const { t: kmText } = useKeenLocale(); return <section className={'kb-card ' + className}>{header && <header>{header}</header>}<div>{children}</div>{footer && <footer>{footer}</footer>}</section>; }
+export function Section({ title, action, children }: {
+    title: string;
+    action?: React.ReactNode;
+    children: React.ReactNode;
+}) { const { t: kmText } = useKeenLocale(); return <section className="kb-section"><header><h3>{title}</h3>{action}</header>{children}</section>; }
+export function Image({ src, alt, fit = 'contain', ratio = '1', onClick }: {
+    src: string;
+    alt: string;
+    fit?: 'contain' | 'cover';
+    ratio?: string;
+    onClick?: () => void;
+}) { const { t: kmText } = useKeenLocale(); const [failed, setFailed] = useState(false); useEffect(() => setFailed(false), [src]); const image = failed ? <span role="img" aria-label={alt + ' unavailable'}>{kmText("Image unavailable")}</span> : <img src={src} alt={alt} style={{ objectFit: fit }} onError={() => setFailed(true)}/>; return onClick ? <button type="button" className="kb-image" style={{ aspectRatio: ratio }} onClick={onClick}>{image}</button> : <div className="kb-image" style={{ aspectRatio: ratio }}>{image}</div>; }
+export function Avatar({ src, name, size = 40 }: {
+    src?: string;
+    name: string;
+    size?: 24 | 40 | 64 | 72;
+}) { const { t: kmText } = useKeenLocale(); return <span className="kb-avatar" style={{ width: size, height: size }}>{src ? <img src={src} alt={name}/> : <span aria-label={name}>{name.slice(0, 1)}</span>}</span>; }
+export function Badge({ count, dot = false, children }: {
+    count?: number;
+    dot?: boolean;
+    children?: React.ReactNode;
+}) { const { t: kmText } = useKeenLocale(); return <span className={'kb-badge' + (!children ? ' kb-badge-inline' : '')}>{children}{(dot || (count ?? 0) > 0) && <span className={'kb-badge-value ' + (dot ? 'kb-badge-dot' : '')} aria-label={dot ? kmText("New notification") : `${count} notifications`}>{!dot && ((count ?? 0) > 99 ? '99+' : count)}</span>}</span>; }
+export function StatusBar({ time = '9:41', inverse = false }: {
+    time?: string;
+    inverse?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <div className={'kb-status ' + (inverse ? 'is-inverse' : '')} aria-label={`Device status ${time}`}><span>{time}</span><img src="/assets/addd3.svg" width="66.664" height="11.337" alt="Signal Wi-Fi battery"/></div>; }
+export function HomeIndicator() { const { t: kmText } = useKeenLocale(); return <div className="kb-home" aria-hidden="true"><i /></div>; }
+export function Page({ children, header, footer, background = 'gray', height = 812, showStatusBar = true, showHomeIndicator = true, inverse = false, className = '', chromeBackground }: {
+    children: React.ReactNode;
+    header?: React.ReactNode;
+    footer?: React.ReactNode;
+    chromeBackground?: string;
+    background?: 'white' | 'gray';
+    height?: number;
+    showStatusBar?: boolean;
+    showHomeIndicator?: boolean;
+    inverse?: boolean;
+    className?: string;
+}) { const { t: kmText } = useKeenLocale(); return <div lang={useKeenLocale().locale} style={{ height, '--kb-chrome-background': chromeBackground || (inverse ? 'var(--ds-color-green-header)' : background === 'white' ? '#fff' : '#f5f5f5') } as React.CSSProperties} data-page-background={background} className={'km-system kb-app kb-page kb-page-' + background + ' ' + className}>{showStatusBar && <StatusBar inverse={inverse}/>}{header}<main>{children}</main>{footer && <footer>{footer}</footer>}{showHomeIndicator && <HomeIndicator />}</div>; }
+export function AppShell({ children, header, footer, inverse = false, surface = 'default', height = 812, showStatusBar = true, showHomeIndicator = true }: {
+    children: React.ReactNode;
+    header?: React.ReactNode;
+    footer?: React.ReactNode;
+    inverse?: boolean;
+    surface?: 'default' | 'plain' | 'account' | 'home';
+    height?: number;
+    showStatusBar?: boolean;
+    showHomeIndicator?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <Page background={surface === 'plain' ? 'white' : 'gray'} height={height} showStatusBar={showStatusBar} showHomeIndicator={showHomeIndicator} inverse={inverse} className={surface === 'home' ? 'kb-app-home' : ''} header={header} footer={footer}>{children}</Page>; }
+export function IconButton({ name, label, onClick, disabled = false }: {
+    name: IconName;
+    label: string;
+    onClick?: () => void;
+    disabled?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <button type="button" className="kb-icon-button" onClick={onClick} disabled={disabled} aria-label={label}><Icon name={name}/></button>; }
+export function NavBar({ title, onBack, right, left, align = 'center' }: {
+    title: string;
+    onBack?: () => void;
+    right?: React.ReactNode;
+    left?: React.ReactNode;
+    align?: 'center' | 'left';
+}) { const { t: kmText } = useKeenLocale(); return <header className={'kb-nav kb-nav-' + align}><span>{left || onBack && <IconButton name="left-2-24" label={kmText("Back")} onClick={onBack}/>}</span><h1>{title}</h1><span>{right}</span></header>; }
+function optionKey(e: React.KeyboardEvent, options: Option[], value: string, onChange: (v: string) => void) {
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key))
+        return;
+    e.preventDefault();
+    const enabled = options.filter(x => !x.disabled);
+    if (!enabled.length)
+        return;
+    const i = enabled.findIndex(x => x.value === value);
+    const next = e.key === 'Home' ? 0 : e.key === 'End' ? enabled.length - 1 : (i + (e.key === 'ArrowRight' ? 1 : -1) + enabled.length) % enabled.length;
+    onChange(enabled[next].value);
+    const parent = e.currentTarget.parentElement;
+    requestAnimationFrame(() => Array.from(parent?.querySelectorAll<HTMLButtonElement>('button[data-option]') || []).find(b => b.dataset.option === enabled[next].value)?.focus());
 }
-export function Picker({label,options,value,onChange,disabled=false}:React.ComponentProps<typeof SelectField>){const [open,setOpen]=useState(false);return <><button type="button" className="kb-picker-trigger" disabled={disabled} onClick={()=>setOpen(true)}>{label}<span>{options.find(o=>o.value===value)?.label||'Select'} ›</span></button><BottomSheet open={open} title={label} onClose={()=>setOpen(false)}>{options.map(o=><RadioRow key={o.value} name="picker-option" value={o.value} label={o.label} disabled={o.disabled} checked={value===o.value} onChange={()=>{onChange(o.value);setOpen(false)}}/>)}</BottomSheet></>}
-export function DatePicker({label,value,onChange,min,disabled=false}:{label:string;value:string;onChange:(v:string)=>void;min?:string;disabled?:boolean}){return <label className="kb-select">{label}<input type="date" value={value} min={min} disabled={disabled} onChange={e=>onChange(e.target.value)}/></label>}
-export function Slider({label,value,onChange,min=0,max=100,disabled=false}:{label:string;value:number;onChange:(v:number)=>void;min?:number;max?:number;disabled?:boolean}){return <label className="kb-slider">{label} <output>{value}</output><input aria-label={label} type="range" value={value} min={min} max={max} disabled={disabled} onChange={e=>onChange(Number(e.target.value))}/></label>}
-export function Uploader({files,onChange,max=5,disabled=false}:{files:File[];onChange:(f:File[])=>void;max?:number;disabled?:boolean}){return <div className="kb-upload"><label><Icon name="camera-24"/><span>Photos / videos ({files.length}/{max})</span><input aria-label="Upload photos or videos" type="file" accept="image/*,video/*" multiple disabled={disabled||files.length>=max} onChange={e=>{const next=[...files,...Array.from(e.target.files||[])].slice(0,max);onChange(next);e.target.value=''}}/></label>{files.map((f,i)=><div key={i}><span>{f.name}</span><button type="button" aria-label={'Remove '+f.name} disabled={disabled} onClick={()=>onChange(files.filter((_,j)=>j!==i))}>×</button></div>)}</div>}
-export function FilterBar({options,value,onChange,onReset}:{options:Option[];value:string[];onChange:(v:string[])=>void;onReset?:()=>void}){return <div className="kb-filter">{options.map(o=><ChoiceChip key={o.value} disabled={o.disabled} selected={value.includes(o.value)} onClick={()=>{if(!o.disabled)onChange(value.includes(o.value)?value.filter(x=>x!==o.value):[...value,o.value])}}>{o.label}</ChoiceChip>)}{onReset&&<Button variant="text" size="compact" onClick={onReset}>Reset</Button>}</div>}
-export function Carousel({images=[],slides,initialIndex=0,label='Images'}:{images?:{src:string;alt:string}[];slides?:React.ReactNode[];initialIndex?:number;label?:string}){const items=slides||images.map(x=><Image key={x.src} {...x} ratio="1.2"/>),[index,setIndex]=useState(initialIndex);useEffect(()=>setIndex(initialIndex),[items.length,initialIndex]);if(!items.length)return <EmptyState title="No images"/>;const safe=Math.min(index,items.length-1);return <section className="kb-carousel" aria-label={label}>{items[safe]}<div>{items.map((_,i)=><button key={i} type="button" aria-label={`Image ${i+1}`} aria-pressed={i===safe} onClick={()=>setIndex(i)}/>)}</div></section>}
-export function Collapse({items}:{items:{id:string;title:string;content:React.ReactNode}[]}){return <div className="kb-collapse">{items.map(i=><details key={i.id}><summary>{i.title}</summary><div>{i.content}</div></details>)}</div>}
-export function Progress({value,label}:{value:number;label?:string}){const v=Math.min(100,Math.max(0,value));return <label className="kb-progress">{label&&<span>{label}</span>}<progress max="100" value={v} aria-label={label||'Progress'}/><small>{v}%</small></label>}
-export function Steps({items,current=0}:{items:{title:string;description?:string}[];current?:number}){return <ol className="kb-steps">{items.map((i,n)=><li key={n} className={n<=current?'is-complete':''} aria-current={n===current?'step':undefined}><i>{n<current?'✓':n+1}</i><span>{i.title}{i.description&&<small>{i.description}</small>}</span></li>)}</ol>}
-export function EmptyState({title='No records found',description,action,illustration,kind='orders',layout='inline'}:{title?:string;description?:string;action?:React.ReactNode;illustration?:React.ReactNode;kind?:EmptyIllustrationKind;layout?:'inline'|'page'}){const content=<div className="kb-empty">{illustration===undefined?<EmptyIllustration kind={kind}/>:illustration}<h3>{title}</h3>{description&&<p>{description}</p>}{action}</div>;return layout==='page'?<div className="kb-empty-page">{content}</div>:content}
-export function Result({status='success',title,description,details,action,fullWidthAction=false}:{status?:'success'|'error'|'warning';title:string;description?:string;details?:string[];action?:React.ReactNode;fullWidthAction?:boolean}){return <div className={'kb-result kb-result-'+status+(fullWidthAction?' kb-result-full-action':'')}><i aria-hidden="true">{status==='success'?'✓':status==='error'?'×':'!'}</i><h2>{title}</h2>{description&&<p>{description}</p>}{details&&<Card className="kb-result-details"><ul>{details.map(t=><li key={t}>{t}</li>)}</ul></Card>}{action}</div>}
-export function Loading({label='Loading…'}:{label?:string}){return <div className="kb-loading" role="status"><i/>{label}</div>}
-export function Skeleton({rows=3}:{rows?:number}){return <div className="kb-skeleton" role="status" aria-label="Loading content">{Array.from({length:rows},(_,i)=><i key={i}/>)}</div>}
-export function Toast({open,message,onClose,duration=3000}:{open:boolean;message:string;onClose:()=>void;duration?:number}){const closeRef=useRef(onClose);closeRef.current=onClose;useEffect(()=>{if(!open)return;const timer=setTimeout(()=>closeRef.current(),duration);return()=>clearTimeout(timer)},[open,message,duration]);return open?<div className="kb-toast" role="status">{message}</div>:null}
-export function Dialog({open,title,children,onClose,actions,variant='default',showClose=true}:{open:boolean;title:string;children:React.ReactNode;onClose:()=>void;actions?:React.ReactNode;variant?:'default'|'poster'|'voucher-success';showClose?:boolean}){const ref=useRef<HTMLDialogElement>(null),id=useId();useEffect(()=>{const d=ref.current;if(open&&!d.open)d.showModal();if(!open&&d.open)d.close()},[open]);return <dialog className={`km-system kb-dialog kb-dialog-${variant}`} ref={ref} aria-labelledby={id} onCancel={e=>{e.preventDefault();onClose()}}><header><h2 id={id}>{title}</h2>{showClose&&<button type="button" aria-label="Close dialog" onClick={onClose}>×</button>}</header><div>{children}</div>{actions&&<footer>{actions}</footer>}</dialog>}
-export function ActionSheet({open,options,onSelect,onClose}:{open:boolean;options:Option[];onSelect:(v:string)=>void;onClose:()=>void}){return <BottomSheet open={open} onClose={onClose} title="Choose an action"><div className="kb-action-sheet-list">{options.map(o=><button type="button" key={o.value} disabled={o.disabled} onClick={()=>{onSelect(o.value);onClose()}}>{o.label}</button>)}</div></BottomSheet>}
-export function Popover({label,children}:{label:string;children:React.ReactNode}){return <details className="kb-popover"><summary>{label}</summary><div>{children}</div></details>}
-export function ImageViewer({open,src,alt,onClose,counter='1/3'}:{open:boolean;src:string;alt:string;onClose:()=>void;counter?:string}){return open?<div className="v08-image-viewer" role="dialog" aria-modal="true" aria-label={alt}><StatusBar/><NavBar title={counter} onBack={onClose}/><img src={src} alt={alt}/><HomeIndicator/></div>:null}
-export function SwipeAction({children,onDelete,actions,disabled=false}:{children:React.ReactNode;onDelete?:()=>void;actions?:{label:string;onAction:()=>void;tone?:'neutral'|'destructive'}[];disabled?:boolean}){
- const [open,setOpen]=useState(false),start=useRef<{x:number;y:number}|null>(null),didSwipe=useRef(false),items=actions||(onDelete?[{label:'Delete',onAction:onDelete,tone:'destructive' as const}]:[]);
- return <div className={'kb-swipe '+(open?'is-open':'')} style={{'--swipe-width':items.length*76+'px'} as React.CSSProperties} onPointerDown={e=>{didSwipe.current=false;if((e.target as HTMLElement).closest('.kb-swipe-actions'))return;if(!disabled)start.current={x:e.clientX,y:e.clientY}}} onPointerUp={e=>{if(start.current&&!disabled&&items.length){const dx=e.clientX-start.current.x,dy=e.clientY-start.current.y;if(Math.abs(dx)>Math.abs(dy)){if(dx< -40){setOpen(true);didSwipe.current=true}else if(dx>40){setOpen(false);didSwipe.current=true}}}start.current=null}} onPointerCancel={()=>{start.current=null}} onKeyDown={e=>{if(e.key==='Escape'){setOpen(false);e.currentTarget.querySelector<HTMLElement>('.kb-swipe-content')?.focus()}}} onClickCapture={e=>{if(didSwipe.current){e.preventDefault();e.stopPropagation();didSwipe.current=false}}}><div className="kb-swipe-actions" aria-hidden={!open}>{items.map((item,i)=><button type="button" className={item.tone==='destructive'?'is-destructive':''} key={i} tabIndex={open?0:-1} disabled={disabled||!open} onClick={()=>{item.onAction();setOpen(false)}}>{item.label}</button>)}</div><div className="kb-swipe-content" tabIndex={disabled?undefined:0} role="group" aria-label="Swipe left to reveal actions" aria-expanded={open} onKeyDown={e=>{if(disabled||!items.length)return;if(e.key==='ArrowLeft'){e.preventDefault();setOpen(true);const first=e.currentTarget.parentElement?.querySelector<HTMLButtonElement>('.kb-swipe-actions>button');requestAnimationFrame(()=>first?.focus())}if(e.key==='ArrowRight'||e.key==='Escape'){e.preventDefault();setOpen(false)}}}>{children}</div></div>
+export function Tabs({ options, value, onChange, variant = 'line', layout = 'equal' }: {
+    options: Option[];
+    value: string;
+    onChange: (v: string) => void;
+    variant?: 'line' | 'pill';
+    layout?: 'equal' | 'scroll';
+}) { const { t: kmText } = useKeenLocale(); return <div className={'kb-tabs kb-tabs-' + variant + ' kb-tabs-' + layout} role="tablist" aria-label={kmText("Sections")}>{options.map(o => <button type="button" role="tab" aria-selected={o.value === value} tabIndex={o.value === value ? 0 : -1} data-option={o.value} key={o.value} disabled={o.disabled} onClick={() => onChange(o.value)} onKeyDown={e => optionKey(e, options, value, onChange)}>{o.label}{o.badge ? <small>{o.badge}</small> : null}</button>)}</div>; }
+export function SegmentedControl({ layout = 'scroll', ...props }: Omit<React.ComponentProps<typeof Tabs>, 'variant'>) { const { t: kmText } = useKeenLocale(); return <Tabs {...props} layout={layout} variant="pill"/>; }
+const tabIcons: Record<string, {
+    idle: string;
+    active: string;
+    inset?: boolean;
+}> = { home: { idle: 'f1075.svg', active: 'e2b80.svg' }, category: { idle: 'a7245.svg', active: 'cef31.svg' }, cart: { idle: '29a27.svg', active: 'aa28f.svg', inset: true }, order: { idle: '30772.svg', active: 'ef7f6.svg' }, account: { idle: '25236.svg', active: '621fa.svg' } };
+export function TabBar({ options, value, onChange }: {
+    options: Option[];
+    value: string;
+    onChange: (v: string) => void;
+}) { const { t: kmText } = useKeenLocale(); return <nav className="kb-tabbar" data-tab-count={options.length} aria-label={kmText("Main navigation")}>{options.map(o => { const active = o.value === value, art = tabIcons[o.value], src = art ? '/assets/navigation-v13/' + (active ? art.active : art.idle) : active && o.activeIconSrc ? o.activeIconSrc : o.iconSrc; return <button type="button" aria-current={active ? 'page' : undefined} key={o.value} onClick={() => onChange(o.value)} disabled={o.disabled}>{(src || o.icon) && <Badge count={o.badge}><span className={'kb-tab-icon' + (art?.inset && !active ? ' kb-tab-icon-inset' : '')}>{src ? <img src={src} alt=""/> : <Icon name={o.icon!}/>}</span></Badge>}<span>{o.label}</span></button>; })}</nav>; }
+export function Sidebar({ options, value, onChange }: {
+    options: Option[];
+    value: string;
+    onChange: (v: string) => void;
+}) { const { t: kmText } = useKeenLocale(); return <nav className="kb-sidebar" aria-label={kmText("Categories")}>{options.map(o => <button type="button" key={o.value} aria-current={o.value === value ? 'true' : undefined} disabled={o.disabled} onClick={() => onChange(o.value)}>{o.label}</button>)}</nav>; }
+export function SearchBar({ value, onChange, onSubmit, placeholder = 'Search products', disabled = false, showSubmit = true, submitIcon = false, surface = 'gray', onFocus }: {
+    surface?: 'gray' | 'outline' | 'white';
+    onFocus?: () => void;
+    value: string;
+    onChange: (v: string) => void;
+    onSubmit?: (v: string) => void;
+    placeholder?: string;
+    disabled?: boolean;
+    showSubmit?: boolean;
+    submitIcon?: boolean;
+}) { const { t: kmText } = useKeenLocale(); placeholder = kmText(placeholder); return <form className={'kb-search kb-search-' + surface} onSubmit={e => { e.preventDefault(); onSubmit?.(value); }}><Icon name="search-24"/><input onFocus={onFocus} aria-label={placeholder} value={value} onChange={e => onChange(e.target.value)} placeholder={placeholder} disabled={disabled}/>{value && <button type="button" aria-label={kmText("Clear search")} onClick={() => onChange('')}>×</button>}{onSubmit && showSubmit && <button type="submit" aria-label={kmText("Search")} disabled={disabled}>{submitIcon ? <Icon name="search-24"/> : kmText("Search")}</button>}</form>; }
+export function FormField({ label, required, error, children }: {
+    label: string;
+    required?: boolean;
+    error?: string;
+    children: React.ReactNode;
+}) { const { t: kmText } = useKeenLocale(); const id = useId(); return <fieldset className="kb-field" aria-describedby={error ? id : undefined}><legend>{label}{required && <span aria-label={kmText("Required")}> *</span>}</legend>{children}{error && <small id={id} className="kb-error">{error}</small>}</fieldset>; }
+export function TextArea({ label, value, onChange, maxLength = 400, disabled = false, error, placeholder = 'Please enter', hideLabel = false }: {
+    label: string;
+    value: string;
+    onChange: (v: string) => void;
+    maxLength?: number;
+    disabled?: boolean;
+    error?: string;
+    placeholder?: string;
+    hideLabel?: boolean;
+}) { const { t: kmText } = useKeenLocale(); placeholder = kmText(placeholder); const id = useId(); return <label className="kb-textarea"><span className={hideLabel ? 'ds-sr' : ''} id={id + '-label'}>{label}</span><textarea placeholder={placeholder} aria-labelledby={id + '-label'} value={value} maxLength={maxLength} disabled={disabled} aria-invalid={!!error} aria-describedby={error ? id : undefined} onChange={e => onChange(e.target.value)}/><small>{value.length}/{maxLength}</small>{error && <span id={id} className="kb-error">{error}</span>}</label>; }
+export function Checkbox({ label, checked, onChange, disabled = false }: {
+    label: string;
+    checked: boolean;
+    onChange: (v: boolean) => void;
+    disabled?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <label className="kb-check"><input type="checkbox" checked={checked} onChange={e => onChange(e.target.checked)} disabled={disabled}/><span>{label}</span></label>; }
+export function Switch({ label, checked, onChange, disabled = false }: {
+    label: string;
+    checked: boolean;
+    onChange: (v: boolean) => void;
+    disabled?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <label className="kb-switch"><span>{label}</span><input role="switch" type="checkbox" checked={checked} onChange={e => onChange(e.target.checked)} disabled={disabled}/></label>; }
+export function SelectField({ label, options, value, onChange, disabled = false }: {
+    label: string;
+    options: Option[];
+    value: string;
+    onChange: (v: string) => void;
+    disabled?: boolean;
+}) {
+    const { t: kmText } = useKeenLocale();
+    const id = useId(), root = useRef<HTMLDivElement>(null), [open, setOpen] = useState(false), [active, setActive] = useState(0);
+    const selected = options.findIndex(o => o.value === value), enabled = options.map((o, i) => o.disabled ? -1 : i).filter(i => i >= 0);
+    useEffect(() => {
+        if (!open)
+            return;
+        const close = (event: PointerEvent) => {
+            if (!root.current?.contains(event.target as Node))
+                setOpen(false);
+        };
+        document.addEventListener('pointerdown', close);
+        return () => document.removeEventListener('pointerdown', close);
+    }, [open]);
+    useEffect(() => {
+        if (open)
+            document.getElementById(id + '-option-' + active)?.scrollIntoView({ block: 'nearest' });
+    }, [open, active, id]);
+    function show() {
+        if (disabled || !enabled.length)
+            return;
+        setActive(selected >= 0 && !options[selected].disabled ? selected : enabled[0] ?? 0);
+        setOpen(true);
+    }
+    function choose(index: number) {
+        const option = options[index];
+        if (!option || option.disabled)
+            return;
+        onChange(option.value);
+        setOpen(false);
+        root.current?.querySelector<HTMLButtonElement>('[role=combobox]')?.focus();
+    }
+    return <div className="kb-select" ref={root} onBlur={e => {
+            if (!e.currentTarget.contains(e.relatedTarget as Node))
+                setOpen(false);
+        }}><span id={id + '-label'}>{label}</span><button type="button" className="kb-select-trigger" role="combobox" aria-labelledby={id + '-label'} aria-controls={id + '-list'} aria-expanded={open} aria-haspopup="listbox" aria-activedescendant={open ? id + '-option-' + active : undefined} disabled={disabled} onClick={() => open ? setOpen(false) : show()} onKeyDown={e => {
+            if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(e.key)) {
+                e.preventDefault();
+                if (!enabled.length)
+                    return;
+                if (!open) {
+                    show();
+                    return;
+                }
+                const i = enabled.indexOf(active);
+                setActive(e.key === 'Home' ? enabled[0] : e.key === 'End' ? enabled[enabled.length - 1] : enabled[(i + (e.key === 'ArrowDown' ? 1 : -1) + enabled.length) % enabled.length]);
+            }
+            else if (open && (e.key === 'Enter' || e.key === ' ')) {
+                e.preventDefault();
+                choose(active);
+            }
+            else if (e.key === 'Escape') {
+                e.preventDefault();
+                setOpen(false);
+            }
+            else if (e.key === 'Tab')
+                setOpen(false);
+        }}><span>{options[selected]?.label || 'Select an option'}</span><Icon name={open ? 'up-2-12' : 'down-2-12'}/></button>{open && <div className="kb-select-menu" id={id + '-list'} role="listbox" aria-labelledby={id + '-label'}>{options.map((o, i) => <button key={o.value} type="button" role="option" id={id + '-option-' + i} aria-selected={value === o.value} className={active === i ? 'is-active' : ''} disabled={o.disabled} tabIndex={-1} onPointerMove={() => !o.disabled && setActive(i)} onMouseDown={e => e.preventDefault()} onClick={() => choose(i)}>{o.label}{value === o.value && <span aria-hidden="true">✓</span>}</button>)}</div>}</div>;
 }
-export function PullRefresh({children,onRefresh}:{children:React.ReactNode;onRefresh:()=>Promise<void>}){
- const [busy,setBusy]=useState(false),[error,setError]=useState(false),[pull,setPull]=useState(0),start=useRef<number|null>(null);
- async function refresh(){if(busy)return;setBusy(true);setError(false);setPull(0);try{await onRefresh()}catch{setError(true)}finally{setBusy(false)}}
- const move=(y:number)=>{if(start.current!==null&&!busy)setPull(Math.min(90,Math.max(0,y-start.current)))};
- const end=()=>{if(pull>=64)void refresh();setPull(0);start.current=null};
- return <section className="kb-refresh" tabIndex={0} aria-label="Pull down to refresh; press Enter to refresh" aria-busy={busy} onKeyDown={e=>{if(e.target===e.currentTarget&&e.key==='Enter'){e.preventDefault();void refresh()}}} onPointerDown={e=>{if(e.pointerType!=='touch'&&e.currentTarget.scrollTop===0)start.current=e.clientY}} onPointerMove={e=>{if(e.pointerType!=='touch')move(e.clientY)}} onPointerUp={end} onPointerCancel={()=>{start.current=null;setPull(0)}} onTouchStart={e=>{if(e.currentTarget.scrollTop===0)start.current=e.touches[0].clientY}} onTouchMove={e=>move(e.touches[0].clientY)} onTouchEnd={end}><div className="kb-refresh-status" role="status" style={{minHeight:busy?40:Math.max(24,pull/2)}}>{busy?'Refreshing…':pull>=64?'Release to refresh':error?'Refresh failed. Pull down to retry.':'Pull down to refresh'}</div><div className="kb-refresh-content" style={{transform:`translateY(${pull/3}px)`}}>{children}</div></section>
+export function Picker({ label, options, value, onChange, disabled = false }: React.ComponentProps<typeof SelectField>) { const { t: kmText } = useKeenLocale(); const [open, setOpen] = useState(false); return <><button type="button" className="kb-picker-trigger" disabled={disabled} onClick={() => setOpen(true)}>{label}<span>{options.find(o => o.value === value)?.label || 'Select'} ›</span></button><BottomSheet open={open} title={label} onClose={() => setOpen(false)}>{options.map(o => <RadioRow key={o.value} name="picker-option" value={o.value} label={o.label} disabled={o.disabled} checked={value === o.value} onChange={() => { onChange(o.value); setOpen(false); }}/>)}</BottomSheet></>; }
+export function DatePicker({ label, value, onChange, min, disabled = false }: {
+    label: string;
+    value: string;
+    onChange: (v: string) => void;
+    min?: string;
+    disabled?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <label className="kb-select">{label}<input type="date" value={value} min={min} disabled={disabled} onChange={e => onChange(e.target.value)}/></label>; }
+export function Slider({ label, value, onChange, min = 0, max = 100, disabled = false }: {
+    label: string;
+    value: number;
+    onChange: (v: number) => void;
+    min?: number;
+    max?: number;
+    disabled?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <label className="kb-slider">{label} <output>{value}</output><input aria-label={label} type="range" value={value} min={min} max={max} disabled={disabled} onChange={e => onChange(Number(e.target.value))}/></label>; }
+export function Uploader({ files, onChange, max = 5, disabled = false }: {
+    files: File[];
+    onChange: (f: File[]) => void;
+    max?: number;
+    disabled?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <div className="kb-upload"><label><Icon name="camera-24"/><span>Photos / videos ({files.length}/{max})</span><input aria-label={kmText("Upload photos or videos")} type="file" accept="image/*,video/*" multiple disabled={disabled || files.length >= max} onChange={e => { const next = [...files, ...Array.from(e.target.files || [])].slice(0, max); onChange(next); e.target.value = ''; }}/></label>{files.map((f, i) => <div key={i}><span>{f.name}</span><button type="button" aria-label={'Remove ' + f.name} disabled={disabled} onClick={() => onChange(files.filter((_, j) => j !== i))}>×</button></div>)}</div>; }
+export function FilterBar({ options, value, onChange, onReset }: {
+    options: Option[];
+    value: string[];
+    onChange: (v: string[]) => void;
+    onReset?: () => void;
+}) {
+    const { t: kmText } = useKeenLocale();
+    return <div className="kb-filter">{options.map(o => <ChoiceChip key={o.value} disabled={o.disabled} selected={value.includes(o.value)} onClick={() => {
+                if (!o.disabled)
+                    onChange(value.includes(o.value) ? value.filter(x => x !== o.value) : [...value, o.value]);
+            }}>{o.label}</ChoiceChip>)}{onReset && <Button variant="text" size="compact" onClick={onReset}>{kmText("Reset")}</Button>}</div>;
 }
-export function LoadMore({loading=false,hasMore=true,onLoad,error=false}:{loading?:boolean;hasMore?:boolean;onLoad:()=>void;error?:boolean}){return hasMore?<Button variant="text" loading={loading} onClick={onLoad}>{error?'Retry':'Load more'}</Button>:<p className="kb-end">End of records</p>}
-export function StickyBar({children,layout='content'}:{children:React.ReactNode;layout?:'single'|'equal'|'content'}){return <div className={'kb-sticky kb-sticky-'+layout}>{children}</div>}
-export function Keyboard({type='numeric',value,onChange,onDone,maxLength=1000,disabled=false,allowDecimal=false}:{allowDecimal?:boolean;type?:'numeric'|'alphabetic';value:string;onChange:(v:string)=>void;onDone:()=>void;maxLength?:number;disabled?:boolean}){const [caps,setCaps]=useState(true);function press(c:string){if(c==='⌫')onChange(value.slice(0,-1));else if(value.length<maxLength)onChange(value+c)}if(type==='numeric')return <div className="kb-keyboard kb-keyboard-numeric" aria-label="Numeric keyboard"><div className="kb-number-keys">{['1','2','3','4','5','6','7','8','9',allowDecimal?'.':'','0','⌫'].map((k,i)=>k?<button type="button" key={i} className={k==='⌫'?'is-delete':''} disabled={disabled} aria-label={k==='⌫'?'Backspace':k} onClick={()=>press(k)}>{k}<small>{['','ABC','DEF','GHI','JKL','MNO','PQRS','TUV','WXYZ'][i]}</small></button>:<span key={i}/>)}</div><HomeIndicator/></div>;return <div className="kb-keyboard kb-keyboard-alphabetic" aria-label="Alphabetic keyboard"><div className="kb-key-suggestions"><span>W</span><span>I</span><span>I’m</span></div>{['qwertyuiop','asdfghjkl','zxcvbnm'].map((row,i)=><div className="kb-key-row" key={row}>{i===2&&<button type="button" disabled={disabled} aria-label="Shift" aria-pressed={caps} onClick={()=>setCaps(!caps)}>⇧</button>}{[...row].map(c=><button type="button" key={c} disabled={disabled} onClick={()=>press(caps?c.toUpperCase():c)}>{caps?c.toUpperCase():c}</button>)}{i===2&&<button type="button" disabled={disabled} aria-label="Backspace" onClick={()=>press('⌫')}>⌫</button>}</div>)}<div className="kb-key-row"><button type="button" disabled={disabled}>123</button><button type="button" disabled={disabled} aria-label="Emoji">☻</button><button type="button" disabled={disabled} onClick={()=>press(' ')}>space</button><button type="button" disabled={disabled} onClick={onDone}>return</button></div><div className="kb-key-accessories" aria-hidden="true"><span>◎</span><span>♩</span></div><HomeIndicator/></div>}
-export function Countdown({seconds,onComplete}:{seconds:number;onComplete?:()=>void}){const [remaining,setRemaining]=useState(Math.max(0,seconds));useEffect(()=>{setRemaining(Math.max(0,seconds))},[seconds]);useEffect(()=>{if(remaining<=0)return;const id=setTimeout(()=>{if(remaining===1)onComplete?.();setRemaining(v=>Math.max(0,v-1))},1000);return()=>clearTimeout(id)},[remaining,onComplete]);return <time className="kb-countdown" aria-label={`${remaining} seconds remaining`}>{String(Math.floor(remaining/60)).padStart(2,'0')}:{String(remaining%60).padStart(2,'0')}</time>}
-export type ArtworkLayer={src:string;x:number;y:number;width:number;height:number;imageX:number;imageY:number;imageWidth:number;imageHeight:number;radius?:number;opacity?:number;blend?:string};
-export function Artwork({layers,label,ratio='1'}:{layers:ArtworkLayer[];label:string;ratio?:string}){return <div className="kb-artwork" role="img" aria-label={label} style={{aspectRatio:ratio}}>{layers.map((l,i)=><span key={i} style={{left:l.x+'%',top:l.y+'%',width:l.width+'%',height:l.height+'%',borderRadius:l.radius||0,opacity:l.opacity??1,mixBlendMode:(l.blend||'normal') as React.CSSProperties['mixBlendMode']}}><img src={l.src} alt="" style={{left:l.imageX+'%',top:l.imageY+'%',width:l.imageWidth+'%',height:l.imageHeight+'%'}}/></span>)}</div>}
-
-export function ListGroup({title,titlePlacement='inside',items}:{title:string;titlePlacement?:'inside'|'outside';items:{id:string;title:string;description?:string;leading?:React.ReactNode;trailing?:React.ReactNode;onClick?:()=>void;disabled?:boolean}[]}){const heading=<h3>{title}</h3>;return <section className={'kb-list-group kb-list-group-'+titlePlacement}>{titlePlacement==='outside'&&heading}<Card header={titlePlacement==='inside'?heading:undefined}>{items.map(({id,...row})=><ListRow key={id} {...row}/>)}</Card></section>}
+export function Carousel({ images = [], slides, initialIndex = 0, label = 'Images' }: {
+    images?: {
+        src: string;
+        alt: string;
+    }[];
+    slides?: React.ReactNode[];
+    initialIndex?: number;
+    label?: string;
+}) {
+    const { t: kmText } = useKeenLocale();
+    const items = slides || images.map(x => <Image key={x.src} {...x} ratio="1.2"/>), [index, setIndex] = useState(initialIndex);
+    useEffect(() => setIndex(initialIndex), [items.length, initialIndex]);
+    if (!items.length)
+        return <EmptyState title={kmText("No images")}/>;
+    const safe = Math.min(index, items.length - 1);
+    return <section className="kb-carousel" aria-label={label}>{items[safe]}<div>{items.map((_, i) => <button key={i} type="button" aria-label={`Image ${i + 1}`} aria-pressed={i === safe} onClick={() => setIndex(i)}/>)}</div></section>;
+}
+export function Collapse({ items }: {
+    items: {
+        id: string;
+        title: string;
+        content: React.ReactNode;
+    }[];
+}) { const { t: kmText } = useKeenLocale(); return <div className="kb-collapse">{items.map(i => <details key={i.id}><summary>{i.title}</summary><div>{i.content}</div></details>)}</div>; }
+export function Progress({ value, label }: {
+    value: number;
+    label?: string;
+}) { const { t: kmText } = useKeenLocale(); const v = Math.min(100, Math.max(0, value)); return <label className="kb-progress">{label && <span>{label}</span>}<progress max="100" value={v} aria-label={label || 'Progress'}/><small>{v}%</small></label>; }
+export function Steps({ items, current = 0 }: {
+    items: {
+        title: string;
+        description?: string;
+    }[];
+    current?: number;
+}) { const { t: kmText } = useKeenLocale(); return <ol className="kb-steps">{items.map((i, n) => <li key={n} className={n <= current ? 'is-complete' : ''} aria-current={n === current ? 'step' : undefined}><i>{n < current ? '✓' : n + 1}</i><span>{i.title}{i.description && <small>{i.description}</small>}</span></li>)}</ol>; }
+export function EmptyState({ title = 'No records found', description, action, illustration, kind = 'orders', layout = 'inline' }: {
+    title?: string;
+    description?: string;
+    action?: React.ReactNode;
+    illustration?: React.ReactNode;
+    kind?: EmptyIllustrationKind;
+    layout?: 'inline' | 'page';
+}) { const { t: kmText } = useKeenLocale(); title = kmText(title); const content = <div className="kb-empty">{illustration === undefined ? <EmptyIllustration kind={kind}/> : illustration}<h3>{title}</h3>{description && <p>{description}</p>}{action}</div>; return layout === 'page' ? <div className="kb-empty-page">{content}</div> : content; }
+export function Result({ status = 'success', title, description, details, action, fullWidthAction = false }: {
+    status?: 'success' | 'error' | 'warning';
+    title: string;
+    description?: string;
+    details?: string[];
+    action?: React.ReactNode;
+    fullWidthAction?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <div className={'kb-result kb-result-' + status + (fullWidthAction ? ' kb-result-full-action' : '')}><i aria-hidden="true">{status === 'success' ? '✓' : status === 'error' ? '×' : '!'}</i><h2>{title}</h2>{description && <p>{description}</p>}{details && <Card className="kb-result-details"><ul>{details.map(t => <li key={t}>{t}</li>)}</ul></Card>}{action}</div>; }
+export function Loading({ label = 'Loading…' }: {
+    label?: string;
+}) { const { t: kmText } = useKeenLocale(); label = kmText(label); return <div className="kb-loading" role="status"><i />{label}</div>; }
+export function Skeleton({ rows = 3 }: {
+    rows?: number;
+}) { const { t: kmText } = useKeenLocale(); return <div className="kb-skeleton" role="status" aria-label={kmText("Loading content")}>{Array.from({ length: rows }, (_, i) => <i key={i}/>)}</div>; }
+export function Toast({ open, message, onClose, duration = 3000 }: {
+    open: boolean;
+    message: string;
+    onClose: () => void;
+    duration?: number;
+}) {
+    const { t: kmText } = useKeenLocale();
+    const closeRef = useRef(onClose);
+    closeRef.current = onClose;
+    useEffect(() => {
+        if (!open)
+            return;
+        const timer = setTimeout(() => closeRef.current(), duration);
+        return () => clearTimeout(timer);
+    }, [open, message, duration]);
+    return open ? <div className="kb-toast" role="status">{message}</div> : null;
+}
+export function Dialog({ open, title, children, onClose, actions, variant = 'default', showClose = true }: {
+    open: boolean;
+    title: string;
+    children: React.ReactNode;
+    onClose: () => void;
+    actions?: React.ReactNode;
+    variant?: 'default' | 'poster' | 'voucher-success';
+    showClose?: boolean;
+}) {
+    const { t: kmText } = useKeenLocale();
+    const ref = useRef<HTMLDialogElement>(null), id = useId();
+    useEffect(() => {
+        const d = ref.current;
+        if (open && !d.open)
+            d.showModal();
+        if (!open && d.open)
+            d.close();
+    }, [open]);
+    return <dialog className={`km-system kb-dialog kb-dialog-${variant}`} ref={ref} aria-labelledby={id} onCancel={e => { e.preventDefault(); onClose(); }}><header><h2 id={id}>{title}</h2>{showClose && <button type="button" aria-label={kmText("Close dialog")} onClick={onClose}>×</button>}</header><div>{children}</div>{actions && <footer>{actions}</footer>}</dialog>;
+}
+export function ActionSheet({ open, options, onSelect, onClose }: {
+    open: boolean;
+    options: Option[];
+    onSelect: (v: string) => void;
+    onClose: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <BottomSheet open={open} onClose={onClose} title={kmText("Choose an action")}><div className="kb-action-sheet-list">{options.map(o => <button type="button" key={o.value} disabled={o.disabled} onClick={() => { onSelect(o.value); onClose(); }}>{o.label}</button>)}</div></BottomSheet>; }
+export function Popover({ label, children }: {
+    label: string;
+    children: React.ReactNode;
+}) { const { t: kmText } = useKeenLocale(); return <details className="kb-popover"><summary>{label}</summary><div>{children}</div></details>; }
+export function ImageViewer({ open, src, alt, onClose, counter = '1/3' }: {
+    open: boolean;
+    src: string;
+    alt: string;
+    onClose: () => void;
+    counter?: string;
+}) { const { t: kmText } = useKeenLocale(); return open ? <div className="v08-image-viewer" role="dialog" aria-modal="true" aria-label={alt}><StatusBar /><NavBar title={counter} onBack={onClose}/><img src={src} alt={alt}/><HomeIndicator /></div> : null; }
+export function SwipeAction({ children, onDelete, actions, disabled = false }: {
+    children: React.ReactNode;
+    onDelete?: () => void;
+    actions?: {
+        label: string;
+        onAction: () => void;
+        tone?: 'neutral' | 'destructive';
+    }[];
+    disabled?: boolean;
+}) {
+    const { t: kmText } = useKeenLocale();
+    const [open, setOpen] = useState(false), start = useRef<{
+        x: number;
+        y: number;
+    } | null>(null), didSwipe = useRef(false), items = actions || (onDelete ? [{ label: kmText("Delete"), onAction: onDelete, tone: 'destructive' as const }] : []);
+    return <div className={'kb-swipe ' + (open ? 'is-open' : '')} style={{ '--swipe-width': items.length * 76 + 'px' } as React.CSSProperties} onPointerDown={e => {
+            didSwipe.current = false;
+            if ((e.target as HTMLElement).closest('.kb-swipe-actions'))
+                return;
+            if (!disabled)
+                start.current = { x: e.clientX, y: e.clientY };
+        }} onPointerUp={e => {
+            if (start.current && !disabled && items.length) {
+                const dx = e.clientX - start.current.x, dy = e.clientY - start.current.y;
+                if (Math.abs(dx) > Math.abs(dy)) {
+                    if (dx < -40) {
+                        setOpen(true);
+                        didSwipe.current = true;
+                    }
+                    else if (dx > 40) {
+                        setOpen(false);
+                        didSwipe.current = true;
+                    }
+                }
+            }
+            start.current = null;
+        }} onPointerCancel={() => { start.current = null; }} onKeyDown={e => {
+            if (e.key === 'Escape') {
+                setOpen(false);
+                e.currentTarget.querySelector<HTMLElement>('.kb-swipe-content')?.focus();
+            }
+        }} onClickCapture={e => {
+            if (didSwipe.current) {
+                e.preventDefault();
+                e.stopPropagation();
+                didSwipe.current = false;
+            }
+        }}><div className="kb-swipe-actions" aria-hidden={!open}>{items.map((item, i) => <button type="button" className={item.tone === 'destructive' ? 'is-destructive' : ''} key={i} tabIndex={open ? 0 : -1} disabled={disabled || !open} onClick={() => { item.onAction(); setOpen(false); }}>{item.label}</button>)}</div><div className="kb-swipe-content" tabIndex={disabled ? undefined : 0} role="group" aria-label={kmText("Swipe left to reveal actions")} aria-expanded={open} onKeyDown={e => {
+            if (disabled || !items.length)
+                return;
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                setOpen(true);
+                const first = e.currentTarget.parentElement?.querySelector<HTMLButtonElement>('.kb-swipe-actions>button');
+                requestAnimationFrame(() => first?.focus());
+            }
+            if (e.key === 'ArrowRight' || e.key === 'Escape') {
+                e.preventDefault();
+                setOpen(false);
+            }
+        }}>{children}</div></div>;
+}
+export function PullRefresh({ children, onRefresh }: {
+    children: React.ReactNode;
+    onRefresh: () => Promise<void>;
+}) {
+    const { t: kmText } = useKeenLocale();
+    const [busy, setBusy] = useState(false), [error, setError] = useState(false), [pull, setPull] = useState(0), start = useRef<number | null>(null);
+    async function refresh() {
+        if (busy)
+            return;
+        setBusy(true);
+        setError(false);
+        setPull(0);
+        try {
+            await onRefresh();
+        }
+        catch {
+            setError(true);
+        }
+        finally {
+            setBusy(false);
+        }
+    }
+    const move = (y: number) => {
+        if (start.current !== null && !busy)
+            setPull(Math.min(90, Math.max(0, y - start.current)));
+    };
+    const end = () => {
+        if (pull >= 64)
+            void refresh();
+        setPull(0);
+        start.current = null;
+    };
+    return <section className="kb-refresh" tabIndex={0} aria-label={kmText("Pull down to refresh; press Enter to refresh")} aria-busy={busy} onKeyDown={e => {
+            if (e.target === e.currentTarget && e.key === 'Enter') {
+                e.preventDefault();
+                void refresh();
+            }
+        }} onPointerDown={e => {
+            if (e.pointerType !== 'touch' && e.currentTarget.scrollTop === 0)
+                start.current = e.clientY;
+        }} onPointerMove={e => {
+            if (e.pointerType !== 'touch')
+                move(e.clientY);
+        }} onPointerUp={end} onPointerCancel={() => { start.current = null; setPull(0); }} onTouchStart={e => {
+            if (e.currentTarget.scrollTop === 0)
+                start.current = e.touches[0].clientY;
+        }} onTouchMove={e => move(e.touches[0].clientY)} onTouchEnd={end}><div className="kb-refresh-status" role="status" style={{ minHeight: busy ? 40 : Math.max(24, pull / 2) }}>{busy ? 'Refreshing…' : pull >= 64 ? 'Release to refresh' : error ? 'Refresh failed. Pull down to retry.' : 'Pull down to refresh'}</div><div className="kb-refresh-content" style={{ transform: `translateY(${pull / 3}px)` }}>{children}</div></section>;
+}
+export function LoadMore({ loading = false, hasMore = true, onLoad, error = false }: {
+    loading?: boolean;
+    hasMore?: boolean;
+    onLoad: () => void;
+    error?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return hasMore ? <Button variant="text" loading={loading} onClick={onLoad}>{error ? 'Retry' : 'Load more'}</Button> : <p className="kb-end">{kmText("End of records")}</p>; }
+export function StickyBar({ children, layout = 'content' }: {
+    children: React.ReactNode;
+    layout?: 'single' | 'equal' | 'content';
+}) { const { t: kmText } = useKeenLocale(); return <div className={'kb-sticky kb-sticky-' + layout}>{children}</div>; }
+export function Keyboard({ type = 'numeric', value, onChange, onDone, maxLength = 1000, disabled = false, allowDecimal = false }: {
+    allowDecimal?: boolean;
+    type?: 'numeric' | 'alphabetic';
+    value: string;
+    onChange: (v: string) => void;
+    onDone: () => void;
+    maxLength?: number;
+    disabled?: boolean;
+}) {
+    const { t: kmText } = useKeenLocale();
+    const [caps, setCaps] = useState(true);
+    function press(c: string) {
+        if (c === '⌫')
+            onChange(value.slice(0, -1));
+        else if (value.length < maxLength)
+            onChange(value + c);
+    }
+    if (type === 'numeric')
+        return <div className="kb-keyboard kb-keyboard-numeric" aria-label="Numeric keyboard"><div className="kb-number-keys">{['1', '2', '3', '4', '5', '6', '7', '8', '9', allowDecimal ? '.' : '', '0', '⌫'].map((k, i) => k ? <button type="button" key={i} className={k === '⌫' ? 'is-delete' : ''} disabled={disabled} aria-label={k === '⌫' ? 'Backspace' : k} onClick={() => press(k)}>{k}<small>{['', 'ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ'][i]}</small></button> : <span key={i}/>)}</div><HomeIndicator /></div>;
+    return <div className="kb-keyboard kb-keyboard-alphabetic" aria-label="Alphabetic keyboard"><div className="kb-key-suggestions"><span>W</span><span>I</span><span>I’m</span></div>{['qwertyuiop', 'asdfghjkl', 'zxcvbnm'].map((row, i) => <div className="kb-key-row" key={row}>{i === 2 && <button type="button" disabled={disabled} aria-label="Shift" aria-pressed={caps} onClick={() => setCaps(!caps)}>⇧</button>}{[...row].map(c => <button type="button" key={c} disabled={disabled} onClick={() => press(caps ? c.toUpperCase() : c)}>{caps ? c.toUpperCase() : c}</button>)}{i === 2 && <button type="button" disabled={disabled} aria-label="Backspace" onClick={() => press('⌫')}>⌫</button>}</div>)}<div className="kb-key-row"><button type="button" disabled={disabled}>123</button><button type="button" disabled={disabled} aria-label="Emoji">☻</button><button type="button" disabled={disabled} onClick={() => press(' ')}>space</button><button type="button" disabled={disabled} onClick={onDone}>return</button></div><div className="kb-key-accessories" aria-hidden="true"><span>◎</span><span>♩</span></div><HomeIndicator /></div>;
+}
+export function Countdown({ seconds, onComplete }: {
+    seconds: number;
+    onComplete?: () => void;
+}) {
+    const { t: kmText } = useKeenLocale();
+    const [remaining, setRemaining] = useState(Math.max(0, seconds));
+    useEffect(() => { setRemaining(Math.max(0, seconds)); }, [seconds]);
+    useEffect(() => {
+        if (remaining <= 0)
+            return;
+        const id = setTimeout(() => {
+            if (remaining === 1)
+                onComplete?.();
+            setRemaining(v => Math.max(0, v - 1));
+        }, 1000);
+        return () => clearTimeout(id);
+    }, [remaining, onComplete]);
+    return <time className="kb-countdown" aria-label={`${remaining} seconds remaining`}>{String(Math.floor(remaining / 60)).padStart(2, '0')}:{String(remaining % 60).padStart(2, '0')}</time>;
+}
+export type ArtworkLayer = {
+    src: string;
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    imageX: number;
+    imageY: number;
+    imageWidth: number;
+    imageHeight: number;
+    radius?: number;
+    opacity?: number;
+    blend?: string;
+};
+export function Artwork({ layers, label, ratio = '1' }: {
+    layers: ArtworkLayer[];
+    label: string;
+    ratio?: string;
+}) { const { t: kmText } = useKeenLocale(); return <div className="kb-artwork" role="img" aria-label={label} style={{ aspectRatio: ratio }}>{layers.map((l, i) => <span key={i} style={{ left: l.x + '%', top: l.y + '%', width: l.width + '%', height: l.height + '%', borderRadius: l.radius || 0, opacity: l.opacity ?? 1, mixBlendMode: (l.blend || 'normal') as React.CSSProperties['mixBlendMode'] }}><img src={l.src} alt="" style={{ left: l.imageX + '%', top: l.imageY + '%', width: l.imageWidth + '%', height: l.imageHeight + '%' }}/></span>)}</div>; }
+export function ListGroup({ title, titlePlacement = 'inside', items }: {
+    title: string;
+    titlePlacement?: 'inside' | 'outside';
+    items: {
+        id: string;
+        title: string;
+        description?: string;
+        leading?: React.ReactNode;
+        trailing?: React.ReactNode;
+        onClick?: () => void;
+        disabled?: boolean;
+    }[];
+}) { const { t: kmText } = useKeenLocale(); const heading = <h3>{title}</h3>; return <section className={'kb-list-group kb-list-group-' + titlePlacement}>{titlePlacement === 'outside' && heading}<Card header={titlePlacement === 'inside' ? heading : undefined}>{items.map(({ id, ...row }) => <ListRow key={id} {...row}/>)}</Card></section>; }

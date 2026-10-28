@@ -45,3 +45,14 @@ export default function App() {
 仓库根目录执行 `npm run library:check`，验证打包、离线安装、严格类型、独立 Vite 构建和资源路径。该检查不代表浏览器视觉验收。
 
 发布使用包目录中的 `npm publish --access public`。需要先登录 npm；首次发布后在 npm 网页核对版本与包文件。每次更新必须提升版本，Make 中也须更新版本。
+
+## 中英文
+
+```tsx
+import { LocaleProvider, Page, Button } from 'keenmart-ui-kit';
+<LocaleProvider locale="zh-CN">
+  <Page background="gray"><Button>继续</Button></Page>
+</LocaleProvider>
+```
+
+英文使用 locale="en"。中文正文优先调用设备已安装的 PingFang SC；公共包不复制该字体文件。没有该字体时使用中文系统备用字体。语言模式保持价格字体变量不变。组件内置 UI 提示使用语言字典；商品名、页面文案、日期和业务数据由调用方提供对应语言，可使用 messages 补充或覆盖内置提示。

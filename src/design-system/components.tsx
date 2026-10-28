@@ -1,18 +1,119 @@
-import {SentimentArtwork} from './SentimentArtwork';
-import React,{useEffect,useRef,useId} from 'react';
-import './variables.css';import './components.css';
-export function Button({variant='primary',size='regular',loading=false,children,className='',...props}:React.ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'primary'|'outline'|'text'|'promotion';size?:'regular'|'medium'|'small'|'compact';loading?:boolean}){return <button {...props} type={props.type||'button'} disabled={props.disabled||loading} aria-busy={loading||undefined} className={`ds-button ds-button-${variant} ds-button-${size} ${className}`}>{loading?'Loading…':children}</button>}
-export function AddButton({onClick,disabled=false}:{onClick?:()=>void;disabled?:boolean}){return <button type="button" className="ds-add" aria-label="Add to cart" disabled={disabled} onClick={onClick}><span aria-hidden="true"/></button>}
-export function QuantityStepper({value,onChange,max=99,min=1,disabled=false,variant='default'}:{value:number;onChange:(v:number)=>void;max?:number;min?:number;disabled?:boolean;variant?:'default'|'overlay'|'field'}){return <div className={'ds-stepper ds-stepper-'+variant}><button type="button" aria-label="Decrease quantity" disabled={disabled||value<=min} onClick={()=>onChange(Math.max(min,value-1))}>−</button><output aria-live="polite">{value}</output><button type="button" aria-label="Increase quantity" disabled={disabled||value>=max} onClick={()=>onChange(Math.min(max,value+1))}>+</button></div>}
-export function Tag({children,tone='success',variant}:{children:React.ReactNode;tone?:'success'|'neutral'|'danger'|'marketing'|'warning';variant?:'outline'}){return <span className={'ds-tag ds-tag-'+tone+(variant?' ds-tag-'+variant:'')}>{children}</span>}
-export function ChoiceChip({children,selected,onClick,disabled=false,background='gray'}:{children:React.ReactNode;selected:boolean;onClick:()=>void;disabled?:boolean;background?:'white'|'gray'}){return <button type="button" className={'ds-chip ds-chip-'+background+' '+(selected?'is-selected':'')} aria-pressed={selected} disabled={disabled} onClick={onClick}>{children}</button>}
-export function TextField({label,error,hint,labelPlacement='outside',...props}:React.InputHTMLAttributes<HTMLInputElement>&{label:string;error?:string;hint?:string;labelPlacement?:'outside'|'inside'}){const id=useId();return <label className={'ds-field'+(labelPlacement==='inside'?' ds-field-inside':'')} htmlFor={id}><span id={id+'-label'}>{label}</span><input placeholder={props.placeholder??`Please enter ${label.toLowerCase()}`} {...props} id={id} aria-labelledby={id+'-label'} aria-invalid={!!error} aria-describedby={error||hint?id+'-hint':undefined}/>{(error||hint)&&<small id={id+'-hint'} className={error?'ds-error':''}>{error||hint}</small>}</label>}
-export function RadioRow({label,description,checked,onChange,name,value,disabled=false}:{label:string;description?:string;checked:boolean;onChange:()=>void;name:string;value:string;disabled?:boolean}){return <label className="ds-radio-row"><span>{label}{description&&<small>{description}</small>}</span><input type="radio" name={name} value={value} checked={checked} disabled={disabled} onChange={onChange}/></label>}
-export function Rating({value,onChange,size=24,variant='stars'}:{value:number;onChange?:(value:number)=>void;size?:16|20|24|28;variant?:'stars'|'sentiment'}){if(variant==='sentiment')return <div className="ds-rating ds-rating-sentiment" role="group" aria-label="Delivery rating">{['Bad','Fair','Average','Good','Excellent'].map((label,i)=><button type="button" key={label} aria-label={'Rate delivery '+label} aria-pressed={value===i+1} disabled={!onChange} onClick={()=>onChange?.(i+1)}><SentimentArtwork active={value===i+1} index={i}/><span>{label}</span></button>)}</div>;const star=(v:number)=><svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true"><path d="M10.5793 2.082C11.2634 1.08378 12.7366 1.08378 13.4207 2.082L16.2094 6.15104C16.4334 6.47782 16.7631 6.7174 17.1431 6.82942L21.8748 8.22422C23.0355 8.56639 23.4908 9.96746 22.7528 10.9266L19.7447 14.8362C19.5031 15.1502 19.3771 15.5378 19.388 15.9338L19.5237 20.8649C19.5569 22.0746 18.3651 22.9405 17.2249 22.535L12.5771 20.8823C12.2038 20.7495 11.7962 20.7495 11.4229 20.8823L6.7751 22.535C5.6349 22.9405 4.44308 22.0746 4.47635 20.8649L4.61197 15.9338C4.62286 15.5378 4.4969 15.1502 4.25532 14.8362L1.24719 10.9266C0.509228 9.96746 0.964461 8.5664 2.12523 8.22422L6.85688 6.82942C7.23687 6.7174 7.56664 6.47782 7.79059 6.15104L10.5793 2.082Z" fill="currentColor"/></svg>;return <div className="ds-rating" role="group" aria-label="Rating">{[1,2,3,4,5].map(v=>onChange?<button type="button" key={v} aria-label={`Rate ${v} stars`} aria-pressed={v===value} onClick={()=>onChange(v)} style={{color:v<=value?'var(--ds-color-yellow-primary)':'var(--ds-color-dark-black10)'}}>{star(v)}</button>:<span key={v} style={{color:v<=value?'var(--ds-color-yellow-primary)':'var(--ds-color-dark-black10)'}}>{star(v)}</span>)}{!onChange&&<span className="ds-sr">{value} of 5 stars</span>}</div>}
-export type CouponData={title:string;tags:string[];description:string;date:string;count?:number;state?:'available'|'expired'|'used';expiryTone?:'default'|'success'};
-export function CouponCard({coupon,onUse,onDetails}:{coupon:CouponData;onUse?:()=>void;onDetails:()=>void}){const inactive=coupon.state&&coupon.state!=='available';return <article className={'ds-coupon '+(inactive?'is-inactive':coupon.count?'is-stacked':'')}>{coupon.count&&!inactive&&<span className="ds-coupon-count">x{coupon.count}</span>}<div className="ds-coupon-body"><div><h3>{coupon.title}</h3><div className="ds-tag-list">{coupon.tags.map(x=><Tag key={x} tone={inactive?'neutral':'success'}>{x}</Tag>)}</div><p>{coupon.description}</p></div>{inactive?<span className="ds-coupon-stamp">{coupon.state==='used'?'Used':'Expired'}</span>:onUse?<Button variant="promotion" size="compact" onClick={onUse}>Use now</Button>:null}</div><footer><span className={!inactive&&coupon.expiryTone==='success'?'ds-date-success':undefined}>{coupon.date}</span><button type="button" onClick={onDetails}>Details</button></footer></article>}
-export function ListRow({title,description,trailing,leading,onClick,disabled=false,danger=false}:{title:string;description?:string;trailing?:React.ReactNode;leading?:React.ReactNode;onClick?:()=>void;disabled?:boolean;danger?:boolean}){const content=<>{leading&&<span className="ds-row-leading">{leading}</span>}<span className="ds-row-main">{title}{description&&<small>{description}</small>}</span><span className="ds-row-trailing">{trailing}{onClick&&<span aria-hidden="true"> ›</span>}</span></>;return onClick?<button type="button" disabled={disabled} className={'ds-list-row '+(danger?'is-danger':'')} onClick={onClick}>{content}</button>:<div className="ds-list-row">{content}</div>}
-export function Notice({children}:{children:React.ReactNode}){return <div className="ds-notice" role="status">{children}</div>}
-export function BottomSheet({open,title,children,onClose,footer,showClose=true,variant='default',maxHeight,titleScrollable=false}:{open:boolean;title:string;children:React.ReactNode;onClose:()=>void;footer?:React.ReactNode;showClose?:boolean;variant?:'default'|'selection'|'consent'|'country'|'product'|'review-confirm'|'payment'|'address-conflict'|'support-orders'|'cancel-reason';maxHeight?:number;titleScrollable?:boolean}){const ref=useRef<HTMLDialogElement>(null),titleId=useId();useEffect(()=>{const d=ref.current;if(open&&!d.open){d.showModal();d.querySelector<HTMLHeadingElement>('h2')?.focus()}else if(!open&&d.open)d.close()},[open]);const heading=<header className="ds-sheet-title"><h2 id={titleId} tabIndex={-1}>{title}</h2>{showClose&&<button type="button" onClick={onClose} aria-label="Close dialog">×</button>}</header>;return <dialog ref={ref} style={maxHeight?{maxHeight}:undefined} className={`km-system ds-sheet ds-sheet-${variant}`} aria-labelledby={titleId} onCancel={e=>{e.preventDefault();onClose()}} onClick={e=>{if(e.target===e.currentTarget)onClose()}}>{!titleScrollable&&heading}<div className="ds-sheet-body">{titleScrollable&&heading}{children}</div>{footer&&<footer>{footer}</footer>}</dialog>}
-
-export function StatusLabel({children,tone='gray'}:{children:React.ReactNode;tone?:'green'|'gray'}){return <span className={'ds-status-label ds-status-label-'+tone}>{children}</span>}
+import { useKeenLocale } from './locale';
+import { SentimentArtwork } from './SentimentArtwork';
+import React, { useEffect, useRef, useId } from 'react';
+import './variables.css';
+import './components.css';
+export function Button({ variant = 'primary', size = 'regular', loading = false, children, className = '', ...props }: React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    variant?: 'primary' | 'outline' | 'text' | 'promotion';
+    size?: 'regular' | 'medium' | 'small' | 'compact';
+    loading?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <button {...props} type={props.type || 'button'} disabled={props.disabled || loading} aria-busy={loading || undefined} className={`ds-button ds-button-${variant} ds-button-${size} ${className}`}>{loading ? kmText("Loading\u2026") : children}</button>; }
+export function AddButton({ onClick, disabled = false }: {
+    onClick?: () => void;
+    disabled?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <button type="button" className="ds-add" aria-label={kmText("Add to cart")} disabled={disabled} onClick={onClick}><span aria-hidden="true"/></button>; }
+export function QuantityStepper({ value, onChange, max = 99, min = 1, disabled = false, variant = 'default' }: {
+    value: number;
+    onChange: (v: number) => void;
+    max?: number;
+    min?: number;
+    disabled?: boolean;
+    variant?: 'default' | 'overlay' | 'field';
+}) { const { t: kmText } = useKeenLocale(); return <div className={'ds-stepper ds-stepper-' + variant}><button type="button" aria-label={kmText("Decrease quantity")} disabled={disabled || value <= min} onClick={() => onChange(Math.max(min, value - 1))}>−</button><output aria-live="polite">{value}</output><button type="button" aria-label={kmText("Increase quantity")} disabled={disabled || value >= max} onClick={() => onChange(Math.min(max, value + 1))}>+</button></div>; }
+export function Tag({ children, tone = 'success', variant }: {
+    children: React.ReactNode;
+    tone?: 'success' | 'neutral' | 'danger' | 'marketing' | 'warning';
+    variant?: 'outline';
+}) { const { t: kmText } = useKeenLocale(); return <span className={'ds-tag ds-tag-' + tone + (variant ? ' ds-tag-' + variant : '')}>{children}</span>; }
+export function ChoiceChip({ children, selected, onClick, disabled = false, background = 'gray' }: {
+    children: React.ReactNode;
+    selected: boolean;
+    onClick: () => void;
+    disabled?: boolean;
+    background?: 'white' | 'gray';
+}) { const { t: kmText } = useKeenLocale(); return <button type="button" className={'ds-chip ds-chip-' + background + ' ' + (selected ? 'is-selected' : '')} aria-pressed={selected} disabled={disabled} onClick={onClick}>{children}</button>; }
+export function TextField({ label, error, hint, labelPlacement = 'outside', ...props }: React.InputHTMLAttributes<HTMLInputElement> & {
+    label: string;
+    error?: string;
+    hint?: string;
+    labelPlacement?: 'outside' | 'inside';
+}) { const { t: kmText } = useKeenLocale(); const id = useId(); return <label className={'ds-field' + (labelPlacement === 'inside' ? ' ds-field-inside' : '')} htmlFor={id}><span id={id + '-label'}>{label}</span><input placeholder={props.placeholder ?? `Please enter ${label.toLowerCase()}`} {...props} id={id} aria-labelledby={id + '-label'} aria-invalid={!!error} aria-describedby={error || hint ? id + '-hint' : undefined}/>{(error || hint) && <small id={id + '-hint'} className={error ? 'ds-error' : ''}>{error || hint}</small>}</label>; }
+export function RadioRow({ label, description, checked, onChange, name, value, disabled = false }: {
+    label: string;
+    description?: string;
+    checked: boolean;
+    onChange: () => void;
+    name: string;
+    value: string;
+    disabled?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <label className="ds-radio-row"><span>{label}{description && <small>{description}</small>}</span><input type="radio" name={name} value={value} checked={checked} disabled={disabled} onChange={onChange}/></label>; }
+export function Rating({ value, onChange, size = 24, variant = 'stars' }: {
+    value: number;
+    onChange?: (value: number) => void;
+    size?: 16 | 20 | 24 | 28;
+    variant?: 'stars' | 'sentiment';
+}) {
+    const { t: kmText } = useKeenLocale();
+    if (variant === 'sentiment')
+        return <div className="ds-rating ds-rating-sentiment" role="group" aria-label={kmText("Delivery rating")}>{['Bad', 'Fair', 'Average', 'Good', kmText("Excellent")].map((label, i) => <button type="button" key={label} aria-label={'Rate delivery ' + label} aria-pressed={value === i + 1} disabled={!onChange} onClick={() => onChange?.(i + 1)}><SentimentArtwork active={value === i + 1} index={i}/><span>{label}</span></button>)}</div>;
+    const star = (v: number) => <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true"><path d="M10.5793 2.082C11.2634 1.08378 12.7366 1.08378 13.4207 2.082L16.2094 6.15104C16.4334 6.47782 16.7631 6.7174 17.1431 6.82942L21.8748 8.22422C23.0355 8.56639 23.4908 9.96746 22.7528 10.9266L19.7447 14.8362C19.5031 15.1502 19.3771 15.5378 19.388 15.9338L19.5237 20.8649C19.5569 22.0746 18.3651 22.9405 17.2249 22.535L12.5771 20.8823C12.2038 20.7495 11.7962 20.7495 11.4229 20.8823L6.7751 22.535C5.6349 22.9405 4.44308 22.0746 4.47635 20.8649L4.61197 15.9338C4.62286 15.5378 4.4969 15.1502 4.25532 14.8362L1.24719 10.9266C0.509228 9.96746 0.964461 8.5664 2.12523 8.22422L6.85688 6.82942C7.23687 6.7174 7.56664 6.47782 7.79059 6.15104L10.5793 2.082Z" fill="currentColor"/></svg>;
+    return <div className="ds-rating" role="group" aria-label={kmText("Rating")}>{[1, 2, 3, 4, 5].map(v => onChange ? <button type="button" key={v} aria-label={`Rate ${v} stars`} aria-pressed={v === value} onClick={() => onChange(v)} style={{ color: v <= value ? 'var(--ds-color-yellow-primary)' : 'var(--ds-color-dark-black10)' }}>{star(v)}</button> : <span key={v} style={{ color: v <= value ? 'var(--ds-color-yellow-primary)' : 'var(--ds-color-dark-black10)' }}>{star(v)}</span>)}{!onChange && <span className="ds-sr">{value} of 5 stars</span>}</div>;
+}
+export type CouponData = {
+    title: string;
+    tags: string[];
+    description: string;
+    date: string;
+    count?: number;
+    state?: 'available' | 'expired' | 'used';
+    expiryTone?: 'default' | 'success';
+};
+export function CouponCard({ coupon, onUse, onDetails }: {
+    coupon: CouponData;
+    onUse?: () => void;
+    onDetails: () => void;
+}) { const { t: kmText } = useKeenLocale(); const inactive = coupon.state && coupon.state !== 'available'; return <article className={'ds-coupon ' + (inactive ? 'is-inactive' : coupon.count ? 'is-stacked' : '')}>{coupon.count && !inactive && <span className="ds-coupon-count">x{coupon.count}</span>}<div className="ds-coupon-body"><div><h3>{coupon.title}</h3><div className="ds-tag-list">{coupon.tags.map(x => <Tag key={x} tone={inactive ? 'neutral' : 'success'}>{x}</Tag>)}</div><p>{coupon.description}</p></div>{inactive ? <span className="ds-coupon-stamp">{coupon.state === 'used' ? kmText("Used") : kmText("Expired")}</span> : onUse ? <Button variant="promotion" size="compact" onClick={onUse}>{kmText("Use now")}</Button> : null}</div><footer><span className={!inactive && coupon.expiryTone === 'success' ? 'ds-date-success' : undefined}>{coupon.date}</span><button type="button" onClick={onDetails}>{kmText("Details")}</button></footer></article>; }
+export function ListRow({ title, description, trailing, leading, onClick, disabled = false, danger = false }: {
+    title: string;
+    description?: string;
+    trailing?: React.ReactNode;
+    leading?: React.ReactNode;
+    onClick?: () => void;
+    disabled?: boolean;
+    danger?: boolean;
+}) { const { t: kmText } = useKeenLocale(); const content = <>{leading && <span className="ds-row-leading">{leading}</span>}<span className="ds-row-main">{title}{description && <small>{description}</small>}</span><span className="ds-row-trailing">{trailing}{onClick && <span aria-hidden="true"> ›</span>}</span></>; return onClick ? <button type="button" disabled={disabled} className={'ds-list-row ' + (danger ? 'is-danger' : '')} onClick={onClick}>{content}</button> : <div className="ds-list-row">{content}</div>; }
+export function Notice({ children }: {
+    children: React.ReactNode;
+}) { const { t: kmText } = useKeenLocale(); return <div className="ds-notice" role="status">{children}</div>; }
+export function BottomSheet({ open, title, children, onClose, footer, showClose = true, variant = 'default', maxHeight, titleScrollable = false }: {
+    open: boolean;
+    title: string;
+    children: React.ReactNode;
+    onClose: () => void;
+    footer?: React.ReactNode;
+    showClose?: boolean;
+    variant?: 'default' | 'selection' | 'consent' | 'country' | 'product' | 'review-confirm' | 'payment' | 'address-conflict' | 'support-orders' | 'cancel-reason';
+    maxHeight?: number;
+    titleScrollable?: boolean;
+}) {
+    const { t: kmText } = useKeenLocale();
+    const ref = useRef<HTMLDialogElement>(null), titleId = useId();
+    useEffect(() => {
+        const d = ref.current;
+        if (open && !d.open) {
+            d.showModal();
+            d.querySelector<HTMLHeadingElement>('h2')?.focus();
+        }
+        else if (!open && d.open)
+            d.close();
+    }, [open]);
+    const heading = <header className="ds-sheet-title"><h2 id={titleId} tabIndex={-1}>{title}</h2>{showClose && <button type="button" onClick={onClose} aria-label={kmText("Close dialog")}>×</button>}</header>;
+    return <dialog lang={useKeenLocale().locale} ref={ref} style={maxHeight ? { maxHeight } : undefined} className={`km-system ds-sheet ds-sheet-${variant}`} aria-labelledby={titleId} onCancel={e => { e.preventDefault(); onClose(); }} onClick={e => {
+            if (e.target === e.currentTarget)
+                onClose();
+        }}>{!titleScrollable && heading}<div className="ds-sheet-body">{titleScrollable && heading}{children}</div>{footer && <footer>{footer}</footer>}</dialog>;
+}
+export function StatusLabel({ children, tone = 'gray' }: {
+    children: React.ReactNode;
+    tone?: 'green' | 'gray';
+}) { const { t: kmText } = useKeenLocale(); return <span className={'ds-status-label ds-status-label-' + tone}>{children}</span>; }

@@ -16,6 +16,20 @@ for(const match of markup.matchAll(/src="([^"]+)"/g)){
  if(src.startsWith('/assets/'))throw new Error('Nonportable asset '+src);
 }
 if(!markup.includes('km-system')||!markup.includes('Foodmax'))throw new Error('Component SSR failed');
+// Verify locale behavior against the installed package, including semantic modes.
+const localized = locale => renderToStaticMarkup(React.createElement(C.LocaleProvider,{locale},
+ React.createElement(C.Page,{background:'white'},
+  React.createElement(C.ProductPurchaseControl,{mode:'specs',onAdd:()=>{}}),
+  React.createElement(C.SearchBar,{value:'',onChange:()=>{}}),
+  React.createElement(C.ProductPriceGroup,{amount:'38.76',currency:'SAR'}))));
+const en=localized('en'),zh=localized('zh-CN');
+if(!en.includes('>specs<')||!zh.includes('>规格<'))throw new Error('Locale labels or specs mode failed');
+if(!zh.includes('lang="zh-CN"')||!en.includes('lang="en"'))throw new Error('Locale language inheritance failed');
+const price = html => html.match(/<span class="ds-price [\s\S]*?<\/strong>/)?.[0];
+if(!price(en)||price(en)!==price(zh))throw new Error('Locale changed price output');
+const css=fs.readFileSync(path.join(root,'node_modules',name,'dist/styles.css'),'utf8');
+if(!css.includes('PingFang SC')||!css.includes(':lang(zh)')||!css.includes('var(--ds-price-font)'))throw new Error('Missing locale or separate price typography');
+console.log('PASS: installed English/Chinese labels, language attributes, specs mode, identical prices and separate font tokens.');
 await build({root,configFile:false,build:{outDir:'dist',emptyOutDir:true},logLevel:'warn'});
 if(process.argv.includes('--static')){console.log('PASS: packed tarball installed offline; strict consumer types, Vite production build, server rendering and installed image/icon paths checked. Browser interactions not checked.');process.exit(0);}
 const server=await preview({root,configFile:false,preview:{host:'127.0.0.1',port:5197,strictPort:true}});

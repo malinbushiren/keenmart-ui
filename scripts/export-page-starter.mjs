@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const source=path.join(root,'templates/page-starter');
+const target=path.resolve(process.argv[2]||path.join(root,'../keenmart-page-starter'));
+if(target===root||target.startsWith(root+path.sep))throw new Error('Export outside maintainer repository');
+fs.mkdirSync(target,{recursive:true});
+for(const name of fs.readdirSync(source))fs.cpSync(path.join(source,name),path.join(target,name),{recursive:true});
+console.log('Exported clean page template to '+target);

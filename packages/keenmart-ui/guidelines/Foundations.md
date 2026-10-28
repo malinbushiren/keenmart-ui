@@ -2,7 +2,7 @@
 
 本表由当前 tokens.json 生成；对应 CSS 在原 React 工程的 src/design-system/variables.css。此文档不会自动安装 CSS。下表原样展开当前 token，不建立第二套语义颜色。具体组件的角色字号由源码及设计规则决定，不将通用 pageTitle 套到所有导航标题。
 
-字体：Poppins 正文/控件，价格字体和标识字体按 variables.css；保留本地 DdmcSans 字体及 npm 字体。字体缺失时需要核查尺寸变化。
+字体：英文正文/控件为 Poppins；中文正文/控件为设备已安装的 PingFang SC，备用 Hiragino Sans GB、Microsoft YaHei、sans-serif。LocaleProvider 设置 en 或 zh-CN。价格字体始终使用 --ds-price-font（DdmcSans、Poppins、sans-serif），不随语言切换。公共包不内置 PingFang 和 DdmcSans 字体文件；有授权的宿主可自行加载。字体缺失时需要核查尺寸变化。
 
 | Token 路径 | 类型 | 值 | 备注 |
 |---|---|---|---|

@@ -1,110 +1,710 @@
-import {PriceValue as Price} from './price-value';
-import {CommerceProductCard,CommerceCategoryLayout,CommercePrice,CommercePurchase,CommerceStatus,CommerceSupplier} from './commerce';import type {CommerceProduct,CommerceCardProps,CategoryLayoutProps} from './commerce';export type {CommerceProduct,ProductSKU,ProductCardVariant,ProductAvailability,CommerceCategory,CategoryLayoutProps} from './commerce';
-import {LayoutSpace as Space} from './layout';
-import React,{useState,useId} from 'react';import {SwipeAction,OTPInput,TextButton,ActionBar,Artwork,HomeIndicator,Badge,Switch} from './foundations';import type {ArtworkLayer} from './foundations';import {countries,permissionIntro,permissionShort,permissionLong} from './auth-content';import {Tag,Button,StatusLabel,CouponCard,QuantityStepper,TextField,ChoiceChip,RadioRow,Rating,ListRow,Notice,BottomSheet,CouponData} from './components';import {Card,Section,Grid,Image,Avatar,IconButton,Checkbox,TextArea,SelectField,Option,Progress,Steps,EmptyState,Result,StickyBar,Uploader,Carousel,SearchBar,Collapse,Dialog,Text} from './foundations';import type {IconName} from './Icon';import {Icon} from './Icon';import './business.css';import './product-detail.css';import './source-refinement.css';import './rules-v06.css';import './rules-v08.css';import './rules-v09.css';import './rules-v10.css';import deliveryVehicle from './delivery-vehicle.json';
-export type Product={id:string;name:string;image:string;amount:string;original?:string;weight:string;unavailable?:boolean;badge?:string;gift?:boolean;giftLocked?:boolean;tags?:string[];processing?:string;unavailableReason?:string;action?:'add'|'stepper'|'count'|'remove'|'none';quantity?:number;imageFit?:'cover'|'contain';titleBadge?:string;imageCrop?:{x:number;y:number;width:number;height:number}};
-export type Address={id:string;label:string;street:string;name:string;phone:string;detail?:string;customLabel?:string};
-export type Payment={id:string;label:string;detail?:string;logo?:string;disabled?:boolean};
-export type OrderState='unpaid'|'failed'|'paid'|'preparing'|'delivering'|'completed'|'cancelled';
-export type Order={id:string;state:OrderState;products:Product[];total:string;time?:string};
-const stateLabels:Record<OrderState,string>={unpaid:'Awaiting payment',failed:'Payment failed',paid:'Payment successful',preparing:'Preparing your order',delivering:'Out for delivery',completed:'Completed',cancelled:'Cancelled'};
-export function ProductCard(props:CommerceCardProps){return <CommerceProductCard {...props}/>}
-export function ProductPriceGroup(props:React.ComponentProps<typeof CommercePrice>){return <CommercePrice {...props}/>}
-export function ProductPurchaseControl(props:React.ComponentProps<typeof CommercePurchase>){return <span className="cm-purchase-control"><CommercePurchase {...props}/></span>}
-export function ProductStatusOverlay(props:React.ComponentProps<typeof CommerceStatus>){return <CommerceStatus {...props}/>}
-export function ProductSupplierTag(props:React.ComponentProps<typeof CommerceSupplier>){return <CommerceSupplier {...props}/>}
-export function ProductList({products,onAdd,onQuantity,layout='grid',density='regular'}:{products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;onRemove?:(id:string)=>void;layout?:'grid'|'row';density?:'regular'|'compact'}){const [skuCounts,setSkuCounts]=useState<Record<string,Record<string,number>>>({});const variant=layout==='row'?'full-width':density==='compact'?'category':'grid';return <div className={'cm-product-list cm-product-list-'+variant}>{products.length?products.map(p=><ProductCard key={p.id} product={p} variant={variant} quantity={p.action==='stepper'||p.action==='remove'?p.quantity:0} onAdd={()=>onAdd(p.id)} onQuantity={v=>onQuantity?.(p.id,v)} skuQuantities={skuCounts[p.id]||{}} onSKUQuantity={(id,v)=>setSkuCounts({...skuCounts,[p.id]:{...skuCounts[p.id],[id]:v}})}/>):<EmptyState kind="goods" title="No products found"/>}</div>}
-export function ProductCollection({products,onAdd,onQuantity,layout='grid',title='You might also like',density='regular'}:{products:CommerceProduct[];onAdd:(id:string)=>void;onQuantity?:(id:string,value:number)=>void;onRemove?:(id:string)=>void;layout?:'grid'|'row';title?:string;density?:'regular'|'compact'}){return <section className="kc-product-collection"><Section title={title}><ProductList products={products} onAdd={onAdd} onQuantity={onQuantity} layout={layout} density={density}/></Section></section>}
-
-export function ProductSpecPicker({groups,values,onChange,onConfirm,product,quantity=1,onQuantity,onClose,open}:{groups:{id:string;title:string;description?:string;required?:boolean;options:Option[]}[];values:Record<string,string>;onChange:(v:Record<string,string>)=>void;onConfirm:()=>void;product?:Product;quantity?:number;onQuantity?:(n:number)=>void;onClose?:()=>void;open?:boolean}){const panel=<div className="kc-spec">{open===undefined&&onClose&&<button type="button" className="kc-spec-close" aria-label="Close options" onClick={onClose}>×</button>}{product&&<div className="kc-spec-product"><img src={product.image} alt={product.name}/><div><p>{product.name}</p><Price amount={product.amount}/></div></div>}{groups.map(g=><section key={g.id} className="kc-spec-group"><header><h3>{g.title}</h3>{g.required&&<span className="ds-tag ds-tag-success">Required</span>}</header>{g.description&&<p>{g.description}</p>}<div className="kc-spec-options">{g.options.map(o=><ChoiceChip key={o.value} selected={values[g.id]===o.value} disabled={o.disabled} onClick={()=>onChange({...values,[g.id]:o.value})}>{o.label}</ChoiceChip>)}</div></section>)}<div className="kc-spec-actions"><ActionBar safeArea layout="content">{onQuantity&&<QuantityStepper variant="field" value={quantity} onChange={onQuantity}/>}<Button onClick={onConfirm}>Add to cart</Button></ActionBar><HomeIndicator/></div></div>;return open===undefined?panel:<BottomSheet open={open} variant="product" title="Choose options" onClose={onClose||(()=>{})}>{panel}</BottomSheet>}
-export function CartItem({product,quantity,selected,onSelect,onQuantity,onRemove,readOnly=false,selectable=false}:{product:Product;quantity:number;selected:boolean;onSelect:(v:boolean)=>void;onQuantity:(v:number)=>void;onRemove:()=>void;readOnly?:boolean;selectable?:boolean}){const [editing,setEditing]=useState(product.action==='stepper');return <article className={'kc-cart-item '+(product.unavailable?'is-unavailable':'')+(readOnly?' kc-cart-readonly':'')+(product.giftLocked?' kc-gift-locked':'')}>{selectable&&!readOnly&&!product.gift&&<Checkbox label={'Select '+product.name} checked={selected} onChange={onSelect} disabled={product.unavailable}/>}<img src={product.image} alt={product.name}/>{product.giftLocked&&<span className="kc-gift-lock" aria-label="Gift unavailable"><Icon name="lock-16"/></span>}<div><h3>{product.name}</h3>{product.weight&&<small>{product.weight}</small>}{product.tags&&<div className="kc-product-tags">{product.tags.map(t=><span className="ds-tag ds-tag-success" key={t}>{t}</span>)}</div>}{product.processing&&<small>{product.processing}</small>}{product.badge&&<span className="kc-cart-promotion">{product.badge}</span>}{product.unavailable?<span className="kc-cart-unavailable-reason">{product.unavailableReason||'Out of stock'}</span>:product.gift?<span className="kc-gift-label">Free <small>X{quantity}</small></span>:<Price amount={product.amount} original={product.original} promotion={false}/>}<div className="kc-cart-actions">{product.unavailable||product.gift?null:readOnly?<span>×{quantity}</span>:editing?<QuantityStepper value={quantity} onChange={onQuantity}/>:<button type="button" className="kc-cart-count" aria-label="Edit item quantity" onClick={()=>setEditing(true)}>{quantity}</button>}</div></div></article>}
-export function CartGroup({title,children,selected,onSelect}:{title:string;children:React.ReactNode;selected:boolean;onSelect:(v:boolean)=>void}){return <Card className="kc-cart-group" header={<Checkbox label={title} checked={selected} onChange={onSelect}/>}>{children}</Card>}
-export function CartSummaryBar({total,selectedCount,onCheckout,disabled=false}:{total:string;selectedCount:number;onCheckout:()=>void;disabled?:boolean}){return <div className="kc-cart-summary"><Price amount={total}/><Button onClick={onCheckout} disabled={disabled||!selectedCount}>Checkout</Button></div>}
-export function InvalidProductsSheet({open,products,onClose,onContinue}:{open:boolean;products:Product[];onClose:()=>void;onContinue:()=>void}){return <BottomSheet open={open} title="Currently Unavailable" onClose={onClose} footer={<Space><Button variant="outline" onClick={onClose}>Return</Button><Button onClick={onContinue}>Continue</Button></Space>}>{products.map(p=><div className="kc-unavailable-row" key={p.id}><img src={p.image} alt={p.name}/><div><p>{p.name}</p><span className="kc-error">{p.unavailableReason||'Out of stock'}</span></div></div>)}</BottomSheet>}
-export function AddressCard({address,selected=false,onSelect,onEdit,variant='default'}:{address:Address;selected?:boolean;onSelect?:()=>void;onEdit?:()=>void;variant?:'default'|'delivery'}){return <article className={'kc-address kc-address-'+variant+' '+(selected?'is-selected':'')}>{variant==='delivery'&&<h3>Address</h3>}<div><Icon name="location-24"/><strong>{address.label}</strong>{onSelect&&<button type="button" aria-label={'Select '+address.label} aria-pressed={selected} onClick={onSelect}>{selected?'✓':'Select'}</button>}{onEdit&&<IconButton name={variant==='delivery'?'right-2-24':'edit-1-24'} label="Edit address" onClick={onEdit}/>}</div><p>{address.street}</p><small>{address.name} · {address.phone}</small></article>}
-export function AddressPicker({addresses,value,onChange,onAdd}:{addresses:Address[];value:string;onChange:(v:string)=>void;onAdd:()=>void}){return <Space vertical>{addresses.length?addresses.map(a=><AddressCard key={a.id} address={a} selected={value===a.id} onSelect={()=>onChange(a.id)}/>):<EmptyState kind="address" title="No delivery address" description="Add an address to start shopping."/>}<Button variant="outline" onClick={onAdd}>Add new address</Button></Space>}
-export function AddressForm({value,onChange,onSubmit,error,disabled=false,onRemove,labelConflict=false,onResolveLabel,surface='white'}:{surface?:'white'|'gray';value:Address;onChange:(v:Address)=>void;onSubmit:()=>void;error?:string;disabled?:boolean;onRemove?:()=>void;labelConflict?:boolean;onResolveLabel?:(use:boolean)=>void}){return <><form className={"kc-address-editor kc-form-surface kc-form-surface-"+surface} onSubmit={e=>{e.preventDefault();onSubmit()}}><div className="kc-address-map"><img src="/assets/85f7f.png" alt="Delivery address map"/><img src="/assets/f36bf.svg" alt="Map pin"/><Button size="small" variant="outline" onClick={()=>onChange({...value})}>Edit</Button></div><p className="kc-address-street">{value.street}</p><TextField labelPlacement="inside" label="Additional address information" placeholder="Flat no./Building/Street/Area" value={value.detail||''} onChange={e=>onChange({...value,detail:e.target.value})} error={error} disabled={disabled}/><Section title="Contact"><TextField labelPlacement="inside" label="Contact name" placeholder="Contact name" value={value.name} onChange={e=>onChange({...value,name:e.target.value})} disabled={disabled}/><PhoneField value={value.phone} country="+966" onChange={v=>onChange({...value,phone:v})} placeholder="Mobile number" disabled={disabled}/></Section><Section title="Label"><div className="kb-filter">{['home','Work','Hangout','Other'].map(label=><ChoiceChip key={label} selected={value.label.toLowerCase()===label.toLowerCase()} onClick={()=>onChange({...value,label})}>{label}</ChoiceChip>)}</div>{value.label.toLowerCase()==='other'&&<TextField labelPlacement="inside" label="Custom label" placeholder="Please enter label" maxLength={20} value={value.customLabel||''} onChange={e=>onChange({...value,customLabel:e.target.value})} hint={(value.customLabel||'').length>=20?'reach 20 character limit':undefined}/>}</Section><Button type="submit" disabled={disabled}>Save and continue</Button></form><BottomSheet open={labelConflict} title="Notice" showClose={false} variant="address-conflict" onClose={()=>onResolveLabel?.(false)} footer={<div className="kc-address-conflict-actions"><Button onClick={()=>onResolveLabel?.(true)}>Use label for current address</Button><Button variant="outline" onClick={()=>onResolveLabel?.(false)}>Stay the same</Button><HomeIndicator/></div>}>Already have another address with same label name. Do you want to use this label for current editing address?<div className="kc-conflicting-address"><strong>Dark 251012 123121231451</strong><p>Building 1，2nd floor</p><small>Dingxiaodong　+86 16660654099</small></div></BottomSheet></>}
-export function MapAddressPicker({map,query,onQuery,address,onConfirm,results,onSelect,onSearchFocus}:{onSearchFocus?:()=>void;map:React.ReactNode;query:string;onQuery:(v:string)=>void;address?:Address;onConfirm:()=>void;results?:{id:string;title:string}[];onSelect?:(id:string)=>void}){return <div className={'kc-map-picker'+(results?' kc-map-picker-results':'')}><div className="kc-map-search"><SearchBar value={query} onChange={onQuery} onFocus={onSearchFocus} placeholder="Search address"/></div><div className="kc-map-slot">{map}</div>{results?<div className="kc-map-results">{results.map(item=><ListRow key={item.id} title={item.title} leading={<Icon name="location-24"/>} onClick={()=>onSelect?.(item.id)}/>)}</div>:<div className="kc-map-selection">{address&&<AddressCard address={address}/>}<Button onClick={onConfirm} disabled={!address}>Confirm location</Button></div>}</div>}
-export function DeliverySlotPicker({days,day,onDay,slots,value,onChange}:{days:Option[];day:string;onDay:(v:string)=>void;slots:Option[];value:string;onChange:(v:string)=>void}){return <div className="kc-slot"><div>{days.map(d=><button type="button" key={d.value} aria-pressed={day===d.value} disabled={d.disabled} onClick={()=>onDay(d.value)}>{d.label}</button>)}</div><div>{slots.length?slots.map(s=><label key={s.value} className={'kc-slot-option '+(s.disabled?'is-disabled':'')}><span>{s.label}</span><input type="radio" name="delivery-slot" checked={value===s.value} disabled={s.disabled} onChange={()=>onChange(s.value)}/></label>):<EmptyState kind="waiting" title="No available delivery slots"/>}</div></div>}
-export function DeliveryProgress({time,progress,description,onSelect}:{time:string;progress:number;description?:string;onSelect?:()=>void}){return <Card header="Delivery time"><div className="kc-delivery"><button type="button" className="kc-delivery-time" onClick={onSelect} disabled={!onSelect}><Icon name="time-circle-24"/><span>{time}</span><span aria-hidden="true">›</span></button>{description&&<small>{description}</small>}<div className="kc-delivery-track" role="progressbar" aria-label="Delivery progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}><span className="kc-delivery-vehicle" style={{left:`${Math.min(90,Math.max(0,progress))}%`}}><Artwork layers={deliveryVehicle} label="Delivery vehicle"/></span></div></div></Card>}
-export function PaymentMethodRow({method,selected,onSelect,groupName}:{method:Payment;selected:boolean;onSelect:()=>void;groupName?:string}){const localName=useId();return <label className={'kc-payment '+(method.disabled?'is-disabled':'')}>{method.logo?<img src={method.logo} alt=""/>:<span className="kc-payment-logo">{method.label.includes('Apple')?'':'▣'}</span>}<span>{method.label}<small>{method.detail}</small></span><input aria-label={method.label} type="radio" name={groupName||localName} checked={selected} onChange={onSelect} disabled={method.disabled}/></label>}
-export function BankCard({brand,last4,expiry,holder='OLIVIA RHYE',selected,onSelect,onDelete,unavailable=false}:{brand:string;last4:string;expiry:string;holder?:string;selected?:boolean;onSelect?:()=>void;onDelete?:()=>void;unavailable?:boolean}){const key=brand.toLowerCase(),logo=key.includes('master')?'/assets/20974.svg':key.includes('amex')?'/assets/734ef.svg':key.includes('mada')?'/assets/9e7bb.png':'/assets/967cf.svg';const card=<article className={'kc-bank-card kc-bank-card-'+(unavailable?'unavailable':key.includes('master')?'mastercard':key.includes('amex')?'amex':key.includes('mada')?'mada':'visa')} aria-label={brand+' ending '+last4}><header><img src={logo} alt={brand}/><img src="/assets/ad140.svg" alt="Contactless"/></header><div className="kc-bank-owner"><span>{holder}</span><span>{expiry}</span></div><div className="kc-bank-number">••••　••••　•••• <strong>{last4}</strong></div>{unavailable&&<span className="kc-bank-unavailable">Card not available</span>}{onSelect&&<button type="button" className="ds-sr" aria-pressed={selected} onClick={onSelect}>Use this card</button>}</article>;return onDelete?<SwipeAction onDelete={onDelete}>{card}</SwipeAction>:card;}
-export type CardData={number:string;holder:string;expiry:string;cvc:string};
-export function BankCardForm({value,onChange,onSubmit,error,errors,total,onFieldFocus}:{value:CardData;onFieldFocus?:(field:keyof CardData)=>void;onChange:(v:CardData)=>void;onSubmit:()=>void;error?:string;errors?:Partial<Record<keyof CardData,string>>;total?:string}){const field=(k:keyof CardData)=><TextField label={{number:'Card number',holder:'Cardholder name',expiry:'Expiry date',cvc:'CVV/CVC'}[k]} placeholder={{holder:'Please enter Cardholder name',number:'0000  0000  0000  0000',expiry:'MM/YY',cvc:'CVV/CVC'}[k]} name={k} onFocus={()=>onFieldFocus?.(k)} autoComplete={{number:'cc-number',holder:'cc-name',expiry:'cc-exp',cvc:'cc-csc'}[k]} inputMode={k==='holder'?'text':'numeric'} type={k==='cvc'?'password':'text'} value={value[k]} required error={errors?.[k]} onChange={e=>onChange({...value,[k]:e.target.value})}/>;return <form className="kc-form kc-bank-form" onSubmit={e=>{e.preventDefault();onSubmit()}}>{total&&<div className="kc-bank-total"><span>Total</span><Price amount={total}/></div>}{field('holder')}{field('number')}<div className="kc-bank-short-fields">{field('expiry')}{field('cvc')}</div>{error&&!errors&&<Notice>{error}</Notice>}<Button type="submit" disabled={Object.values(value).some(v=>!v)||!!error||!!errors&&Object.values(errors).some(Boolean)}>Save and use</Button></form>}
-export function PaymentMethodPicker({value,onChange,cards=[] ,onNewCard}:{value:string;onChange:(v:string)=>void;cards?:{id:string;brand:string;last4:string;logo:string}[];onNewCard:()=>void}){const groupName=useId();return <div className="kc-payment-picker"><section><h3>Online payment methods</h3><Card>{[{id:'apple',label:'Apple Pay',logo:'/assets/34ac4.svg'},{id:'stc',label:'Stc pay',logo:'/assets/12b24.png'}].map(m=><PaymentMethodRow key={m.id} groupName={groupName} method={m} selected={value===m.id} onSelect={()=>onChange(m.id)}/>)}</Card></section><section><h3>Card payment methods</h3><Card>{cards.map(c=><PaymentMethodRow key={c.id} groupName={groupName} method={{id:c.id,label:c.brand+'  ****'+c.last4,logo:c.logo}} selected={value===c.id} onSelect={()=>onChange(c.id)}/>)}<div className="kc-new-card-action"><TextButton tone="brand" onClick={onNewCard}>＋ Pay with a new card</TextButton><span className="kc-accepted-cards">{['02f1e','8ca85','359ed'].map(x=><img key={x} src={'/assets/'+x+'.svg'} alt=""/>)}</span></div></Card></section></div>}
-export function CheckoutSummary({rows,total}:{rows:{label:string;value:string;original?:string;discount?:boolean}[];total:string}){return <Card header="Summary">{rows.map((r,i)=><div key={i} className={'kc-summary-row '+(r.discount?'is-discount':'')}><span>{r.label}</span><span>{r.original&&<del>{r.original}</del>} {r.value}</span></div>)}<div className="kc-summary-total"><strong>Total</strong><Price amount={total}/></div></Card>}
-export function OrderCard({order,onAction,actions=['View details'],variant='list',itemCount=9}:{order:Order;onAction:(action:string)=>void;actions?:string[];variant?:'list'|'overview';itemCount?:number}){if(variant==='overview')return <Card className="kc-order-overview-card"><header><strong>Order No.{order.id}</strong><TextButton tone="brand" onClick={()=>onAction('View details')}>View details</TextButton></header><p>{itemCount} items&nbsp; Total SAR {order.total}</p><div className="kc-order-products">{order.products.map((p,i)=><img key={i} src={p.image} alt={p.name}/>)}</div></Card>;return <Card className="kc-order-list-card" header={<div className="kc-order-heading"><span>{order.time}</span><strong>{({unpaid:'Pending payment',failed:'Payment failed',paid:'Waiting for sorting',preparing:'Waiting for delivery',delivering:'Delivering',completed:'Completed',cancelled:'Cancelled'})[order.state]}</strong></div>}><div className="kc-order-products">{order.products.map((p,i)=><img key={i} src={p.image} alt={p.name}/>)}</div><div className="kc-order-list-total"><span>{itemCount} {itemCount===1?'item':'items'}</span><Price amount={order.total}/></div>{['unpaid','paid','preparing','delivering'].includes(order.state)&&<p className="kc-order-arrival-line">Arriving Today,09:00-12:00</p>}{actions.length>0&&<div className="kc-order-list-actions">{actions.map(label=><Button size="compact" variant={label.startsWith('Pay')?'primary':'outline'} key={label} onClick={()=>onAction(label)}>{label}</Button>)}</div>}</Card>}
-export function OrderStatusHeader({state,description,countdown,title,artwork}:{state:OrderState;description?:string;countdown?:string;title?:string;artwork?:ArtworkLayer[]}){return <section className={'kc-order-status state-'+state}><div><h1>{title||({unpaid:'Payment waiting',failed:'Payment failed',paid:'Payment successful!',preparing:'Preparing in progress',delivering:'Delivering',completed:'Completed',cancelled:'Cancelled'})[state]}</h1>{description&&<p>{description}</p>}{countdown&&<span>Time remaining: {countdown}</span>}</div>{artwork&&<div className="kc-order-state-art"><Artwork layers={artwork} label={title||state}/></div>}</section>}
-export function OrderTimeline({events,current}:{events:{title:string;description?:string}[];current:number}){return <Card header="Order progress"><Steps items={events} current={current}/></Card>}
-export function OrderInfo({rows,onCopy}:{rows:{label:string;value:string;copyable?:boolean}[];onCopy?:(v:string)=>void}){return <Card header="Order information">{rows.map(r=><div key={r.label} className="kc-summary-row"><span>{r.label}</span><span>{r.value}{r.copyable&&onCopy&&<Button variant="text" size="compact" onClick={()=>onCopy(r.value)}>Copy</Button>}</span></div>)}</Card>}
-export function CancelReasonPicker({options,value,onChange,onConfirm,open,onClose,putBack=false,onPutBack=()=>{},error}:{options:Option[];value:string;onChange:(v:string)=>void;onConfirm:()=>void;open:boolean;onClose:()=>void;putBack?:boolean;onPutBack?:(v:boolean)=>void;error?:string}){return <BottomSheet open={open} title="Reason for cancellation" variant="cancel-reason" onClose={onClose} footer={<><div className="kc-cancel-footer"><div className="kc-cancel-notice"><Switch label="After confirmation, put this item back in the shopping cart" checked={putBack} onChange={onPutBack}/></div>{error&&<p role="alert" className="kc-error">{error}</p>}<Button disabled={!value} onClick={onConfirm}>Confirm</Button></div><HomeIndicator/></>}><div className="kc-cancel-options">{options.map(o=><RadioRow key={o.value} name="cancel-reason" label={o.label} value={o.value} checked={value===o.value} onChange={()=>onChange(o.value)}/>)}</div></BottomSheet>}
-export function ReviewCard({product,rating,comment,images,onView}:{product:Product;rating:number;comment:string;images:string[];onView?:(src:string)=>void}){return <div className="kc-readonly-review"><div className="kc-review-product"><span className="kc-review-thumb"><img src={product.image} alt={product.name}/></span><div><span>{product.name}</span><div className="kc-review-score"><Rating value={rating} size={16}/><span>Excellent</span></div></div></div>{comment&&<><small>Fresh: Excellent, Taste: Excellent</small><p className="kc-review-comment">{comment}</p></>}<div className="kc-review-images">{images.map((src,i)=><button type="button" key={i} onClick={()=>onView?.(src)} aria-label={`View review photo ${i+1}`}>{src?<img src={src} alt=""/>:null}</button>)}</div></div>}
-export function ProductRatingPanel({product,rating,onRating,dimensions,onDimension,expanded, onToggle,comment='',onComment,files=[],onFiles,maxLength=400}:{product:Product;rating:number;onRating:(v:number)=>void;dimensions:Record<string,number>;onDimension:(name:string,value:number)=>void;expanded?:boolean;onToggle?:()=>void;comment?:string;onComment?:(v:string)=>void;files?:File[];onFiles?:(v:File[])=>void;maxLength?:number}){const show=expanded??rating>0;return <Card className="kc-product-rating"><div className="kc-review-product"><span className="kc-review-thumb"><img src={product.image} alt={product.name}/></span><span>{product.name}</span><button type="button" className="kc-review-toggle" aria-label={show?'Collapse item review':'Edit item review'} aria-expanded={show} onClick={onToggle}>{show?'⌃':<img src="/assets/ad5ba.svg" alt=""/>}</button></div><div className="kc-review-score"><Rating value={rating} onChange={onRating}/>{show&&<strong>Excellent</strong>}</div>{show&&<div className="kc-review-expanded">{['Taste','Fresh'].map(name=><div className="kc-review-dimension" key={name}><span>{name}</span><div>{[{label:'Wrong',value:1},{label:'Average',value:3},{label:'Excellent',value:5}].map(x=><ChoiceChip key={x.value} selected={dimensions[name]===x.value} onClick={()=>onDimension(name,x.value)}>{x.label}</ChoiceChip>)}</div></div>)}<TextArea label="Item review" hideLabel placeholder="Tell us more about the items" value={comment} maxLength={maxLength} onChange={v=>onComment?.(v)}/>{onFiles&&<Uploader files={files} onChange={onFiles}/>}</div>}</Card>}
-export function RiderRatingPanel({name,rating,onChange,comment,onComment}:{name:string;rating:number;onChange:(v:number)=>void;comment?:string;onComment?:(v:string)=>void}){return <section className="kc-rider-section"><h3>Rate Delivery Service</h3><Card className="kc-rider-rating"><Space><Avatar name={name} src="/assets/5efc4.png"/><div>{name}<small>Delivered at 09 Oct 10:30</small></div></Space><Rating value={rating} variant="sentiment" onChange={onChange}/>{comment!==undefined&&<TextArea label="Delivery review" hideLabel value={comment} placeholder="Tell us more about delivery services" maxLength={400} onChange={v=>onComment?.(v)}/>}</Card></section>}
-export type ReviewData={rating:number;tags:string[];comment:string;files:File[]};
-export function ReviewEditor({value,onChange,error,tagOptions=['Fresh','Good quality','Well packed']}:{value:ReviewData;onChange:(v:ReviewData)=>void;error?:string;tagOptions?:string[]}){return <div className="kc-review-editor"><ProductRatingPanel product={{id:'review',name:'Fresh broccoli from Spain',image:'/assets/eccee.png',weight:'',amount:'38.76'}} rating={value.rating} onRating={rating=>onChange({...value,rating})} dimensions={{Taste:value.tags.includes('Taste')?5:0,Fresh:value.tags.includes('Fresh')?5:0}} onDimension={name=>onChange({...value,tags:[...value.tags,name]})} expanded comment={value.comment} onComment={comment=>onChange({...value,comment})} files={value.files} onFiles={files=>onChange({...value,files})}/>{error&&<Notice>{error}</Notice>}</div>}
-export function MediaPicker({items,selected,onChange,max=5,onDone,onCamera}:{items:{id:string;src:string}[];selected:string[];onChange:(v:string[])=>void;max?:number;onDone:()=>void;onCamera:()=>void}){return <div className="kc-media"><header><span>Recent projects</span><Button variant="text" size="compact" onClick={onDone}>Done ({selected.length})</Button></header><Grid columns={3}><IconButton name="camera-24" label="Open camera" onClick={onCamera}/>{items.map(i=><button key={i.id} type="button" aria-label={'Select photo '+i.id} aria-pressed={selected.includes(i.id)} disabled={!selected.includes(i.id)&&selected.length>=max} onClick={()=>onChange(selected.includes(i.id)?selected.filter(x=>x!==i.id):[...selected,i.id])}>{i.src&&<img src={i.src} alt=""/>}<span>{selected.includes(i.id)?selected.indexOf(i.id)+1:''}</span></button>)}</Grid></div>}
-export function PromoCodeForm({value,onChange,onSubmit,onFocus,error,loading=false}:{value:string;onChange:(v:string)=>void;onSubmit:()=>void;onFocus?:()=>void;error?:string;loading?:boolean}){return <div className="kc-promo-surface"><form className="kc-promo" onSubmit={e=>{e.preventDefault();onSubmit()}}><input onFocus={onFocus} aria-label="Promo code" placeholder="Enter promo code" value={value} onChange={e=>onChange(e.target.value)}/>{value&&<button type="button" aria-label="Clear promo code" onClick={()=>onChange('')}>×</button>}<Button size="compact" disabled={!value.trim()||loading} loading={loading} type="submit">Add</Button></form>{error&&<p className="kc-error">{error}</p>}</div>}
-export function CampaignBanner({src,alt,onClick,ratio='2.4',title,subtitle,actionLabel,artwork,background,variant='default'}:{variant?:'default'|'source';src?:string;alt:string;onClick:()=>void;ratio?:string;title?:string;subtitle?:string;actionLabel?:string;artwork?:React.ReactNode;background?:string}){if(!title&&src)return <Image src={src} alt={alt} ratio={ratio} fit="cover" onClick={onClick}/>;return <button type="button" className={'kc-campaign kc-campaign-'+variant} aria-label={alt} onClick={onClick} style={{aspectRatio:ratio,background:background||'var(--ds-color-green-pressed)'}}><span><strong>{title}</strong><small>{subtitle}</small>{actionLabel&&<i>{actionLabel}</i>}</span><div>{artwork||(src&&<img src={src} alt=""/>)}</div></button>}
-export function NewUserOffer({amount,coupons,onUse,onDetails,header}:{amount:string;coupons:CouponData[];onUse:()=>void;onDetails:()=>void;header?:React.ReactNode}){return <section className="kc-new-user">{header||<header><span>SAR<small>coupons</small></span><strong>{amount}</strong><div><img src="/assets/11a55.svg" alt=""/><span>New user<br/>limited</span></div></header>}<div className="kc-new-coupons">{coupons.map((c,i)=><article key={i}><strong>{c.title}</strong><small>{c.description}</small></article>)}</div><Button variant="outline" onClick={onUse}>View it</Button><Button variant="text" onClick={onDetails}>View detail</Button></section>}
-
-export function AccountHeader({name,phone,onLogin,avatarSrc,variant='card'}:{name?:string;phone?:string;avatarSrc?:string;variant?:'card'|'profile';onLogin:()=>void}){return <header className={'kc-account kc-account-'+variant+(name?'':' kc-account-guest')}>{name?<><Avatar src={avatarSrc} name={name} size={72}/><h2>{name}</h2>{phone&&<p>{phone}</p>}</>:<><h1>Account</h1><p>Log In or Sign Up to start shopping.</p><Button onClick={onLogin}>Log In or Sign Up</Button></>}</header>}
-export function SettingGroup({items,onAction}:{items:{id:string;title:string;description?:string;value?:React.ReactNode;icon?:IconName;leading?:React.ReactNode}[];onAction:(v:string)=>void}){return <Card className="kc-settings">{items.map(i=><ListRow key={i.id} title={i.title} leading={i.leading||(i.icon?<Icon name={i.icon}/>:undefined)} description={i.description} trailing={i.value} onClick={()=>onAction(i.id)}/>)}</Card>}
-export function ChatMessage({side='agent',text,time,children,variant='bubble'}:{side?:'agent'|'user'|'system';text?:string;time?:string;children?:React.ReactNode;variant?:'bubble'|'notice'|'media'}){return <article className={'kc-message kc-message-'+side+' kc-message-'+variant}>{time&&<small>{time}</small>}{variant==='notice'&&<img className="kc-message-avatar" src="/assets/6099f.png" alt=""/>}<div>{text&&<p>{text}</p>}{children}</div></article>}
-export function ChatComposer({value,onChange,onSend,onAttach,disabled=false,expanded=false}:{value:string;onChange:(v:string)=>void;onSend:()=>void;onAttach:()=>void;disabled?:boolean;expanded?:boolean}){return <form className="kc-composer" onSubmit={e=>{e.preventDefault();if(value.trim())onSend()}}><input aria-label="Message" placeholder="Please describe your issue" value={value} disabled={disabled} onChange={e=>onChange(e.target.value)}/>{value.trim()?<Button size="compact" disabled={disabled} type="submit">Send</Button>:<button type="button" className="kc-composer-attach" aria-label={expanded?'Close attachments':'Attach'} aria-expanded={expanded} disabled={disabled} onClick={onAttach}>{expanded?'×':'+'}</button>}</form>}
-export function ServiceQueue({position,onCancel}:{position:number;onCancel:()=>void}){return <ChatMessage side="agent" time="12:34:23"><div className="kc-queue"><p>You are currently <span>No.{position}</span> in line. Please wait patiently.</p><TextButton onClick={onCancel}>Cancel the queue</TextButton></div></ChatMessage>}
-export function ServiceTicketCard({id,time,status,onContinue,onHistory}:{id:string;time:string;status:'ongoing'|'ended';onContinue:()=>void;onHistory:()=>void}){return <Card className="kc-service-record"><header><img src="/assets/6099f.png" alt=""/><span>Online customer service</span></header><dl><dt>Time</dt><dd>{time}</dd><dt>Status</dt><dd>{status==='ongoing'?'Ongoing':'End'}</dd></dl><div className="kc-service-record-actions"><Button variant="outline" size="compact" className={status==='ongoing'?'is-brand':''} onClick={status==='ongoing'?onContinue:onHistory}>{status==='ongoing'?'Countinue to chat':'Chat history'}</Button></div></Card>}
-export function ServiceTicketDetail({question,answer,onContact,onLink}:{question:string;answer:string;onContact:()=>void;onLink?:()=>void}){return <div className="kc-help-detail"><Card header={question}><p>{answer}</p><TextButton tone="brand" onClick={onLink}>这是超链接，支持跳转。</TextButton><div className="kc-help-media"/><div className="kc-help-media"/></Card><Button className="kc-help-contact" onClick={onContact}>Contact us</Button></div>}
-export function FAQList({items}:{items:{id:string;title:string;content:React.ReactNode}[]}){return <Collapse items={items}/>}
-export function BrandLogo({variant='full'}:{variant?:'full'|'short'}){return variant==='full'?<img className="kc-brand-logo" src="/assets/0e775.svg" alt="KeenMart"/>:<span className="kc-brand-short">Keen</span>}
-export function LegalText({text,onLink}:{text:string;onLink?:(label:string)=>void}){const seen=new Set<string>();return <>{text.split(/(Terms of Use|Privacy Policy|Privacy)/g).map((part,i)=>{const link=/^(Terms of Use|Privacy Policy|Privacy)$/.test(part)&&!seen.has(part);seen.add(part);return link?<button type="button" className="kc-legal-link" key={i} onClick={()=>onLink?.(part)}>{part}</button>:<React.Fragment key={i}>{part}</React.Fragment>})}</>}
-export function CountryPicker({open,onClose,value,onChange}:{open:boolean;onClose:()=>void;value:string;onChange:(value:string)=>void}){return <BottomSheet open={open} title="Country/Region" variant="country" onClose={onClose} footer={<HomeIndicator/>}>{countries.map(c=><button type="button" key={c.code} aria-pressed={value===c.code} className="kc-country-option" onClick={()=>{onChange(c.code);onClose()}}><span className="kc-country-flag"><img src="/assets/8b151.png" alt="" style={{left:c.left,top:c.top,width:374.9996,height:811.5392}}/></span><span>{c.name}</span><span>({c.code})</span></button>)}</BottomSheet>}
-export function PhoneLoginForm({country,phone,onCountry,onPhone,onSubmit,error,loading=false,showCountry=true,initialCountryOpen=false,onEmail,onPolicy,onInputFocus,onCountryOpen,focused=false}:{country:string;phone:string;onCountry:(v:string)=>void;onPhone:(v:string)=>void;onSubmit:()=>void;error?:string;loading?:boolean;showCountry?:boolean;initialCountryOpen?:boolean;onEmail?:()=>void;onPolicy?:(title:string)=>void;onInputFocus?:()=>void;onCountryOpen?:()=>void;focused?:boolean}){const [open,setOpen]=useState(initialCountryOpen);return <><form className="kc-login-form" onSubmit={e=>{e.preventDefault();onSubmit()}}><h1>Sign up or log in</h1><PhoneField value={phone} country={country} showCountry={showCountry} onCountry={()=>{onCountryOpen?.();setOpen(true)}} onChange={onPhone} error={error} focused={focused} onFocus={onInputFocus}/><Button type="submit" loading={loading} disabled={phone.length<5}>Continue</Button><p className="kc-auth-legal"><LegalText text="By continuing, you agree to our Terms of Use and Privacy" onLink={onPolicy}/></p><div className="kc-auth-divider">or</div><button type="button" className="kc-email-login" onClick={onEmail}><span className="kc-email-symbol" aria-hidden="true"><img src="/assets/8ffcb.png" alt=""/></span>Continue with Email</button></form>{showCountry&&<CountryPicker open={open} value={country} onChange={onCountry} onClose={()=>setOpen(false)}/>}</>}
-export function VerificationCodeField({value,onChange,length=4,error,onResend,remaining=0,phone='(+966)27514021412',onMore,onFocus}:{value:string;onChange:(v:string)=>void;length?:4|6;error?:string;onResend:()=>void;remaining?:number;phone?:string;onMore?:()=>void;onFocus?:()=>void}){return <section className="kc-verification"><h1>Enter verification code<br/>we sent to<br/>{phone}</h1><OTPInput length={length} value={value} onChange={onChange} error={error} focused onFocus={onFocus}/><TextButton disabled={remaining>0} onClick={onResend}>{remaining>0?`Send again (${remaining}s)`:'Send again'}</TextButton><TextButton onClick={onMore}>More options</TextButton></section>}
-export function ConsentSheet({open,children,onAccept,onDecline,onClose,longForm=false}:{open:boolean;children?:React.ReactNode;onAccept:()=>void;onDecline:()=>void;onClose:()=>void;longForm?:boolean}){return <BottomSheet open={open} title="Permission notification" variant="consent" showClose={false} titleScrollable maxHeight={724} onClose={onClose} footer={<ActionBar safeArea><Button variant="outline" onClick={onDecline}>Decline</Button><Button onClick={onAccept}>Accept</Button></ActionBar>}><div className="kc-consent-copy">{children||<><p><LegalText text={permissionIntro}/></p>{longForm?<><p>{permissionLong+permissionLong}Please read and </p><br/><p>clicking Continue.{permissionLong.slice('Please read and ensure you understand the relevant terms before clicking Continue.'.length)}{permissionLong}</p><br/><p>{permissionLong}</p></>:<><br/><p>{permissionShort}</p></>}</>}</div></BottomSheet>}
-
-export function OrderRemarks({options,selected,onSelect,history,note,onNote,onConfirm}:{options:string[];selected:string[];onSelect:(v:string[])=>void;history:string[];note:string;onNote:(v:string)=>void;onConfirm:()=>void}){return <div className="kc-order-remarks kc-form-surface"><Space vertical><Section title="Quick Remarks"><div className="kb-filter">{options.map(t=><ChoiceChip key={t} selected={selected.includes(t)} onClick={()=>onSelect(selected.includes(t)?selected.filter(x=>x!==t):[...selected,t])}>{t}</ChoiceChip>)}</div></Section><Section title="Historical notes"><div className="kb-filter">{history.map(t=><ChoiceChip key={t} selected={selected.includes(t)} onClick={()=>onSelect(selected.includes(t)?selected.filter(x=>x!==t):[...selected,t])}>{t}</ChoiceChip>)}</div></Section><TextArea label="Supplementary explanation" maxLength={1000} value={note} onChange={onNote}/><Button onClick={onConfirm}>Confirm</Button></Space></div>}
-export function OrderSubmitBar({total,label='Place Order',onSubmit,disabled=false,loading=false,variant='default',paymentLogo}:{total:string;label?:string;onSubmit:()=>void;disabled?:boolean;loading?:boolean;variant?:'default'|'integrated';paymentLogo?:string}){return <div className={'kc-submit kc-submit-'+variant}><StickyBar><span>Total <Price amount={total}/></span><Button onClick={onSubmit} disabled={disabled} loading={loading}>{paymentLogo&&<img src={paymentLogo} width={32} height={24} alt="Apple Pay"/>}{label}</Button></StickyBar></div>}
-
-export function AccountDeletionNotice({conditions,consequences,onApply}:{conditions:string[];consequences:string[];onApply:()=>void}){return <Space vertical><Section title="Delete account must meet the following conditions"><Card><ul className="kc-legal-list">{conditions.map((x,i)=><li key={i}>{x}</li>)}</ul></Card></Section><Section title="After the account is cancelled"><Card><ul className="kc-legal-list">{consequences.map((x,i)=><li key={i}>{x}</li>)}</ul></Card></Section><Button onClick={onApply}>Apply to delete account</Button></Space>}
-export function PromotionGroup({kind='sale',title,eligible,remainingCount=1,discount,selected,onSelect,onAction,children}:{kind?:'sale'|'gift'|'buy-get';title:string;eligible:boolean;remainingCount?:number;discount?:string;selected?:boolean;onSelect?:(v:boolean)=>void;onAction:()=>void;children:React.ReactNode}){return <section className={'kc-promotion-group kc-promotion-'+kind}><CartPromotionBar celebrate={eligible} kind={kind==='gift'?'gift':'sale'} title={title} description={kind==='gift'||kind==='buy-get'?undefined:eligible?(discount?`Already discounted by SAR ${discount}`:undefined):`Choose ${remainingCount} more item to participate in the activity`} actionLabel={kind==='gift'?'View':undefined} onAction={onAction}/><div className="kc-promotion-products">{children}</div></section>}
-export function UnavailableProductsGroup({products,expanded,onExpand,onRemoveAll,onRemove,totalCount}:{products:Product[];expanded:boolean;onExpand:()=>void;onRemoveAll:()=>void;onRemove:(id:string)=>void;totalCount?:number}){const count=totalCount??products.length;return <section className="kc-unavailable-group"><header><strong>Currently Unavailable（{count}）</strong><TextButton tone="danger" onClick={onRemoveAll} disabled={!products.length}>Remove</TextButton></header>{products.length?(expanded?products:products.slice(0,3)).map(p=><CartItem key={p.id} product={{...p,unavailable:true}} quantity={1} selected={false} onSelect={()=>{}} onQuantity={()=>{}} onRemove={()=>onRemove(p.id)}/>):<EmptyState kind="goods" title="No unavailable items"/>}{count>3&&<TextButton onClick={onExpand}>{expanded?'Collapse':'View all'}</TextButton>}</section>}
-export function CartHeader({count,address,onAddress,onClear}:{count:number;address?:string;onAddress?:()=>void;onClear:()=>void}){return <header className="kc-cart-header"><div><h1>Cart <span>({count})</span></h1><IconButton name="trash-can-24" label="Clear cart" onClick={onClear}/></div>{address!==undefined&&<button type="button" className="kc-cart-address" onClick={onAddress}><Icon name="location-24"/><span>{address?<><span>Deliver to: </span><strong>{address}</strong></>:'Please select an address'}</span><Icon name="down-2-12"/></button>}</header>}
-export function SearchHeader({value,onChange,onSearch,onBack,onCart,cartCount=0}:{value:string;onChange:(v:string)=>void;onSearch:(v:string)=>void;onBack:()=>void;onCart:()=>void;cartCount?:number}){return <header className="kc-search-header"><IconButton name="left-2-24" label="Back" onClick={onBack}/><SearchBar value={value} onChange={onChange} onSubmit={onSearch} showSubmit={false} placeholder="Search products"/><Badge count={cartCount}><IconButton name="cart-24" label="Cart" onClick={onCart}/></Badge></header>}
-export function SearchSuggestions({title,items,onSelect,onClear,expandable=false}:{title:string;items:string[];onSelect:(v:string)=>void;onClear?:()=>void;expandable?:boolean}){const [expanded,setExpanded]=useState(false);return <section className="kc-search-suggestions"><header><h2>{title}</h2>{onClear&&<IconButton name="trash-can-24" label="Clear search history" onClick={onClear}/>}</header><div>{(expanded?items:items.slice(0,expandable?7:items.length)).map((item,i)=><button type="button" key={i} onClick={()=>onSelect(item)}>{item}</button>)}{expandable&&items.length>7&&<button type="button" aria-label={expanded?'Collapse search history':'Expand search history'} aria-expanded={expanded} onClick={()=>setExpanded(!expanded)}>{expanded?'⌃':'⌄'}</button>}</div></section>}
-
-export type CategoryItem={id:string;label:string;layers:ArtworkLayer[];promotion?:boolean};
-export function CategoryTile({item,onSelect}:{item:CategoryItem;onSelect:()=>void}){return <button type="button" className={'kc-category-tile '+(item.promotion?'is-promotion':'')} onClick={onSelect}>{item.promotion?<><strong>{item.label}</strong><span className="kc-category-cta">SHOP NOW</span><Artwork layers={item.layers} label="" ratio="111 / 127"/></>:<><Artwork layers={item.layers} label="" ratio="111 / 77"/><span>{item.label}</span></>}</button>}
-export function CategoryGrid({items,onSelect}:{items:CategoryItem[];onSelect:(id:string)=>void}){return <nav className="kc-category-grid" aria-label="Product categories">{items.map(item=><CategoryTile key={item.id} item={item} onSelect={()=>onSelect(item.id)}/>)}</nav>}
-export function HomeHeader({address,delivery,information,query,onQuery,onAddress,onSearch}:{address:string;delivery:string;information:string;query:string;onQuery:(v:string)=>void;onAddress:()=>void;onSearch?:()=>void}){return <header className="kc-home-header"><div className="kc-home-identity"><div><BrandLogo variant="short"/><small>{delivery}</small></div><div><button type="button" onClick={onAddress}>{address} ⌄</button><small>{information}</small></div></div><SearchBar value={query} onChange={onQuery} onSubmit={onSearch}/></header>}
-export type SecondaryCategory={id:string;label:string;layers:ArtworkLayer[]};
-export function CategoryLayout(props:CategoryLayoutProps){return <CommerceCategoryLayout {...props}/>}
-
-export function OrderStageProgress({current=0}:{current?:number}){const step=Math.max(-1,Math.min(3,current)),complete=step===3,base='/assets/navigation-v13/',icons=[complete?'4c55a.svg':'7aff3.svg',step>=1?(complete?'f1a90.svg':'509f4.svg'):'46e47.svg',step>=2?(complete?'d3a64.svg':'2eccb.svg'):'6ed60.svg',complete?'3943c.svg':'fe6ba.svg'];return <ol className={'kc-order-stages'+(complete?' is-complete':'')} aria-label="Order progress">{['Placed','Preparing','Delivering','Received'].map((label,i)=><li key={label} aria-current={i===step?'step':undefined} className={i<=step?'is-done':''}><span className={'kc-stage-icon'+(i===0&&step<0?' is-pending':'')}><img src={base+icons[i]} alt=""/>{i===0&&<img className="kc-stage-receipt" src={base+'ca53a.svg'} alt=""/>}</span><span className="ds-sr">{label}</span>{i<3&&<span className="kc-stage-track" aria-hidden="true"><i style={{width:i<step?'100%':i===step?'53.333%':'0%'}}/></span>}</li>)}</ol>}
-
-export function OrderArrival({time,actions=[],onAction}:{time:string;actions?:string[];onAction:(action:string)=>void}){return <Card className="kc-order-arrival"><small>Arriving</small><h3>{time}</h3>{actions.length>0&&<ActionBar>{actions.map((label,i)=><Button size="small" key={label} variant={i===actions.length-1?'primary':'outline'} onClick={()=>onAction(label)}>{label}</Button>)}</ActionBar>}</Card>}
-export function OrderDeliveryDetails({time,address}:{time:string;address:Address}){return <Card header="Delivery details"><dl className="kc-order-delivery"><dt>Time</dt><dd>{time}</dd><dt>Address</dt><dd>{address.label}<br/>{address.street}<br/>{address.name} {address.phone}</dd></dl></Card>}
-
-export function PhoneField({value,onChange,country='+966',showCountry=true,onCountry,placeholder='Phone number',disabled=false,error,focused=false,onFocus}:{value:string;onChange:(v:string)=>void;country?:string;showCountry?:boolean;onCountry?:()=>void;placeholder?:string;disabled?:boolean;error?:string;focused?:boolean;onFocus?:()=>void}){const id=useId();return <div className="kb-phone-field">{showCountry&&<button type="button" aria-label="Choose country or region" disabled={disabled} onClick={onCountry}>{country}<span aria-hidden="true">⌄</span></button>}<label className="ds-sr" htmlFor={id}>Phone number</label><input id={id} type="tel" inputMode="numeric" autoComplete="tel-national" placeholder={placeholder} value={value} disabled={disabled} aria-invalid={!!error} className={focused?'is-focused':''} onFocus={onFocus} onChange={e=>onChange(e.target.value.replace(/\D/g,'').slice(0,15))}/>{error&&<small className="kb-phone-error" role="alert">{error}</small>}</div>}
-
-export function SupportOrderCard({status='Completed',count=9,time='Delivered 2021-11-11  09:22:22',onSelect}:{status?:string;count?:number;time?:string;onSelect?:()=>void}){return <article className="kc-support-order" onClick={onSelect} onKeyDown={e=>{if(onSelect&&(e.key==='Enter'||e.key===' ')){e.preventDefault();onSelect()}}} role={onSelect?'button':undefined} tabIndex={onSelect?0:undefined}><header><span>Order Number 24544377643333</span><StatusLabel tone={status==='Delivering'?'green':'gray'}>{status}</StatusLabel></header><div className="kc-support-order-products">{['0933d','e99c6','b960e','392c5'].map(x=><img src={'/assets/'+x+'.png'} key={x} alt="Order item"/>)}<span>(Total: {count} items)</span></div><footer><span>{time}</span><strong>SAR 998.98</strong></footer></article>}
-export function RiderReviewCard({comment,rating=5,name='Rider Name'}:{comment:string;rating?:number;name?:string}){return <Card className="kc-rider-review"><header><Avatar src="/assets/5efc4.png" name={name}/><div><span>{name}</span><small>Delivered at 09 Oct 10:30</small></div><div className="kc-rider-review-mark"><Rating variant="sentiment" value={rating}/><span>Excellent</span></div></header><p>{comment}</p></Card>}
-
-export function CartPromotionBar({kind='sale',title,description,actionLabel,onAction,celebrate=false}:{kind?:'sale'|'gift';title:string;description?:string;actionLabel?:string;onAction?:()=>void;celebrate?:boolean}){return <section className={'kc-cart-promotion-bar kc-cart-promotion-bar-'+kind}><header><span className="kc-cart-promotion-tag"><Icon name={kind==='gift'?'gift-12':'sale-12'}/>{kind==='gift'?'GIFT':'SALE'}</span><strong>{title}</strong>{actionLabel&&<button type="button" onClick={onAction}>{actionLabel}<span aria-hidden="true">›</span></button>}</header>{description&&<p>{celebrate&&<span aria-hidden="true">🎉</span>}{description}</p>}</section>}
-
-export function VoucherList({coupons,onUse,onDetails,empty=false}:{coupons:CouponData[];onUse:()=>void;onDetails:(index:number)=>void;empty?:boolean}){return <section className={'kc-voucher-list'+(empty?' is-empty':'')} aria-label="Vouchers">{empty?<EmptyState layout="page" kind="vouchers" illustration={<img src="/assets/48e4a.svg" alt=""/>} title="You have no vouchers available"/>:coupons.map((coupon,i)=><CouponCard key={i} coupon={coupon} onUse={onUse} onDetails={()=>onDetails(i)}/>) }{!empty&&coupons.every(c=>c.state&&c.state!=='available')&&<p className="kc-voucher-history">Only coupons from the past 3 months can be viewed</p>}</section>}
-export function VoucherSuccessDialog({open,coupon,onClose,onUse,onDetails,showClose=false}:{open:boolean;coupon:CouponData;onClose:()=>void;onUse:()=>void;onDetails:()=>void;showClose?:boolean}){return <Dialog variant="voucher-success" open={open} title="Voucher added successfully !" showClose={showClose} onClose={onClose} actions={<Button variant="promotion" onClick={onClose}>Got it</Button>}><CouponCard coupon={coupon} onUse={onUse} onDetails={onDetails}/></Dialog>}
-export function HomeVoucherBanner({onClick}:{onClick:()=>void}){return <button type="button" className="kc-home-voucher-banner" onClick={onClick} aria-label="SAR 100 New user vouchers"><span><span>SAR <strong>100</strong></span><b>New user vouchers</b></span><span className="kc-home-hand"><img src="/assets/32689.png" alt=""/></span><i>SAR100</i></button>}
-
-
+import { useKeenLocale } from './locale';
+import { PriceValue as Price } from './price-value';
+import { CommerceProductCard, CommerceCategoryLayout, CommercePrice, CommercePurchase, CommerceStatus, CommerceSupplier } from './commerce';
+import type { CommerceProduct, CommerceCardProps, CategoryLayoutProps } from './commerce';
+export type { CommerceProduct, ProductSKU, ProductCardVariant, ProductAvailability, CommerceCategory, CategoryLayoutProps } from './commerce';
+import { LayoutSpace as Space } from './layout';
+import React, { useState, useId } from 'react';
+import { SwipeAction, OTPInput, TextButton, ActionBar, Artwork, HomeIndicator, Badge, Switch } from './foundations';
+import type { ArtworkLayer } from './foundations';
+import { countries, permissionIntro, permissionShort, permissionLong } from './auth-content';
+import { Tag, Button, StatusLabel, CouponCard, QuantityStepper, TextField, ChoiceChip, RadioRow, Rating, ListRow, Notice, BottomSheet, CouponData } from './components';
+import { Card, Section, Grid, Image, Avatar, IconButton, Checkbox, TextArea, SelectField, Option, Progress, Steps, EmptyState, Result, StickyBar, Uploader, Carousel, SearchBar, Collapse, Dialog, Text } from './foundations';
+import type { IconName } from './Icon';
+import { Icon } from './Icon';
+import './business.css';
+import './product-detail.css';
+import './source-refinement.css';
+import './rules-v06.css';
+import './rules-v08.css';
+import './rules-v09.css';
+import './rules-v10.css';
+import deliveryVehicle from './delivery-vehicle.json';
+export type Product = {
+    id: string;
+    name: string;
+    image: string;
+    amount: string;
+    original?: string;
+    weight: string;
+    unavailable?: boolean;
+    badge?: string;
+    gift?: boolean;
+    giftLocked?: boolean;
+    tags?: string[];
+    processing?: string;
+    unavailableReason?: string;
+    action?: 'add' | 'stepper' | 'count' | 'remove' | 'none';
+    quantity?: number;
+    imageFit?: 'cover' | 'contain';
+    titleBadge?: string;
+    imageCrop?: {
+        x: number;
+        y: number;
+        width: number;
+        height: number;
+    };
+};
+export type Address = {
+    id: string;
+    label: string;
+    street: string;
+    name: string;
+    phone: string;
+    detail?: string;
+    customLabel?: string;
+};
+export type Payment = {
+    id: string;
+    label: string;
+    detail?: string;
+    logo?: string;
+    disabled?: boolean;
+};
+export type OrderState = 'unpaid' | 'failed' | 'paid' | 'preparing' | 'delivering' | 'completed' | 'cancelled';
+export type Order = {
+    id: string;
+    state: OrderState;
+    products: Product[];
+    total: string;
+    time?: string;
+};
+const stateLabels: Record<OrderState, string> = { unpaid: 'Awaiting payment', failed: 'Payment failed', paid: 'Payment successful', preparing: 'Preparing your order', delivering: 'Out for delivery', completed: 'Completed', cancelled: 'Cancelled' };
+export function ProductCard(props: CommerceCardProps) { const { t: kmText } = useKeenLocale(); return <CommerceProductCard {...props}/>; }
+export function ProductPriceGroup(props: React.ComponentProps<typeof CommercePrice>) { const { t: kmText } = useKeenLocale(); return <CommercePrice {...props}/>; }
+export function ProductPurchaseControl(props: React.ComponentProps<typeof CommercePurchase>) { const { t: kmText } = useKeenLocale(); return <span className="cm-purchase-control"><CommercePurchase {...props}/></span>; }
+export function ProductStatusOverlay(props: React.ComponentProps<typeof CommerceStatus>) { const { t: kmText } = useKeenLocale(); return <CommerceStatus {...props}/>; }
+export function ProductSupplierTag(props: React.ComponentProps<typeof CommerceSupplier>) { const { t: kmText } = useKeenLocale(); return <CommerceSupplier {...props}/>; }
+export function ProductList({ products, onAdd, onQuantity, layout = 'grid', density = 'regular' }: {
+    products: CommerceProduct[];
+    onAdd: (id: string) => void;
+    onQuantity?: (id: string, value: number) => void;
+    onRemove?: (id: string) => void;
+    layout?: 'grid' | 'row';
+    density?: 'regular' | 'compact';
+}) { const { t: kmText } = useKeenLocale(); const [skuCounts, setSkuCounts] = useState<Record<string, Record<string, number>>>({}); const variant = layout === 'row' ? 'full-width' : density === 'compact' ? 'category' : 'grid'; return <div className={'cm-product-list cm-product-list-' + variant}>{products.length ? products.map(p => <ProductCard key={p.id} product={p} variant={variant} quantity={p.action === 'stepper' || p.action === 'remove' ? p.quantity : 0} onAdd={() => onAdd(p.id)} onQuantity={v => onQuantity?.(p.id, v)} skuQuantities={skuCounts[p.id] || {}} onSKUQuantity={(id, v) => setSkuCounts({ ...skuCounts, [p.id]: { ...skuCounts[p.id], [id]: v } })}/>) : <EmptyState kind="goods" title={kmText("No products found")}/>}</div>; }
+export function ProductCollection({ products, onAdd, onQuantity, layout = 'grid', title = 'You might also like', density = 'regular' }: {
+    products: CommerceProduct[];
+    onAdd: (id: string) => void;
+    onQuantity?: (id: string, value: number) => void;
+    onRemove?: (id: string) => void;
+    layout?: 'grid' | 'row';
+    title?: string;
+    density?: 'regular' | 'compact';
+}) { const { t: kmText } = useKeenLocale(); title = kmText(title); return <section className="kc-product-collection"><Section title={title}><ProductList products={products} onAdd={onAdd} onQuantity={onQuantity} layout={layout} density={density}/></Section></section>; }
+export function ProductSpecPicker({ groups, values, onChange, onConfirm, product, quantity = 1, onQuantity, onClose, open }: {
+    groups: {
+        id: string;
+        title: string;
+        description?: string;
+        required?: boolean;
+        options: Option[];
+    }[];
+    values: Record<string, string>;
+    onChange: (v: Record<string, string>) => void;
+    onConfirm: () => void;
+    product?: Product;
+    quantity?: number;
+    onQuantity?: (n: number) => void;
+    onClose?: () => void;
+    open?: boolean;
+}) { const { t: kmText } = useKeenLocale(); const panel = <div className="kc-spec">{open === undefined && onClose && <button type="button" className="kc-spec-close" aria-label={kmText("Close options")} onClick={onClose}>×</button>}{product && <div className="kc-spec-product"><img src={product.image} alt={product.name}/><div><p>{product.name}</p><Price amount={product.amount}/></div></div>}{groups.map(g => <section key={g.id} className="kc-spec-group"><header><h3>{g.title}</h3>{g.required && <span className="ds-tag ds-tag-success">{kmText("Required")}</span>}</header>{g.description && <p>{g.description}</p>}<div className="kc-spec-options">{g.options.map(o => <ChoiceChip key={o.value} selected={values[g.id] === o.value} disabled={o.disabled} onClick={() => onChange({ ...values, [g.id]: o.value })}>{o.label}</ChoiceChip>)}</div></section>)}<div className="kc-spec-actions"><ActionBar safeArea layout="content">{onQuantity && <QuantityStepper variant="field" value={quantity} onChange={onQuantity}/>}<Button onClick={onConfirm}>{kmText("Add to cart")}</Button></ActionBar><HomeIndicator /></div></div>; return open === undefined ? panel : <BottomSheet open={open} variant="product" title={kmText("Choose options")} onClose={onClose || (() => { })}>{panel}</BottomSheet>; }
+export function CartItem({ product, quantity, selected, onSelect, onQuantity, onRemove, readOnly = false, selectable = false }: {
+    product: Product;
+    quantity: number;
+    selected: boolean;
+    onSelect: (v: boolean) => void;
+    onQuantity: (v: number) => void;
+    onRemove: () => void;
+    readOnly?: boolean;
+    selectable?: boolean;
+}) { const { t: kmText } = useKeenLocale(); const [editing, setEditing] = useState(product.action === 'stepper'); return <article className={'kc-cart-item ' + (product.unavailable ? 'is-unavailable' : '') + (readOnly ? ' kc-cart-readonly' : '') + (product.giftLocked ? ' kc-gift-locked' : '')}>{selectable && !readOnly && !product.gift && <Checkbox label={'Select ' + product.name} checked={selected} onChange={onSelect} disabled={product.unavailable}/>}<img src={product.image} alt={product.name}/>{product.giftLocked && <span className="kc-gift-lock" aria-label={kmText("Gift unavailable")}><Icon name="lock-16"/></span>}<div><h3>{product.name}</h3>{product.weight && <small>{product.weight}</small>}{product.tags && <div className="kc-product-tags">{product.tags.map(t => <span className="ds-tag ds-tag-success" key={t}>{t}</span>)}</div>}{product.processing && <small>{product.processing}</small>}{product.badge && <span className="kc-cart-promotion">{product.badge}</span>}{product.unavailable ? <span className="kc-cart-unavailable-reason">{product.unavailableReason || kmText("Out of stock")}</span> : product.gift ? <span className="kc-gift-label">{kmText("Free")}<small>X{quantity}</small></span> : <Price amount={product.amount} original={product.original} promotion={false}/>}<div className="kc-cart-actions">{product.unavailable || product.gift ? null : readOnly ? <span>×{quantity}</span> : editing ? <QuantityStepper value={quantity} onChange={onQuantity}/> : <button type="button" className="kc-cart-count" aria-label={kmText("Edit item quantity")} onClick={() => setEditing(true)}>{quantity}</button>}</div></div></article>; }
+export function CartGroup({ title, children, selected, onSelect }: {
+    title: string;
+    children: React.ReactNode;
+    selected: boolean;
+    onSelect: (v: boolean) => void;
+}) { const { t: kmText } = useKeenLocale(); return <Card className="kc-cart-group" header={<Checkbox label={title} checked={selected} onChange={onSelect}/>}>{children}</Card>; }
+export function CartSummaryBar({ total, selectedCount, onCheckout, disabled = false }: {
+    total: string;
+    selectedCount: number;
+    onCheckout: () => void;
+    disabled?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <div className="kc-cart-summary"><Price amount={total}/><Button onClick={onCheckout} disabled={disabled || !selectedCount}>{kmText("Checkout")}</Button></div>; }
+export function InvalidProductsSheet({ open, products, onClose, onContinue }: {
+    open: boolean;
+    products: Product[];
+    onClose: () => void;
+    onContinue: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <BottomSheet open={open} title={kmText("Currently Unavailable")} onClose={onClose} footer={<Space><Button variant="outline" onClick={onClose}>{kmText("Return")}</Button><Button onClick={onContinue}>{kmText("Continue")}</Button></Space>}>{products.map(p => <div className="kc-unavailable-row" key={p.id}><img src={p.image} alt={p.name}/><div><p>{p.name}</p><span className="kc-error">{p.unavailableReason || kmText("Out of stock")}</span></div></div>)}</BottomSheet>; }
+export function AddressCard({ address, selected = false, onSelect, onEdit, variant = 'default' }: {
+    address: Address;
+    selected?: boolean;
+    onSelect?: () => void;
+    onEdit?: () => void;
+    variant?: 'default' | 'delivery';
+}) { const { t: kmText } = useKeenLocale(); return <article className={'kc-address kc-address-' + variant + ' ' + (selected ? 'is-selected' : '')}>{variant === 'delivery' && <h3>{kmText("Address")}</h3>}<div><Icon name="location-24"/><strong>{address.label}</strong>{onSelect && <button type="button" aria-label={'Select ' + address.label} aria-pressed={selected} onClick={onSelect}>{selected ? '✓' : 'Select'}</button>}{onEdit && <IconButton name={variant === 'delivery' ? 'right-2-24' : 'edit-1-24'} label={kmText("Edit address")} onClick={onEdit}/>}</div><p>{address.street}</p><small>{address.name} · {address.phone}</small></article>; }
+export function AddressPicker({ addresses, value, onChange, onAdd }: {
+    addresses: Address[];
+    value: string;
+    onChange: (v: string) => void;
+    onAdd: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <Space vertical>{addresses.length ? addresses.map(a => <AddressCard key={a.id} address={a} selected={value === a.id} onSelect={() => onChange(a.id)}/>) : <EmptyState kind="address" title={kmText("No delivery address")} description="Add an address to start shopping."/>}<Button variant="outline" onClick={onAdd}>{kmText("Add new address")}</Button></Space>; }
+export function AddressForm({ value, onChange, onSubmit, error, disabled = false, onRemove, labelConflict = false, onResolveLabel, surface = 'white' }: {
+    surface?: 'white' | 'gray';
+    value: Address;
+    onChange: (v: Address) => void;
+    onSubmit: () => void;
+    error?: string;
+    disabled?: boolean;
+    onRemove?: () => void;
+    labelConflict?: boolean;
+    onResolveLabel?: (use: boolean) => void;
+}) { const { t: kmText } = useKeenLocale(); return <><form className={"kc-address-editor kc-form-surface kc-form-surface-" + surface} onSubmit={e => { e.preventDefault(); onSubmit(); }}><div className="kc-address-map"><img src="/assets/85f7f.png" alt={kmText("Delivery address map")}/><img src="/assets/f36bf.svg" alt={kmText("Map pin")}/><Button size="small" variant="outline" onClick={() => onChange({ ...value })}>{kmText("Edit")}</Button></div><p className="kc-address-street">{value.street}</p><TextField labelPlacement="inside" label={kmText("Additional address information")} placeholder={kmText("Flat no./Building/Street/Area")} value={value.detail || ''} onChange={e => onChange({ ...value, detail: e.target.value })} error={error} disabled={disabled}/><Section title={kmText("Contact")}><TextField labelPlacement="inside" label={kmText("Contact name")} placeholder={kmText("Contact name")} value={value.name} onChange={e => onChange({ ...value, name: e.target.value })} disabled={disabled}/><PhoneField value={value.phone} country="+966" onChange={v => onChange({ ...value, phone: v })} placeholder={kmText("Mobile number")} disabled={disabled}/></Section><Section title={kmText("Label")}><div className="kb-filter">{['home', kmText("Work"), kmText("Hangout"), kmText("Other")].map(label => <ChoiceChip key={label} selected={value.label.toLowerCase() === label.toLowerCase()} onClick={() => onChange({ ...value, label })}>{label}</ChoiceChip>)}</div>{value.label.toLowerCase() === 'other' && <TextField labelPlacement="inside" label={kmText("Custom label")} placeholder={kmText("Please enter label")} maxLength={20} value={value.customLabel || ''} onChange={e => onChange({ ...value, customLabel: e.target.value })} hint={(value.customLabel || '').length >= 20 ? 'reach 20 character limit' : undefined}/>}</Section><Button type="submit" disabled={disabled}>{kmText("Save and continue")}</Button></form><BottomSheet open={labelConflict} title={kmText("Notice")} showClose={false} variant="address-conflict" onClose={() => onResolveLabel?.(false)} footer={<div className="kc-address-conflict-actions"><Button onClick={() => onResolveLabel?.(true)}>{kmText("Use label for current address")}</Button><Button variant="outline" onClick={() => onResolveLabel?.(false)}>{kmText("Stay the same")}</Button><HomeIndicator /></div>}>{kmText("Already have another address with same label name. Do you want to use this label for current editing address?")}<div className="kc-conflicting-address"><strong>Dark 251012 123121231451</strong><p>{kmText("Building 1\uFF0C2nd floor")}</p><small>Dingxiaodong　+86 16660654099</small></div></BottomSheet></>; }
+export function MapAddressPicker({ map, query, onQuery, address, onConfirm, results, onSelect, onSearchFocus }: {
+    onSearchFocus?: () => void;
+    map: React.ReactNode;
+    query: string;
+    onQuery: (v: string) => void;
+    address?: Address;
+    onConfirm: () => void;
+    results?: {
+        id: string;
+        title: string;
+    }[];
+    onSelect?: (id: string) => void;
+}) { const { t: kmText } = useKeenLocale(); return <div className={'kc-map-picker' + (results ? ' kc-map-picker-results' : '')}><div className="kc-map-search"><SearchBar value={query} onChange={onQuery} onFocus={onSearchFocus} placeholder={kmText("Search address")}/></div><div className="kc-map-slot">{map}</div>{results ? <div className="kc-map-results">{results.map(item => <ListRow key={item.id} title={item.title} leading={<Icon name="location-24"/>} onClick={() => onSelect?.(item.id)}/>)}</div> : <div className="kc-map-selection">{address && <AddressCard address={address}/>}<Button onClick={onConfirm} disabled={!address}>{kmText("Confirm location")}</Button></div>}</div>; }
+export function DeliverySlotPicker({ days, day, onDay, slots, value, onChange }: {
+    days: Option[];
+    day: string;
+    onDay: (v: string) => void;
+    slots: Option[];
+    value: string;
+    onChange: (v: string) => void;
+}) { const { t: kmText } = useKeenLocale(); return <div className="kc-slot"><div>{days.map(d => <button type="button" key={d.value} aria-pressed={day === d.value} disabled={d.disabled} onClick={() => onDay(d.value)}>{d.label}</button>)}</div><div>{slots.length ? slots.map(s => <label key={s.value} className={'kc-slot-option ' + (s.disabled ? 'is-disabled' : '')}><span>{s.label}</span><input type="radio" name="delivery-slot" checked={value === s.value} disabled={s.disabled} onChange={() => onChange(s.value)}/></label>) : <EmptyState kind="waiting" title={kmText("No available delivery slots")}/>}</div></div>; }
+export function DeliveryProgress({ time, progress, description, onSelect }: {
+    time: string;
+    progress: number;
+    description?: string;
+    onSelect?: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <Card header="Delivery time"><div className="kc-delivery"><button type="button" className="kc-delivery-time" onClick={onSelect} disabled={!onSelect}><Icon name="time-circle-24"/><span>{time}</span><span aria-hidden="true">›</span></button>{description && <small>{description}</small>}<div className="kc-delivery-track" role="progressbar" aria-label={kmText("Delivery progress")} aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}><span className="kc-delivery-vehicle" style={{ left: `${Math.min(90, Math.max(0, progress))}%` }}><Artwork layers={deliveryVehicle} label={kmText("Delivery vehicle")}/></span></div></div></Card>; }
+export function PaymentMethodRow({ method, selected, onSelect, groupName }: {
+    method: Payment;
+    selected: boolean;
+    onSelect: () => void;
+    groupName?: string;
+}) { const { t: kmText } = useKeenLocale(); const localName = useId(); return <label className={'kc-payment ' + (method.disabled ? 'is-disabled' : '')}>{method.logo ? <img src={method.logo} alt=""/> : <span className="kc-payment-logo">{method.label.includes('Apple') ? '' : '▣'}</span>}<span>{method.label}<small>{method.detail}</small></span><input aria-label={method.label} type="radio" name={groupName || localName} checked={selected} onChange={onSelect} disabled={method.disabled}/></label>; }
+export function BankCard({ brand, last4, expiry, holder = 'OLIVIA RHYE', selected, onSelect, onDelete, unavailable = false }: {
+    brand: string;
+    last4: string;
+    expiry: string;
+    holder?: string;
+    selected?: boolean;
+    onSelect?: () => void;
+    onDelete?: () => void;
+    unavailable?: boolean;
+}) { const { t: kmText } = useKeenLocale(); const key = brand.toLowerCase(), logo = key.includes('master') ? '/assets/20974.svg' : key.includes('amex') ? '/assets/734ef.svg' : key.includes('mada') ? '/assets/9e7bb.png' : '/assets/967cf.svg'; const card = <article className={'kc-bank-card kc-bank-card-' + (unavailable ? 'unavailable' : key.includes('master') ? 'mastercard' : key.includes('amex') ? 'amex' : key.includes('mada') ? 'mada' : 'visa')} aria-label={brand + ' ending ' + last4}><header><img src={logo} alt={brand}/><img src="/assets/ad140.svg" alt="Contactless"/></header><div className="kc-bank-owner"><span>{holder}</span><span>{expiry}</span></div><div className="kc-bank-number">••••　••••　•••• <strong>{last4}</strong></div>{unavailable && <span className="kc-bank-unavailable">{kmText("Card not available")}</span>}{onSelect && <button type="button" className="ds-sr" aria-pressed={selected} onClick={onSelect}>{kmText("Use this card")}</button>}</article>; return onDelete ? <SwipeAction onDelete={onDelete}>{card}</SwipeAction> : card; }
+export type CardData = {
+    number: string;
+    holder: string;
+    expiry: string;
+    cvc: string;
+};
+export function BankCardForm({ value, onChange, onSubmit, error, errors, total, onFieldFocus }: {
+    value: CardData;
+    onFieldFocus?: (field: keyof CardData) => void;
+    onChange: (v: CardData) => void;
+    onSubmit: () => void;
+    error?: string;
+    errors?: Partial<Record<keyof CardData, string>>;
+    total?: string;
+}) { const { t: kmText } = useKeenLocale(); const field = (k: keyof CardData) => <TextField label={{ number: 'Card number', holder: 'Cardholder name', expiry: 'Expiry date', cvc: 'CVV/CVC' }[k]} placeholder={{ holder: 'Please enter Cardholder name', number: '0000  0000  0000  0000', expiry: 'MM/YY', cvc: 'CVV/CVC' }[k]} name={k} onFocus={() => onFieldFocus?.(k)} autoComplete={{ number: 'cc-number', holder: 'cc-name', expiry: 'cc-exp', cvc: 'cc-csc' }[k]} inputMode={k === 'holder' ? 'text' : 'numeric'} type={k === 'cvc' ? 'password' : 'text'} value={value[k]} required error={errors?.[k]} onChange={e => onChange({ ...value, [k]: e.target.value })}/>; return <form className="kc-form kc-bank-form" onSubmit={e => { e.preventDefault(); onSubmit(); }}>{total && <div className="kc-bank-total"><span>{kmText("Total")}</span><Price amount={total}/></div>}{field('holder')}{field('number')}<div className="kc-bank-short-fields">{field('expiry')}{field('cvc')}</div>{error && !errors && <Notice>{error}</Notice>}<Button type="submit" disabled={Object.values(value).some(v => !v) || !!error || !!errors && Object.values(errors).some(Boolean)}>{kmText("Save and use")}</Button></form>; }
+export function PaymentMethodPicker({ value, onChange, cards = [], onNewCard }: {
+    value: string;
+    onChange: (v: string) => void;
+    cards?: {
+        id: string;
+        brand: string;
+        last4: string;
+        logo: string;
+    }[];
+    onNewCard: () => void;
+}) { const { t: kmText } = useKeenLocale(); const groupName = useId(); return <div className="kc-payment-picker"><section><h3>{kmText("Online payment methods")}</h3><Card>{[{ id: 'apple', label: 'Apple Pay', logo: '/assets/34ac4.svg' }, { id: 'stc', label: 'Stc pay', logo: '/assets/12b24.png' }].map(m => <PaymentMethodRow key={m.id} groupName={groupName} method={m} selected={value === m.id} onSelect={() => onChange(m.id)}/>)}</Card></section><section><h3>{kmText("Card payment methods")}</h3><Card>{cards.map(c => <PaymentMethodRow key={c.id} groupName={groupName} method={{ id: c.id, label: c.brand + '  ****' + c.last4, logo: c.logo }} selected={value === c.id} onSelect={() => onChange(c.id)}/>)}<div className="kc-new-card-action"><TextButton tone="brand" onClick={onNewCard}>{kmText("\uFF0B Pay with a new card")}</TextButton><span className="kc-accepted-cards">{['02f1e', '8ca85', '359ed'].map(x => <img key={x} src={'/assets/' + x + '.svg'} alt=""/>)}</span></div></Card></section></div>; }
+export function CheckoutSummary({ rows, total }: {
+    rows: {
+        label: string;
+        value: string;
+        original?: string;
+        discount?: boolean;
+    }[];
+    total: string;
+}) { const { t: kmText } = useKeenLocale(); return <Card header="Summary">{rows.map((r, i) => <div key={i} className={'kc-summary-row ' + (r.discount ? 'is-discount' : '')}><span>{r.label}</span><span>{r.original && <del>{r.original}</del>} {r.value}</span></div>)}<div className="kc-summary-total"><strong>{kmText("Total")}</strong><Price amount={total}/></div></Card>; }
+export function OrderCard({ order, onAction, actions = ['View details'], variant = 'list', itemCount = 9 }: {
+    order: Order;
+    onAction: (action: string) => void;
+    actions?: string[];
+    variant?: 'list' | 'overview';
+    itemCount?: number;
+}) {
+    const { t: kmText } = useKeenLocale();
+    if (variant === 'overview')
+        return <Card className="kc-order-overview-card"><header><strong>Order No.{order.id}</strong><TextButton tone="brand" onClick={() => onAction(kmText("View details"))}>{kmText("View details")}</TextButton></header><p>{itemCount} items&nbsp; Total SAR {order.total}</p><div className="kc-order-products">{order.products.map((p, i) => <img key={i} src={p.image} alt={p.name}/>)}</div></Card>;
+    return <Card className="kc-order-list-card" header={<div className="kc-order-heading"><span>{order.time}</span><strong>{({ unpaid: 'Pending payment', failed: 'Payment failed', paid: 'Waiting for sorting', preparing: 'Waiting for delivery', delivering: kmText("Delivering"), completed: kmText("Completed"), cancelled: kmText("Cancelled") })[order.state]}</strong></div>}><div className="kc-order-products">{order.products.map((p, i) => <img key={i} src={p.image} alt={p.name}/>)}</div><div className="kc-order-list-total"><span>{itemCount} {itemCount === 1 ? 'item' : 'items'}</span><Price amount={order.total}/></div>{['unpaid', 'paid', 'preparing', 'delivering'].includes(order.state) && <p className="kc-order-arrival-line">{kmText("Arriving Today,09:00-12:00")}</p>}{actions.length > 0 && <div className="kc-order-list-actions">{actions.map(label => <Button size="compact" variant={label.startsWith('Pay') ? 'primary' : 'outline'} key={label} onClick={() => onAction(label)}>{kmText(label)}</Button>)}</div>}</Card>;
+}
+export function OrderStatusHeader({ state, description, countdown, title, artwork }: {
+    state: OrderState;
+    description?: string;
+    countdown?: string;
+    title?: string;
+    artwork?: ArtworkLayer[];
+}) { const { t: kmText } = useKeenLocale(); return <section className={'kc-order-status state-' + state}><div><h1>{title || ({ unpaid: 'Payment waiting', failed: 'Payment failed', paid: 'Payment successful!', preparing: 'Preparing in progress', delivering: kmText("Delivering"), completed: kmText("Completed"), cancelled: kmText("Cancelled") })[state]}</h1>{description && <p>{description}</p>}{countdown && <span>Time remaining: {countdown}</span>}</div>{artwork && <div className="kc-order-state-art"><Artwork layers={artwork} label={title || state}/></div>}</section>; }
+export function OrderTimeline({ events, current }: {
+    events: {
+        title: string;
+        description?: string;
+    }[];
+    current: number;
+}) { const { t: kmText } = useKeenLocale(); return <Card header={kmText("Order progress")}><Steps items={events} current={current}/></Card>; }
+export function OrderInfo({ rows, onCopy }: {
+    rows: {
+        label: string;
+        value: string;
+        copyable?: boolean;
+    }[];
+    onCopy?: (v: string) => void;
+}) { const { t: kmText } = useKeenLocale(); return <Card header="Order information">{rows.map(r => <div key={r.label} className="kc-summary-row"><span>{r.label}</span><span>{r.value}{r.copyable && onCopy && <Button variant="text" size="compact" onClick={() => onCopy(r.value)}>{kmText("Copy")}</Button>}</span></div>)}</Card>; }
+export function CancelReasonPicker({ options, value, onChange, onConfirm, open, onClose, putBack = false, onPutBack = () => { }, error }: {
+    options: Option[];
+    value: string;
+    onChange: (v: string) => void;
+    onConfirm: () => void;
+    open: boolean;
+    onClose: () => void;
+    putBack?: boolean;
+    onPutBack?: (v: boolean) => void;
+    error?: string;
+}) { const { t: kmText } = useKeenLocale(); return <BottomSheet open={open} title={kmText("Reason for cancellation")} variant="cancel-reason" onClose={onClose} footer={<><div className="kc-cancel-footer"><div className="kc-cancel-notice"><Switch label={kmText("After confirmation, put this item back in the shopping cart")} checked={putBack} onChange={onPutBack}/></div>{error && <p role="alert" className="kc-error">{error}</p>}<Button disabled={!value} onClick={onConfirm}>{kmText("Confirm")}</Button></div><HomeIndicator /></>}><div className="kc-cancel-options">{options.map(o => <RadioRow key={o.value} name="cancel-reason" label={o.label} value={o.value} checked={value === o.value} onChange={() => onChange(o.value)}/>)}</div></BottomSheet>; }
+export function ReviewCard({ product, rating, comment, images, onView }: {
+    product: Product;
+    rating: number;
+    comment: string;
+    images: string[];
+    onView?: (src: string) => void;
+}) { const { t: kmText } = useKeenLocale(); return <div className="kc-readonly-review"><div className="kc-review-product"><span className="kc-review-thumb"><img src={product.image} alt={product.name}/></span><div><span>{product.name}</span><div className="kc-review-score"><Rating value={rating} size={16}/><span>{kmText("Excellent")}</span></div></div></div>{comment && <><small>{kmText("Fresh: Excellent, Taste: Excellent")}</small><p className="kc-review-comment">{comment}</p></>}<div className="kc-review-images">{images.map((src, i) => <button type="button" key={i} onClick={() => onView?.(src)} aria-label={`View review photo ${i + 1}`}>{src ? <img src={src} alt=""/> : null}</button>)}</div></div>; }
+export function ProductRatingPanel({ product, rating, onRating, dimensions, onDimension, expanded, onToggle, comment = '', onComment, files = [], onFiles, maxLength = 400 }: {
+    product: Product;
+    rating: number;
+    onRating: (v: number) => void;
+    dimensions: Record<string, number>;
+    onDimension: (name: string, value: number) => void;
+    expanded?: boolean;
+    onToggle?: () => void;
+    comment?: string;
+    onComment?: (v: string) => void;
+    files?: File[];
+    onFiles?: (v: File[]) => void;
+    maxLength?: number;
+}) { const { t: kmText } = useKeenLocale(); const show = expanded ?? rating > 0; return <Card className="kc-product-rating"><div className="kc-review-product"><span className="kc-review-thumb"><img src={product.image} alt={product.name}/></span><span>{product.name}</span><button type="button" className="kc-review-toggle" aria-label={show ? 'Collapse item review' : 'Edit item review'} aria-expanded={show} onClick={onToggle}>{show ? '⌃' : <img src="/assets/ad5ba.svg" alt=""/>}</button></div><div className="kc-review-score"><Rating value={rating} onChange={onRating}/>{show && <strong>{kmText("Excellent")}</strong>}</div>{show && <div className="kc-review-expanded">{['Taste', 'Fresh'].map(name => <div className="kc-review-dimension" key={name}><span>{name}</span><div>{[{ label: 'Wrong', value: 1 }, { label: 'Average', value: 3 }, { label: kmText("Excellent"), value: 5 }].map(x => <ChoiceChip key={x.value} selected={dimensions[name] === x.value} onClick={() => onDimension(name, x.value)}>{x.label}</ChoiceChip>)}</div></div>)}<TextArea label={kmText("Item review")} hideLabel placeholder={kmText("Tell us more about the items")} value={comment} maxLength={maxLength} onChange={v => onComment?.(v)}/>{onFiles && <Uploader files={files} onChange={onFiles}/>}</div>}</Card>; }
+export function RiderRatingPanel({ name, rating, onChange, comment, onComment }: {
+    name: string;
+    rating: number;
+    onChange: (v: number) => void;
+    comment?: string;
+    onComment?: (v: string) => void;
+}) { const { t: kmText } = useKeenLocale(); return <section className="kc-rider-section"><h3>{kmText("Rate Delivery Service")}</h3><Card className="kc-rider-rating"><Space><Avatar name={name} src="/assets/5efc4.png"/><div>{name}<small>{kmText("Delivered at 09 Oct 10:30")}</small></div></Space><Rating value={rating} variant="sentiment" onChange={onChange}/>{comment !== undefined && <TextArea label={kmText("Delivery review")} hideLabel value={comment} placeholder={kmText("Tell us more about delivery services")} maxLength={400} onChange={v => onComment?.(v)}/>}</Card></section>; }
+export type ReviewData = {
+    rating: number;
+    tags: string[];
+    comment: string;
+    files: File[];
+};
+export function ReviewEditor({ value, onChange, error, tagOptions = ['Fresh', 'Good quality', 'Well packed'] }: {
+    value: ReviewData;
+    onChange: (v: ReviewData) => void;
+    error?: string;
+    tagOptions?: string[];
+}) { const { t: kmText } = useKeenLocale(); return <div className="kc-review-editor"><ProductRatingPanel product={{ id: 'review', name: 'Fresh broccoli from Spain', image: '/assets/eccee.png', weight: '', amount: '38.76' }} rating={value.rating} onRating={rating => onChange({ ...value, rating })} dimensions={{ Taste: value.tags.includes('Taste') ? 5 : 0, Fresh: value.tags.includes('Fresh') ? 5 : 0 }} onDimension={name => onChange({ ...value, tags: [...value.tags, name] })} expanded comment={value.comment} onComment={comment => onChange({ ...value, comment })} files={value.files} onFiles={files => onChange({ ...value, files })}/>{error && <Notice>{error}</Notice>}</div>; }
+export function MediaPicker({ items, selected, onChange, max = 5, onDone, onCamera }: {
+    items: {
+        id: string;
+        src: string;
+    }[];
+    selected: string[];
+    onChange: (v: string[]) => void;
+    max?: number;
+    onDone: () => void;
+    onCamera: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <div className="kc-media"><header><span>{kmText("Recent projects")}</span><Button variant="text" size="compact" onClick={onDone}>Done ({selected.length})</Button></header><Grid columns={3}><IconButton name="camera-24" label={kmText("Open camera")} onClick={onCamera}/>{items.map(i => <button key={i.id} type="button" aria-label={'Select photo ' + i.id} aria-pressed={selected.includes(i.id)} disabled={!selected.includes(i.id) && selected.length >= max} onClick={() => onChange(selected.includes(i.id) ? selected.filter(x => x !== i.id) : [...selected, i.id])}>{i.src && <img src={i.src} alt=""/>}<span>{selected.includes(i.id) ? selected.indexOf(i.id) + 1 : ''}</span></button>)}</Grid></div>; }
+export function PromoCodeForm({ value, onChange, onSubmit, onFocus, error, loading = false }: {
+    value: string;
+    onChange: (v: string) => void;
+    onSubmit: () => void;
+    onFocus?: () => void;
+    error?: string;
+    loading?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <div className="kc-promo-surface"><form className="kc-promo" onSubmit={e => { e.preventDefault(); onSubmit(); }}><input onFocus={onFocus} aria-label={kmText("Promo code")} placeholder={kmText("Enter promo code")} value={value} onChange={e => onChange(e.target.value)}/>{value && <button type="button" aria-label={kmText("Clear promo code")} onClick={() => onChange('')}>×</button>}<Button size="compact" disabled={!value.trim() || loading} loading={loading} type="submit">{kmText("Add")}</Button></form>{error && <p className="kc-error">{error}</p>}</div>; }
+export function CampaignBanner({ src, alt, onClick, ratio = '2.4', title, subtitle, actionLabel, artwork, background, variant = 'default' }: {
+    variant?: 'default' | 'source';
+    src?: string;
+    alt: string;
+    onClick: () => void;
+    ratio?: string;
+    title?: string;
+    subtitle?: string;
+    actionLabel?: string;
+    artwork?: React.ReactNode;
+    background?: string;
+}) {
+    const { t: kmText } = useKeenLocale();
+    if (!title && src)
+        return <Image src={src} alt={alt} ratio={ratio} fit="cover" onClick={onClick}/>;
+    return <button type="button" className={'kc-campaign kc-campaign-' + variant} aria-label={alt} onClick={onClick} style={{ aspectRatio: ratio, background: background || 'var(--ds-color-green-pressed)' }}><span><strong>{title}</strong><small>{subtitle}</small>{actionLabel && <i>{actionLabel}</i>}</span><div>{artwork || (src && <img src={src} alt=""/>)}</div></button>;
+}
+export function NewUserOffer({ amount, coupons, onUse, onDetails, header }: {
+    amount: string;
+    coupons: CouponData[];
+    onUse: () => void;
+    onDetails: () => void;
+    header?: React.ReactNode;
+}) { const { t: kmText } = useKeenLocale(); return <section className="kc-new-user">{header || <header><span>SAR<small>{kmText("coupons")}</small></span><strong>{amount}</strong><div><img src="/assets/11a55.svg" alt=""/><span>{kmText("New user")}<br />{kmText("limited")}</span></div></header>}<div className="kc-new-coupons">{coupons.map((c, i) => <article key={i}><strong>{c.title}</strong><small>{c.description}</small></article>)}</div><Button variant="outline" onClick={onUse}>{kmText("View it")}</Button><Button variant="text" onClick={onDetails}>{kmText("View detail")}</Button></section>; }
+export function AccountHeader({ name, phone, onLogin, avatarSrc, variant = 'card' }: {
+    name?: string;
+    phone?: string;
+    avatarSrc?: string;
+    variant?: 'card' | 'profile';
+    onLogin: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <header className={'kc-account kc-account-' + variant + (name ? '' : ' kc-account-guest')}>{name ? <><Avatar src={avatarSrc} name={name} size={72}/><h2>{name}</h2>{phone && <p>{phone}</p>}</> : <><h1>{kmText("Account")}</h1><p>{kmText("Log In or Sign Up to start shopping.")}</p><Button onClick={onLogin}>{kmText("Log In or Sign Up")}</Button></>}</header>; }
+export function SettingGroup({ items, onAction }: {
+    items: {
+        id: string;
+        title: string;
+        description?: string;
+        value?: React.ReactNode;
+        icon?: IconName;
+        leading?: React.ReactNode;
+    }[];
+    onAction: (v: string) => void;
+}) { const { t: kmText } = useKeenLocale(); return <Card className="kc-settings">{items.map(i => <ListRow key={i.id} title={i.title} leading={i.leading || (i.icon ? <Icon name={i.icon}/> : undefined)} description={i.description} trailing={i.value} onClick={() => onAction(i.id)}/>)}</Card>; }
+export function ChatMessage({ side = 'agent', text, time, children, variant = 'bubble' }: {
+    side?: 'agent' | 'user' | 'system';
+    text?: string;
+    time?: string;
+    children?: React.ReactNode;
+    variant?: 'bubble' | 'notice' | 'media';
+}) { const { t: kmText } = useKeenLocale(); return <article className={'kc-message kc-message-' + side + ' kc-message-' + variant}>{time && <small>{time}</small>}{variant === 'notice' && <img className="kc-message-avatar" src="/assets/6099f.png" alt=""/>}<div>{text && <p>{text}</p>}{children}</div></article>; }
+export function ChatComposer({ value, onChange, onSend, onAttach, disabled = false, expanded = false }: {
+    value: string;
+    onChange: (v: string) => void;
+    onSend: () => void;
+    onAttach: () => void;
+    disabled?: boolean;
+    expanded?: boolean;
+}) {
+    const { t: kmText } = useKeenLocale();
+    return <form className="kc-composer" onSubmit={e => {
+            e.preventDefault();
+            if (value.trim())
+                onSend();
+        }}><input aria-label={kmText("Message")} placeholder={kmText("Please describe your issue")} value={value} disabled={disabled} onChange={e => onChange(e.target.value)}/>{value.trim() ? <Button size="compact" disabled={disabled} type="submit">{kmText("Send")}</Button> : <button type="button" className="kc-composer-attach" aria-label={expanded ? 'Close attachments' : 'Attach'} aria-expanded={expanded} disabled={disabled} onClick={onAttach}>{expanded ? '×' : '+'}</button>}</form>;
+}
+export function ServiceQueue({ position, onCancel }: {
+    position: number;
+    onCancel: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <ChatMessage side="agent" time="12:34:23"><div className="kc-queue"><p>{kmText("You are currently")}<span>No.{position}</span>{kmText("in line. Please wait patiently.")}</p><TextButton onClick={onCancel}>{kmText("Cancel the queue")}</TextButton></div></ChatMessage>; }
+export function ServiceTicketCard({ id, time, status, onContinue, onHistory }: {
+    id: string;
+    time: string;
+    status: 'ongoing' | 'ended';
+    onContinue: () => void;
+    onHistory: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <Card className="kc-service-record"><header><img src="/assets/6099f.png" alt=""/><span>{kmText("Online customer service")}</span></header><dl><dt>{kmText("Time")}</dt><dd>{time}</dd><dt>{kmText("Status")}</dt><dd>{status === 'ongoing' ? 'Ongoing' : 'End'}</dd></dl><div className="kc-service-record-actions"><Button variant="outline" size="compact" className={status === 'ongoing' ? 'is-brand' : ''} onClick={status === 'ongoing' ? onContinue : onHistory}>{status === 'ongoing' ? 'Countinue to chat' : 'Chat history'}</Button></div></Card>; }
+export function ServiceTicketDetail({ question, answer, onContact, onLink }: {
+    question: string;
+    answer: string;
+    onContact: () => void;
+    onLink?: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <div className="kc-help-detail"><Card header={question}><p>{answer}</p><TextButton tone="brand" onClick={onLink}>这是超链接，支持跳转。</TextButton><div className="kc-help-media"/><div className="kc-help-media"/></Card><Button className="kc-help-contact" onClick={onContact}>{kmText("Contact us")}</Button></div>; }
+export function FAQList({ items }: {
+    items: {
+        id: string;
+        title: string;
+        content: React.ReactNode;
+    }[];
+}) { const { t: kmText } = useKeenLocale(); return <Collapse items={items}/>; }
+export function BrandLogo({ variant = 'full' }: {
+    variant?: 'full' | 'short';
+}) { const { t: kmText } = useKeenLocale(); return variant === 'full' ? <img className="kc-brand-logo" src="/assets/0e775.svg" alt="KeenMart"/> : <span className="kc-brand-short">Keen</span>; }
+export function LegalText({ text, onLink }: {
+    text: string;
+    onLink?: (label: string) => void;
+}) { const { t: kmText } = useKeenLocale(); const seen = new Set<string>(); return <>{text.split(/(Terms of Use|Privacy Policy|Privacy)/g).map((part, i) => { const link = /^(Terms of Use|Privacy Policy|Privacy)$/.test(part) && !seen.has(part); seen.add(part); return link ? <button type="button" className="kc-legal-link" key={i} onClick={() => onLink?.(part)}>{part}</button> : <React.Fragment key={i}>{part}</React.Fragment>; })}</>; }
+export function CountryPicker({ open, onClose, value, onChange }: {
+    open: boolean;
+    onClose: () => void;
+    value: string;
+    onChange: (value: string) => void;
+}) { const { t: kmText } = useKeenLocale(); return <BottomSheet open={open} title={kmText("Country/Region")} variant="country" onClose={onClose} footer={<HomeIndicator />}>{countries.map(c => <button type="button" key={c.code} aria-pressed={value === c.code} className="kc-country-option" onClick={() => { onChange(c.code); onClose(); }}><span className="kc-country-flag"><img src="/assets/8b151.png" alt="" style={{ left: c.left, top: c.top, width: 374.9996, height: 811.5392 }}/></span><span>{c.name}</span><span>({c.code})</span></button>)}</BottomSheet>; }
+export function PhoneLoginForm({ country, phone, onCountry, onPhone, onSubmit, error, loading = false, showCountry = true, initialCountryOpen = false, onEmail, onPolicy, onInputFocus, onCountryOpen, focused = false }: {
+    country: string;
+    phone: string;
+    onCountry: (v: string) => void;
+    onPhone: (v: string) => void;
+    onSubmit: () => void;
+    error?: string;
+    loading?: boolean;
+    showCountry?: boolean;
+    initialCountryOpen?: boolean;
+    onEmail?: () => void;
+    onPolicy?: (title: string) => void;
+    onInputFocus?: () => void;
+    onCountryOpen?: () => void;
+    focused?: boolean;
+}) { const { t: kmText } = useKeenLocale(); const [open, setOpen] = useState(initialCountryOpen); return <><form className="kc-login-form" onSubmit={e => { e.preventDefault(); onSubmit(); }}><h1>{kmText("Sign up or log in")}</h1><PhoneField value={phone} country={country} showCountry={showCountry} onCountry={() => { onCountryOpen?.(); setOpen(true); }} onChange={onPhone} error={error} focused={focused} onFocus={onInputFocus}/><Button type="submit" loading={loading} disabled={phone.length < 5}>{kmText("Continue")}</Button><p className="kc-auth-legal"><LegalText text="By continuing, you agree to our Terms of Use and Privacy" onLink={onPolicy}/></p><div className="kc-auth-divider">{kmText("or")}</div><button type="button" className="kc-email-login" onClick={onEmail}><span className="kc-email-symbol" aria-hidden="true"><img src="/assets/8ffcb.png" alt=""/></span>{kmText("Continue with Email")}</button></form>{showCountry && <CountryPicker open={open} value={country} onChange={onCountry} onClose={() => setOpen(false)}/>}</>; }
+export function VerificationCodeField({ value, onChange, length = 4, error, onResend, remaining = 0, phone = '(+966)27514021412', onMore, onFocus }: {
+    value: string;
+    onChange: (v: string) => void;
+    length?: 4 | 6;
+    error?: string;
+    onResend: () => void;
+    remaining?: number;
+    phone?: string;
+    onMore?: () => void;
+    onFocus?: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <section className="kc-verification"><h1>{kmText("Enter verification code")}<br />{kmText("we sent to")}<br />{phone}</h1><OTPInput length={length} value={value} onChange={onChange} error={error} focused onFocus={onFocus}/><TextButton disabled={remaining > 0} onClick={onResend}>{remaining > 0 ? `Send again (${remaining}s)` : 'Send again'}</TextButton><TextButton onClick={onMore}>{kmText("More options")}</TextButton></section>; }
+export function ConsentSheet({ open, children, onAccept, onDecline, onClose, longForm = false }: {
+    open: boolean;
+    children?: React.ReactNode;
+    onAccept: () => void;
+    onDecline: () => void;
+    onClose: () => void;
+    longForm?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <BottomSheet open={open} title={kmText("Permission notification")} variant="consent" showClose={false} titleScrollable maxHeight={724} onClose={onClose} footer={<ActionBar safeArea><Button variant="outline" onClick={onDecline}>{kmText("Decline")}</Button><Button onClick={onAccept}>{kmText("Accept")}</Button></ActionBar>}><div className="kc-consent-copy">{children || <><p><LegalText text={permissionIntro}/></p>{longForm ? <><p>{permissionLong + permissionLong}Please read and </p><br /><p>clicking Continue.{permissionLong.slice('Please read and ensure you understand the relevant terms before clicking Continue.'.length)}{permissionLong}</p><br /><p>{permissionLong}</p></> : <><br /><p>{permissionShort}</p></>}</>}</div></BottomSheet>; }
+export function OrderRemarks({ options, selected, onSelect, history, note, onNote, onConfirm }: {
+    options: string[];
+    selected: string[];
+    onSelect: (v: string[]) => void;
+    history: string[];
+    note: string;
+    onNote: (v: string) => void;
+    onConfirm: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <div className="kc-order-remarks kc-form-surface"><Space vertical><Section title={kmText("Quick Remarks")}><div className="kb-filter">{options.map(t => <ChoiceChip key={t} selected={selected.includes(t)} onClick={() => onSelect(selected.includes(t) ? selected.filter(x => x !== t) : [...selected, t])}>{t}</ChoiceChip>)}</div></Section><Section title={kmText("Historical notes")}><div className="kb-filter">{history.map(t => <ChoiceChip key={t} selected={selected.includes(t)} onClick={() => onSelect(selected.includes(t) ? selected.filter(x => x !== t) : [...selected, t])}>{t}</ChoiceChip>)}</div></Section><TextArea label={kmText("Supplementary explanation")} maxLength={1000} value={note} onChange={onNote}/><Button onClick={onConfirm}>{kmText("Confirm")}</Button></Space></div>; }
+export function OrderSubmitBar({ total, label = 'Place Order', onSubmit, disabled = false, loading = false, variant = 'default', paymentLogo }: {
+    total: string;
+    label?: string;
+    onSubmit: () => void;
+    disabled?: boolean;
+    loading?: boolean;
+    variant?: 'default' | 'integrated';
+    paymentLogo?: string;
+}) { const { t: kmText } = useKeenLocale(); return <div className={'kc-submit kc-submit-' + variant}><StickyBar><span>{kmText("Total")}<Price amount={total}/></span><Button onClick={onSubmit} disabled={disabled} loading={loading}>{paymentLogo && <img src={paymentLogo} width={32} height={24} alt="Apple Pay"/>}{label}</Button></StickyBar></div>; }
+export function AccountDeletionNotice({ conditions, consequences, onApply }: {
+    conditions: string[];
+    consequences: string[];
+    onApply: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <Space vertical><Section title={kmText("Delete account must meet the following conditions")}><Card><ul className="kc-legal-list">{conditions.map((x, i) => <li key={i}>{x}</li>)}</ul></Card></Section><Section title={kmText("After the account is cancelled")}><Card><ul className="kc-legal-list">{consequences.map((x, i) => <li key={i}>{x}</li>)}</ul></Card></Section><Button onClick={onApply}>{kmText("Apply to delete account")}</Button></Space>; }
+export function PromotionGroup({ kind = 'sale', title, eligible, remainingCount = 1, discount, selected, onSelect, onAction, children }: {
+    kind?: 'sale' | 'gift' | 'buy-get';
+    title: string;
+    eligible: boolean;
+    remainingCount?: number;
+    discount?: string;
+    selected?: boolean;
+    onSelect?: (v: boolean) => void;
+    onAction: () => void;
+    children: React.ReactNode;
+}) { const { t: kmText } = useKeenLocale(); return <section className={'kc-promotion-group kc-promotion-' + kind}><CartPromotionBar celebrate={eligible} kind={kind === 'gift' ? 'gift' : 'sale'} title={title} description={kind === 'gift' || kind === 'buy-get' ? undefined : eligible ? (discount ? `Already discounted by SAR ${discount}` : undefined) : `Choose ${remainingCount} more item to participate in the activity`} actionLabel={kind === 'gift' ? kmText("View") : undefined} onAction={onAction}/><div className="kc-promotion-products">{children}</div></section>; }
+export function UnavailableProductsGroup({ products, expanded, onExpand, onRemoveAll, onRemove, totalCount }: {
+    products: Product[];
+    expanded: boolean;
+    onExpand: () => void;
+    onRemoveAll: () => void;
+    onRemove: (id: string) => void;
+    totalCount?: number;
+}) { const { t: kmText } = useKeenLocale(); const count = totalCount ?? products.length; return <section className="kc-unavailable-group"><header><strong>Currently Unavailable（{count}）</strong><TextButton tone="danger" onClick={onRemoveAll} disabled={!products.length}>{kmText("Remove")}</TextButton></header>{products.length ? (expanded ? products : products.slice(0, 3)).map(p => <CartItem key={p.id} product={{ ...p, unavailable: true }} quantity={1} selected={false} onSelect={() => { }} onQuantity={() => { }} onRemove={() => onRemove(p.id)}/>) : <EmptyState kind="goods" title={kmText("No unavailable items")}/>}{count > 3 && <TextButton onClick={onExpand}>{expanded ? 'Collapse' : 'View all'}</TextButton>}</section>; }
+export function CartHeader({ count, address, onAddress, onClear }: {
+    count: number;
+    address?: string;
+    onAddress?: () => void;
+    onClear: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <header className="kc-cart-header"><div><h1>{kmText("Cart")}<span>({count})</span></h1><IconButton name="trash-can-24" label={kmText("Clear cart")} onClick={onClear}/></div>{address !== undefined && <button type="button" className="kc-cart-address" onClick={onAddress}><Icon name="location-24"/><span>{address ? <><span>{kmText("Deliver to:")}</span><strong>{address}</strong></> : kmText("Please select an address")}</span><Icon name="down-2-12"/></button>}</header>; }
+export function SearchHeader({ value, onChange, onSearch, onBack, onCart, cartCount = 0 }: {
+    value: string;
+    onChange: (v: string) => void;
+    onSearch: (v: string) => void;
+    onBack: () => void;
+    onCart: () => void;
+    cartCount?: number;
+}) { const { t: kmText } = useKeenLocale(); return <header className="kc-search-header"><IconButton name="left-2-24" label={kmText("Back")} onClick={onBack}/><SearchBar value={value} onChange={onChange} onSubmit={onSearch} showSubmit={false} placeholder={kmText("Search products")}/><Badge count={cartCount}><IconButton name="cart-24" label={kmText("Cart")} onClick={onCart}/></Badge></header>; }
+export function SearchSuggestions({ title, items, onSelect, onClear, expandable = false }: {
+    title: string;
+    items: string[];
+    onSelect: (v: string) => void;
+    onClear?: () => void;
+    expandable?: boolean;
+}) { const { t: kmText } = useKeenLocale(); const [expanded, setExpanded] = useState(false); return <section className="kc-search-suggestions"><header><h2>{title}</h2>{onClear && <IconButton name="trash-can-24" label={kmText("Clear search history")} onClick={onClear}/>}</header><div>{(expanded ? items : items.slice(0, expandable ? 7 : items.length)).map((item, i) => <button type="button" key={i} onClick={() => onSelect(item)}>{item}</button>)}{expandable && items.length > 7 && <button type="button" aria-label={expanded ? 'Collapse search history' : 'Expand search history'} aria-expanded={expanded} onClick={() => setExpanded(!expanded)}>{expanded ? '⌃' : '⌄'}</button>}</div></section>; }
+export type CategoryItem = {
+    id: string;
+    label: string;
+    layers: ArtworkLayer[];
+    promotion?: boolean;
+};
+export function CategoryTile({ item, onSelect }: {
+    item: CategoryItem;
+    onSelect: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <button type="button" className={'kc-category-tile ' + (item.promotion ? 'is-promotion' : '')} onClick={onSelect}>{item.promotion ? <><strong>{item.label}</strong><span className="kc-category-cta">{kmText("SHOP NOW")}</span><Artwork layers={item.layers} label="" ratio="111 / 127"/></> : <><Artwork layers={item.layers} label="" ratio="111 / 77"/><span>{item.label}</span></>}</button>; }
+export function CategoryGrid({ items, onSelect }: {
+    items: CategoryItem[];
+    onSelect: (id: string) => void;
+}) { const { t: kmText } = useKeenLocale(); return <nav className="kc-category-grid" aria-label={kmText("Product categories")}>{items.map(item => <CategoryTile key={item.id} item={item} onSelect={() => onSelect(item.id)}/>)}</nav>; }
+export function HomeHeader({ address, delivery, information, query, onQuery, onAddress, onSearch }: {
+    address: string;
+    delivery: string;
+    information: string;
+    query: string;
+    onQuery: (v: string) => void;
+    onAddress: () => void;
+    onSearch?: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <header className="kc-home-header"><div className="kc-home-identity"><div><BrandLogo variant="short"/><small>{delivery}</small></div><div><button type="button" onClick={onAddress}>{address} ⌄</button><small>{information}</small></div></div><SearchBar value={query} onChange={onQuery} onSubmit={onSearch}/></header>; }
+export type SecondaryCategory = {
+    id: string;
+    label: string;
+    layers: ArtworkLayer[];
+};
+export function CategoryLayout(props: CategoryLayoutProps) { const { t: kmText } = useKeenLocale(); return <CommerceCategoryLayout {...props}/>; }
+export function OrderStageProgress({ current = 0 }: {
+    current?: number;
+}) { const { t: kmText } = useKeenLocale(); const step = Math.max(-1, Math.min(3, current)), complete = step === 3, base = '/assets/navigation-v13/', icons = [complete ? '4c55a.svg' : '7aff3.svg', step >= 1 ? (complete ? 'f1a90.svg' : '509f4.svg') : '46e47.svg', step >= 2 ? (complete ? 'd3a64.svg' : '2eccb.svg') : '6ed60.svg', complete ? '3943c.svg' : 'fe6ba.svg']; return <ol className={'kc-order-stages' + (complete ? ' is-complete' : '')} aria-label={kmText("Order progress")}>{['Placed', kmText("Preparing"), kmText("Delivering"), 'Received'].map((label, i) => <li key={label} aria-current={i === step ? 'step' : undefined} className={i <= step ? 'is-done' : ''}><span className={'kc-stage-icon' + (i === 0 && step < 0 ? ' is-pending' : '')}><img src={base + icons[i]} alt=""/>{i === 0 && <img className="kc-stage-receipt" src={base + 'ca53a.svg'} alt=""/>}</span><span className="ds-sr">{label}</span>{i < 3 && <span className="kc-stage-track" aria-hidden="true"><i style={{ width: i < step ? '100%' : i === step ? '53.333%' : '0%' }}/></span>}</li>)}</ol>; }
+export function OrderArrival({ time, actions = [], onAction }: {
+    time: string;
+    actions?: string[];
+    onAction: (action: string) => void;
+}) { const { t: kmText } = useKeenLocale(); return <Card className="kc-order-arrival"><small>{kmText("Arriving")}</small><h3>{time}</h3>{actions.length > 0 && <ActionBar>{actions.map((label, i) => <Button size="small" key={label} variant={i === actions.length - 1 ? 'primary' : 'outline'} onClick={() => onAction(label)}>{kmText(label)}</Button>)}</ActionBar>}</Card>; }
+export function OrderDeliveryDetails({ time, address }: {
+    time: string;
+    address: Address;
+}) { const { t: kmText } = useKeenLocale(); return <Card header="Delivery details"><dl className="kc-order-delivery"><dt>{kmText("Time")}</dt><dd>{time}</dd><dt>{kmText("Address")}</dt><dd>{address.label}<br />{address.street}<br />{address.name} {address.phone}</dd></dl></Card>; }
+export function PhoneField({ value, onChange, country = '+966', showCountry = true, onCountry, placeholder = 'Phone number', disabled = false, error, focused = false, onFocus }: {
+    value: string;
+    onChange: (v: string) => void;
+    country?: string;
+    showCountry?: boolean;
+    onCountry?: () => void;
+    placeholder?: string;
+    disabled?: boolean;
+    error?: string;
+    focused?: boolean;
+    onFocus?: () => void;
+}) { const { t: kmText } = useKeenLocale(); placeholder = kmText(placeholder); const id = useId(); return <div className="kb-phone-field">{showCountry && <button type="button" aria-label={kmText("Choose country or region")} disabled={disabled} onClick={onCountry}>{country}<span aria-hidden="true">⌄</span></button>}<label className="ds-sr" htmlFor={id}>{kmText("Phone number")}</label><input id={id} type="tel" inputMode="numeric" autoComplete="tel-national" placeholder={placeholder} value={value} disabled={disabled} aria-invalid={!!error} className={focused ? 'is-focused' : ''} onFocus={onFocus} onChange={e => onChange(e.target.value.replace(/\D/g, '').slice(0, 15))}/>{error && <small className="kb-phone-error" role="alert">{error}</small>}</div>; }
+export function SupportOrderCard({ status = 'Completed', count = 9, time = 'Delivered 2021-11-11  09:22:22', onSelect }: {
+    status?: string;
+    count?: number;
+    time?: string;
+    onSelect?: () => void;
+}) {
+    const { t: kmText } = useKeenLocale();
+    status = kmText(status);
+    return <article className="kc-support-order" onClick={onSelect} onKeyDown={e => {
+            if (onSelect && (e.key === 'Enter' || e.key === ' ')) {
+                e.preventDefault();
+                onSelect();
+            }
+        }} role={onSelect ? 'button' : undefined} tabIndex={onSelect ? 0 : undefined}><header><span>Order Number 24544377643333</span><StatusLabel tone={status === kmText("Delivering") ? 'green' : 'gray'}>{status}</StatusLabel></header><div className="kc-support-order-products">{['0933d', 'e99c6', 'b960e', '392c5'].map(x => <img src={'/assets/' + x + '.png'} key={x} alt={kmText("Order item")}/>)}<span>(Total: {count} items)</span></div><footer><span>{time}</span><strong>SAR 998.98</strong></footer></article>;
+}
+export function RiderReviewCard({ comment, rating = 5, name = 'Rider Name' }: {
+    comment: string;
+    rating?: number;
+    name?: string;
+}) { const { t: kmText } = useKeenLocale(); return <Card className="kc-rider-review"><header><Avatar src="/assets/5efc4.png" name={name}/><div><span>{name}</span><small>{kmText("Delivered at 09 Oct 10:30")}</small></div><div className="kc-rider-review-mark"><Rating variant="sentiment" value={rating}/><span>{kmText("Excellent")}</span></div></header><p>{comment}</p></Card>; }
+export function CartPromotionBar({ kind = 'sale', title, description, actionLabel, onAction, celebrate = false }: {
+    kind?: 'sale' | 'gift';
+    title: string;
+    description?: string;
+    actionLabel?: string;
+    onAction?: () => void;
+    celebrate?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <section className={'kc-cart-promotion-bar kc-cart-promotion-bar-' + kind}><header><span className="kc-cart-promotion-tag"><Icon name={kind === 'gift' ? 'gift-12' : 'sale-12'}/>{kind === 'gift' ? 'GIFT' : 'SALE'}</span><strong>{title}</strong>{actionLabel && <button type="button" onClick={onAction}>{actionLabel}<span aria-hidden="true">›</span></button>}</header>{description && <p>{celebrate && <span aria-hidden="true">🎉</span>}{description}</p>}</section>; }
+export function VoucherList({ coupons, onUse, onDetails, empty = false }: {
+    coupons: CouponData[];
+    onUse: () => void;
+    onDetails: (index: number) => void;
+    empty?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <section className={'kc-voucher-list' + (empty ? ' is-empty' : '')} aria-label={kmText("Vouchers")}>{empty ? <EmptyState layout="page" kind="vouchers" illustration={<img src="/assets/48e4a.svg" alt=""/>} title={kmText("You have no vouchers available")}/> : coupons.map((coupon, i) => <CouponCard key={i} coupon={coupon} onUse={onUse} onDetails={() => onDetails(i)}/>)}{!empty && coupons.every(c => c.state && c.state !== 'available') && <p className="kc-voucher-history">{kmText("Only coupons from the past 3 months can be viewed")}</p>}</section>; }
+export function VoucherSuccessDialog({ open, coupon, onClose, onUse, onDetails, showClose = false }: {
+    open: boolean;
+    coupon: CouponData;
+    onClose: () => void;
+    onUse: () => void;
+    onDetails: () => void;
+    showClose?: boolean;
+}) { const { t: kmText } = useKeenLocale(); return <Dialog variant="voucher-success" open={open} title={kmText("Voucher added successfully !")} showClose={showClose} onClose={onClose} actions={<Button variant="promotion" onClick={onClose}>{kmText("Got it")}</Button>}><CouponCard coupon={coupon} onUse={onUse} onDetails={onDetails}/></Dialog>; }
+export function HomeVoucherBanner({ onClick }: {
+    onClick: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <button type="button" className="kc-home-voucher-banner" onClick={onClick} aria-label="SAR 100 New user vouchers"><span><span>SAR <strong>100</strong></span><b>{kmText("New user vouchers")}</b></span><span className="kc-home-hand"><img src="/assets/32689.png" alt=""/></span><i>SAR100</i></button>; }
 // Product detail modules: structure reference Figma 140:54048; styles inherit current tokens.
-export type DetailAttribute={label:string;value:string};
-export type DetailVariant={id:string;label:string;amount:string;unitPrice:string};
-export function ProductMediaGallery({images,onPreview}:{images:{src:string;alt:string}[];onPreview?:(index:number)=>void}){return <div className="pd-gallery"><Carousel label="商品图片" slides={images.map((image,i)=><button type="button" key={image.src} className="pd-gallery-photo" onClick={()=>onPreview?.(i)} aria-label={'查看商品图片 '+(i+1)}><img src={image.src} alt={image.alt}/><span>{i+1} / {images.length}</span></button>)}/></div>}
-export function ProductVariantPricing({variants,value,onChange,currency='¥',unit='袋',sales}:{variants:DetailVariant[];value:string;onChange:(id:string)=>void;currency?:string;unit?:string;sales?:string}){const selected=variants.find(v=>v.id===value)||variants[0];return <Card className="pd-variant-pricing"><div className="pd-price-line">{selected&&<ProductPriceGroup amount={selected.amount} currency={currency} unit={unit} promotion/>}<Text as="span" tone="secondary">{sales}</Text></div><div className="pd-variant-strip" role="group" aria-label="选择商品规格">{variants.map(v=><ChoiceChip key={v.id} selected={value===v.id} onClick={()=>onChange(v.id)}><strong>{v.label}</strong><small>{v.unitPrice}</small></ChoiceChip>)}</div></Card>}
-export function ProductSummary({name,ranking,attributes,description,onDetails}:{name:string;ranking?:string;attributes:DetailAttribute[];description:string;onDetails:()=>void}){return <Card className="pd-summary"><h1>{name}</h1>{ranking&&<Tag tone="success">{ranking}</Tag>}<div className="pd-summary-attributes">{attributes.map(a=><div key={a.label}><span>{a.value}</span><small>{a.label}</small></div>)}</div><button type="button" className="pd-description" onClick={onDetails} aria-label="查看完整商品介绍"><span>{description}</span><Icon name="right-2-24"/></button></Card>}
-export function ProductFulfillment({delivery,deliveryDetail,afterSales,onAfterSales}:{delivery:string;deliveryDetail:string;afterSales:string;onAfterSales:()=>void}){return <Card className="pd-fulfillment"><ListRow title={delivery} description={deliveryDetail}/><ListRow title={afterSales} onClick={onAfterSales}/></Card>}
-export function ProductSupplierPanel({name,metrics,onClick}:{name:string;metrics:DetailAttribute[];onClick:()=>void}){return <Card className="pd-supplier"><ListRow title={name} onClick={onClick}/><dl className="pd-supplier-metrics">{metrics.map(m=><div key={m.label}><dt>{m.label}</dt><dd>{m.value}</dd></div>)}</dl></Card>}
-export function ProductAttributes({title='商品详情',items}:{title?:string;items:DetailAttribute[]}){return <Card className="pd-attributes"><h2>{title}</h2><table><caption className="pd-visually-hidden">{title}</caption><tbody>{items.map(a=><tr key={a.label}><th scope="row">{a.label}</th><td>{a.value}</td></tr>)}</tbody></table></Card>}
-export function ProductServiceBenefits({title='我们的服务',items,onSelect}:{title?:string;items:{id:string;label:string;icon:IconName;description:string}[];onSelect:(id:string)=>void}){return <Card className="pd-services"><h2>{title}</h2><div>{items.map(item=><button type="button" key={item.id} onClick={()=>onSelect(item.id)}><span><Icon name={item.icon}/></span><small>{item.label}</small></button>)}</div></Card>}
-export function ProductPurchaseBar({quantity,onQuantity,favorite,onFavorite,cartCount,onCart,onAdd,max=99}:{quantity:number;onQuantity:(v:number)=>void;favorite:boolean;onFavorite:()=>void;cartCount:number;onCart:()=>void;onAdd:()=>void;max?:number}){return <div className="pd-purchase-bar"><button type="button" aria-pressed={favorite} onClick={onFavorite} className={favorite?'is-favorite':''}><Icon name="heart-24"/><small>{favorite?'已收藏':'加入收藏'}</small></button><button type="button" onClick={onCart} aria-label={'购物车，'+cartCount+'件商品'}><span className="pd-cart-icon"><Icon name="cart-24"/><Badge count={cartCount}/></span><small>购物车</small></button><div className="pd-purchase-main">{quantity>0?<QuantityStepper variant="overlay" min={0} max={max} value={quantity} onChange={onQuantity}/>:<Button onClick={onAdd}>加入购物车</Button>}</div></div>}
+export type DetailAttribute = {
+    label: string;
+    value: string;
+};
+export type DetailVariant = {
+    id: string;
+    label: string;
+    amount: string;
+    unitPrice: string;
+};
+export function ProductMediaGallery({ images, onPreview }: {
+    images: {
+        src: string;
+        alt: string;
+    }[];
+    onPreview?: (index: number) => void;
+}) { const { t: kmText } = useKeenLocale(); return <div className="pd-gallery"><Carousel label="商品图片" slides={images.map((image, i) => <button type="button" key={image.src} className="pd-gallery-photo" onClick={() => onPreview?.(i)} aria-label={'查看商品图片 ' + (i + 1)}><img src={image.src} alt={image.alt}/><span>{i + 1} / {images.length}</span></button>)}/></div>; }
+export function ProductVariantPricing({ variants, value, onChange, currency = '¥', unit = '袋', sales }: {
+    variants: DetailVariant[];
+    value: string;
+    onChange: (id: string) => void;
+    currency?: string;
+    unit?: string;
+    sales?: string;
+}) { const { t: kmText } = useKeenLocale(); const selected = variants.find(v => v.id === value) || variants[0]; return <Card className="pd-variant-pricing"><div className="pd-price-line">{selected && <ProductPriceGroup amount={selected.amount} currency={currency} unit={unit} promotion/>}<Text as="span" tone="secondary">{sales}</Text></div><div className="pd-variant-strip" role="group" aria-label="选择商品规格">{variants.map(v => <ChoiceChip key={v.id} selected={value === v.id} onClick={() => onChange(v.id)}><strong>{v.label}</strong><small>{v.unitPrice}</small></ChoiceChip>)}</div></Card>; }
+export function ProductSummary({ name, ranking, attributes, description, onDetails }: {
+    name: string;
+    ranking?: string;
+    attributes: DetailAttribute[];
+    description: string;
+    onDetails: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <Card className="pd-summary"><h1>{name}</h1>{ranking && <Tag tone="success">{ranking}</Tag>}<div className="pd-summary-attributes">{attributes.map(a => <div key={a.label}><span>{a.value}</span><small>{a.label}</small></div>)}</div><button type="button" className="pd-description" onClick={onDetails} aria-label="查看完整商品介绍"><span>{description}</span><Icon name="right-2-24"/></button></Card>; }
+export function ProductFulfillment({ delivery, deliveryDetail, afterSales, onAfterSales }: {
+    delivery: string;
+    deliveryDetail: string;
+    afterSales: string;
+    onAfterSales: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <Card className="pd-fulfillment"><ListRow title={delivery} description={deliveryDetail}/><ListRow title={afterSales} onClick={onAfterSales}/></Card>; }
+export function ProductSupplierPanel({ name, metrics, onClick }: {
+    name: string;
+    metrics: DetailAttribute[];
+    onClick: () => void;
+}) { const { t: kmText } = useKeenLocale(); return <Card className="pd-supplier"><ListRow title={name} onClick={onClick}/><dl className="pd-supplier-metrics">{metrics.map(m => <div key={m.label}><dt>{m.label}</dt><dd>{m.value}</dd></div>)}</dl></Card>; }
+export function ProductAttributes({ title = '商品详情', items }: {
+    title?: string;
+    items: DetailAttribute[];
+}) { const { t: kmText } = useKeenLocale(); return <Card className="pd-attributes"><h2>{title}</h2><table><caption className="pd-visually-hidden">{title}</caption><tbody>{items.map(a => <tr key={a.label}><th scope="row">{a.label}</th><td>{a.value}</td></tr>)}</tbody></table></Card>; }
+export function ProductServiceBenefits({ title = '我们的服务', items, onSelect }: {
+    title?: string;
+    items: {
+        id: string;
+        label: string;
+        icon: IconName;
+        description: string;
+    }[];
+    onSelect: (id: string) => void;
+}) { const { t: kmText } = useKeenLocale(); return <Card className="pd-services"><h2>{title}</h2><div>{items.map(item => <button type="button" key={item.id} onClick={() => onSelect(item.id)}><span><Icon name={item.icon}/></span><small>{item.label}</small></button>)}</div></Card>; }
+export function ProductPurchaseBar({ quantity, onQuantity, favorite, onFavorite, cartCount, onCart, onAdd, max = 99 }: {
+    quantity: number;
+    onQuantity: (v: number) => void;
+    favorite: boolean;
+    onFavorite: () => void;
+    cartCount: number;
+    onCart: () => void;
+    onAdd: () => void;
+    max?: number;
+}) { const { t: kmText } = useKeenLocale(); return <div className="pd-purchase-bar"><button type="button" aria-pressed={favorite} onClick={onFavorite} className={favorite ? 'is-favorite' : ''}><Icon name="heart-24"/><small>{favorite ? '已收藏' : '加入收藏'}</small></button><button type="button" onClick={onCart} aria-label={'购物车，' + cartCount + '件商品'}><span className="pd-cart-icon"><Icon name="cart-24"/><Badge count={cartCount}/></span><small>购物车</small></button><div className="pd-purchase-main">{quantity > 0 ? <QuantityStepper variant="overlay" min={0} max={max} value={quantity} onChange={onQuantity}/> : <Button onClick={onAdd}>加入购物车</Button>}</div></div>; }

@@ -302,6 +302,14 @@ OrderStageProgress 使用 28px 完整阶段图标，不能把原稿自带圆底�
 
 **适用组件**：订单阶段进度（OrderStageProgress）。
 
+## locale · 中英文正文分别选择字体，价格保持不变
+
+**类别**：字体与语言。**依据**：用户明确要求（2026-10-28）。
+
+组件使用 LocaleProvider 设置 en 或 zh-CN。英文正文使用 Poppins，中文正文使用设备已安装的 PingFang SC；不存在时回退 Hiragino Sans GB、Microsoft YaHei、sans-serif。语言切换仅改变正文 --ds-font，不覆盖独立的 --ds-price-font，价格仍为 DdmcSans、Poppins、sans-serif。Page 与弹层保持同一语言。商品名、业务数据及页面文案由调用方提供对应语言；不得根据币种或价格猜测语言。PingFang 字体文件不随公共包分发。
+
+**适用组件**：页面容器（Page）, 按钮（Button）, 单行输入框（TextField）, 底部抽屉（BottomSheet）, 对话框（Dialog）, 商品卡片（ProductCard）, 商品价格组合（ProductPriceGroup）。
+
 ## 实现与验证边界
 
 Page 统一头部背景；EmptyState 的 page 布局落实 1:2 留白；QuantityStepper 禁用最小值减号；Toast 默认 3000ms、无关闭按钮；其余规则由各组件接口和页面组合负责。构建通过或页面可渲染不等于视觉验收，不能自动把审核结论改为通过。

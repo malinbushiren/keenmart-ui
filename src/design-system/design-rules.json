@@ -518,5 +518,22 @@
     ],
     "source": "用户要求；Figma 152:57104、152:57164、152:57211、152:57267",
     "priority": "用户修正优先于原稿历史值"
+  },
+  {
+    "id": "locale",
+    "category": "字体与语言",
+    "title": "中英文正文分别选择字体，价格保持不变",
+    "rule": "组件使用 LocaleProvider 设置 en 或 zh-CN。英文正文使用 Poppins，中文正文使用设备已安装的 PingFang SC；不存在时回退 Hiragino Sans GB、Microsoft YaHei、sans-serif。语言切换仅改变正文 --ds-font，不覆盖独立的 --ds-price-font，价格仍为 DdmcSans、Poppins、sans-serif。Page 与弹层保持同一语言。商品名、业务数据及页面文案由调用方提供对应语言；不得根据币种或价格猜测语言。PingFang 字体文件不随公共包分发。",
+    "components": [
+      "Page",
+      "Button",
+      "TextField",
+      "BottomSheet",
+      "Dialog",
+      "ProductCard",
+      "ProductPriceGroup"
+    ],
+    "source": "用户明确要求（2026-10-28）",
+    "priority": "用户修正优先于原稿历史值"
   }
 ]
