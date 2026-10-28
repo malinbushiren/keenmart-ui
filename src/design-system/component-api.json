@@ -229,7 +229,7 @@
   },
   "ImageViewer": {
     "file": "foundations.tsx",
-    "props": "{open:boolean;src:string;alt:string;onClose:()=>void}"
+    "props": "{open:boolean;src:string;alt:string;onClose:()=>void;counter?:string}"
   },
   "SwipeAction": {
     "file": "foundations.tsx",
@@ -550,6 +550,38 @@
   "HomeVoucherBanner": {
     "file": "business.tsx",
     "props": "{onClick:()=>void}"
+  },
+  "ProductMediaGallery": {
+    "file": "business.tsx",
+    "props": "{images:{src:string;alt:string}[];onPreview?:(index:number)=>void}"
+  },
+  "ProductVariantPricing": {
+    "file": "business.tsx",
+    "props": "{variants:DetailVariant[];value:string;onChange:(id:string)=>void;currency?:string;unit?:string;sales?:string}"
+  },
+  "ProductSummary": {
+    "file": "business.tsx",
+    "props": "{name:string;ranking?:string;attributes:DetailAttribute[];description:string;onDetails:()=>void}"
+  },
+  "ProductFulfillment": {
+    "file": "business.tsx",
+    "props": "{delivery:string;deliveryDetail:string;afterSales:string;onAfterSales:()=>void}"
+  },
+  "ProductSupplierPanel": {
+    "file": "business.tsx",
+    "props": "{name:string;metrics:DetailAttribute[];onClick:()=>void}"
+  },
+  "ProductAttributes": {
+    "file": "business.tsx",
+    "props": "{title?:string;items:DetailAttribute[]}"
+  },
+  "ProductServiceBenefits": {
+    "file": "business.tsx",
+    "props": "{title?:string;items:{id:string;label:string;icon:IconName;description:string}[];onSelect:(id:string)=>void}"
+  },
+  "ProductPurchaseBar": {
+    "file": "business.tsx",
+    "props": "{quantity:number;onQuantity:(v:number)=>void;favorite:boolean;onFavorite:()=>void;cartCount:number;onCart:()=>void;onAdd:()=>void;max?:number}"
   },
   "Icon": {
     "file": "Icon.tsx",

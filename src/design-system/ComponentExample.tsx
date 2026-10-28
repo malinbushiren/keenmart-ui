@@ -1,3 +1,4 @@
+import {detailImages,detailVariants,detailAttributes,detailDescription,supplierName,supplierMetrics,detailServices} from './product-detail-data';
 import cartSource from './cart-content.json';
 import {cancelReasons} from './cancel-reasons';
 import {commerceProduct,commerceSKUs,commerceProducts,commerceGridProducts,primaryCategories,pictureCategories,textCategories,tertiaryCategories} from './commerce-demo';
@@ -10,6 +11,15 @@ const act=(s='Action completed')=>onAction(s),p={...products[0],unavailable:vari
 const state=(['unpaid','failed','paid','preparing','delivering','completed','cancelled'].includes(variant)?variant:'delivering') as B.OrderState;
 const cb={...coupon,state:(mode('expired')?'expired':mode('used')?'used':'available') as 'available'|'expired'|'used'};
 switch(name){
+case 'ProductMediaGallery':return <><B.ProductMediaGallery images={detailImages} onPreview={i=>{setWhich(String(i));setOpen(true)}}/><F.ImageViewer open={open} src={detailImages[Number(which)||0].src} alt="商品图片" counter={`${(Number(which)||0)+1}/2`} onClose={()=>setOpen(false)}/></>;
+case 'ProductVariantPricing':return <B.ProductVariantPricing variants={detailVariants} value={which==='a'?'3':which} onChange={setWhich} sales="月售7000+"/>;
+case 'ProductSummary':return <B.ProductSummary name="紫甘蓝" ranking="紫甘蓝普通销量第1名" attributes={detailAttributes.slice(0,4)} description={detailDescription} onDetails={()=>act(detailDescription)}/>;
+case 'ProductFulfillment':return <B.ProductFulfillment delivery="明日上午达" deliveryDetail="00:00–23:00下单，明日06:00–10:00送达" afterSales="18小时售后" onAfterSales={()=>act('18小时售后，服务范围以订单约定为准')}/>;
+case 'ProductSupplierPanel':return <B.ProductSupplierPanel name={supplierName} metrics={supplierMetrics} onClick={()=>act('查看供应商信息')}/>;
+case 'ProductAttributes':return <B.ProductAttributes items={detailAttributes}/>;
+case 'ProductServiceBenefits':return <B.ProductServiceBenefits items={detailServices} onSelect={id=>act(detailServices.find(s=>s.id===id)?.description||'')}/>;
+case 'ProductPurchaseBar':return <B.ProductPurchaseBar quantity={mode('quantity')?qty:dimensions.main||0} onQuantity={v=>mode('quantity')?setQty(v):setDimensions({...dimensions,main:v})} favorite={checked} onFavorite={()=>setChecked(!checked)} cartCount={mode('quantity')?qty:dimensions.main||0} onCart={()=>act('查看购物车')} onAdd={()=>mode('quantity')?setQty(1):setDimensions({...dimensions,main:1})}/>;
+
 case 'ListGroup':return <F.ListGroup title="Frequently Asked Questions" titlePlacement={mode('outside')?'outside':'inside'} items={['Account','Payment/Refund','Others'].map((title,i)=>({id:String(i),title,onClick:()=>act(title)}))}/>;
 case 'CartPromotionBar':return <B.CartPromotionBar kind={mode('gift')?'gift':'sale'} title={mode('gift')?'One gift voucher can use':'3 For SAR 100'} description={mode('gift')?undefined:mode('threshold')?'Choose 1 more item to participate':'Already discounted by 36SR'} actionLabel={mode('gift')?'View':undefined} onAction={()=>act('Gift vouchers')}/>;
 case 'StatusLabel':return <C.StatusLabel tone={mode('green')?'green':'gray'}>{mode('green')?'Delivering':'Completed'}</C.StatusLabel>;

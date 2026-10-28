@@ -143,7 +143,17 @@ OrderArrival|订单到达时间和当前允许的动作；待支付用 Repay，�
 OrderDeliveryDetails|订单配送信息分区；统一时间、收货地址和联系人标签值布局。
 Icon|本地 SVG 图标库入口；必须选择与含义相符的名称和状态。
 '''
-defs=dict(line.split('|',1) for line in definitions.strip().splitlines())
+definitions+='''
+ProductMediaGallery|商品详情图集；正方形图片槽位、轮播与预览回调，图片保持比例。
+ProductVariantPricing|商品规格与价格联动；横向规格选择、单位价格与销量摘要，由页面传入所选规格。
+ProductSummary|商品标题、排名、关键参数与介绍摘要；通过回调打开完整详情。
+ProductFulfillment|商品预计送达和售后入口；不自行计算或承诺真实配送时间。
+ProductSupplierPanel|供应商名称和经营数据卡；通过回调进入供应商详情。
+ProductAttributes|商品参数表；带语义行标题的标签值结构，不管理页面级导航。
+ProductServiceBenefits|服务保障入口；沿用基础图标与品牌绿，详情由页面承载。
+ProductPurchaseBar|吸底商品购买栏；收藏、购物车角标和购买数量，安全区由 Page 提供。
+'''
+defs=dict(line.split('|',1) for line in definitions.strip().splitlines() if line.strip())
 assert set(defs)==set(x['name'] for x in catalog),(set(x['name'] for x in catalog)-set(defs),set(defs)-set(x['name'] for x in catalog))
 group_when={'页面与布局':'开始搭建页面，或需要将同一组内容按层级排版时。','导航':'需要在同一层级切换内容或在应用主栏目之间跳转时。','操作':'用户能明确知道点击后会执行什么动作时。','输入与筛选':'用户需要填写、选择、筛选或提交一个值时。','展示':'已有内容需要统一格式、层级或媒介呈现时。','反馈':'当前操作正在进行、已完成、失败或需要确认时。','商品与购物车':'商品被浏览、选择规格、加入购物车或结算前检查时。','地址与配送':'设置收货地点、选择时段或展示配送信息时。','支付与订单':'选择付款方式、填写卡信息、查看金额或订单状态时。','评价与媒体':'对商品或配送评分、填写评价或选择评价媒体时。','优惠与账户':'展示权益、优惠券、账户身份或账户设置时。','客服与帮助':'查问题、等待客服、发送消息或查看工单时。','登录与授权':'输入手机号、验证身份或确认授权告知时。'}
 special={

@@ -1793,6 +1793,110 @@
     "example": "<HomeVoucherBanner onClick={openVouchers} />",
     "preview": "?component-preview=HomeVoucherBanner&variant=default"
   },
+  "ProductMediaGallery": {
+    "definition": "商品详情图集；正方形图片槽位、轮播与预览回调，图片保持比例。",
+    "when": "商品被浏览、选择规格、加入购物车或结算前检查时。",
+    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
+    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
+    "steps": [
+      "选择与当前任务相符的组件及状态。",
+      "按接口传入数据，绑定 onChange／onAction 等事件。",
+      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
+    ],
+    "example": null,
+    "preview": "?component-preview=ProductMediaGallery&variant=default"
+  },
+  "ProductVariantPricing": {
+    "definition": "商品规格与价格联动；横向规格选择、单位价格与销量摘要，由页面传入所选规格。",
+    "when": "商品被浏览、选择规格、加入购物车或结算前检查时。",
+    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
+    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
+    "steps": [
+      "选择与当前任务相符的组件及状态。",
+      "按接口传入数据，绑定 onChange／onAction 等事件。",
+      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
+    ],
+    "example": null,
+    "preview": "?component-preview=ProductVariantPricing&variant=default"
+  },
+  "ProductSummary": {
+    "definition": "商品标题、排名、关键参数与介绍摘要；通过回调打开完整详情。",
+    "when": "商品被浏览、选择规格、加入购物车或结算前检查时。",
+    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
+    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
+    "steps": [
+      "选择与当前任务相符的组件及状态。",
+      "按接口传入数据，绑定 onChange／onAction 等事件。",
+      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
+    ],
+    "example": null,
+    "preview": "?component-preview=ProductSummary&variant=default"
+  },
+  "ProductFulfillment": {
+    "definition": "商品预计送达和售后入口；不自行计算或承诺真实配送时间。",
+    "when": "商品被浏览、选择规格、加入购物车或结算前检查时。",
+    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
+    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
+    "steps": [
+      "选择与当前任务相符的组件及状态。",
+      "按接口传入数据，绑定 onChange／onAction 等事件。",
+      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
+    ],
+    "example": null,
+    "preview": "?component-preview=ProductFulfillment&variant=default"
+  },
+  "ProductSupplierPanel": {
+    "definition": "供应商名称和经营数据卡；通过回调进入供应商详情。",
+    "when": "商品被浏览、选择规格、加入购物车或结算前检查时。",
+    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
+    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
+    "steps": [
+      "选择与当前任务相符的组件及状态。",
+      "按接口传入数据，绑定 onChange／onAction 等事件。",
+      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
+    ],
+    "example": null,
+    "preview": "?component-preview=ProductSupplierPanel&variant=default"
+  },
+  "ProductAttributes": {
+    "definition": "商品参数表；带语义行标题的标签值结构，不管理页面级导航。",
+    "when": "商品被浏览、选择规格、加入购物车或结算前检查时。",
+    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
+    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
+    "steps": [
+      "选择与当前任务相符的组件及状态。",
+      "按接口传入数据，绑定 onChange／onAction 等事件。",
+      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
+    ],
+    "example": null,
+    "preview": "?component-preview=ProductAttributes&variant=default"
+  },
+  "ProductServiceBenefits": {
+    "definition": "服务保障入口；沿用基础图标与品牌绿，详情由页面承载。",
+    "when": "商品被浏览、选择规格、加入购物车或结算前检查时。",
+    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
+    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
+    "steps": [
+      "选择与当前任务相符的组件及状态。",
+      "按接口传入数据，绑定 onChange／onAction 等事件。",
+      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
+    ],
+    "example": null,
+    "preview": "?component-preview=ProductServiceBenefits&variant=default"
+  },
+  "ProductPurchaseBar": {
+    "definition": "吸底商品购买栏；收藏、购物车角标和购买数量，安全区由 Page 提供。",
+    "when": "商品被浏览、选择规格、加入购物车或结算前检查时。",
+    "avoid": "只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。",
+    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
+    "steps": [
+      "选择与当前任务相符的组件及状态。",
+      "按接口传入数据，绑定 onChange／onAction 等事件。",
+      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
+    ],
+    "example": null,
+    "preview": "?component-preview=ProductPurchaseBar&variant=default"
+  },
   "Icon": {
     "definition": "本地 SVG 图标库入口；必须选择与含义相符的名称和状态。",
     "when": "已有内容需要统一格式、层级或媒介呈现时。",

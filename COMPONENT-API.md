@@ -463,7 +463,7 @@ React.ComponentProps<typeof SelectField>
 基础组件 · 反馈
 
 ```ts
-{open:boolean;src:string;alt:string;onClose:()=>void}
+{open:boolean;src:string;alt:string;onClose:()=>void;counter?:string}
 ```
 
 ## 左滑操作（SwipeAction）
@@ -1114,6 +1114,70 @@ type CommerceCategory = {id:string;label:string;image?:string;selectedImage?:str
 
 ```ts
 {onClick:()=>void}
+```
+
+## 商品详情图集（ProductMediaGallery）
+
+业务组件 · 商品与购物车
+
+```ts
+{images:{src:string;alt:string}[];onPreview?:(index:number)=>void}
+```
+
+## 商品规格价格（ProductVariantPricing）
+
+业务组件 · 商品与购物车
+
+```ts
+{variants:DetailVariant[];value:string;onChange:(id:string)=>void;currency?:string;unit?:string;sales?:string}
+```
+
+## 商品详情摘要（ProductSummary）
+
+业务组件 · 商品与购物车
+
+```ts
+{name:string;ranking?:string;attributes:DetailAttribute[];description:string;onDetails:()=>void}
+```
+
+## 商品配送与售后（ProductFulfillment）
+
+业务组件 · 商品与购物车
+
+```ts
+{delivery:string;deliveryDetail:string;afterSales:string;onAfterSales:()=>void}
+```
+
+## 供应商信息卡（ProductSupplierPanel）
+
+业务组件 · 商品与购物车
+
+```ts
+{name:string;metrics:DetailAttribute[];onClick:()=>void}
+```
+
+## 商品参数表（ProductAttributes）
+
+业务组件 · 商品与购物车
+
+```ts
+{title?:string;items:DetailAttribute[]}
+```
+
+## 商品服务保障（ProductServiceBenefits）
+
+业务组件 · 商品与购物车
+
+```ts
+{title?:string;items:{id:string;label:string;icon:IconName;description:string}[];onSelect:(id:string)=>void}
+```
+
+## 商品详情购买栏（ProductPurchaseBar）
+
+业务组件 · 商品与购物车
+
+```ts
+{quantity:number;onQuantity:(v:number)=>void;favorite:boolean;onFavorite:()=>void;cartCount:number;onCart:()=>void;onAdd:()=>void;max?:number}
 ```
 
 ## 图标（Icon）

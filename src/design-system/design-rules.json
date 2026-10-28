@@ -7,7 +7,10 @@
     "components": [
       "Page",
       "ChatMessage",
-      "MapAddressPicker"
+      "MapAddressPicker",
+      "ProductSummary",
+      "ProductFulfillment",
+      "ProductSupplierPanel"
     ],
     "source": "用户明确要求（含前轮确认）",
     "priority": "用户修正优先于原稿历史值"
@@ -41,7 +44,13 @@
       "MapAddressPicker",
       "VoucherList",
       "CouponCard",
-      "ProductCollection"
+      "ProductCollection",
+      "ProductVariantPricing",
+      "ProductSummary",
+      "ProductFulfillment",
+      "ProductSupplierPanel",
+      "ProductAttributes",
+      "ProductServiceBenefits"
     ],
     "source": "用户明确要求（含前轮确认）",
     "priority": "用户修正优先于原稿历史值"
@@ -69,7 +78,10 @@
       "ListGroup",
       "ListRow",
       "UnavailableProductsGroup",
-      "ProductSpecPicker"
+      "ProductSpecPicker",
+      "ProductSummary",
+      "ProductSupplierPanel",
+      "ProductServiceBenefits"
     ],
     "source": "用户的间距／字阶要求；具体尺寸由原稿与现有规范归纳",
     "priority": "用户修正优先于原稿历史值"
@@ -97,7 +109,9 @@
       "Text",
       "BottomSheet",
       "NavBar",
-      "StatusLabel"
+      "StatusLabel",
+      "ProductSummary",
+      "ProductAttributes"
     ],
     "source": "用户的间距／字阶要求；具体尺寸由原稿与现有规范归纳",
     "priority": "用户修正优先于原稿历史值"
@@ -125,7 +139,8 @@
       "CartItem",
       "ProductCard",
       "ProductSpecPicker",
-      "SwipeAction"
+      "SwipeAction",
+      "ProductPurchaseBar"
     ],
     "source": "用户明确要求（含前轮确认）",
     "priority": "用户修正优先于原稿历史值"
@@ -178,7 +193,8 @@
       "Page",
       "ActionBar",
       "HomeIndicator",
-      "StickyBar"
+      "StickyBar",
+      "ProductPurchaseBar"
     ],
     "source": "用户明确要求（含前轮确认）",
     "priority": "用户修正优先于原稿历史值"
@@ -287,7 +303,8 @@
     "title": "单个数字角标为圆形",
     "rule": "Badge 单位数为 16px 圆形，多位数横向扩展为胶囊；放在图标右上角，不遮住图标主体。",
     "components": [
-      "Badge"
+      "Badge",
+      "ProductPurchaseBar"
     ],
     "source": "用户明确要求（含前轮确认）",
     "priority": "用户修正优先于原稿历史值"
@@ -325,7 +342,8 @@
     "rule": "图片查看为黑底全屏、fit 显示，保留返回、计数和手势区；不要替换为白色居中 Dialog。媒体选择只保留一套标题/完成操作。",
     "components": [
       "ImageViewer",
-      "MediaPicker"
+      "MediaPicker",
+      "ProductMediaGallery"
     ],
     "source": "用户明确要求（含前轮确认）",
     "priority": "用户修正优先于原稿历史值"
@@ -383,7 +401,9 @@
       "ProductStatusOverlay",
       "ProductSupplierTag",
       "CartItem",
-      "ProductSpecPicker"
+      "ProductSpecPicker",
+      "ProductVariantPricing",
+      "ProductPurchaseBar"
     ],
     "source": "用户本轮要求；Figma 136:39431 的三类商卡结构，基础元素遵循现有规范",
     "priority": "用户修正优先于原稿历史值"

@@ -12,7 +12,7 @@
 
 保持原稿的文案、素材、状态、结构和交互位置；不得用示例内容代替。用户明确修正的规则优先于原稿历史值。
 
-**适用组件**：页面容器（Page）, 聊天消息（ChatMessage）, 地图选址（MapAddressPicker）。
+**适用组件**：页面容器（Page）, 聊天消息（ChatMessage）, 地图选址（MapAddressPicker）, 商品详情摘要（ProductSummary）, 商品配送与售后（ProductFulfillment）, 供应商信息卡（ProductSupplierPanel）。
 
 ## chrome · 状态栏与导航使用同一背景
 
@@ -28,7 +28,7 @@
 
 白底上使用灰色组件，或有描边的白色组件；灰底上使用白色或明确的彩色组件。输入框、搜索框和预览容器都要有可见边界，不能融入背景。 优惠券列表、历史券列表、Profile、About 和推荐商品 feeds 流必须使用灰色承载背景与白色卡片；即使原页面误用白底，也按此规则纠正。ProductCollection、VoucherList 自己提供灰色承载层，页面不能把它覆盖回白色。白底上白色组件只有具备明确描边时才可使用。 通用 SVG 包装层修正规则不得命中 VoucherList 或优惠券页面等带明确背景的语义容器；验证时检查浏览器计算后的背景色，不能只检查 CSS 声明。
 
-**适用组件**：页面容器（Page）, 搜索框（SearchBar）, 单行输入框（TextField）, 选择标签（ChoiceChip）, 卡片（Card）, 地图选址（MapAddressPicker）, 优惠券列表（VoucherList）, 优惠券卡片（CouponCard）, 猜你喜欢（ProductCollection）。
+**适用组件**：页面容器（Page）, 搜索框（SearchBar）, 单行输入框（TextField）, 选择标签（ChoiceChip）, 卡片（Card）, 地图选址（MapAddressPicker）, 优惠券列表（VoucherList）, 优惠券卡片（CouponCard）, 猜你喜欢（ProductCollection）, 商品规格价格（ProductVariantPricing）, 商品详情摘要（ProductSummary）, 商品配送与售后（ProductFulfillment）, 供应商信息卡（ProductSupplierPanel）, 商品参数表（ProductAttributes）, 商品服务保障（ProductServiceBenefits）。
 
 ## empty · 整页空状态的上下留白为 1:2
 
@@ -44,7 +44,7 @@
 
 图标与文字 6–9px，同组标题与说明 6px，说明与控件 12px，卡片间通常 12px，任务分区通常 24px。列表标题距首行 6–12px；不要把多个容器的 padding、margin、gap 重复相加。原稿有明确尺寸时以原稿为准。
 
-**适用组件**：内容分区（Section）, 卡片（Card）, 列表分组（ListGroup）, 列表行（ListRow）, 不可用商品组（UnavailableProductsGroup）, 商品规格选择器（ProductSpecPicker）。
+**适用组件**：内容分区（Section）, 卡片（Card）, 列表分组（ListGroup）, 列表行（ListRow）, 不可用商品组（UnavailableProductsGroup）, 商品规格选择器（ProductSpecPicker）, 商品详情摘要（ProductSummary）, 供应商信息卡（ProductSupplierPanel）, 商品服务保障（ProductServiceBenefits）。
 
 ## insets · 列表和内容保留左右留白
 
@@ -60,7 +60,7 @@
 
 导航和底部弹窗标题使用 18/23px，正文 14/19px，辅助文案 12/18px；文字不因模板复用随意放大。状态标签使用常规字重，价格保留币种、整数和小数的明确层级。
 
-**适用组件**：文本（Text）, 底部抽屉（BottomSheet）, 顶部导航栏（NavBar）, 状态文字（StatusLabel）。
+**适用组件**：文本（Text）, 底部抽屉（BottomSheet）, 顶部导航栏（NavBar）, 状态文字（StatusLabel）, 商品详情摘要（ProductSummary）, 商品参数表（ProductAttributes）。
 
 ## button · 按钮尺寸按操作层级使用
 
@@ -76,7 +76,7 @@ regular 48px 用于提交和结算，medium 40px 用于区域操作，small 36px
 
 购物车步进器下限为 1，减号保留并置灰，删除使用左滑。商卡加购控件下限为 0，数量为 1 时减号可点击，减到 0 后恢复加购按钮；达到上限时加号禁用。
 
-**适用组件**：数量步进器（QuantityStepper）, 购物车商品行（CartItem）, 商品卡片（ProductCard）, 商品规格选择器（ProductSpecPicker）, 左滑操作（SwipeAction）。
+**适用组件**：数量步进器（QuantityStepper）, 购物车商品行（CartItem）, 商品卡片（ProductCard）, 商品规格选择器（ProductSpecPicker）, 左滑操作（SwipeAction）, 商品详情购买栏（ProductPurchaseBar）。
 
 ## swipe · 左滑后才展示操作
 
@@ -108,7 +108,7 @@ regular 48px 用于提交和结算，medium 40px 用于区域操作，small 36px
 
 原稿中的底部主操作放入 Page.footer，滚动内容不把它推走。ActionBar 只管理按钮及上下间距；HomeIndicator 由页面或弹层统一放一次，背景透明或与上方操作区一致。
 
-**适用组件**：页面容器（Page）, 操作栏（ActionBar）, 底部手势条（HomeIndicator）, 吸底操作栏（StickyBar）。
+**适用组件**：页面容器（Page）, 操作栏（ActionBar）, 底部手势条（HomeIndicator）, 吸底操作栏（StickyBar）, 商品详情购买栏（ProductPurchaseBar）。
 
 ## activity · 购物车活动条独立于商品行
 
@@ -180,7 +180,7 @@ ChoiceChip 需要白色与灰色背景两种外观，并有明确的选中/未�
 
 Badge 单位数为 16px 圆形，多位数横向扩展为胶囊；放在图标右上角，不遮住图标主体。
 
-**适用组件**：角标（Badge）。
+**适用组件**：角标（Badge）, 商品详情购买栏（ProductPurchaseBar）。
 
 ## nav · 导航与切换保留真实边界
 
@@ -204,7 +204,7 @@ FormField 内的 input 或 textarea 要有 placeholder，描述预期输入。Te
 
 图片查看为黑底全屏、fit 显示，保留返回、计数和手势区；不要替换为白色居中 Dialog。媒体选择只保留一套标题/完成操作。
 
-**适用组件**：图片查看器（ImageViewer）, 媒体选择器（MediaPicker）。
+**适用组件**：图片查看器（ImageViewer）, 媒体选择器（MediaPicker）, 商品详情图集（ProductMediaGallery）。
 
 ## classification · 区分基础规则与业务组件
 
@@ -236,7 +236,7 @@ VoucherSuccessDialog 统一使用浅绿渐变背景、绿色标题、白色优�
 
 ProductCard 的 grid、full-width、category 分别用于双列瀑布流、通栏单列和分类单列；保留商品图、标题、重量、价格层级、促销、供应商和购买状态。图片槽位分别为自适应正方形、120px、72px；尺寸来自本轮原稿。价格、标签、数量、按钮和文字使用当前基础规范与令牌，不在页面重新实现旧商卡。双列商卡多规格通过抽屉选择，宽屏商卡可在卡内展开规格。商卡加购数量为 1 时减号可点击，减到 0 恢复加购按钮。 状态蒙层使用白色 50% 遮罩和黑色 60% 胶囊，支持 165 与 72 两套尺寸、售罄/已下架/非卖品及中英文共 12 个变体；供应商名称与比价共用一个可切换标签组件。购物车商品图片占位始终为 1:1。规格选择作为完整白色底部抽屉，包含商品摘要、规格、数量、主按钮与安全区。地址表单字段名称放在输入框内，保留无障碍标签。
 
-**适用组件**：商品卡片（ProductCard）, feeds（ProductList）, 猜你喜欢（ProductCollection）, 商品价格组合（ProductPriceGroup）, 商品购买控件（ProductPurchaseControl）, 商品状态蒙层（ProductStatusOverlay）, 供应商标签（ProductSupplierTag）, 购物车商品行（CartItem）, 商品规格选择器（ProductSpecPicker）。
+**适用组件**：商品卡片（ProductCard）, feeds（ProductList）, 猜你喜欢（ProductCollection）, 商品价格组合（ProductPriceGroup）, 商品购买控件（ProductPurchaseControl）, 商品状态蒙层（ProductStatusOverlay）, 供应商标签（ProductSupplierTag）, 购物车商品行（CartItem）, 商品规格选择器（ProductSpecPicker）, 商品规格价格（ProductVariantPricing）, 商品详情购买栏（ProductPurchaseBar）。
 
 ## category-framework · 分类框架独立于页面外壳
 

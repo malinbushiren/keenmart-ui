@@ -17,3 +17,7 @@ playwright-report/
 test-results/
 __pycache__/
 *.pyc
+
+# Library artifacts
+packages/*/*.tgz
+.library-smoke/

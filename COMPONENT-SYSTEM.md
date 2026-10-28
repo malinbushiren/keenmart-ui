@@ -1,8 +1,8 @@
 # KeenMart 组件体系 · v0.12
 
-本轮范围：现有 109 个页面／状态；65 个基础组件、74 个业务组件，共 139 个可运行候选组件。13 个组件属于规范补充，其他组件从原页面中的结构或交互提取。共有 427 个状态检查项。
+本轮范围：现有 110 个页面／状态；65 个基础组件、82 个业务组件，共 147 个可运行候选组件。13 个组件属于规范补充，其他组件从原页面中的结构或交互提取。共有 436 个状态检查项。
 
-组件库、组合页面与原页面分开维护：组合页不导入旧 Screen 模块；原页面继续保留作对照。109 个入口都有公共组件拼装方案，覆盖 47 类页面组合。运行检查与视觉验收分开记录；visualReview=pending 不会因加载成功而自动标成通过。
+组件库、组合页面与原页面分开维护：组合页不导入旧 Screen 模块；原页面继续保留作对照。110 个入口都有公共组件拼装方案，覆盖 47 类页面组合。运行检查与视觉验收分开记录；visualReview=pending 不会因加载成功而自动标成通过。
 
 ## 查看
 
@@ -175,6 +175,14 @@
 | 优惠券列表（VoucherList） | 优惠与账户 | 页面提取 | default, empty, expired |
 | 兑券成功弹窗（VoucherSuccessDialog） | 优惠与账户 | 页面提取 | default, closable |
 | 首页新客券横幅（HomeVoucherBanner） | 优惠与账户 | 页面提取 | default |
+| 商品详情图集（ProductMediaGallery） | 商品与购物车 | 页面提取 | default |
+| 商品规格价格（ProductVariantPricing） | 商品与购物车 | 页面提取 | default |
+| 商品详情摘要（ProductSummary） | 商品与购物车 | 页面提取 | default |
+| 商品配送与售后（ProductFulfillment） | 商品与购物车 | 页面提取 | default |
+| 供应商信息卡（ProductSupplierPanel） | 商品与购物车 | 页面提取 | default |
+| 商品参数表（ProductAttributes） | 商品与购物车 | 页面提取 | default |
+| 商品服务保障（ProductServiceBenefits） | 商品与购物车 | 页面提取 | default |
+| 商品详情购买栏（ProductPurchaseBar） | 商品与购物车 | 页面提取 | default, quantity |
 
 ## 页面覆盖与组合
 

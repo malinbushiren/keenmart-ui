@@ -3070,6 +3070,170 @@
     "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
   },
   {
+    "name": "ProductMediaGallery",
+    "displayName": "商品详情图集",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "140:54048"
+    ],
+    "dependencies": [
+      "Carousel"
+    ],
+    "rationale": "商品详情图集；正方形图片槽位、轮播与预览回调，图片保持比例。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductVariantPricing",
+    "displayName": "商品规格价格",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "140:54048"
+    ],
+    "dependencies": [
+      "Card",
+      "ChoiceChip",
+      "ProductPriceGroup",
+      "Text"
+    ],
+    "rationale": "商品规格与价格联动；横向规格选择、单位价格与销量摘要，由页面传入所选规格。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductSummary",
+    "displayName": "商品详情摘要",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "140:54048"
+    ],
+    "dependencies": [
+      "Card",
+      "Icon",
+      "Tag"
+    ],
+    "rationale": "商品标题、排名、关键参数与介绍摘要；通过回调打开完整详情。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductFulfillment",
+    "displayName": "商品配送与售后",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "140:54048"
+    ],
+    "dependencies": [
+      "Card",
+      "ListRow"
+    ],
+    "rationale": "商品预计送达和售后入口；不自行计算或承诺真实配送时间。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductSupplierPanel",
+    "displayName": "供应商信息卡",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "140:54048"
+    ],
+    "dependencies": [
+      "Card",
+      "ListRow"
+    ],
+    "rationale": "供应商名称和经营数据卡；通过回调进入供应商详情。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductAttributes",
+    "displayName": "商品参数表",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "140:54048"
+    ],
+    "dependencies": [
+      "Card"
+    ],
+    "rationale": "商品参数表；带语义行标题的标签值结构，不管理页面级导航。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductServiceBenefits",
+    "displayName": "商品服务保障",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default"
+    ],
+    "sources": [
+      "140:54048"
+    ],
+    "dependencies": [
+      "Card",
+      "Icon"
+    ],
+    "rationale": "服务保障入口；沿用基础图标与品牌绿，详情由页面承载。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
+    "name": "ProductPurchaseBar",
+    "displayName": "商品详情购买栏",
+    "kind": "business",
+    "category": "商品与购物车",
+    "origin": "observed",
+    "states": [
+      "default",
+      "quantity"
+    ],
+    "sources": [
+      "140:54048"
+    ],
+    "dependencies": [
+      "Badge",
+      "Button",
+      "Icon",
+      "QuantityStepper"
+    ],
+    "rationale": "吸底商品购买栏；收藏、购物车角标和购买数量，安全区由 Page 提供。",
+    "status": "implemented-candidate",
+    "dependencySource": "Public JSX in components.tsx / foundations.tsx / business.tsx / Icon.tsx"
+  },
+  {
     "name": "Icon",
     "displayName": "图标",
     "kind": "basic",

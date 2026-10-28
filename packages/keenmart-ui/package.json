@@ -1,0 +1,45 @@
+{
+  "name": "keenmart-ui-kit",
+  "version": "0.1.0",
+  "description": "KeenMart React components, design tokens and Figma Make guidelines",
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "guidelines",
+    "README.md",
+    "LICENSE",
+    "THIRD-PARTY-NOTICES.md",
+    "check-publish.mjs"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/types/packages/keenmart-ui/entry.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/packages/keenmart-ui/entry.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./fonts.css": "./dist/fonts.css",
+    "./tokens.json": "./dist/tokens.json"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "@fontsource/poppins": "^5.2.0",
+    "@fontsource/leckerli-one": "^5.2.0"
+  },
+  "scripts": {
+    "prepublishOnly": "node ./check-publish.mjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

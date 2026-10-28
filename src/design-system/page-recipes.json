@@ -2760,5 +2760,41 @@
     "visualReview": "pending",
     "scope": "公共组件组合验证；不等于已与原稿逐像素验收通过。",
     "usageSource": "PageAssembly.tsx JSX + bounded helper dependencies"
+  },
+  {
+    "nodeId": "140:54048",
+    "name": "商品详情 · 模块化组合",
+    "group": "13 商品详情",
+    "template": "product-detail",
+    "state": "default",
+    "width": 375,
+    "height": 812,
+    "density": "regular",
+    "components": [
+      "Page",
+      "Toast",
+      "NavBar",
+      "ProductMediaGallery",
+      "ProductVariantPricing",
+      "ProductSummary",
+      "ProductFulfillment",
+      "ProductSupplierPanel",
+      "ProductAttributes",
+      "ProductServiceBenefits",
+      "ProductPurchaseBar",
+      "ProductCollection",
+      "ProductList",
+      "Card",
+      "Collapse",
+      "Text",
+      "Button",
+      "BottomSheet",
+      "ImageViewer"
+    ],
+    "source": "https://www.figma.com/design/muIyl7AhHSieD13gdjfEw1/keen-mart-UIkits?node-id=140-54048",
+    "background": "gray",
+    "visualReview": "pending",
+    "scope": "参考长图结构，沿用现有规范和库内素材；未通过视觉验收。",
+    "usageSource": "PageAssembly.tsx explicit domain composition"
   }
 ]

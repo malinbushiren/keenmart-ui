@@ -137,5 +137,13 @@
   "VoucherList": "优惠券列表",
   "VoucherSuccessDialog": "兑券成功弹窗",
   "HomeVoucherBanner": "首页新客券横幅",
-  "Icon": "图标"
+  "Icon": "图标",
+  "ProductMediaGallery": "商品详情图集",
+  "ProductVariantPricing": "商品规格价格",
+  "ProductSummary": "商品详情摘要",
+  "ProductFulfillment": "商品配送与售后",
+  "ProductSupplierPanel": "供应商信息卡",
+  "ProductAttributes": "商品参数表",
+  "ProductServiceBenefits": "商品服务保障",
+  "ProductPurchaseBar": "商品详情购买栏"
 }
