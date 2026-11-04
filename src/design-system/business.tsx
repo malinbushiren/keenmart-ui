@@ -1,8 +1,8 @@
 import { useKeenLocale } from './locale';
 import { PriceValue as Price } from './price-value';
-import { CommerceProductCard, CommerceCategoryLayout, CommercePrice, CommercePurchase, CommerceStatus, CommerceSupplier } from './commerce';
+import { CommerceProductCard, CommerceCategoryLayout, CommercePrice, CommercePurchase, CommerceStatus, CommerceSupplier, CommerceTemperatureTag, CommerceTag, CommerceTitle, CommerceImage } from './commerce';
 import type { CommerceProduct, CommerceCardProps, CategoryLayoutProps } from './commerce';
-export type { CommerceProduct, ProductSKU, ProductCardVariant, ProductAvailability, CommerceCategory, CategoryLayoutProps } from './commerce';
+export type { CommerceProduct, ProductSKU, ProductCardVariant, ProductAvailability, ProductTemperature, ProductTagData, ProductTagTone, CommerceCategory, CategoryLayoutProps } from './commerce';
 import { LayoutSpace as Space } from './layout';
 import React, { useState, useId } from 'react';
 import { SwipeAction, OTPInput, TextButton, ActionBar, Artwork, HomeIndicator, Badge, Switch } from './foundations';
@@ -75,15 +75,20 @@ export function ProductPriceGroup(props: React.ComponentProps<typeof CommercePri
 export function ProductPurchaseControl(props: React.ComponentProps<typeof CommercePurchase>) { const { t: kmText } = useKeenLocale(); return <span className="cm-purchase-control"><CommercePurchase {...props}/></span>; }
 export function ProductStatusOverlay(props: React.ComponentProps<typeof CommerceStatus>) { const { t: kmText } = useKeenLocale(); return <CommerceStatus {...props}/>; }
 export function ProductSupplierTag(props: React.ComponentProps<typeof CommerceSupplier>) { const { t: kmText } = useKeenLocale(); return <CommerceSupplier {...props}/>; }
-export function ProductList({ products, onAdd, onQuantity, layout = 'grid', density = 'regular' }: {
+export function ProductTemperatureTag(props: React.ComponentProps<typeof CommerceTemperatureTag>) { return <CommerceTemperatureTag {...props}/>; }
+export function ProductTag(props: React.ComponentProps<typeof CommerceTag>) { return <CommerceTag {...props}/>; }
+export function ProductTitle(props: React.ComponentProps<typeof CommerceTitle>) { return <CommerceTitle {...props}/>; }
+export function ProductImage(props: React.ComponentProps<typeof CommerceImage>) { return <CommerceImage {...props}/>; }
+export function ProductList({ products, onAdd, onQuantity, layout = 'grid', density = 'regular', showTemperature }: {
     products: CommerceProduct[];
     onAdd: (id: string) => void;
     onQuantity?: (id: string, value: number) => void;
     onRemove?: (id: string) => void;
     layout?: 'grid' | 'row';
     density?: 'regular' | 'compact';
-}) { const { t: kmText } = useKeenLocale(); const [skuCounts, setSkuCounts] = useState<Record<string, Record<string, number>>>({}); const variant = layout === 'row' ? 'full-width' : density === 'compact' ? 'category' : 'grid'; return <div className={'cm-product-list cm-product-list-' + variant}>{products.length ? products.map(p => <ProductCard key={p.id} product={p} variant={variant} quantity={p.action === 'stepper' || p.action === 'remove' ? p.quantity : 0} onAdd={() => onAdd(p.id)} onQuantity={v => onQuantity?.(p.id, v)} skuQuantities={skuCounts[p.id] || {}} onSKUQuantity={(id, v) => setSkuCounts({ ...skuCounts, [p.id]: { ...skuCounts[p.id], [id]: v } })}/>) : <EmptyState kind="goods" title={kmText("No products found")}/>}</div>; }
-export function ProductCollection({ products, onAdd, onQuantity, layout = 'grid', title = 'You might also like', density = 'regular' }: {
+    showTemperature?: boolean;
+}) { const { t: kmText } = useKeenLocale(); const [skuCounts, setSkuCounts] = useState<Record<string, Record<string, number>>>({}); const variant = layout === 'row' ? 'full-width' : density === 'compact' ? 'category' : 'grid'; return <div className={'cm-product-list cm-product-list-' + variant}>{products.length ? products.map(p => <ProductCard key={p.id} product={p} showTemperature={showTemperature} variant={variant} quantity={p.action === 'stepper' || p.action === 'remove' ? p.quantity : 0} onAdd={() => onAdd(p.id)} onQuantity={v => onQuantity?.(p.id, v)} skuQuantities={skuCounts[p.id] || {}} onSKUQuantity={(id, v) => setSkuCounts({ ...skuCounts, [p.id]: { ...skuCounts[p.id], [id]: v } })}/>) : <EmptyState kind="goods" title={kmText("No products found")}/>}</div>; }
+export function ProductCollection({ products, onAdd, onQuantity, layout = 'grid', title = 'You might also like', density = 'regular', showTemperature }: {
     products: CommerceProduct[];
     onAdd: (id: string) => void;
     onQuantity?: (id: string, value: number) => void;
@@ -91,7 +96,8 @@ export function ProductCollection({ products, onAdd, onQuantity, layout = 'grid'
     layout?: 'grid' | 'row';
     title?: string;
     density?: 'regular' | 'compact';
-}) { const { t: kmText } = useKeenLocale(); title = kmText(title); return <section className="kc-product-collection"><Section title={title}><ProductList products={products} onAdd={onAdd} onQuantity={onQuantity} layout={layout} density={density}/></Section></section>; }
+    showTemperature?: boolean;
+}) { const { t: kmText } = useKeenLocale(); title = kmText(title); return <section className="kc-product-collection"><Section title={title}><ProductList products={products} onAdd={onAdd} onQuantity={onQuantity} layout={layout} density={density} showTemperature={showTemperature}/></Section></section>; }
 export function ProductSpecPicker({ groups, values, onChange, onConfirm, product, quantity = 1, onQuantity, onClose, open }: {
     groups: {
         id: string;

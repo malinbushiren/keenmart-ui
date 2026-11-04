@@ -265,7 +265,7 @@
   },
   "ProductCard": {
     "file": "business.tsx",
-    "props": "type ProductCardVariant = 'grid' | 'full-width' | 'category';\ntype ProductAvailability = 'available' | 'sold-out' | 'unavailable' | 'not-for-sale';\ntype ProductSKU = {\n    id: string;\n    label: string;\n    amount: string;\n    unitPrice?: string;\n    promotion?: string;\n    max?: number;\n};\ntype CommerceProduct = Product & {\n    currency?: string;\n    unit?: string;\n    unitPrice?: string;\n    promotion?: string;\n    supplier?: string;\n    supplierVariant?: 'supplier' | 'comparison';\n    orderBy?: string;\n    availability?: ProductAvailability;\n    purchase?: 'add' | 'quantity' | 'count' | 'notify' | 'similar' | 'none';\n    max?: number;\n    skus?: ProductSKU[];\n};\n\n{\n    product: CommerceProduct;\n    variant?: ProductCardVariant;\n    quantity?: number;\n    onAdd: () => void;\n    onQuantity?: (value: number) => void;\n    onSKUQuantity?: (id: string, value: number) => void;\n    skuQuantities?: Record<string, number>;\n    initialExpanded?: boolean;\n    onNotify?: () => void;\n    onSimilar?: () => void;\n    onSupplier?: () => void;\n    locale?: 'en' | 'zh';\n}"
+    "props": "type ProductCardVariant = 'grid' | 'full-width' | 'category';\ntype ProductAvailability = 'available' | 'sold-out' | 'unavailable' | 'not-for-sale';\ntype ProductSKU = {\n    id: string;\n    label: string;\n    amount: string;\n    unitPrice?: string;\n    promotion?: string;\n    max?: number;\n};\ntype CommerceProduct = Product & {\n    temperature?: import('./commerce-parts').ProductTemperature;\n    showTemperature?: boolean;\n    priceTone?: 'regular' | 'promotion';\n    productTags?: import('./commerce-parts').ProductTagData[];\n    currency?: string;\n    unit?: string;\n    unitPrice?: string;\n    promotion?: string;\n    supplier?: string;\n    supplierVariant?: 'supplier' | 'comparison';\n    orderBy?: string;\n    availability?: ProductAvailability;\n    purchase?: 'add' | 'quantity' | 'count' | 'notify' | 'similar' | 'none';\n    max?: number;\n    skus?: ProductSKU[];\n};\n\n{\n    product: CommerceProduct;\n    variant?: ProductCardVariant;\n    quantity?: number;\n    onAdd: () => void;\n    onQuantity?: (value: number) => void;\n    onSKUQuantity?: (id: string, value: number) => void;\n    skuQuantities?: Record<string, number>;\n    initialExpanded?: boolean;\n    onNotify?: () => void;\n    onSimilar?: () => void;\n    onSupplier?: () => void;\n    locale?: 'en' | 'zh';\n    showTemperature?: boolean;\n}"
   },
   "ProductPriceGroup": {
     "file": "business.tsx",
@@ -277,19 +277,35 @@
   },
   "ProductStatusOverlay": {
     "file": "business.tsx",
-    "props": "{\n    status: ProductAvailability;\n    locale?: 'en' | 'zh';\n    size?: 'regular' | 'compact';\n}"
+    "props": "undefined"
   },
   "ProductSupplierTag": {
     "file": "business.tsx",
     "props": "{\n    name: string;\n    variant?: 'supplier' | 'comparison';\n    onClick?: () => void;\n}"
   },
+  "ProductTemperatureTag": {
+    "file": "business.tsx",
+    "props": "React.ComponentProps<typeof CommerceTemperatureTag>"
+  },
+  "ProductTag": {
+    "file": "business.tsx",
+    "props": "React.ComponentProps<typeof CommerceTag>"
+  },
+  "ProductTitle": {
+    "file": "business.tsx",
+    "props": "React.ComponentProps<typeof CommerceTitle>"
+  },
+  "ProductImage": {
+    "file": "business.tsx",
+    "props": "React.ComponentProps<typeof CommerceImage>"
+  },
   "ProductList": {
     "file": "business.tsx",
-    "props": "{\n    products: CommerceProduct[];\n    onAdd: (id: string) => void;\n    onQuantity?: (id: string, value: number) => void;\n    onRemove?: (id: string) => void;\n    layout?: 'grid' | 'row';\n    density?: 'regular' | 'compact';\n}"
+    "props": "{\n    products: CommerceProduct[];\n    onAdd: (id: string) => void;\n    onQuantity?: (id: string, value: number) => void;\n    onRemove?: (id: string) => void;\n    layout?: 'grid' | 'row';\n    density?: 'regular' | 'compact';\n    showTemperature?: boolean;\n}"
   },
   "ProductCollection": {
     "file": "business.tsx",
-    "props": "{\n    products: CommerceProduct[];\n    onAdd: (id: string) => void;\n    onQuantity?: (id: string, value: number) => void;\n    onRemove?: (id: string) => void;\n    layout?: 'grid' | 'row';\n    title?: string;\n    density?: 'regular' | 'compact';\n}"
+    "props": "{\n    products: CommerceProduct[];\n    onAdd: (id: string) => void;\n    onQuantity?: (id: string, value: number) => void;\n    onRemove?: (id: string) => void;\n    layout?: 'grid' | 'row';\n    title?: string;\n    density?: 'regular' | 'compact';\n    showTemperature?: boolean;\n}"
   },
   "ProductSpecPicker": {
     "file": "business.tsx",
@@ -509,7 +525,7 @@
   },
   "CategoryLayout": {
     "file": "business.tsx",
-    "props": "type ProductAvailability = 'available' | 'sold-out' | 'unavailable' | 'not-for-sale';\ntype ProductSKU = {\n    id: string;\n    label: string;\n    amount: string;\n    unitPrice?: string;\n    promotion?: string;\n    max?: number;\n};\ntype CommerceProduct = Product & {\n    currency?: string;\n    unit?: string;\n    unitPrice?: string;\n    promotion?: string;\n    supplier?: string;\n    supplierVariant?: 'supplier' | 'comparison';\n    orderBy?: string;\n    availability?: ProductAvailability;\n    purchase?: 'add' | 'quantity' | 'count' | 'notify' | 'similar' | 'none';\n    max?: number;\n    skus?: ProductSKU[];\n};\ntype CommerceCategory = {\n    id: string;\n    label: string;\n    image?: string;\n    selectedImage?: string;\n    layers?: ArtworkLayer[];\n};\n\n{\n    variant?: 'image-primary' | 'text-primary';\n    title: string;\n    categories: CommerceCategory[];\n    selected: string;\n    onSelect: (id: string) => void;\n    products: CommerceProduct[];\n    onAdd: (id: string) => void;\n    onQuantity?: (id: string, value: number) => void;\n    primaryCategories?: CommerceCategory[];\n    primaryOptions: string[];\n    primaryValue?: string;\n    onPrimaryChange: (value: string) => void;\n    expanded?: boolean;\n    onExpand: () => void;\n    query?: string;\n    onQuery?: (v: string) => void;\n    onSearch?: () => void;\n    tertiaryOptions?: string[];\n    tertiaryValue?: string;\n    onTertiaryChange?: (v: string) => void;\n    sort?: 'default' | 'sales' | 'price';\n    onSort?: (sort: 'default' | 'sales' | 'price') => void;\n}"
+    "props": "type ProductAvailability = 'available' | 'sold-out' | 'unavailable' | 'not-for-sale';\ntype ProductSKU = {\n    id: string;\n    label: string;\n    amount: string;\n    unitPrice?: string;\n    promotion?: string;\n    max?: number;\n};\ntype CommerceProduct = Product & {\n    temperature?: import('./commerce-parts').ProductTemperature;\n    showTemperature?: boolean;\n    priceTone?: 'regular' | 'promotion';\n    productTags?: import('./commerce-parts').ProductTagData[];\n    currency?: string;\n    unit?: string;\n    unitPrice?: string;\n    promotion?: string;\n    supplier?: string;\n    supplierVariant?: 'supplier' | 'comparison';\n    orderBy?: string;\n    availability?: ProductAvailability;\n    purchase?: 'add' | 'quantity' | 'count' | 'notify' | 'similar' | 'none';\n    max?: number;\n    skus?: ProductSKU[];\n};\ntype CommerceCategory = {\n    id: string;\n    label: string;\n    image?: string;\n    selectedImage?: string;\n    layers?: ArtworkLayer[];\n};\n\n{\n    variant?: 'image-primary' | 'text-primary';\n    title: string;\n    categories: CommerceCategory[];\n    selected: string;\n    onSelect: (id: string) => void;\n    products: CommerceProduct[];\n    onAdd: (id: string) => void;\n    onQuantity?: (id: string, value: number) => void;\n    primaryCategories?: CommerceCategory[];\n    primaryOptions: string[];\n    primaryValue?: string;\n    onPrimaryChange: (value: string) => void;\n    expanded?: boolean;\n    onExpand: () => void;\n    query?: string;\n    onQuery?: (v: string) => void;\n    onSearch?: () => void;\n    tertiaryOptions?: string[];\n    tertiaryValue?: string;\n    onTertiaryChange?: (v: string) => void;\n    sort?: 'default' | 'sales' | 'price';\n    onSort?: (sort: 'default' | 'sales' | 'price') => void;\n    showTemperature?: boolean;\n}"
   },
   "OrderStageProgress": {
     "file": "business.tsx",

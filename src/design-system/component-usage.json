@@ -859,7 +859,7 @@
   },
   "ProductCard": {
     "definition": "Figma 定制商卡；grid 双列、full-width 通栏、category 分类单列三种布局，共用价格、供应商、促销和购买状态。",
-    "when": "商品摘要只使用 grid、full-width、category 三类。传入 product 数据与购买回调；多规格由 skus 驱动：双列通过底部抽屉选择，通栏与分类单列支持卡内展开。",
+    "when": "商品摘要只使用 grid、full-width、category 三类。传入 product 数据与购买回调；多规格由 skus 驱动：双列通过底部抽屉选择，通栏与分类单列支持卡内展开。 应用侧提示词要求“展示温层”时传 showTemperature=true，并传商品 temperature=frozen/chilled；未要求时默认隐藏，缺少温层数据也隐藏。",
     "avoid": "不要使用旧 density 商卡，或把大图卡缩窄模拟分类单列。",
     "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
     "steps": [
@@ -867,7 +867,7 @@
       "按接口传入数据，绑定 onChange／onAction 等事件。",
       "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
     ],
-    "example": "<ProductCard product={product} variant=\"category\" quantity={quantity} onAdd={add} onQuantity={setQuantity} />",
+    "example": "<ProductCard product={product} variant=\"category\" quantity={quantity} onAdd={add} onQuantity={setQuantity} showTemperature />",
     "preview": "?component-preview=ProductCard&variant=default"
   },
   "ProductPriceGroup": {
@@ -922,9 +922,61 @@
     "example": "<ProductSupplierTag name=\"foodmax\" variant=\"comparison\" onClick={compare} />",
     "preview": "?component-preview=ProductSupplierTag&variant=default"
   },
+  "ProductTemperatureTag": {
+    "definition": "商卡温层标；冷冻与冷鲜两类，支持中英文和对应温度范围。",
+    "when": "商品有 temperature=frozen 或 chilled 时展示相应温层。",
+    "avoid": "不能根据商品名称猜测温层；缺少温层数据时隐藏。",
+    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
+    "steps": [
+      "选择与当前任务相符的组件及状态。",
+      "按接口传入数据，绑定 onChange／onAction 等事件。",
+      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
+    ],
+    "example": "<ProductTemperatureTag temperature=\"frozen\" locale=\"zh\" />",
+    "preview": "?component-preview=ProductTemperatureTag&variant=default"
+  },
+  "ProductTag": {
+    "definition": "商品短标签；六种颜色、实心与空心两种样式，可选券图标和箭头。",
+    "when": "为商品标注促销或属性；支持 red/orange/gold/green/gray、outline/solid；blue 仅兼容旧调用并渲染为中性灰。实心先于空心，同样式暖色先于冷色再灰色，同级保持原顺序。",
+    "avoid": "不自行创造标签颜色或圆角。",
+    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
+    "steps": [
+      "选择与当前任务相符的组件及状态。",
+      "按接口传入数据，绑定 onChange／onAction 等事件。",
+      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
+    ],
+    "example": "<ProductTag tone=\"red\" variant=\"outline\" leadingIcon>满1500减150</ProductTag>",
+    "preview": "?component-preview=ProductTag&variant=default"
+  },
+  "ProductTitle": {
+    "definition": "商品标题；可选内联短标签，行数由商卡布局控制。",
+    "when": "商卡标题可通过 badge 插入特惠等内联标签。",
+    "avoid": "不把标签独立成占满一行的标题。",
+    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
+    "steps": [
+      "选择与当前任务相符的组件及状态。",
+      "按接口传入数据，绑定 onChange／onAction 等事件。",
+      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
+    ],
+    "example": "<ProductTitle title={product.name} badge=\"特惠\" />",
+    "preview": "?component-preview=ProductTitle&variant=default"
+  },
+  "ProductImage": {
+    "definition": "商卡图片模块；165、120、72 三种尺寸，统一温层、截单时间、状态蒙层和购买入口。",
+    "when": "按商卡布局选择 size=165/120/72；showTemperature 控制温层标，status 控制状态蒙层。",
+    "avoid": "温层数据缺失时不展示；不拉伸图片比例。",
+    "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
+    "steps": [
+      "选择与当前任务相符的组件及状态。",
+      "按接口传入数据，绑定 onChange／onAction 等事件。",
+      "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
+    ],
+    "example": "<ProductImage src={product.image} alt={product.name} temperature=\"chilled\" showTemperature size={165} />",
+    "preview": "?component-preview=ProductImage&variant=default"
+  },
   "ProductList": {
     "definition": "同一批商品卡的数据列表；统一网格／横向布局并回传商品操作。",
-    "when": "feeds 商品流；layout=grid 双列瀑布流，layout=row 单列通栏，density=compact 分类单列。",
+    "when": "feeds 商品流；layout=grid 双列瀑布流，layout=row 单列通栏，density=compact 分类单列。 应用侧提示词要求“展示温层”时传 showTemperature=true，并传商品 temperature=frozen/chilled；未要求时默认隐藏，缺少温层数据也隐藏。",
     "avoid": "使用定制商卡，不恢复旧商卡结构。",
     "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
     "steps": [
@@ -932,12 +984,12 @@
       "按接口传入数据，绑定 onChange／onAction 等事件。",
       "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
     ],
-    "example": "<ProductList products={products} layout=\"row\" onAdd={add} />",
+    "example": "<ProductList products={products} layout=\"row\" onAdd={add} showTemperature />",
     "preview": "?component-preview=ProductList&variant=default"
   },
   "ProductCollection": {
     "definition": "带标题和商品列表的推荐区；底层复用 ProductList。",
-    "when": "猜你喜欢：灰色承载层、标题和白色商品卡；layout=grid 双列、layout=row 单列。",
+    "when": "猜你喜欢：灰色承载层、标题和白色商品卡；layout=grid 双列、layout=row 单列。 应用侧提示词要求“展示温层”时传 showTemperature=true，并传商品 temperature=frozen/chilled；未要求时默认隐藏，缺少温层数据也隐藏。",
     "avoid": "不能让白色商品卡融入白色背景。",
     "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
     "steps": [
@@ -945,7 +997,7 @@
       "按接口传入数据，绑定 onChange／onAction 等事件。",
       "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
     ],
-    "example": "<ProductCollection products={products} layout=\"row\" onAdd={add} />",
+    "example": "<ProductCollection products={products} layout=\"row\" onAdd={add} showTemperature />",
     "preview": "?component-preview=ProductCollection&variant=default"
   },
   "ProductSpecPicker": {
@@ -1652,7 +1704,7 @@
   },
   "CategoryLayout": {
     "definition": "商品分类浏览任务；主分类、带图次分类和商品列表一起协同。",
-    "when": "image-primary 为一级图文与二级文字；text-primary 为一级文字与二级图文。导航和结果区分别滚动，分类、筛选和排序均受控。",
+    "when": "image-primary 为一级图文与二级文字；text-primary 为一级文字与二级图文。导航和结果区分别滚动，分类、筛选和排序均受控。 应用侧提示词要求“展示温层”时传 showTemperature=true，并传商品 temperature=frozen/chilled；未要求时默认隐藏，缺少温层数据也隐藏。",
     "avoid": "不要把整个分类框架当作一张商卡，或复制一套页面内商卡样式。",
     "boundary": "组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。",
     "steps": [
@@ -1660,7 +1712,7 @@
       "按接口传入数据，绑定 onChange／onAction 等事件。",
       "放进 Page 对应背景中，再对照来源页面检查文案与状态。"
     ],
-    "example": "<CategoryLayout variant=\"image-primary\" categories={categories} products={products} {...navigation} />",
+    "example": "<CategoryLayout variant=\"image-primary\" categories={categories} products={products} {...navigation} showTemperature />",
     "preview": "?component-preview=CategoryLayout&variant=default"
   },
   "OrderStageProgress": {

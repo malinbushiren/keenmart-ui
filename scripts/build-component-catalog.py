@@ -29,6 +29,15 @@ for n in detail_names:
  source_override[n]=['140:54048']
 states.update({'ProductMediaGallery':'default','ProductVariantPricing':'default','ProductSummary':'default','ProductFulfillment':'default','ProductSupplierPanel':'default','ProductAttributes':'default','ProductServiceBenefits':'default','ProductPurchaseBar':'default,quantity'})
 deps.update({'ProductMediaGallery':['Carousel'],'ProductVariantPricing':['Card','ProductPriceGroup','ChoiceChip','Text'],'ProductSummary':['Card','Tag','Icon'],'ProductFulfillment':['Card','ListRow'],'ProductSupplierPanel':['Card','ListRow'],'ProductAttributes':['Card'],'ProductServiceBenefits':['Card','Icon'],'ProductPurchaseBar':['Icon','Badge','Button','QuantityStepper']})
+for n in ['ProductTemperatureTag','ProductTag','ProductTitle','ProductImage']:
+ category[n]='商品与购物车'
+ source_override[n]=['860:42782' if n=='ProductTemperatureTag' else '123:19046' if n=='ProductTag' else '827:38714' if n=='ProductTitle' else '860:45309']
+states.update({'ProductTemperatureTag':'frozen-en,chilled-en,frozen-zh,chilled-zh','ProductTag':','.join(t+'-'+v for t in ['red','blue','orange','gray','green','gold'] for v in ['outline','solid']),'ProductTitle':'default,badge','ProductImage':'default,row,compact,chilled,temperature-hidden,order-by,sold-out'})
+states['ProductCard']='updated-overview,'+states['ProductCard']+',frozen,chilled,temperature-hidden'
+source_override['ProductCard']=['123:20156','136:40097','136:40212']
+deps['ProductCard']=['ProductImage','ProductTitle','ProductPriceGroup','ProductPurchaseControl','ProductSupplierTag','ProductTag']
+deps['ProductImage']=['ProductTemperatureTag','ProductStatusOverlay']
+deps['ProductTitle']=['ProductTag']
 display_names=json.loads((p/'component-names.json').read_text())
 assert set(display_names)==set(names), '组件中文名称必须完整覆盖目录'
 assert len(set(display_names.values()))==len(display_names), '组件中文名称不得重复'

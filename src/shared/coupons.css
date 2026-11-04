@@ -9,11 +9,11 @@
 .artboard .voucher-card p{font-size:13px;line-height:18px}
 .artboard .voucher-tags>span{font-size:11px;line-height:13px;padding:3px 6px;border-radius:4px}
 .artboard .voucher-stamp{background:transparent!important}
-.promo-keyboard{position:absolute;bottom:0;left:0;width:375px;height:291px;background:#d3d7dc;z-index:6;padding:8px 3px 0;font-family:Arial,sans-serif;color:#000}
+.promo-keyboard{position:absolute;bottom:0;left:0;width:375px;height:291px;background:#cccccc;z-index:6;padding:8px 3px 0;font-family:Arial,sans-serif;color:#000}
 .promo-key-row{display:flex;justify-content:center;gap:6px;margin-bottom:12px;height:42px}
-.promo-key-row>span{display:flex;align-items:center;justify-content:center;flex:1;min-width:0;background:#fff;border-radius:5px;box-shadow:0 1px 0 #92969a;font:400 23px/1 Arial,sans-serif}
-.promo-key-row.row-1{padding:0 24px}.promo-key-row.row-2{gap:6px}.promo-key-row.row-2 .wide-key{flex:1.35;background:#aeb4bd}.promo-key-row .wide-key:first-child{margin-right:6px}.promo-key-row .wide-key:last-child{margin-left:6px}.promo-key-row .wide-key img{max-width:28px;max-height:24px}
-.promo-key-bottom{gap:6px;margin-bottom:15px}.promo-key-bottom>span{font-size:16px;background:#adb3bc;flex:1}.promo-key-bottom>span:nth-child(2){flex:2.15;background:#fff}
+.promo-key-row>span{display:flex;align-items:center;justify-content:center;flex:1;min-width:0;background:#fff;border-radius:5px;box-shadow:0 1px 0 #808080;font:400 23px/1 Arial,sans-serif}
+.promo-key-row.row-1{padding:0 24px}.promo-key-row.row-2{gap:6px}.promo-key-row.row-2 .wide-key{flex:1.35;background:#b3b3b3}.promo-key-row .wide-key:first-child{margin-right:6px}.promo-key-row .wide-key:last-child{margin-left:6px}.promo-key-row .wide-key img{max-width:28px;max-height:24px}
+.promo-key-bottom{gap:6px;margin-bottom:15px}.promo-key-bottom>span{font-size:16px;background:#b3b3b3;flex:1}.promo-key-bottom>span:nth-child(2){flex:2.15;background:#fff}
 .promo-key-tools{display:flex;justify-content:space-between;padding:0 15px}.promo-key-tools img{width:26px;height:26px;object-fit:contain}.promo-key-home{position:absolute;left:121px;bottom:8px;width:134px;height:5px;border-radius:5px;background:#000}
 .artboard>.voucher-page.voucher-page.voucher-page[data-node-id]{background:#f5f5f5!important}
 .promo-key-row .wide-key img{width:32px;height:43px;max-width:none;max-height:none;object-fit:contain}

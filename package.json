@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "tsc --noEmit && vite build",
+    "build": "npm run visual:check && tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "tokens:build": "node scripts/build-design-tokens.mjs",
-    "catalog:build": "python3 scripts/build-component-catalog.py && node scripts/sync-component-dependencies.mjs && python3 scripts/build-page-recipes.py && node scripts/sync-page-usage.mjs && node scripts/extract-component-api.mjs && python3 scripts/write-component-docs.py && python3 scripts/build-component-usage.py && python3 scripts/write-design-rules.py",
+    "catalog:build": "python3 scripts/build-component-catalog.py && node scripts/sync-component-dependencies.mjs && python3 scripts/build-page-recipes.py && node scripts/sync-page-usage.mjs && node scripts/extract-component-api.mjs && python3 scripts/write-component-docs.py && python3 scripts/build-component-usage.py && python3 scripts/write-design-rules.py && node scripts/sync-visual-guidelines.mjs",
     "library:build": "node scripts/build-library.mjs",
-    "library:check": "npm run library:build && node scripts/verify-library.mjs --static"
+    "library:check": "npm run library:build && node scripts/verify-library.mjs --static",
+    "visual:check": "node scripts/check-visual-policy.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

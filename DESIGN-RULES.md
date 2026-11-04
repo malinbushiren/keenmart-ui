@@ -1,6 +1,6 @@
 # KeenMart 设计规则
 
-版本：v0.12；更新日期：2026-10-23。
+版本：v0.12；更新日期：2026-11-04。
 
 本规则汇总用户逐页审核时的明确要求；字号、间距和按钮尺寸同时标注原稿及现有规范的归纳依据。它是跨页面约束，不替代原稿的具体数据和尺寸。用户明确修正优先于原稿历史值；未获确认的设计选择不得自行发明。
 
@@ -234,7 +234,7 @@ VoucherSuccessDialog 统一使用浅绿渐变背景、绿色标题、白色优�
 
 **类别**：业务组件。**依据**：用户本轮要求；Figma 136:39431 的三类商卡结构，基础元素遵循现有规范。
 
-ProductCard 的 grid、full-width、category 分别用于双列瀑布流、通栏单列和分类单列；保留商品图、标题、重量、价格层级、促销、供应商和购买状态。图片槽位分别为自适应正方形、120px、72px；尺寸来自本轮原稿。价格、标签、数量、按钮和文字使用当前基础规范与令牌，不在页面重新实现旧商卡。双列商卡多规格通过抽屉选择，宽屏商卡可在卡内展开规格。商卡加购数量为 1 时减号可点击，减到 0 恢复加购按钮。 状态蒙层使用白色 50% 遮罩和黑色 60% 胶囊，支持 165 与 72 两套尺寸、售罄/已下架/非卖品及中英文共 12 个变体；供应商名称与比价共用一个可切换标签组件。购物车商品图片占位始终为 1:1。规格选择作为完整白色底部抽屉，包含商品摘要、规格、数量、主按钮与安全区。地址表单字段名称放在输入框内，保留无障碍标签。
+ProductCard 的 grid、full-width、category 分别用于双列瀑布流、通栏单列和分类单列；保留商品图、标题、重量、价格层级、促销、供应商和购买状态。图片槽位分别为自适应正方形、120px、72px；尺寸来自本轮原稿。价格、标签、数量、按钮和文字使用当前基础规范与令牌，不在页面重新实现旧商卡。双列商卡多规格通过抽屉选择，宽屏商卡可在卡内展开规格。商卡加购数量为 1 时减号可点击，减到 0 恢复加购按钮。 状态蒙层使用白色 50% 遮罩和黑色 60% 胶囊，支持 165 与 72 两套尺寸、售罄/已下架/非卖品及中英文共 12 个变体；供应商名称与比价共用一个可切换标签组件。购物车商品图片占位始终为 1:1。规格选择作为完整白色底部抽屉，包含商品摘要、规格、数量、主按钮与安全区。地址表单字段名称放在输入框内，保留无障碍标签。 商卡售价统一使用黑色（Black90），包括促销商品和展开规格；促销通过标签表达，不将售价改为红色。
 
 **适用组件**：商品卡片（ProductCard）, feeds（ProductList）, 猜你喜欢（ProductCollection）, 商品价格组合（ProductPriceGroup）, 商品购买控件（ProductPurchaseControl）, 商品状态蒙层（ProductStatusOverlay）, 供应商标签（ProductSupplierTag）, 购物车商品行（CartItem）, 商品规格选择器（ProductSpecPicker）, 商品规格价格（ProductVariantPricing）, 商品详情购买栏（ProductPurchaseBar）。
 
@@ -309,6 +309,22 @@ OrderStageProgress 使用 28px 完整阶段图标，不能把原稿自带圆底�
 组件使用 LocaleProvider 设置 en 或 zh-CN。英文正文使用 Poppins，中文正文使用设备已安装的 PingFang SC；不存在时回退 Hiragino Sans GB、Microsoft YaHei、sans-serif。语言切换仅改变正文 --ds-font，不覆盖独立的 --ds-price-font，价格仍为 DdmcSans、Poppins、sans-serif。Page 与弹层保持同一语言。商品名、业务数据及页面文案由调用方提供对应语言；不得根据币种或价格猜测语言。PingFang 字体文件不随公共包分发。
 
 **适用组件**：页面容器（Page）, 按钮（Button）, 单行输入框（TextField）, 底部抽屉（BottomSheet）, 对话框（Dialog）, 商品卡片（ProductCard）, 商品价格组合（ProductPriceGroup）。
+
+## neutral-colors · 蓝色与蓝灰统一去色相
+
+**类别**：颜色。**依据**：用户明确要求（2026-11-04）。
+
+所有基础组件、业务组件及新生成页面禁止使用蓝色、蓝灰色或带蓝色色相的背景、文字、边框、阴影和渐变。中性色必须 R=G=B，优先使用 Black90 #1A1A1A、Black70 #4D4D4D、Black50 #808080、Black30 #B3B3B3、Black20 #CCCCCC、Black10 #E6E6E6、Black4 #F5F5F5 与白色；透明色使用等值 RGB 或中性黑白叠加。不能使用 slate、zinc 默认冷灰或自行调制蓝灰。历史 blue token/标签参数仅为兼容标识，其渲染为中性灰，不能据名称恢复蓝色；温层标同样遵循。商品照片与原始品牌素材不做去色处理。
+
+**适用组件**：页面容器（Page）, 文本（Text）, 卡片（Card）, 单行输入框（TextField）, 搜索框（SearchBar）, 商品营销标签（ProductTag）, 商品温层标（ProductTemperatureTag）, 商品卡片（ProductCard）, 猜你喜欢（ProductCollection）, 分类页框架（CategoryLayout）。
+
+## tag-priority · 标签按实心与色温两级排序
+
+**类别**：业务组件。**依据**：用户明确要求（2026-11-04）。
+
+标签排序先比较样式：实心优先于空心；同样式再比较色温：暖色（red/orange/gold）优先于冷色（green），冷色优先于灰色（gray，以及已转为中性灰的兼容 blue）。同优先级保持调用方传入顺序。样式优先级高于色温，因此实心灰色仍先于空心暖色。默认 variant=outline、tone=red；排序不得修改调用方数组。
+
+**适用组件**：商品营销标签（ProductTag）, 商品标题（ProductTitle）, 商品卡片（ProductCard）, feeds（ProductList）, 猜你喜欢（ProductCollection）。
 
 ## 实现与验证边界
 

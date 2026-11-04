@@ -1,3 +1,17 @@
+<!-- current-visual-policy:start -->
+## Current visual policy / 2026-11-04
+
+### 蓝色与蓝灰统一去色相 (neutral-colors)
+
+所有基础组件、业务组件及新生成页面禁止使用蓝色、蓝灰色或带蓝色色相的背景、文字、边框、阴影和渐变。中性色必须 R=G=B，优先使用 Black90 #1A1A1A、Black70 #4D4D4D、Black50 #808080、Black30 #B3B3B3、Black20 #CCCCCC、Black10 #E6E6E6、Black4 #F5F5F5 与白色；透明色使用等值 RGB 或中性黑白叠加。不能使用 slate、zinc 默认冷灰或自行调制蓝灰。历史 blue token/标签参数仅为兼容标识，其渲染为中性灰，不能据名称恢复蓝色；温层标同样遵循。商品照片与原始品牌素材不做去色处理。
+
+### 标签按实心与色温两级排序 (tag-priority)
+
+标签排序先比较样式：实心优先于空心；同样式再比较色温：暖色（red/orange/gold）优先于冷色（green），冷色优先于灰色（gray，以及已转为中性灰的兼容 blue）。同优先级保持调用方传入顺序。样式优先级高于色温，因此实心灰色仍先于空心暖色。默认 variant=outline、tone=red；排序不得修改调用方数组。
+
+商卡售价一律为 Black90 #1A1A1A，包含促销售价与展开规格，原价和单位仍使用中性灰。上述规则优先于本文件历史示例与 Figma 原稿；生成后检查所有背景、文字、边框、阴影、渐变，禁止引入蓝灰或默认 slate 冷灰。
+<!-- current-visual-policy:end -->
+
 # 组件选择与接口
 
 组件中文名用于沟通，英文名用于代码与检索。本文由当前 catalog、api、usage 生成。先找职责匹配的组件，再看 props；状态表属于演示，不是 variant 类型。完整示例见 source/src/design-system/ComponentExample.tsx。

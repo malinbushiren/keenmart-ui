@@ -35,9 +35,9 @@
 .art-70e44d5c89{position:absolute;inset:-0.1% 2.64% 14.55% 2.87%}
 .art-96e3ead43f{position:relative;width:54px;height:54px}
 .art-fe81d5b031{position:absolute;display:contents;inset:3.7% 8.44% 13.76% 8.44%}
-.art-a32cfb86e3{position:absolute;background-image:linear-gradient(to bottom,var(--from),var(--via,var(--from)) var(--via-stop,0%),var(--to) var(--to-stop,100%));--to-stop:1.664%;--from:rgba(255,255,255,0);inset:3.7% 41.69% 47.3% 15.44%;--to:#b8bec8;--to-stop:134.81%}
-.art-abc7adb89b{position:absolute;background-image:linear-gradient(to bottom,var(--from),var(--via,var(--from)) var(--via-stop,0%),var(--to) var(--to-stop,100%));--to-stop:1.664%;--from:rgba(255,255,255,0);inset:3.7% 15.44% 47.3% 41.69%;--to:#b8bec8;--to-stop:134.81%}
-.art-b7a40b2236{position:absolute;background-image:linear-gradient(to bottom,var(--from),var(--via,var(--from)) var(--via-stop,0%),var(--to) var(--to-stop,100%));--to-stop:1.664%;--from:rgba(255,255,255,0);inset:3.7% 28.56% 47.3% 28.56%;--to:#b8bec8;--to-stop:134.81%}
+.art-a32cfb86e3{position:absolute;background-image:linear-gradient(to bottom,var(--from),var(--via,var(--from)) var(--via-stop,0%),var(--to) var(--to-stop,100%));--to-stop:1.664%;--from:rgba(255,255,255,0);inset:3.7% 41.69% 47.3% 15.44%;--to:#cccccc;--to-stop:134.81%}
+.art-abc7adb89b{position:absolute;background-image:linear-gradient(to bottom,var(--from),var(--via,var(--from)) var(--via-stop,0%),var(--to) var(--to-stop,100%));--to-stop:1.664%;--from:rgba(255,255,255,0);inset:3.7% 15.44% 47.3% 41.69%;--to:#cccccc;--to-stop:134.81%}
+.art-b7a40b2236{position:absolute;background-image:linear-gradient(to bottom,var(--from),var(--via,var(--from)) var(--via-stop,0%),var(--to) var(--to-stop,100%));--to-stop:1.664%;--from:rgba(255,255,255,0);inset:3.7% 28.56% 47.3% 28.56%;--to:#cccccc;--to-stop:134.81%}
 .art-472a069d16{position:absolute;display:contents;inset:14.49% 8.44% 13.76% 8.44%}
 .art-9bf64da887{position:absolute;inset:14.49% 13.56% 13.76% 14.69%}
 .art-f723fa8624{position:absolute;display:contents;inset:57.95% 27.69% 28.05% 27.69%}

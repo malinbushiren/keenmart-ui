@@ -145,5 +145,9 @@
   "ProductSupplierPanel": "供应商信息卡",
   "ProductAttributes": "商品参数表",
   "ProductServiceBenefits": "商品服务保障",
-  "ProductPurchaseBar": "商品详情购买栏"
+  "ProductPurchaseBar": "商品详情购买栏",
+  "ProductTemperatureTag": "商品温层标",
+  "ProductTag": "商品营销标签",
+  "ProductTitle": "商品标题",
+  "ProductImage": "商品图片组合"
 }

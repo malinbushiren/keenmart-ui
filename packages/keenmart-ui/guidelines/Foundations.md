@@ -1,3 +1,17 @@
+<!-- current-visual-policy:start -->
+## Current visual policy / 2026-11-04
+
+### 蓝色与蓝灰统一去色相 (neutral-colors)
+
+所有基础组件、业务组件及新生成页面禁止使用蓝色、蓝灰色或带蓝色色相的背景、文字、边框、阴影和渐变。中性色必须 R=G=B，优先使用 Black90 #1A1A1A、Black70 #4D4D4D、Black50 #808080、Black30 #B3B3B3、Black20 #CCCCCC、Black10 #E6E6E6、Black4 #F5F5F5 与白色；透明色使用等值 RGB 或中性黑白叠加。不能使用 slate、zinc 默认冷灰或自行调制蓝灰。历史 blue token/标签参数仅为兼容标识，其渲染为中性灰，不能据名称恢复蓝色；温层标同样遵循。商品照片与原始品牌素材不做去色处理。
+
+### 标签按实心与色温两级排序 (tag-priority)
+
+标签排序先比较样式：实心优先于空心；同样式再比较色温：暖色（red/orange/gold）优先于冷色（green），冷色优先于灰色（gray，以及已转为中性灰的兼容 blue）。同优先级保持调用方传入顺序。样式优先级高于色温，因此实心灰色仍先于空心暖色。默认 variant=outline、tone=red；排序不得修改调用方数组。
+
+商卡售价一律为 Black90 #1A1A1A，包含促销售价与展开规格，原价和单位仍使用中性灰。上述规则优先于本文件历史示例与 Figma 原稿；生成后检查所有背景、文字、边框、阴影、渐变，禁止引入蓝灰或默认 slate 冷灰。
+<!-- current-visual-policy:end -->
+
 # 基础样式与变量
 
 本表由当前 tokens.json 生成；对应 CSS 在原 React 工程的 src/design-system/variables.css。此文档不会自动安装 CSS。下表原样展开当前 token，不建立第二套语义颜色。具体组件的角色字号由源码及设计规则决定，不将通用 pageTitle 套到所有导航标题。
@@ -76,7 +90,7 @@
 | color.yellow.alpha30 | color | {"colorSpace":"srgb","components":[1,0.7098039215686275,0.10980392156862745],"alpha":0.3} | 参考图后三项文字重复；按 Primary 派生的候选透明色，待确认 |
 | color.yellow.alpha20 | color | {"colorSpace":"srgb","components":[1,0.7098039215686275,0.10980392156862745],"alpha":0.2} | 参考图后三项文字重复；按 Primary 派生的候选透明色，待确认 |
 | color.yellow.alpha05 | color | {"colorSpace":"srgb","components":[1,0.7098039215686275,0.10980392156862745],"alpha":0.05} | 参考图后三项文字重复；按 Primary 派生的候选透明色，待确认 |
-| color.blue.primary | color | "#0066E0" | 原稿营销分类卡的背景基色；不用于交互选中态。 |
-| color.blue.alpha05 | color | {"colorSpace":"srgb","components":[0,0.4,0.8784313725490196],"alpha":0.05} | 分类入口的浅蓝底；来源 1:1965。 |
+| color.blue.primary | color | "#808080" | 兼容旧 blue 标识的中性灰；已移除蓝色色相。新组件优先使用 dark.black50。 |
+| color.blue.alpha05 | color | {"colorSpace":"srgb","components":[0,0,0],"alpha":0.05} | 兼容旧 blue 标识的中性黑色 5% 透明底；禁止恢复浅蓝底。 |
 
 CSS 变量及尺寸以源码为准，不能根据 token 路径猜变量名称。

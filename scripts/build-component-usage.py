@@ -1,8 +1,13 @@
 # coding: utf-8
 from pathlib import Path
 import json
+import sys
 p=Path('src/design-system');catalog=json.loads((p/'component-catalog.json').read_text())
 definitions='''
+ProductTemperatureTag|商卡温层标；冷冻与冷鲜两类，支持中英文和对应温度范围。
+ProductTag|商品短标签；六种颜色、实心与空心两种样式，可选券图标和箭头。
+ProductTitle|商品标题；可选内联短标签，行数由商卡布局控制。
+ProductImage|商卡图片模块；165、120、72 三种尺寸，统一温层、截单时间、状态蒙层和购买入口。
 ProductPriceGroup|价格业务组合；当前售价、币种、单位、单位价与划线原价的四种组合。
 ProductPurchaseControl|商卡购买状态；加购、数量、到达上限、多规格、到货提醒和找相似。
 ProductStatusOverlay|商品图上的售罄、下架、非卖品蒙层；支持中英文。
@@ -183,12 +188,25 @@ special.update({
  'ProductSpecPicker':('完整白色商品规格抽屉：商品图与摘要、处理方式、口味、数量、加购及安全区；传 open/onClose 控制抽屉，省略 open 可内嵌预览面板。','不再仅抽取孤立选项；不要重复套一层 BottomSheet 或重复安全区。','<ProductSpecPicker open={open} onClose={close} product={product} groups={groups} values={values} onChange={setValues} quantity={quantity} onQuantity={setQuantity} onConfirm={add} />')
 })
 
+special.update({
+ 'ProductTemperatureTag':('商品有 temperature=frozen 或 chilled 时展示相应温层。','不能根据商品名称猜测温层；缺少温层数据时隐藏。','<ProductTemperatureTag temperature="frozen" locale="zh" />'),
+ 'ProductTag':('为商品标注促销或属性；支持 red/orange/gold/green/gray、outline/solid；blue 仅兼容旧调用并渲染为中性灰。实心先于空心，同样式暖色先于冷色再灰色，同级保持原顺序。','不自行创造标签颜色或圆角。','<ProductTag tone="red" variant="outline" leadingIcon>满1500减150</ProductTag>'),
+ 'ProductTitle':('商卡标题可通过 badge 插入特惠等内联标签。','不把标签独立成占满一行的标题。','<ProductTitle title={product.name} badge="特惠" />'),
+ 'ProductImage':('按商卡布局选择 size=165/120/72；showTemperature 控制温层标，status 控制状态蒙层。','温层数据缺失时不展示；不拉伸图片比例。','<ProductImage src={product.image} alt={product.name} temperature="chilled" showTemperature size={165} />')
+})
+for name in ('ProductCard', 'ProductList', 'ProductCollection', 'CategoryLayout'):
+ when,avoid,example=special[name]
+ special[name]=(when+' 应用侧提示词要求“展示温层”时传 showTemperature=true，并传商品 temperature=frozen/chilled；未要求时默认隐藏，缺少温层数据也隐藏。',avoid,example.replace(' />',' showTemperature />'))
+
 for x in catalog:
  n=x['name'];when,avoid,code=special.get(n,(group_when[x['category']],'只完成上述定义中的任务；路由、接口、金额计算和跨组件状态由组合页管理。',None))
  rows[n]={'definition':defs[n],'when':when,'avoid':avoid,'boundary':('只负责通用外观与交互，不读取商品、订单或账户接口。' if x['kind']=='basic' else '组合领域内的基础组件；接收真实业务数据及事件，不把整张旧页面包装进来。'),'steps':['选择与当前任务相符的组件及状态。','按接口传入数据，绑定 onChange／onAction 等事件。','放进 Page 对应背景中，再对照来源页面检查文案与状态。'],'example':code,'preview':'?component-preview='+n+'&variant=default'}
 for x in catalog:x['rationale']=rows[x['name']]['definition']
 (p/'component-catalog.json').write_text(json.dumps(catalog,ensure_ascii=False,indent=2))
 (p/'component-usage.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+if '--json-only' in sys.argv:
+ print('Updated component metadata only; Markdown awaiting visual review')
+ sys.exit(0)
 text='# 组件定义与使用手册 · v0.12\n\n基础组件处理通用外观与交互；业务组件处理一个有明确数据关系和动作的领域任务；PageAssembly 才负责跨领域组合与状态。业务组件不是整页模板，也不是随意放在一起的卡片。\n\n'
 text+='## 从页面开始选择\n\n- 连续正文、登录、输入银行卡：Page white。\n- 分类、商品网格、购物车、结算、订单、评价、地址簿：Page gray，内容卡片 white。\n- 原稿是底部选择或确认面板：BottomSheet；独立短确认才用 Dialog。\n- 主要提交用 Button；取消、完成、查看、重发、新增入口用 TextButton。\n- 列表同层切换用 Tabs；应用主栏目用 TabBar；不要重复添加导航。\n\n'
 rules=json.loads((p/'design-rules.json').read_text())
