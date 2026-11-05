@@ -315,7 +315,7 @@ export function Collapse({ items }: {
         title: string;
         content: React.ReactNode;
     }[];
-}) { const { t: kmText } = useKeenLocale(); return <div className="kb-collapse">{items.map(i => <details key={i.id}><summary>{i.title}</summary><div>{i.content}</div></details>)}</div>; }
+}) { const [open, setOpen] = useState<Record<string, boolean>>({}); const prefix = useId(); return <div className="kb-collapse">{items.map(i => { const expanded = !!open[i.id]; const contentId = prefix + '-' + i.id; return <div className="kb-collapse-item" key={i.id}><ListRow title={i.title} arrow={expanded ? 'up' : 'down'} expanded={expanded} controls={contentId} onClick={() => setOpen(v => ({...v, [i.id]: !v[i.id]}))}/><div className="kb-collapse-content" id={contentId} hidden={!expanded}>{i.content}</div></div>; })}</div>; }
 export function Progress({ value, label }: {
     value: number;
     label?: string;

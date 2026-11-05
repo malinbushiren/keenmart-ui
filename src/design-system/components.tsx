@@ -1,4 +1,5 @@
 import { useKeenLocale } from './locale';
+import { Icon } from './Icon';
 import { SentimentArtwork } from './SentimentArtwork';
 import React, { useEffect, useRef, useId } from 'react';
 import './variables.css';
@@ -73,7 +74,10 @@ export function CouponCard({ coupon, onUse, onDetails }: {
     onUse?: () => void;
     onDetails: () => void;
 }) { const { t: kmText } = useKeenLocale(); const inactive = coupon.state && coupon.state !== 'available'; return <article className={'ds-coupon ' + (inactive ? 'is-inactive' : coupon.count ? 'is-stacked' : '')}>{coupon.count && !inactive && <span className="ds-coupon-count">x{coupon.count}</span>}<div className="ds-coupon-body"><div><h3>{coupon.title}</h3><div className="ds-tag-list">{coupon.tags.map(x => <Tag key={x} tone={inactive ? 'neutral' : 'success'}>{x}</Tag>)}</div><p>{coupon.description}</p></div>{inactive ? <span className="ds-coupon-stamp">{coupon.state === 'used' ? kmText("Used") : kmText("Expired")}</span> : onUse ? <Button variant="promotion" size="compact" onClick={onUse}>{kmText("Use now")}</Button> : null}</div><footer><span className={!inactive && coupon.expiryTone === 'success' ? 'ds-date-success' : undefined}>{coupon.date}</span><button type="button" onClick={onDetails}>{kmText("Details")}</button></footer></article>; }
-export function ListRow({ title, description, trailing, leading, onClick, disabled = false, danger = false }: {
+export function ListRow({ title, description, trailing, leading, onClick, disabled = false, danger = false, arrow = 'right', expanded, controls }: {
+    arrow?: 'right' | 'down' | 'up';
+    expanded?: boolean;
+    controls?: string;
     title: string;
     description?: string;
     trailing?: React.ReactNode;
@@ -81,7 +85,7 @@ export function ListRow({ title, description, trailing, leading, onClick, disabl
     onClick?: () => void;
     disabled?: boolean;
     danger?: boolean;
-}) { const { t: kmText } = useKeenLocale(); const content = <>{leading && <span className="ds-row-leading">{leading}</span>}<span className="ds-row-main">{title}{description && <small>{description}</small>}</span><span className="ds-row-trailing">{trailing}{onClick && <span aria-hidden="true"> ›</span>}</span></>; return onClick ? <button type="button" disabled={disabled} className={'ds-list-row ' + (danger ? 'is-danger' : '')} onClick={onClick}>{content}</button> : <div className="ds-list-row">{content}</div>; }
+}) { const { t: kmText } = useKeenLocale(); const content = <>{leading && <span className="ds-row-leading">{leading}</span>}<span className="ds-row-main">{title}{description && <small>{description}</small>}</span><span className="ds-row-trailing">{trailing}{onClick && <Icon name={arrow === 'down' ? 'down-2-12' : arrow === 'up' ? 'up-2-12' : 'right-2-12'}/>}</span></>; return onClick ? <button type="button" disabled={disabled} className={'ds-list-row ' + (danger ? 'is-danger' : '')} aria-expanded={expanded} aria-controls={controls} onClick={onClick}>{content}</button> : <div className="ds-list-row">{content}</div>; }
 export function Notice({ children }: {
     children: React.ReactNode;
 }) { const { t: kmText } = useKeenLocale(); return <div className="ds-notice" role="status">{children}</div>; }

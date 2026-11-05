@@ -678,18 +678,19 @@ export function ProductSummary({ name, ranking, attributes, description, onDetai
     attributes: DetailAttribute[];
     description: string;
     onDetails: () => void;
-}) { const { t: kmText } = useKeenLocale(); return <Card className="pd-summary"><h1>{name}</h1>{ranking && <Tag tone="success">{ranking}</Tag>}<div className="pd-summary-attributes">{attributes.map(a => <div key={a.label}><span>{a.value}</span><small>{a.label}</small></div>)}</div><button type="button" className="pd-description" onClick={onDetails} aria-label="查看完整商品介绍"><span>{description}</span><Icon name="right-2-24"/></button></Card>; }
+}) { const { t: kmText } = useKeenLocale(); return <Card className="pd-summary"><h1>{name}</h1>{ranking && <Tag tone="success">{ranking}</Tag>}<div className="pd-summary-attributes">{attributes.map(a => <div key={a.label}><span>{a.value}</span><small>{a.label}</small></div>)}</div><button type="button" className="pd-description" onClick={onDetails} aria-label="查看完整商品介绍"><span>{description}</span><Icon name="right-2-12"/></button></Card>; }
 export function ProductFulfillment({ delivery, deliveryDetail, afterSales, onAfterSales }: {
     delivery: string;
     deliveryDetail: string;
     afterSales: string;
     onAfterSales: () => void;
 }) { const { t: kmText } = useKeenLocale(); return <Card className="pd-fulfillment"><ListRow title={delivery} description={deliveryDetail}/><ListRow title={afterSales} onClick={onAfterSales}/></Card>; }
-export function ProductSupplierPanel({ name, metrics, onClick }: {
+export function ProductSupplierPanel({ name, logo, metrics, onClick }: {
+    logo?: string;
     name: string;
     metrics: DetailAttribute[];
     onClick: () => void;
-}) { const { t: kmText } = useKeenLocale(); return <Card className="pd-supplier"><ListRow title={name} onClick={onClick}/><dl className="pd-supplier-metrics">{metrics.map(m => <div key={m.label}><dt>{m.label}</dt><dd>{m.value}</dd></div>)}</dl></Card>; }
+}) { const { t: kmText } = useKeenLocale(); return <Card className="pd-supplier"><ListRow title={name} leading={<img className="pd-supplier-logo" src={logo || "/assets/supplier-logo-placeholder.svg"} alt={logo ? name + " Logo" : "供应商 Logo 占位图"}/>} onClick={onClick}/><dl className="pd-supplier-metrics">{metrics.map(m => <div key={m.label}><dt>{m.label}</dt><dd>{m.value}</dd></div>)}</dl></Card>; }
 export function ProductAttributes({ title = '商品详情', items }: {
     title?: string;
     items: DetailAttribute[];

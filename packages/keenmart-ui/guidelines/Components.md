@@ -1,5 +1,9 @@
 <!-- current-visual-policy:start -->
-## Current visual policy / 2026-11-04
+## Current visual policy / 2026-11-05
+
+### 商卡统一使用三种定制结构 (commerce-anatomy)
+
+ProductCard 的 grid、full-width、category 分别用于双列瀑布流、通栏单列和分类单列；保留商品图、标题、重量、价格层级、促销、供应商和购买状态。图片槽位分别为自适应正方形、120px、72px；尺寸来自本轮原稿。商卡高度随实际内容自适应，不设置固定卡高或标题最小高度，不为短标题补齐三行空白；无重量等可选内容时不渲染空占位。双列保持瀑布流，不强制同排等高。价格、标签、数量、按钮和文字使用当前基础规范与令牌，不在页面重新实现旧商卡。双列商卡多规格通过抽屉选择，宽屏商卡可在卡内展开规格。商卡加购数量为 1 时减号可点击，减到 0 恢复加购按钮。 状态蒙层使用白色 50% 遮罩和黑色 60% 胶囊，支持 165 与 72 两套尺寸、售罄/已下架/非卖品及中英文共 12 个变体；供应商名称与比价共用一个可切换标签组件。购物车商品图片占位始终为 1:1。规格选择作为完整白色底部抽屉，包含商品摘要、规格、数量、主按钮与安全区。地址表单字段名称放在输入框内，保留无障碍标签。 商卡售价统一使用黑色（Black90），包括促销商品和展开规格；促销通过标签表达，不将售价改为红色。
 
 ### 蓝色与蓝灰统一去色相 (neutral-colors)
 
@@ -8,6 +12,14 @@
 ### 标签按实心与色温两级排序 (tag-priority)
 
 标签排序先比较样式：实心优先于空心；同样式再比较色温：暖色（red/orange/gold）优先于冷色（green），冷色优先于灰色（gray，以及已转为中性灰的兼容 blue）。同优先级保持调用方传入顺序。样式优先级高于色温，因此实心灰色仍先于空心暖色。默认 variant=outline、tone=red；排序不得修改调用方数组。
+
+### 分割线只放在列表项之间 (list-separators)
+
+带分割线的列表在项与项之间展示分割线，最后一项底部不再添加分割线；单行列表不额外添加底部分割线。列表后仍有不同内容分区时，可保留明确的分区边界。折叠列表同样遵循末项无分割线，不能因为内容容器存在而给末项补画底线。
+
+### 导航箭头复用图标库且不大于文字 (navigation-arrows)
+
+列表行、摘要入口等导航箭头统一使用图标库的右箭头，不使用 ›、> 等文本字符模拟。箭头尺寸等于或小于对应文字字号，14px 正文优先使用12px箭头；不可为了填满行高放大箭头。折叠入口复用 ListRow，右侧使用向下箭头，展开后切换为向上箭头，并暴露展开状态。
 
 商卡售价一律为 Black90 #1A1A1A，包含促销售价与展开规格，原价和单位仍使用中性灰。上述规则优先于本文件历史示例与 Figma 原稿；生成后检查所有背景、文字、边框、阴影、渐变，禁止引入蓝灰或默认 slate 冷灰。
 <!-- current-visual-policy:end -->
@@ -2805,3 +2817,14 @@ type CommerceCategory = {id:string;label:string;image?:string;selectedImage?:str
 ```ts
 {name:IconName;label?:string;className?:string}
 ```
+
+<!-- detail-module-updates:start -->
+## 商品详情组件更新 · 2026-11-05
+
+- ProductCard：高度随内容自适应，标题不设最小高度，不为短标题补齐三行；无重量时不输出空占位。三种变体保留图片比例与基础字号。
+- ProductCollection：相似商品与猜你喜欢均经 ProductList 复用 ProductCard。组件自带左右12px内距，父页面不要重复添加；375px页面下双列卡宽171px、图片165×165px、列间9px。
+- ProductVariantPricing：商品详情主售价整数28px、小数20px、币种16px，价格字体保持独立的 --ds-price-font，售价黑色。规格价格和推荐商卡价格不随主售价放大。
+- ProductSupplierPanel：新增 logo?: string，传入实际公司 Logo 图片地址；未提供时展示36×36px中性占位图，不能将占位图当作真实品牌。
+- ListRow：新增 arrow?: 'right' | 'down' | 'up'（默认right）、expanded?: boolean、controls?: string。右侧箭头使用图标库12px图标，末行不绘制底部分割线。
+- Collapse：保留 items: {id,title,content}[] 接口，内部复用 ListRow。收起箭头朝下，展开朝上；原生按钮支持键盘操作并提供 aria-expanded / aria-controls。末项无分割线，正文首尾段落无默认外边距，避免叠加 Card 的12px内距。
+<!-- detail-module-updates:end -->

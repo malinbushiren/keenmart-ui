@@ -37,7 +37,7 @@
   },
   "ListRow": {
     "file": "components.tsx",
-    "props": "{\n    title: string;\n    description?: string;\n    trailing?: React.ReactNode;\n    leading?: React.ReactNode;\n    onClick?: () => void;\n    disabled?: boolean;\n    danger?: boolean;\n}"
+    "props": "{\n    arrow?: 'right' | 'down' | 'up';\n    expanded?: boolean;\n    controls?: string;\n    title: string;\n    description?: string;\n    trailing?: React.ReactNode;\n    leading?: React.ReactNode;\n    onClick?: () => void;\n    disabled?: boolean;\n    danger?: boolean;\n}"
   },
   "Notice": {
     "file": "components.tsx",
@@ -585,7 +585,7 @@
   },
   "ProductSupplierPanel": {
     "file": "business.tsx",
-    "props": "{\n    name: string;\n    metrics: DetailAttribute[];\n    onClick: () => void;\n}"
+    "props": "{\n    logo?: string;\n    name: string;\n    metrics: DetailAttribute[];\n    onClick: () => void;\n}"
   },
   "ProductAttributes": {
     "file": "business.tsx",

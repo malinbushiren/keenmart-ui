@@ -19,12 +19,12 @@ export function ProductDetailPage(){
  <B.ProductVariantPricing variants={detailVariants} value={variant} onChange={setVariant} currency="¥" unit="袋" sales="月售7000+"/>
  <B.ProductSummary name="紫甘蓝" ranking="紫甘蓝普通销量第1名" attributes={detailAttributes.slice(0,4)} description={detailDescription} onDetails={()=>setPanel('description')}/>
  <B.ProductFulfillment delivery="明日上午达" deliveryDetail="00:00–23:00下单，明日06:00–10:00送达" afterSales="18小时售后" onAfterSales={()=>setPanel('after-sales')}/>
- <B.ProductCollection title="紫甘蓝 · 相似商品" products={collection(similarProducts)} onAdd={addRelated} onQuantity={(id,n)=>setRelated(v=>({...v,[id]:n}))}/>
+ <B.ProductCollection layout="grid" title="紫甘蓝 · 相似商品" products={collection(similarProducts)} onAdd={addRelated} onQuantity={(id,n)=>setRelated(v=>({...v,[id]:n}))}/>
  <B.ProductSupplierPanel name={supplierName} metrics={supplierMetrics} onClick={()=>setPanel('supplier')}/>
  <B.ProductAttributes items={detailAttributes}/>
  <B.ProductServiceBenefits items={detailServices} onSelect={setPanel}/>
  <F.Card className="pd-additional"><F.Collapse items={[{id:'extra',title:'补充说明',content:<p>{detailDescription} 商品图片仅供参考，请以实际收到的商品为准。</p>}]}/></F.Card>
- <B.ProductCollection title="猜你喜欢" products={collection(recommendedProducts)} onAdd={addRelated} onQuantity={(id,n)=>setRelated(v=>({...v,[id]:n}))}/>
+ <B.ProductCollection layout="grid" title="猜你喜欢" products={collection(recommendedProducts)} onAdd={addRelated} onQuantity={(id,n)=>setRelated(v=>({...v,[id]:n}))}/>
  </div>
  </F.Page>
  <BottomSheet open={!!panel} title={panel==='cart'?'购物车':panel==='description'?'商品介绍':panel==='supplier'?'供应商':panel==='supplier-products'?'供应商商品':panel==='after-sales'?'售后说明':panel==='share'?'分享商品':service?.label||'联系客服'} onClose={()=>setPanel('')} footer={<Button onClick={()=>setPanel('')}>完成</Button>}>

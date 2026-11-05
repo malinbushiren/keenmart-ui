@@ -2292,3 +2292,7 @@
 
 可运行示例：`http://127.0.0.1:5173/?component-preview=Icon&variant=default`。所需参数见 COMPONENT-API.md 的同名条目。
 
+
+## 商品详情验收更新 · 2026-11-05
+
+商卡复用 ProductCard，随内容自适应高度，不为短标题预留三行；ProductCollection 自带左右12px内距，父页面不重复叠加。主价格28px、小数20px、币种16px。ProductSupplierPanel 支持 logo 图片，缺省为中性占位图。Collapse 内部复用 ListRow，右侧下/上箭头切换展开状态，末项不画底线，正文去掉默认段落外边距，卡片底部只保留12px内距。ListRow 新增 arrow、expanded、controls，详见 COMPONENT-API.md。

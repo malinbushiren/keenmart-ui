@@ -126,6 +126,9 @@ React.InputHTMLAttributes<HTMLInputElement> & {
 
 ```ts
 {
+    arrow?: 'right' | 'down' | 'up';
+    expanded?: boolean;
+    controls?: string;
     title: string;
     description?: string;
     trailing?: React.ReactNode;
@@ -2079,6 +2082,7 @@ type CommerceCategory = {
 
 ```ts
 {
+    logo?: string;
     name: string;
     metrics: DetailAttribute[];
     onClick: () => void;
